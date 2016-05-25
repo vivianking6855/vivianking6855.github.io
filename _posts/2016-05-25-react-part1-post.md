@@ -3,7 +3,7 @@ layout: post
 title: ReactNative
 date: 2015-05-25
 excerpt: "ReactNative 学习笔记 Part 1"
-tags: [react, technology]
+tags: [react]
 comments: true
 ---
 
