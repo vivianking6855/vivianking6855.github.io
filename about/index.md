@@ -5,6 +5,13 @@ tags: [about]
 date: 2016-05-25
 ---
     
+---
+##目前专注于 Android, ReactNative开发	
+- I love OpenSource!
+- I love GitHub!
+- I love WeChat!
+- I love FB!	
+- I love my family!
 
 ## Technology
 * Android
