@@ -2,7 +2,7 @@
 layout: post
 title: ReactNative
 date: 2015-05-25
-excerpt: "Demo post displaying the various ways of highlighting code in Markdown."
+excerpt: "ReactNative 学习笔记"
 tags: [react, technology]
 comments: true
 ---
