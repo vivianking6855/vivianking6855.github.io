@@ -1,15 +1,11 @@
 ---
 layout: post
-title:  "Moon Jekyll Theme"
-date:   2016-04-06
-excerpt: "Minimal, one column Jekyll theme for your blog."
+title:  "ZenTalk"
+date:   2016-05-25
+excerpt: "ZenTalk Project Manager."
 project: true
 tag:
-- jekyll 
-- moon
-- blog
-- about
-- theme
+- project 
 comments: true
 ---
 
