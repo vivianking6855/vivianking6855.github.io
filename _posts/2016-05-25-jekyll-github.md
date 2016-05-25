@@ -16,11 +16,11 @@ comments: true
 
 
 ## 评论插件
-[国内可以用多说评论插件](http://duoshuo.com/)
+[国内可以用多说评论插件](http://duoshuo.com/)<br/>
 [国外可以用disqus评论插件](https://disqus.com/)
 
-##社会化功能，如分享到QQ、微信等
-[我用的是jiathis](http://www.jiathis.com/)
+## 社会化功能，如分享到QQ、微信等
+[我用的是jiathis](http://www.jiathis.com/)<br/>
 实现可参看：[网站怎么添加社会化功能](http://jingyan.baidu.com/article/f79b7cb37cfc239145023e45.html)
 
 ## vivian blog下载地址
