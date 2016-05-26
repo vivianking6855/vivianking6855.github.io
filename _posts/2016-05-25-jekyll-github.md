@@ -33,3 +33,4 @@ Moon模板默认里面有disqus评论插件，我换成了duoshuo
 
 <br/><br/>
 > [Jekyll 模板数据](http://havee.me/internet/2013-07/jekyll-template-data.html)
+> [如何利用github打造博客专属域名](http://blog.csdn.net/lmj623565791/article/details/51319147) 
