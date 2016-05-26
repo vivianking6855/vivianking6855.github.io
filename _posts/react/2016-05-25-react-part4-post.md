@@ -73,6 +73,7 @@ ElementBox ：最内层的组件
 ####3. 添加签名和混淆
    打开android\app中的build.gradle文件。
    加入signingConfigs用来签名（？？？内容改成自己的，如果是执行上面的命令KeyAlias不用改）</br>
+   设定enableProguardInRelease为ture来开启proguard混淆。</br>
    
         signingConfigs {
             release {
@@ -82,9 +83,6 @@ ElementBox ：最内层的组件
                 keyPassword "???"
             }
         }
-   设定enableProguardInRelease为ture来开启proguard混淆。</br>
-   混淆可以减小APK文件的大小。可以移除掉React Native Java（和它的依赖库中）中没有被使用到的部分，最终有效的减少APK的大小。</br>
-   如果需要添加一些库的混淆可以修改app/proguard-rules.pro文件。</br>   
     
         buildTypes {
             release {
@@ -95,6 +93,9 @@ ElementBox ：最内层的组件
         }
         enableProguardInReleaseBuilds = true
  
+   混淆可以减小APK文件的大小。可以移除掉React Native Java（和它的依赖库中）中没有被使用到的部分。</br>
+   最终有效的减少APK的大小。</br>
+   如果需要添加一些库的混淆可以修改app/proguard-rules.pro文件。</br>  
 ####4. 打包文件
    进入/android/目录，cmd执行gradle assembleRelease</br>
    打包后的文件在 android/app/build/outputs/apk目录中。例如app-release.apk（里面还有之前调试生成的app-debug开头的apk）</br>
