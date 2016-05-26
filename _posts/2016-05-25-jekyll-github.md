@@ -27,5 +27,9 @@ comments: true
 Moon模板默认里面有disqus评论插件，我换成了duoshuo
 [下载地址](https://github.com/vivianking6855/vivianking6855.github.io)
 
+## 浏览次数统计
+[友盟](https://i.umeng.com/user/products)
 
+
+<br/><br/>
 > [Jekyll 模板数据](http://havee.me/internet/2013-07/jekyll-template-data.html)
