@@ -21,23 +21,20 @@ comments: true
     当应用启动运行的时候，会自动拉取这个bundle文件。<br/>
     该文件里存放的是应用的全部逻辑代码，在目录中并不存在这个文件。
     事实上，这个地址只是一个请求地址，而非真正的静态资源文件。<br/>
-    <font color="red">是通过包服务器packager通过动态分析index.android.js中的依赖，并对其进行合并得到的.</font><br/>
-     而且该服务允许代码实时渲染。
-
+    <font color="red">是通过包服务器packager通过动态分析index.android.js中的依赖，并对其进行合并得到的.</font>
+     而且该服务允许代码实时渲染
 - 调试
 
     http://localhost:8081/debugger-ui
-
 - Enable Hot Reloading
 
-    热更新
-    
+    热更新  
 - Enable Live Reload
+
     JS变动后自动刷新，不需要店家Reload JS. 不过不太稳定
-    
 - 检查元素
+    
     点击后可以在设备端查看各组件layout信息，给服务器端的检查元素类似
-  
 - Enable Perf Monitor
     性能监视器，可以看到fps等信息
 
