@@ -8,7 +8,7 @@ comments: false
 ---
 
 
-## ReactNative  第8节 JSX实战
+## ReactNative  第 8 节 JSX实战
 React Native中没有DOM的概念，只有组件的概念。<br/>
 因此在ReactJS中使用的Html标签以及对DOM的操作是不起作用的。<br/>
 不过组件的生命周期、JSX的语法、事件绑定、自定义属性等，在RN和ReactJS中是一样的。
@@ -29,7 +29,7 @@ ElementBox ：最内层的组件
 [Sample Code](https://github.com/vivianking6855/ReactNativeProject/blob/master/TwoReactNative/index.android.js)
 
 
-## ReactNative 第7节 打包和发布
+## ReactNative 第 9 节 打包和发布
 ### 设备端Menu
 手机摇晃会出现Menu<br/>
 ![](http://i.imgur.com/oHDFEIR.jpg)
