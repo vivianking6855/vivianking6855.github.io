@@ -4,14 +4,15 @@ title: ReactNative
 date: 2015-05-25
 excerpt: "ReactNative 学习笔记 5"
 tags: [react]
-comments: false
+comments: true
 ---
 
 ## ReactNative 第 9 节 打包和发布
 
 ### 设备端Menu
 
-手机摇晃会出现Menu<br/>
+手机摇晃会出现Menu
+
 ![](http://i.imgur.com/oHDFEIR.jpg)
 
 - ReloadJS
@@ -42,11 +43,11 @@ comments: false
 
 ### 打包发布步骤
 
-#### 1. 生成一个签名密钥</br>
+#### 1. 生成一个签名密钥
    可以用工具Eclipse，AndroidStudio生成。也可以用命令：</br>
    keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
    会生成一个叫做my-release-key.keystore的密钥库文件
-#### 2. 将index.android.bundle下载保存到路径/android/app/src/main/assets文件夹</br>
+#### 2. 将index.android.bundle下载保存到路径/android/app/src/main/assets文件夹
    文件夹不存在，可以新建。但是名字一定要是assets
    curl -k "http://localhost:8081/index.android.bundle" > android/app/src/main/assets/index.android.bundle
    这点很重要。<font color="red">如果assets目录中不存在该文件，则打包的apk在执行时显示空白。</font>
