@@ -1,0 +1,113 @@
+---
+layout: post
+title: ReactNative
+date: 2015-05-25
+excerpt: "ReactNative 学习笔记 4"
+tags: [react]
+comments: false
+---
+
+
+## ReactNative  第8节 JSX实战
+React Native中没有DOM的概念，只有组件的概念。<br/>
+因此在ReactJS中使用的Html标签以及对DOM的操作是不起作用的。<br/>
+不过组件的生命周期、JSX的语法、事件绑定、自定义属性等，在RN和ReactJS中是一样的。
+
+用组件嵌套组件的方式实现，效果图：<br/>
+![效果图](http://i.imgur.com/RlUC68h.jpg)
+
+其中的大概逻辑是：
+
+MargginBox ：使用Box，childName="borderBox"，通过{this.props.children}把内部子组件传给子组件Box
+
+BorderBox ：使用Box，childName="paddingBox"，通过{this.props.children}把内部子组件传给子组件Box
+
+PaddingBox ：使用Box，childName="elementBox"，通过{this.props.children}把内部子组件传给子组件Box
+
+ElementBox ：最内层的组件
+
+[Sample Code](https://github.com/vivianking6855/ReactNativeProject/blob/master/TwoReactNative/index.android.js)
+
+
+## ReactNative 第7节 打包和发布
+### 设备端Menu
+手机摇晃会出现Menu<br/>
+![](http://i.imgur.com/oHDFEIR.jpg)
+
+- ReloadJS
+
+    重新加载JS和刷新http://localhost:8081/index.android.bundle?platform=android 同样的效果<br/>
+    当应用启动运行的时候，会自动拉取这个bundle文件。<br/>
+    该文件里存放的是应用的全部逻辑代码，在目录中并不存在这个文件。
+    事实上，这个地址只是一个请求地址，而非真正的静态资源文件。<br/>
+    <font color="red">是通过包服务器packager通过动态分析index.android.js中的依赖，并对其进行合并得到的.</font><br/>
+     而且该服务允许代码实时渲染。
+
+- 调试
+
+    http://localhost:8081/debugger-ui
+
+- Enable Hot Reloading
+
+    热更新
+    
+- Enable Live Reload
+    JS变动后自动刷新，不需要店家Reload JS. 不过不太稳定
+    
+- 检查元素
+    点击后可以在设备端查看各组件layout信息，给服务器端的检查元素类似
+  
+- Enable Perf Monitor
+    性能监视器，可以看到fps等信息
+
+### 打包发布步骤
+
+####1. 生成一个签名密钥</br>
+   可以用工具Eclipse，AndroidStudio生成。也可以用命令：</br>
+   keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+   会生成一个叫做my-release-key.keystore的密钥库文件
+####2. 将index.android.bundle下载保存到路径/android/app/src/main/assets文件夹</br>
+   文件夹不存在，可以新建。但是名字一定要是assets
+   curl -k "http://localhost:8081/index.android.bundle" > android/app/src/main/assets/index.android.bundle
+   这点很重要。<font color="red">如果assets目录中不存在该文件，则打包的apk在执行时显示空白。</font>
+####3. 添加签名和混淆
+   打开android\app中的build.gradle文件。
+   加入signingConfigs用来签名（？？？内容改成自己的，如果是执行上面的命令KeyAlias不用改）</br>
+   
+        signingConfigs {
+            release {
+                storeFile file("../../my-release-key.keystore")
+                storePassword "???"
+                keyAlias "my-key-alias"
+                keyPassword "???"
+            }
+        }
+   设定enableProguardInRelease为ture来开启proguard混淆。</br>
+   混淆可以减小APK文件的大小。可以移除掉React Native Java（和它的依赖库中）中没有被使用到的部分，最终有效的减少APK的大小。</br>
+   如果需要添加一些库的混淆可以修改app/proguard-rules.pro文件。</br>   
+    
+        buildTypes {
+            release {
+                minifyEnabled enableProguardInReleaseBuilds
+                proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+                signingConfig signingConfigs.release // add for app signkey
+            }
+        }
+        enableProguardInReleaseBuilds = true
+ 
+####4. 打包文件
+   进入/android/目录，cmd执行gradle assembleRelease</br>
+   打包后的文件在 android/app/build/outputs/apk目录中。例如app-release.apk（里面还有之前调试生成的app-debug开头的apk）</br>
+   注意事项：</br>
+
+   - 如果打包碰到问题可以先执行 gradle clean 清理一下。
+   - 安装gradle工具（版本与android\gradle\wrapper下的一致）并配置环境变量。
+   - 配置GRADLEHOME，加入%GRADLEHOME%/bin到PATH环境变量
+   - cmd执行gradle -v 检查可以检查版本
+
+####5. 发布apk到应用市场
+
+![](http://i.imgur.com/S8sLXQ9.png)
+
+> [Windows下安装使用curl命令](http://jingyan.baidu.com/article/a681b0dec4c67a3b1943467c.html)
+> [gradle下载地址](http://services.gradle.org/distributions)
