@@ -89,4 +89,5 @@ comments: false
 ![](http://i.imgur.com/S8sLXQ9.png)
 
 > [Windows下安装使用curl命令](http://jingyan.baidu.com/article/a681b0dec4c67a3b1943467c.html)
+
 > [gradle下载地址](http://services.gradle.org/distributions)
