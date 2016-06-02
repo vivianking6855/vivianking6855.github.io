@@ -2,7 +2,7 @@
 layout: post
 title: ReactNative
 date: 2015-05-27
-excerpt: "ReactNative 学习笔记 6"
+excerpt: "ReactNative 学习笔记 6 Component View,Text"
 tags: [react]
 comments: true
 ---
@@ -40,4 +40,7 @@ Text组件特性：
 2. 自定义中间List
 3. 自定义ImportNews 
 
-Sample Code
+![TextDemo](http://i.imgur.com/oOUUx5i.png)
+
+
+[Sample Code](https://github.com/vivianking6855/ReactNativeProject/blob/rncomponent/TwoReactNative/app/TextLesson.js)
