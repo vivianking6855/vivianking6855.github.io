@@ -11,9 +11,9 @@ comments: true
 
 ### View
 
-跟标签div类似,支持多层嵌套，支持flexbox布局
+[跟标签div类似,支持多层嵌套，支持flexbox布局](http://reactnative.cn/docs/0.26/view.html#content)
 
-布局逻辑分析：
+实例布局逻辑分析：
 
 1. 水平均分成三栏
 2. 左边部分内容和布局都居中
@@ -25,4 +25,19 @@ comments: true
 
 [Sample Code](https://github.com/vivianking6855/ReactNativeProject/blob/rncomponent/TwoReactNative/app/ViewLesson.js)
 
-### 
+
+### Text
+[用于显示文本。可以嵌套，继承。](http://reactnative.cn/docs/0.26/text.html#content)
+
+Text组件特性：
+
+1. onPress 当文本被点击以后调用此回调函数。
+2. numberOfLines 最多显示行数
+3. onLayout function 当挂载或者布局变化以后调用
+
+实例布局逻辑分析：
+1. 单独的module header，便于以后重复使用。其他控件也可参照处理
+2. 自定义中间List
+3. 自定义ImportNews 
+
+Sample Code
