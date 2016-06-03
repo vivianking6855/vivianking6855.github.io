@@ -2,12 +2,12 @@
 layout: post
 title: ReactNative
 date: 2015-05-25
-excerpt: "ReactNative 学习笔记 Part 2"
+excerpt: "ReactNative 学习笔记 2 实战之JSX - 入门"
 tags: [react]
 comments: true
 ---
 
-## ReactNative 第4节 实例 ## 
+##  第1节 实例
 
 ### ReactNative 实例效果 ###
 http://i.imgur.com/KVtcb1c.jpg
@@ -29,7 +29,7 @@ justity-content: -> justifyContent:
 ### 源码下载 ###
 
 
-## React Native  第5节 实战之JSX入门
+## 第2节 实战之JSX入门
 React是由ReactJS与React Native组成。其中ReactJS是Facebook开源的一个前端框架。
 React Native是ReactJS思想在native上的体现！
 JSX并不是一门新的语言，仅仅是个语法糖，允许开发者在JavaScript中书写HTML语法。最后每个HTML标签都转化为JavaScript代码来运行

@@ -2,7 +2,7 @@
 layout: post
 title: ReactNative
 date: 2015-05-25
-excerpt: "ReactNative 学习笔记 Part 1"
+excerpt: "ReactNative 学习笔记 1 环境搭建"
 tags: [react]
 comments: true
 ---

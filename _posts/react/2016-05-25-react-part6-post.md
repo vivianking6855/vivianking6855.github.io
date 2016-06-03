@@ -2,12 +2,12 @@
 layout: post
 title: ReactNative
 date: 2015-05-27
-excerpt: "ReactNative 学习笔记 6 Component View,Text"
+excerpt: "ReactNative 学习笔记 6 Component - View,Text"
 tags: [react]
 comments: true
 ---
 
-## ReactNative 第 10 节 组件
+## ReactNative 学习笔记 6 Component - View,Text
 
 ### View
 
@@ -44,3 +44,5 @@ Text组件特性：
 
 
 [Sample Code](https://github.com/vivianking6855/ReactNativeProject/blob/rncomponent/TwoReactNative/app/TextLesson.js)
+
+> [key warning ](http://facebook.github.io/react/docs/multiple-components.html#dynamic-children)

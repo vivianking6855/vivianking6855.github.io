@@ -2,12 +2,10 @@
 layout: post
 title: ReactNative
 date: 2015-05-25
-excerpt: "ReactNative 学习笔记 5"
+excerpt: "ReactNative 学习笔记 5 打包和发布"
 tags: [react]
 comments: true
 ---
-
-## ReactNative 第 9 节 打包和发布
 
 ### 设备端Menu
 

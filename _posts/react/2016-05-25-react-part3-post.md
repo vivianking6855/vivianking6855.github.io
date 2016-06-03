@@ -2,12 +2,12 @@
 layout: post
 title: ReactNative
 date: 2015-05-25
-excerpt: "ReactNative 学习笔记 Part 3"
+excerpt: "ReactNative 学习笔记 3 实战之JSX - 组件生命周期和通讯"
 tags: [react]
 comments: true
 ---
 
-##  ReactNative 第6节 实战之ReactJS 组件和生命周期
+##  第1节 组件和生命周期
 ReactNative关键是ReactJS思想在Native上的体现。 <br/>
 ReactJS核心思想：组件化。  <br/>
 每个组件维护自动的状态和UI，状态变化时，自动重新渲染。多个组件组成了ReactJS应用。
@@ -92,7 +92,7 @@ componentWillReceiveProps、shouldComponentUpdate、componentWillUpdate、render
             console.log("componentWillUnmount");
         },
 
-##  ReactNative 第7节 实战之ReactJS 组件通讯
+##  第2节 组件通讯
 React的核心思想是组件化，必然需要知晓组件的通讯</br>
 ReactJS组件关系是一层套一层，DOM结构。就像HTML的标签。组织结构比较清晰。</br>
 组件分为：父组件，子组件</br>
