@@ -32,7 +32,6 @@ RN中对应的控件是：Navigator（Android/IOS)，NavigatorIOS
 
 查看Navigator.SceneConfigs来获取默认的动画和更多的场景配置选项。
 
-[详细的教程](http://bbs.reactnative.cn/topic/20/新手理解navigator的教程)
 
 实例逻辑解析：
 
@@ -81,9 +80,10 @@ RN中对应的控件是：Navigator（Android/IOS)，NavigatorIOS
             navigator.pop();
         }
     }
-    
-    
-    
-
+ 
                 
 [Sample Code](https://github.com/vivianking6855/ReactNativeProject/blob/rncomponent/TwoReactNative/app/NavigatorLesson.js)
+
+
+> [详细的教程](http://bbs.reactnative.cn/topic/20/新手理解navigator的教程)
+> [官网API地址](http://reactnative.cn/docs/0.26/navigator.html#content)
