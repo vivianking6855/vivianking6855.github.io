@@ -1,15 +1,15 @@
 ---
 layout: post
-title: ReactNative
+title: React
 date: 2015-05-25
-excerpt: "ReactNative 学习笔记 2 实战之JSX - 入门"
+excerpt: "React 实战之JSX - 入门"
 tags: [react]
 comments: true
 ---
 
 ##  第1节 实例
 
-### ReactNative 实例效果 ###
+### React 实例效果 ###
 http://i.imgur.com/KVtcb1c.jpg
 
 ## React语法 ##

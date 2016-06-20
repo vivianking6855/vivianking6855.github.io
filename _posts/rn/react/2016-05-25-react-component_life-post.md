@@ -1,8 +1,8 @@
 ---
 layout: post
-title: ReactNative
+title: React
 date: 2015-05-25
-excerpt: "ReactNative 学习笔记 3 实战之JSX - 组件生命周期和通讯"
+excerpt: "React 实战之JSX - 组件生命周期和通讯"
 tags: [react]
 comments: true
 ---
@@ -105,13 +105,3 @@ ReactJS组件关系是一层套一层，DOM结构。就像HTML的标签。组织
     首先给child组件去个名字：ref="child"；然后用this.refs去获取
                
 [Sample请点击这里](https://github.com/vivianking6855/reactdemo/blob/master/lesson/lesson6_community.html)
-
-
-
-## Awesome React Native
-
-[Awesome React Native ](https://github.com/jondot/awesome-react-native)
-
-[推荐5个值得学习React Native的开源项目](http://www.tuicool.com/articles/BrIvMvE)
-
-[React 入门实例教程](http://www.ruanyifeng.com/blog/2015/03/react.html)

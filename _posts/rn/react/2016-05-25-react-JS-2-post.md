@@ -1,9 +1,9 @@
 ---
 layout: post
-title: ReactNative
+title: React
 date: 2015-05-25
-excerpt: "ReactNative 学习笔记 4 JSX实战"
-tags: [react]
+excerpt: "React JSX实战"
+tags: [React]
 comments: true
 ---
 
