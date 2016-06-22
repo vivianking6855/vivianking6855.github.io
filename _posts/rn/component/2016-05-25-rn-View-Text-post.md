@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ReactNative
-date: 2015-05-27
+date: 2016-05-27
 excerpt: "ReactNative 学习笔记 Component - View,Text"
 tags: [ReactNative]
 comments: true

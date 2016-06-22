@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ReactNative
-date: 2015-06-08
+date: 2016-06-08
 excerpt: "ReactNative 学习笔记 12 open source - react-native-swiper"
 tags: [ReactNative]
 comments: true

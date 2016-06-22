@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ReactNative
-date: 2015-06-08
+date: 2016-06-08
 excerpt: "ReactNative 学习笔记 Component - ViewPager， 异步网络数据"
 tags: [ReactNative]
 comments: true

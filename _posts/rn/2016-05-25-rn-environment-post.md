@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ReactNative
-date: 2015-05-25
+date: 2016-05-24
 excerpt: "ReactNative 学习笔记 初篇 环境搭建和知识储备"
 tags: [ReactNative]
 comments: true

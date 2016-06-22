@@ -1,7 +1,7 @@
 ---
 layout: post
 title: React
-date: 2015-05-25
+date: 2016-05-25
 excerpt: "React 实战之JSX - 入门"
 tags: [react]
 comments: true

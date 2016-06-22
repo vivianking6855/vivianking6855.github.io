@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ReactNative
-date: 2015-06-07
+date: 2016-06-07
 excerpt: "ReactNative 学习笔记 Component - ProgressBar，DrawerLayoutAndroid"
 tags: [ReactNative]
 comments: true

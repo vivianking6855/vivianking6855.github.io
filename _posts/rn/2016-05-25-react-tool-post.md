@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ReactNative
-date: 2015-05-25
+date: 2016-05-25
 excerpt: "ReactNative Windows下npm设定小结"
 tags: [react]
 comments: true

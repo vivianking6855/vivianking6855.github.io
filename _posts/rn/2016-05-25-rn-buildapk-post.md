@@ -1,8 +1,8 @@
 ---
 layout: post
 title: ReactNative
-date: 2015-05-25
-excerpt: "ReactNative 学习笔记 5 打包和发布"
+date: 2016-06-26
+excerpt: "ReactNative 学习笔记 打包和发布"
 tags: [react]
 comments: true
 ---
