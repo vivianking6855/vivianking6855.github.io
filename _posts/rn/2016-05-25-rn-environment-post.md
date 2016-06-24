@@ -38,13 +38,15 @@ comments: true
 
 ## ReactNative 第3节 IDE
 
-1.Facebook推荐IDE——基于Atom的nuclide
+1.Facebook推荐IDE——基于Atom的[nuclide](https://nuclide.io/)
   
   nuclide是Facebook在开源React Native框架时同时开源的IDE，是基于Github发布的开源编辑器Atom开发的React开发插件
   
   由于有Facebook的支持，对React.js和React Native的支持比较好。但一个很严重的问题是，Atom基于浏览器，性能是很严重的问题。
+  
+  免费，但是仅支持Mac: is not currently supported on Windows.
 
-2.永恒的经典——Sublime
+2.永恒的经典——Sublime 
 
   做JS的FE必然都知道Sublime。需要安装一些插件来支持React Native
 
@@ -53,8 +55,27 @@ comments: true
   跟Android Studio很类似的布局。熟悉Android Studio上手WebStorm比较快，使用很顺手。
 
   WebStorm自带的插件也比较好用，提示非常智能，不用安装什么插件就能上手开发了
+  
+   收费，有破解版
 
-[在webstom里面配置运行RN的方案](http://reactnative.cn/post/539) 
+  [在webstom里面配置运行RN的方案](http://reactnative.cn/post/539) 
+  
+<font color='red' size=4>4.微软推荐的Visual Studio Code</font>
+  
+  [Visual Studio Code](https://code.visualstudio.com/b?utm_expid=101350005-21.ckupCbvGQMiML5eJsxWmxw.1) 是微软在2015年4月29号 Build 2015 大会上发布的免费跨平台代码编辑器 
+
+  支持 Win/Mac/Linux 多平台开发。Visual Studio Code支持语法高亮、智能代码补全、自定义热键、括号匹配、代码片段、代码对比 Diff、GIT 等特性，并针对网页开发和云端应用开发做了优化。软件跨平台支持 Win、Mac 以及 Linux，运行流畅
+  https://code.visualstudio.com/docs/c?utm_expid=101350005-20.jAsCkEFcTeqvtdr0STCN9g.2&start=true
+
+  免费
+  
+  推荐的[插件](https://marketplace.visualstudio.com/VSCode)：
+  
+  https://marketplace.visualstudio.com/items?itemName=vsmobile.vscode-react-native
+  
+  https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+  
+  https://marketplace.visualstudio.com/items?itemName=alechp.react-toolbox-snippets
 
 
 ## ReactNative 第4节 建议学习的相关技术
@@ -104,6 +125,11 @@ comments: true
 
 ### Run on a Device 
 adb reverse tcp:8081 tcp:8081
+
+### 避免中文乱码
+修改WebStorm默认保存的文件编码格式：File > Settings > Editor > File Encodings  
+
+IDE Encoding 和 Project Encoding 改成 UTF-8
 
 
 

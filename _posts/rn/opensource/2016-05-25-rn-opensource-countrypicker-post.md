@@ -2,14 +2,12 @@
 layout: post
 title: ReactNative
 date: 2016-06-08
-excerpt: "ReactNative 学习笔记 12 open source - react-native-swiper"
+excerpt: "ReactNative 学习笔记 Open Source - Country Picker"
 tags: [ReactNative]
 comments: true
 ---
 
 ## react-native-swiper
-
-
 
 Swiper component for React Native.
 

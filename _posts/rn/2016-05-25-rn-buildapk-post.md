@@ -7,41 +7,7 @@ tags: [react]
 comments: true
 ---
 
-### 设备端Menu
-
-手机摇晃会出现Menu
-
-![](http://i.imgur.com/oHDFEIR.jpg)
-
-1. ReloadJS
-
-    重新加载JS和刷新http://localhost:8081/index.android.bundle?platform=android 同样的效果<br/>
-    当应用启动运行的时候，会自动拉取这个bundle文件。<br/>
-    该文件里存放的是应用的全部逻辑代码，在目录中并不存在这个文件。
-    事实上，这个地址只是一个请求地址，而非真正的静态资源文件。<br/>
-    <font color="red">是通过包服务器packager通过动态分析index.android.js中的依赖，并对其进行合并得到的.</font>
-
-2. 调试
-
-    http://localhost:8081/debugger-ui
-    
-3. Enable Hot Reloading
-
-    热更新  
-    
-4. Enable Live Reload
-
-    JS变动后自动刷新，不需要店家Reload JS. 不过不太稳定
-    
-5. 检查元素
-    
-    点击后可以在设备端查看各组件layout信息，给服务器端的检查元素类似
-    
-6. Enable Perf Monitor
-    
-    性能监视器，可以看到fps等信息
-
-### 打包发布步骤
+## 打包发布步骤
 
 #### 1. 生成一个签名密钥
    可以用工具Eclipse，AndroidStudio生成。也可以用命令：</br>
