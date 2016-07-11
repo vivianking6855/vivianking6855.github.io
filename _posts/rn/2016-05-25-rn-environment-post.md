@@ -38,29 +38,36 @@ comments: true
 
 ## ReactNative 第3节 IDE
 
-1.Facebook推荐IDE——基于Atom的[nuclide](https://nuclide.io/)
-  
-  nuclide是Facebook在开源React Native框架时同时开源的IDE，是基于Github发布的开源编辑器Atom开发的React开发插件
-  
-  由于有Facebook的支持，对React.js和React Native的支持比较好。但一个很严重的问题是，Atom基于浏览器，性能是很严重的问题。
-  
-  免费，但是仅支持Mac: is not currently supported on Windows.
+React Native 的开发基本上是 Javascript ＋ 系统原生开发语言（Java，Objective-C，Swift）
 
-2.永恒的经典——Sublime 
+原生语言的开发所用的 IDE 没有多余的选择：
 
-  做JS的FE必然都知道Sublime。需要安装一些插件来支持React Native
+- Android 平台只能使用 Android Studio（不要告诉我你还在使用 Eclipse）
 
-3.全能型选手——WebStorm 11
+- iOS 平台只能使用 XCode
+
+而开发 Javascript 的 IDE 选择就多了：
+
+从 FaceBook 官方推荐的 Atom＋Nuclide，到与 Android Studio 同系列的 Javascript IDE WebStorm，
+
+再到功能强大的 Sublime Text 3，以及微软推出的 Visual Studio Code 和 decosoftware 专门为 React Native 打造的开源 IDE Deco，甚至 Vim，NodePad++ 等等，都可以用来开发 React Native
+
+唯一的前提能够支持识别 Javascript 语法，识别 JSX 和 React Native API 的智能提醒。
+
+这里只介绍其中的两款：
+
+
+1.全能型选手——WebStorm 11
 
   跟Android Studio很类似的布局。熟悉Android Studio上手WebStorm比较快，使用很顺手。
 
-  WebStorm自带的插件也比较好用，提示非常智能，不用安装什么插件就能上手开发了
+  WebStorm自带的插件也比较好用，提示非常智能。
   
-   收费，有破解版
-
-  [在webstom里面配置运行RN的方案](http://reactnative.cn/post/539) 
+  支持 React Native 语法可以使用一个开源的插件：[ReactNative-LiveTemplate](https://github.com/virtoolswebplayer/ReactNative-LiveTemplate)。
   
-<font color='red' size=4>4.微软推荐的Visual Studio Code</font>
+  不用安装什么插件就能上手开发。正版软件收费，但是有破解版
+  
+2. <font color='red' size=4>4.微软推荐的Visual Studio Code</font>
   
   [Visual Studio Code](https://code.visualstudio.com/b?utm_expid=101350005-21.ckupCbvGQMiML5eJsxWmxw.1) 是微软在2015年4月29号 Build 2015 大会上发布的免费跨平台代码编辑器 
 
@@ -75,7 +82,10 @@ comments: true
   
   https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
   
-  https://marketplace.visualstudio.com/items?itemName=alechp.react-toolbox-snippets
+  https://marketplace.visualstudio.com/items?itemName=alechp.react-toolbox-snippets 
+
+
+> [React Native 开发之 IDE 选型和配置](http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112392&idx=1&sn=135e29ddde3050d469be98db815c267e&scene=1&srcid=07018VwWxB6oc9FwO7daEAbX#rd)
 
 
 ## ReactNative 第4节 建议学习的相关技术
