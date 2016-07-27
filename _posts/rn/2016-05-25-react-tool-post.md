@@ -11,39 +11,44 @@ comments: true
 npm install --save libname (from network)
 npm install --save "E:\Download\react-native-router-master" (from local)
 
-## npm升级
+## npm升级插件
 
-npm可以很方便的升级各种插件。
+npm可以很方便的升级各种插件。例如升级express框架命令
 
-例如如果想升级express框架，使用如下命令
-
-npm update express （非全局安装）
-npm update -g express （express全局安装）
+- npm update express （非全局安装）
+- npm update -g express （express全局安装）
 
 也可以使用安装命令来重装，在这里是等效于update：npm install -g express
 
-但是如果想升级npm自身，可以先cd到nodejs安装目录：（例如： D:\Program Files\nodejs）
+### 升级npm自身
+1. 先cd到nodejs安装目录：（例如： D:\Program Files\nodejs）
 
-cd "D:\Program Files\nodejs"
+    cd "D:\Program Files\nodejs"
 
-npm update npm
+2. npm update npm
 
-常用命令：
-npm info react-native
-npm update -g react-native-cli：更新cli
+### npm 常用命令
+1. npm info react-native
+2. npm update -g react-native-cli：更新cli
 
-## react-native升级
-npm info react-native：查看新版信息
-react-native --version：查看本地信息
-修改package.json中的依赖版本，执行npm install就会升级到指定版本
 
-    "dependencies": {
-    "react": "^15.1.0",
-    "react-native": "^0.27.2",
+## 升级所有dependencies到最新版本
+1. 使用npm -g outdated 查看 dependencies是否outdate
+2. package.json里面update version到最新，然后npm install就全部升级了
 
-react-native upgrade：更新项目templates文件
 
-react升级同理
+## 升级react-native
+
+### 升级react-native
+
+可参照上面的升级所有dependencies，也可以：
+1. npm info react-native
+2. 修改package.json中的依赖版本，执行npm install就会升级到指定版本
+
+### 更新项目templates文件
+
+更新template中的android，ios template文件：
+react-native upgrade
 
 
 ## nodejs 升级
@@ -54,7 +59,6 @@ Chocolatey是一套可以用來在Windows上用命令列(powershell)安裝軟體
 更新Node命令：
 
 choco upgrade nodejs
-
 
 
 ## node_modules文件名或扩展名太长如何删除 ##
@@ -84,3 +88,4 @@ cache=D:\Program Files\nodejs\node_cache
 
 > [Windows环境下的NodeJS+NPM+Bower安装配置](http://jingyan.baidu.com/article/2d5afd69e243cc85a2e28efa.html)
 > [Node.js各作業系統更新方式 ](http://eddychang.me/blog/javascript/58-nodes-update.html)
+> [npm升级所有可更新包](http://www.tuicool.com/articles/UbyY7rY)
