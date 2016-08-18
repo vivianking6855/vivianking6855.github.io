@@ -192,6 +192,8 @@ comments: true
     ……  
     if (bitmap_ref .get() != null)  
               bitmap_ref.get().recycle(); 
+              
+   PS: 对象的引用强度 SoftRefrence > WeakReference
 
 
 

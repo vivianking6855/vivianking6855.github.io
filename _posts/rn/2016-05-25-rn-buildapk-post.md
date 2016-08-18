@@ -15,6 +15,8 @@ comments: true
 
    - 可以用工具Eclipse，AndroidStudio生成。</br>
    - 命令：keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+     
+     密码可以自行设定，这里以123456为例
     
     会生成一个叫做my-release-key.keystore的密钥库文件
    
