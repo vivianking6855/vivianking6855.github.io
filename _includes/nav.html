@@ -3,12 +3,13 @@
 		<ul class="dl-menu">
 			<li><a href="{{ site.url }}/">Home</a></li>
 			<li>
-				<a href="#">About</a>
-				<ul class="dl-submenu">
-					<li>
-						<h4>{{ site.title }}</h4>
-					</li>
-					<li><a href="{{ site.url }}/about/"><span class="btn btn-inverse">Learn More</span></a></li>
+				<a href="{{ site.url }}/tags/">All Tags</a>
+			</li>
+			<li>
+				<a href="{{ site.url }}/posts/">All Posts</a>
+			</li>
+			<li>
+				<ul>
 					{% if site.email %}<li>
                         <a href="mailto:{{ site.email }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
                     </li>{% endif %}
@@ -79,12 +80,6 @@
                         <a href="https://news.ycombinator.com/user?id={{ site.hackernews }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-hacker-news"></i> Hacker News</a>
                     </li>{% endif %}
 				</ul><!-- /.dl-submenu -->
-			</li>
-			<li>
-				<a href="{{ site.url }}/posts/">All Posts</a>
-			</li>
-			<li>
-				<a href="{{ site.url }}/tags/">All Tags</a>
 			</li>
 			{% for link in site.data.navigation %}
 		    {% if link.url contains 'http' %}
