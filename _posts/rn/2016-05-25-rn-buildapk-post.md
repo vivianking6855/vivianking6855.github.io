@@ -3,7 +3,7 @@ layout: post
 title: ReactNative
 date: 2016-06-26
 excerpt: "ReactNative 学习笔记 RN android apk 打包"
-tags: [react]
+tags: [react,apk 打包]
 comments: true
 ---
 
