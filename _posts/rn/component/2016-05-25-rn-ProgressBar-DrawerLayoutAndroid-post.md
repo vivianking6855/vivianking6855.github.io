@@ -1,9 +1,9 @@
 ---
 layout: post
-title: ReactNative
+title: ReactNative 学习笔记 Component - ProgressBar，DrawerLayoutAndroid
 date: 2016-06-07
 excerpt: "ReactNative 学习笔记 Component - ProgressBar，DrawerLayoutAndroid"
-tags: [ReactNative]
+tags: [ReactNative,学习笔记]
 comments: true
 ---
 

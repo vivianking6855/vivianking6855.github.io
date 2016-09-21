@@ -1,9 +1,9 @@
 ---
 layout: post
-title: ReactNative
+title: ReactNative 学习笔记 Open Source - react-native-swiper
 date: 2016-06-22
 excerpt: "ReactNative 学习笔记 Open Source - react-native-swiper"
-tags: [ReactNative]
+tags: [ReactNative, 学习笔记]
 comments: true
 ---
 

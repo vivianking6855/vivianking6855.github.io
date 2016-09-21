@@ -1,8 +1,8 @@
 ---
 layout: post
-title: ReactNative
+title: ReactNative Awesome
 date: 2016-05-25
-excerpt: "ReactNative Awesome Items"
+excerpt: "ReactNative Awesome"
 tags: [ReactNative]
 comments: true
 ---

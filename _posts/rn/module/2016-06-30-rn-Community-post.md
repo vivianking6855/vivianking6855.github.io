@@ -1,9 +1,9 @@
 ---
 layout: post
-title: ReactNative
+title: ReactNative 学习笔记 Community- 组件，页面通讯
 date: 2016-06-30
 excerpt: "ReactNative 学习笔记 Community- 组件，页面通讯"
-tags: [ReactNative]
+tags: [ReactNative,学习笔记]
 comments: true
 ---
 
