@@ -1,9 +1,9 @@
 ---
 layout: post
-title: ReactNative
+title: Android 学习资料收集 
 date: 2016-07-15
-excerpt: "Android 学习资料收集     "
-tags: [Android]
+excerpt: "Android 学习资料收集"
+tags: [Android,学习资源]
 comments: true
 ---
 

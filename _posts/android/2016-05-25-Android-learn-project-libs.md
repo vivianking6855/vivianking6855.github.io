@@ -1,9 +1,9 @@
 ---
 layout: post
-title: ReactNative
+title: Anroid开源项目及库
 date: 2016-07-15
 excerpt: "Anroid开源项目及库"
-tags: [Android]
+tags: [Android,学习资源]
 comments: true
 ---
 

@@ -1,9 +1,9 @@
 ---
 layout: post
-title: ReactNative
+title: Android性能优化 （一）
 date: 2016-07-15
 excerpt: "Android性能优化 （一）"
-tags: [Android, 性能优化]
+tags: [Android, Android性能优化]
 comments: true
 ---
 
