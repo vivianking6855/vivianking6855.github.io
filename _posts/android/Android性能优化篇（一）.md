@@ -3,7 +3,7 @@ layout: post
 title: ReactNative
 date: 2016-07-15
 excerpt: "Android性能优化 （一）"
-tags: [Android]
+tags: [Android, 性能优化]
 comments: true
 ---
 
