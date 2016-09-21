@@ -1,11 +1,12 @@
 ---
 layout: post
-title: ReactNative
+title: 如何解决Android应用方法数不能超过65K的问题
 date: 2016-07-15
 excerpt: "如何解决Android应用方法数不能超过65K的问题"
-tags: [Android]
+tags: [Android,疑难解析]
 comments: true
 ---
+
 
 ## Introduction
 
@@ -56,4 +57,3 @@ Configuring Your App for Multidex with Gradle，need to perform the following st
 
 
 > [Build Apps with more than 65,000 methods，](http://developer.android.com/tools/building/multidex.html)
-
