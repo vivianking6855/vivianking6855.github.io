@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 如何解决Android应用方法数不能超过65K的问题
-date: 2016-07-15
+date: 2016-09-21
 excerpt: "如何解决Android应用方法数不能超过65K的问题"
 tags: [Android,疑难解析]
 comments: true
@@ -20,7 +20,6 @@ Configuring Your App for Multidex with Gradle，need to perform the following st
 
 - Change your Gradle build configuration to enable multidex
 - Modify your manifest to reference the MultiDexApplication class
-
 
 
 关键Code:
@@ -56,4 +55,4 @@ Configuring Your App for Multidex with Gradle，need to perform the following st
 
 
 
-> [Build Apps with more than 65,000 methods，](http://developer.android.com/tools/building/multidex.html)
+> [Build Apps with more than 65,000 methods](http://developer.android.com/tools/building/multidex.html)
