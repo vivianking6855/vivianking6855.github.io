@@ -45,6 +45,13 @@ comments: true
 3、打开0.9——新建项目：appid和名称随便填，路径选demo的路径
 
 
+## 附录图
+
+![](http://i.imgur.com/4Azhlkm.jpg)
+
+![](http://i.imgur.com/bxzsdUM.jpg)
+
+
 > [推荐资源网站 www.helloxcx.com](www.helloxcx.com)
 
 > [推荐微信公众平台小程序API文档](http://wxopen.notedown.cn/)
