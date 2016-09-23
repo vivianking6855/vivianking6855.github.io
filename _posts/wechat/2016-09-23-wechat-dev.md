@@ -27,6 +27,5 @@ comments: true
 
 
 > [推荐资源网站 www.helloxcx.com](www.helloxcx.com)
-> 
-> [推荐 微信公众平台 |小程序 API文档](http://wxopen.notedown.cn/)
 
+> [推荐微信公众平台小程序API文档](http://wxopen.notedown.cn/)
