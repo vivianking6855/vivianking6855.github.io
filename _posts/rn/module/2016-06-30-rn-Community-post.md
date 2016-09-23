@@ -266,8 +266,9 @@ ReactJS中数据的流动是单向的
     }
 
 
-### 4. Redux, Transdux
-TODO
+### 4. Redux
+
+Redux可以查看章节 [Redux](http://vivianking6855.github.io/redux/)
 
 
 ## 小结
