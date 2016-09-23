@@ -18,6 +18,7 @@ comments: true
 2、安装0.9 ——不要启动程序——替换3个文件
 
 文件夹weapp-ide-crack-master中的下面文件覆盖到安装目录：
+
 - 微信web开发者工具\package.nw\app\dist\weapp\appservice\asdebug.js
 - 微信web开发者工具\package.nw\app\dist\components\create\createstep.js
 - 微信web开发者工具\package.nw\app\dist\stroes\projectStores.js
@@ -26,4 +27,6 @@ comments: true
 
 
 > [推荐资源网站 www.helloxcx.com](www.helloxcx.com)
+> 
+> [推荐 微信公众平台 |小程序 API文档](http://wxopen.notedown.cn/)
 
