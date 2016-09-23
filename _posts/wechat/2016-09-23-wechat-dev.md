@@ -9,7 +9,7 @@ comments: true
 
 ## 下载工具和破解包
 
-下载地址
+[下载地址](https://github.com/vivianking6855/vivianking6855.github.io/blob/master/datum/tools/wechat%E5%B0%8F%E7%A8%8B%E5%BA%8F.rar)
 
 ## 破解步骤
 
