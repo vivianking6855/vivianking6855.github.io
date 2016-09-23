@@ -9,14 +9,24 @@ comments: true
 
 ## 微信小程序
 
-[微信小程序问世，部分码农喜迎春天？ 手机操作系统未来依然是APP的天下](http://tech.163.com/16/0922/13/C1IRTBJB00097U7R.html)
-
-
 ![](http://i.imgur.com/ZyCznig.png)
 
+网易新闻称：
+
+1. 100亿以下的传统企业，就不要做自己的app了
+
+2. 可能是草根程序员的春天？
+
+3. 手机操作系统未来依然是APP的天下
+
+[==全文==](http://tech.163.com/16/0922/13/C1IRTBJB00097U7R.html)
 
 
 ## 下载工具和破解包
+
+可以下载工具和破解包体验。个人感觉目录结构类似android. 页面和语法跟Android，RN都很类似。
+
+控件和API基本够用。下载地址里面也包含了官方Demo。里面有支援的所有组件和API演示。
 
 [下载地址](https://github.com/vivianking6855/vivianking6855.github.io/blob/master/datum/tools/wechat%E5%B0%8F%E7%A8%8B%E5%BA%8F.rar)
 
