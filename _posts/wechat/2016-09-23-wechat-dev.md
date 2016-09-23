@@ -1,11 +1,20 @@
 ---
 layout: post
-title: 微信小程序开发工具破解
+title: 微信小程序
 date: 2016-09-23
-excerpt: "微信小程序开发工具破解"
+excerpt: "微信小程序"
 tags: [wechat]
 comments: true
 ---
+
+## 微信小程序
+
+[微信小程序问世，部分码农喜迎春天？ 手机操作系统未来依然是APP的天下](http://tech.163.com/16/0922/13/C1IRTBJB00097U7R.html)
+
+
+![](http://i.imgur.com/ZyCznig.png)
+
+
 
 ## 下载工具和破解包
 
