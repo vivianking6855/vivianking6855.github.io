@@ -15,6 +15,21 @@ comments: true
 
 如何封装这些RN没有的模块呢？现有步骤介绍和Sample Code
 
+## Argument Types
+@ReactMethod RN参数跟JS参数的对比map，我们demo中用到了String，WritableMap，Promise，Callback，int 
+
+Boolean -> Bool
+Integer -> Number
+Double -> Number
+Float -> Number
+String -> String
+Callback -> function
+ReadableMap -> Object
+ReadableArray -> Array
+
+Promise -> Promise
+WritableMap -> Object
+
 
 ## Toast 模块例子
 我们希望可以从Javascript发起一个Toast消息（Android中的一种会在屏幕下方弹出、保持一段时间的消息通知）
@@ -126,7 +141,155 @@ comments: true
 
 
 ## Activity例子
+我们希望可以从Javascript叫起Android端Activity
 
+1. 原生模块UserNativeModule.java中添加方法
+
+        核心Code:
+    
+        /**
+         * @param module   activity id that which activity you want to call up
+         * @param map
+         * @param callback
+         */
+        @ReactMethod
+        public void startActivity(int module, final ReadableMap map, Callback callback) {
+            mCallback = callback;
+            Activity currentActivity = getCurrentActivity();
+            switch (module) {
+                case ACTIVITY_TEST_ID:
+                    startTestActivity(map, currentActivity);
+            }
+        }
+    
+        /**
+         * @param map
+         * @param activity
+         */
+        public void startTestActivity(final ReadableMap map, Activity activity) {
+            Intent it = new Intent(getReactApplicationContext(), TestActivity.class);
+            it.putExtra("status", map.getInt("status"));
+            it.putExtra("text", map.getString("text"));
+            activity.startActivityForResult(it, ACTIVITY_TEST_ID);
+        }
+    
+        @Override
+        public void onActivityResult(final int requestCode, final int resultCode, final Intent intent) {
+            switch (requestCode) {
+                case ACTIVITY_TEST_ID:
+                    String result = intent.getStringExtra("result");
+                    if (mCallback != null) {
+                        mCallback.invoke(result);
+                    }
+                    break;
+            }
+        }
+    
+2. 实现Android TestActivity
+   Android正常步骤创建Activity，这里不多赘述，Code放在[这里](https://github.com/vivianking6855/ReactNativeProject/blob/master/Advanced/nativemodules/android/app/src/main/java/com/nativemodules/TestActivity.java)
+   
+
+3. JS中使用
+
+    核心Code
+    
+        const map = {
+          'status': 0,
+          'text': 'ASUS from RN',
+        };
+        UserNativeModule.startActivity(UserNativeModule.ACTIVITY_TEST, map, (result) => {
+          ToastAndroid.show(result, ToastAndroid.SHORT);
+        });
+        
+        
+## Promise
+ JS的异步变成模块。 RN也直接传入Promise作为参数。下面以获取Android app版号方法为例：
+ Android核心Code
+    @ReactMethod
+    public void getPackageVersion(final Promise promise) {
+        String versionName = "1.0";
+        int versionCode = 1;
+        try {
+            PackageManager packageManager = getReactApplicationContext().getPackageManager();
+            PackageInfo info = packageManager.getPackageInfo(getReactApplicationContext().getPackageName(), 0);
+            versionName = info.versionName;
+            versionCode = info.versionCode;
+
+            WritableMap ret = Arguments.createMap();
+            ret.putString("versionName", versionName);
+            ret.putInt("versionCode", versionCode);
+            promise.resolve(ret);
+        } catch (Exception ex) {
+            Log.d(TAG, "getPackageVersion:", ex);
+            promise.reject(ex);
+        }
+    }
+    
+  JS使用
+  
+        UserNativeModule.getPackageVersion()
+          .then(result => {
+            let version = JSON.stringify(result);
+            ToastAndroid.show('Version : ' + version, ToastAndroid.LONG);
+          })
+          .catch(result => {
+            ToastAndroid.show('exception : ' + result);
+          });
+          
+## RN android端调用JS模块 - RCTDeviceEventEmitter 组件
+RCTDeviceEventEmitter通讯组件不仅仅可以用于[组件全局事件交互](http://vivianking6855.github.io/rn-Community-post/)，还可以用做android调用JS模块使用
+
+Android核心Code
+
+    TestActivity.java
+    
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.jsBtn:
+                sendEvent();
+                break;
+        }
+    }
+
+    private void sendEvent() {
+        WritableMap params = Arguments.createMap();
+        params.putString("text", "event from android");
+        UserNativeModule.sendEvent(EVENT_NAME, params);
+    }
+    
+    UserNativeModule.java
+    
+    public static void sendEvent(String eventName, WritableMap params) {
+        sUserNativeModule.mReactContext
+                .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                .emit(eventName, params);
+    }
+    
+
+JS使用
+
+    import {
+      DeviceEventEmitter
+    } from 'react-native';
+
+      componentWillMount() {
+        DeviceEventEmitter.addListener('TEST', this.handleTest.bind(this));
+      }
+    
+      componentWillUnmount() {
+        DeviceEventEmitter.removeListener('TEST');
+      }
+    
+      handleTest(param) {
+        ToastAndroid.show('JS rev event: ' + JSON.stringify(param), ToastAndroid.SHORT);
+      }
+
+
+PS: ReactContext在其他Activity中不太好获取，因此我将方法放在UserNativeModule.java中。同时在UserNativeModule中设置singleton给外部使用
+
+
+[Demo下载地址](https://github.com/vivianking6855/ReactNativeProject/tree/master/Advanced/nativemodules)
 
 
 > [FB Native Modules](https://facebook.github.io/react-native/docs/native-modules-android.html)
