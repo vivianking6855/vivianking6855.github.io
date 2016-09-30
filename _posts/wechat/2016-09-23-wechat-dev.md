@@ -41,6 +41,8 @@ comments: true
 ![](http://i.imgur.com/bxzsdUM.jpg)
 
 
-> [推荐资源网站 www.helloxcx.com](www.helloxcx.com)
+> [推荐资源网站 helloxcx](www.helloxcx.com)
 
-> [推荐微信公众平台小程序API文档](http://wxopen.notedown.cn/)
+> [推荐微信公众平台 wxopen](http://wxopen.notedown.cn/)
+
+> [mp.wenxi](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html?t=1474644089359)
