@@ -2,8 +2,8 @@
 layout: post
 title: Android 之 微技巧 （一）
 date: 2016-10-14
-excerpt: "Android 之  微技巧 （一）
-tags: [Android]
+excerpt: "Android 之  微技巧 （一）"
+tags: [Android, 知识点]
 comments: true
 ---
 

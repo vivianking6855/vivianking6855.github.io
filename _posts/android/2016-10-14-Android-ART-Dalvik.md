@@ -1,12 +1,11 @@
 ---
 layout: post
-title: Android-Dalvik和ART
+title: Android 之 Dalvik和ART
 date: 2016-10-14
-excerpt: "Android-Dalvik和ART"
-tags: [Android]
+excerpt: "Android 之 Dalvik和ART"
+tags: [Android, 知识点]
 comments: true
 ---
-
 
 ## Dalvik和ART的区别
 
