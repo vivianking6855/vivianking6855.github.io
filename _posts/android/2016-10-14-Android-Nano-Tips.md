@@ -62,6 +62,9 @@ comments: true
 
 当然并不是说上述框架就一定没有使用反射了，其实上述其中部分框架内部还是有部分实现是依赖于反射的，但是很少而且一般都做了缓存的处理。所以相对来说，效率影响很小。
 
+## android热更新技术研究 
+[android热更新技术研究](http://blog.csdn.net/qq_25943493/article/details/51463884)  
+
 
 > [Android 如何编写基于编译时注解的项目](http://blog.csdn.net/lmj623565791/article/details/51931859)
 
