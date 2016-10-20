@@ -43,7 +43,7 @@ comments: true
 [App 研发录](http://book.douban.com/subject/26649050/) | 本书作者是包建强, 本书是作者多年 App 开发的经验总结, 从 App 架构的角度, 重点总结了 Android 应用开发中常见的实用技巧和疑难问题解决方法, 为打造高质量 App 提供有价值的实践指导, 迅速提升应用开发能力和解决疑难问题的能力. 这本书非常有利于 Android 开发者进阶.
 [Android 设计模式源码分析](http://book.douban.com/subject/26644935/) | 本书作者是开发技术前线创立者之一 Mr.Simple, 该书从 Android 源码的角度由浅入深地剖析设计模式的运用, 让工程师们把设计与模式重视起来, 提升自己的设计能力与代码质量
 
-## 开发环境/工具
+<h2 id="开发环境/工具"> 开发环境/工具 </h2>
 (附上: 由 [@脉脉不得语](http://weibo.com/234959219) 收集维护超多开发工具下载地址 [AndroidDevTools](https://github.com/inferjay/AndroidDevTools), 后五个工具资料在 [stormzhang](http://stormzhang.com/) 博客中找到的,[地址](http://stormzhang.com/android/2015/05/26/android-tools/))
 
  环境/工具 | 简述
@@ -68,8 +68,7 @@ comments: true
 [ParcelableGenerator](https://github.com/mcharmas/android-parcelable-intellij-plugin) | Android中的序列化有两种方式, 分别是实现Serializable接口和Parcelable接口, 但在Android中是推荐使用Parcelable, 只不过我们这种方式要比Serializable方式要繁琐，那么有了这个插件一切就ok了
 [LeakCanary](https://github.com/square/leakcanary) | 良心企业Square最近刚开源的一个非常有用的工具, 强烈推荐, 帮助你在开发阶段方便的检测出内存泄露的问题, 使用起来更简单方便, 而且我们团队第一时间使用帮助我们发现了不少问题, 英文不好的这里有雷锋同志翻译的中文版 [LeakCanary 中文使用说明](http://www.liaohuqiu.net/cn/posts/leak-canary-read-me/)
 
-
-## 博客
+<h2 id="博客"> 博客 </h2>
 
  博客地址 | 博主信息
  -------- | --------
@@ -85,7 +84,7 @@ comments: true
 [hi大头鬼hi](http://blog.csdn.net/lzyzsd/) | hi大头鬼hi 是阿里巴巴集团的一名 Android 工程师, 擅长 Android, RxJava, RxAndroid, ReactNative, Node.js, 大前端, 可谓是全栈工程师, 如果你对 RxJava 技术感兴趣, 不妨到他的博客看看, 他写了一系列有关 RxJava 的介绍
 [更多](https://github.com/android-cn/android-dev-cn) | 这里面收集了很多国内外开发者的信息, 大家可以去看看
 
-## 社区
+<h2 id="社区"> 社区 </h2>
 
  名称 | 简介
  ---- | ----
@@ -96,7 +95,7 @@ comments: true
 [APKBUS 安卓巴士](http://www.apkbus.com/) | APKBUS 安卓巴士是一家服务于中国移动开发者学习与成长需要的综合社区服务平台
 [谷歌开发者社区(GDG)](http://chinagdg.org/) | GDG 是 Google Developer Groups 的缩写, 中文名称是谷歌开发者社区
 
-## 开源项目学习
+<h2 id="开源项目学习"> 开源项目学习 </h2>
 
  项目名称 | 项目简介 
  -------- | --------
@@ -143,7 +142,7 @@ comments: true
 [Meizhi](https://github.com/drakeet/Meizhi) | 开发者是许晓峰(Drakeet), 该 app 是数据来自代码家干货网站 [gank.io](http://gank.io), 有很多开发者都纷纷为这网站做客户端 app, 因为代码家大神开放该网站的 Api, 更重要的是该网站每天除了有干货还有漂亮妹子看呢, 该 App 使用到的技术有 RxJava + Retrofit, 代码结构非常清晰, 值得一看的开源 App.
 [Bingo](https://github.com/sfsheng0322/Bingo) | 开发者是[孙福生](http://weibo.com/u/3852192525), Bingo 是一款 IT 阅读学习类的开源软件, 作者收集一些干货学习内容, 你也可以在 App 上分享你的认为干货文章, 该项目使用动态代理 AOP 编程框架, 使开发起来更简洁, 更高效. 里面有一个功能就是多种主题切换, 感兴趣的可以看看怎么实现
 
-## Android 开发者杂志周刊
+<h2 id="android-开发者杂志周刊"> Android 开发者杂志周刊 </h2>
 
 ( 前五个资料来自 [Drakeet](http://drakeet.me/) 收集整理的, 资料原链接 [地址](http://www.jianshu.com/p/54c4a19ffa68) )
 
@@ -158,7 +157,8 @@ comments: true
 [干货集中营](http://gank.io/) | 由 [代码家](http://blog.daimajia.com/) 维护更新, 周一到周五每天中午分享, 分享内容有漂亮妹子, Android 干货, iOS 干货, App, 技术以外推荐, 还有休息视频
 [Android Blog 周刊](http://www.androidblog.cn/) | AndroidBlog 是由 [Jomeslu](http://weibo.com/u/2106134235?refer_flag=1001030201_&is_hot=1) 收录的, 目前就职于搜狐, 该周刊分享内容主要有一周国内外热门技术博客, 优秀的类库, 以及一些有趣的新闻, 看了前几期分享的内容质量都是很高的, 因此值得推荐给大家
 
-## Awesome 系列
+
+<h2 id="awesome-系列"> Awesome 系列 </h2>
 
 - [awesome android(1)](https://github.com/snowdream/awesome-android)
 - [awesome_android(2)](https://github.com/JStumpp/awesome-android)
@@ -169,14 +169,14 @@ comments: true
 - [awesome 系列之终极版](https://github.com/sindresorhus/awesome)
 - [android-dynamic-load-awesome](https://github.com/liaohuqiu/android-dynamic-load-awesome)
 
-## 动画系列
+<h2 id="动画系列"> 动画系列 </h2>
 - [animate](https://github.com/hitherejoe/animate)
 - [awesome-animation](https://github.com/Animatious/awesome-animation)
 - [Material-Animations](https://github.com/lgvalle/Material-Animations)
 - [AndroidViewAnimations](https://github.com/daimajia/AndroidViewAnimations)
 
 
-## Material Design 设计
+<h2 id="material-design-设计"> Material Design 设计 </h2>
 
 - [Material Design 教程](https://www.google.com/design/spec/material-design/introduction.html)
 - [Material Design 教程(中文版)](https://github.com/1sters/material_design_zh_2)
@@ -184,7 +184,7 @@ comments: true
 - [十大Material Design开源项目](http://www.aplesson.com/?p=650)
 
 
-## 素材
+<h2 id="素材"> 素材 </h2>
 
 - [常用色彩搭配表](http://tool.c7sky.com/webcolor/)
 - [ColorHunt-色彩搭配](http://www.colorhunt.co/)
@@ -195,7 +195,7 @@ comments: true
 - [Material icons](https://design.google.com/icons/)
 - [Iconfont](http://iconfont.cn/)
 
-## 开源库收集
+<h2 id="开源库收集"> 开源库收集 </h2>
 
 - [Android Libraries and Resources ](http://alamkanak.github.io/android-libraries-and-resources/)
 - [Android Arsenal ](http://android-arsenal.com/)(一个专门收集 android 开源库的网站, 网站经常更新)
@@ -204,13 +204,13 @@ comments: true
 - [泡在网上的日子](http://www.jcodecraeer.com/plus/list.php?tid=31)
 - [android-gems](http://www.android-gems.com/)(国内外很多开发者都在这里上传他们最新的项目, 还带有 apk 下载)
 
-## 设计模式
+<h2 id="设计模式"> 设计模式 </h2>
 
 - [java-design-patterns](https://github.com/iluwatar/java-design-patterns#model-view-presenter)
 - [Android源码设计模式分析项目](https://github.com/simple-android-framework-exchange/android_design_patterns_analysis)
 - [Java之美[从菜鸟到高手演变]之设计模式](http://blog.csdn.net/zhangerqing/article/details/8194653)
 
-## 实践篇
+<h2 id="实践篇"> 实践篇 </h2>
 
 - [Android 开发最佳实践](https://github.com/futurice/android-best-practices/blob/master/translations/Chinese/README.cn.md)
 - [Android 开发最佳实践 ](http://hukai.me/android-dev-patterns/)(来自[胡凯](http://hukai.me/)总结)
@@ -240,12 +240,12 @@ comments: true
 - [如何提高安卓代码的质量和语法](http://gold.xitu.io/entry/56cd6ebb99a6ce005a2887e3)
 - [我的 Android 开发实战经验总结](http://www.jianshu.com/p/4f152bc8f4f3)
 
-## 文档
+<h2 id="文档"> 文档 </h2>
 
 - [Android 官方 API 文档](http://developer.android.com/reference/android/package-summary.html)(网站需要翻墙，不翻墙可以[下载](http://pan.baidu.com/s/1dDu3LVb)离线文件)
 - [Android 官方培训课程中文版](http://hukai.me/android-training-course-in-chinese/index.html)(由胡凯发起对 Google Android 官方培训课程翻译的中文版)
 
-## 其它学习资料收集
+<h2 id="其它学习资料收集"> 其它学习资料收集 </h2>
 
 - [10 个很棒的学习 Android 开发的网站](http://www.eoeandroid.com/forum.php?mod=viewthread&tid=571335&highlight=10%E4%B8%AA%E5%BE%88%E6%A3%92)
 - [Android 开发, 你应该知道的学习资源](http://android.jobbole.com/80815/)
@@ -257,7 +257,7 @@ comments: true
 - [AndroidTips](https://github.com/JohnTsaiAndroid/AndroidTips)
 
 
-## 知乎上的讨论
+<h2 id="知乎上的讨论"> 知乎上的讨论 </h2>
 
 - [有哪些 Android 大牛的 blog 值得推荐?](http://www.zhihu.com/question/19775981)
 - [GitHub 上都有哪些值得关注学习的 Android项目?](http://www.zhihu.com/question/23804819)
@@ -272,11 +272,12 @@ comments: true
 - [Android Studio有什么奇技淫巧?](https://www.zhihu.com/question/27482725)
 - [Android 开发: 开始一个项目前, 做好哪些准备可以事半功倍?](https://www.zhihu.com/question/37433825)
 
-## 贡献者
+<h2 id="贡献者"> 贡献者 </h2>
 
 点击[该链接](https://github.com/Freelander/Android_Data/graphs/contributors)查看该项目所有贡献者
 
-## License
+
+<h2 id="License"> License </h2>
 
 以上内容采用 [CC BY-NC-SA 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh) 进行许可, 转载请注明出处, 版权归本人及所有贡献者所有
 
