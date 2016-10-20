@@ -14,8 +14,7 @@ github排名 [https://github.com/trending](https://github.com/trending)
 github搜索：[https://github.com/search](https://github.com/search)
 
 ###  目录
-- [UI](#UI)
-  
+- [UI](#UI)  
     - [卫星菜单](#卫星菜单)
     - [节选器](#节选器)
     - [下拉刷新](#下拉刷新)
@@ -48,84 +47,86 @@ github搜索：[https://github.com/search](https://github.com/search)
 
 ### 具体内容
 
-##### UI
+<h1 id="UI"> UI </h1>
 
-- [Awesome-MaterialDesign](https://github.com/lightSky/Awesome-MaterialDesign) | MaterialDesignCenter改名为Awesome-MaterialDesign，优化了布局，新增了不少库。
-- [awesome-android-ui](https://github.com/wasabeef/awesome-android-ui) | ui库，非常多的ui及特效。
-- [ChipsLibrary](https://github.com/AndroidDeveloperLB/ChipsLibrary) | 在Android EditText中实现打Tag功能。
-- [bitmapMesh](https://github.com/7heaven/bitmapMesh) | 拉窗帘效果
-- [ObservableScrollView](https://github.com/ksoichiro/Android-ObservableScrollView) | 在滚动的视图观测滚动事件的Android库它易于与在Android 5.0 Lollipop中引入的工具条Toolbar相交互，并能够帮助实现Material Design apps的外观
-- [iconify](https://github.com/JoanZapata/android-iconify) | iconify 图片与文字同一行显示。
-- [iosched](https://github.com/google/iosched) | The Google I/O 2014 Android App，Android 5.0 and Material Design。
-- [MaterialList](https://github.com/dexafree/MaterialList) | MaterialList 。
-- [material design card](https://dribbble.com/search?q=material+design+card) | material design card 
-- [MaterialDesignExample](https://github.com/chenyangcun/MaterialDesignExample) | 本APP用来演示Material Design控件的使用http://www.aswifter.com/2015/07/02/Material-Design-Example-5/ , [使用说明](http://www.aswifter.com/2015/08/01/android-material-design-animation/)
-- [InstaMaterial](https://github.com/frogermcs/InstaMaterial) | InstalMaterial 项目(非常多的UI样式：ViewAnimator、RecyclerView、拍照), [InstalMaterial学习笔记之Reveal效果](http://www.jianshu.com/p/35492fb2c269)
-- [NavigationDrawer-MaterialDesign](https://github.com/rudsonlive/NavigationDrawer-MaterialDesign) | 一个Material Design的抽屉模板库，分分钟搭起一个程序框架
-- [MaterialEditText](https://github.com/rengwuxian/MaterialEditText) | 直接继承EditText, 无需修改Java文件即能实现自定义控件颜色, [直接拿来用！十大Material Design开源项目](http://www.csdn.net/article/2014-11-21/2822753-material-design-libs)
-- [fab](https://github.com/shell-software/fab) | Floating Action Button library for Android
-- [labelview](https://github.com/linger1216/labelview) | 贴纸效果, 如：淘宝商品侧贴折扣
-- [SearchMenuAnim](https://github.com/kongnanlive/SearchMenuAnim) |  一个很棒的带动画的搜索框
-- [SearchAnimation](https://github.com/NiaNingXue/SearchAnimation) | 一个很棒的带动画的搜索框, 支持低版本
-- [快速支持emoji表情显示](http://www.eoeandroid.com/thread-567299-1-1.html) | 让项目快速支持emojicon表情的显示, 并可判断用户输入的内容中是否含有 emojicon 表情以及过滤掉emojicon
-- [Context-Menu.Android](https://github.com/Yalantis/Context-Menu.Android) | 可以方便快速集成漂亮带有动画效果的上下文菜单
-- [Titanic](https://github.com/RomainPiel/Titanic) |  可以显示水位上升下降的TextView
-- [AndroidSwipeLayout](https://github.com/daimajia/AndroidSwipeLayout) | 滑动Layout，支持单个View，ListView，GridView，[demo-apk](https://github.com/daimajia/AndroidSwipeLayout/releases/download/v1.0.0/AndroidSwipeLayout-Demo-1.0.1-snapshot.apk)
-- [android-typeface-helper](https://github.com/norbsoft/android-typeface-helper) | Android Typeface Helper 可以帮你轻松实现自定义字体的库
-- [android-lockpattern](https://code.google.com/p/android-lockpattern/) | Android的图案密码解锁, [文档介绍](https://code.google.com/p/android-lockpattern/wiki/QuickUse)
-- [ToggleButton](https://github.com/zcweng/ToggleButton) | 状态切换的 Button，类似 iOS，用 View 实现
-- [android-typeface-helper](https://github.com/norbsoft/android-typeface-helper) | Android Typeface Helper 可以帮你轻松实现自定义字体的库
-- [GuideBackgroundColorAnimation](https://github.com/TaurusXi/GuideBackgroundColorAnimation) | 实现滑动ViewPager渐变背景色。
-- [Toolbar](https://github.com/xamarin/monodroid-samples/tree/master/android_l/Toolbar) | Toolbar替换Android Toolbar，[说明](http://blog.xamarin.com/android-tips-hello-toolbar-goodbye-action-bar/)
-- [PagerSlidingTabStrip](https://github.com/jpardogo/PagerSlidingTabStrip) | 一个支持Material Design的PagerSlidingTabStrip
-- [MaterialViewPager](https://github.com/florent37/MaterialViewPager) | 一个易于使用的 Material Design ViewPager 库
-- [PinnedListView](http://www.eoeandroid.com/thread-567853-1-1.html) | PinnedListView悬浮Head效果修改，[github pinned-section-listview](https://github.com/beworker/pinned-section-listview)
-- [APP启动引导页](http://www.eoeandroid.com/thread-564018-1-1.html) | APP应用中最常用的APP启动引导页，常见的4种引导项目方式：splash，viewpage，viewflipper，scrollview
-- [AwesomeText](https://github.com/JMPergar/AwesomeText) |  简化TextViews中Spans使用的库
-- [dialogplus](https://github.com/orhanobut/dialogplus) | 一个简单容易使用的对话框——DialogPlus
-- [material-dialogs](https://github.com/afollestad/material-dialogs) | Material Design风格Dialogs
-- [CardView](https://github.com/chiemy/CardView) | 3d卡片效果-国人
-- [FilterMenu](https://github.com/linroid/FilterMenu) | 这是一个自定义的圆形菜单, 效果非常酷
-- [GridPasswordView](https://github.com/Jungerr/GridPasswordView) | 类似微信, 支付宝支付时候的输入密码页面效果，带格子的密码输入框
-- [PersistentSearch](https://github.com/Quinny898/PersistentSearch) | 模仿Google Now, Google Maps Google Play的SearchBar，下拉列表匹配、录音
-- [Droppy](https://github.com/shehabic/Droppy) | Android 下简洁好看的 Dropdown 菜单
-- [UltimateRecyclerView](https://github.com/cymcsg/UltimateRecyclerView) |  这是一个终极的 RecyclerView，有下拉刷新、滑动删除、拖拽、加载更多、丰富动画等功能
-- [SmartTabLayout](https://github.com/ogaclejapan/SmartTabLayout) | SmartTabLayout实现viewpgaer页面导航效果，简化并实现android的TabHost效果，顶部滑动tab，引导页，可以自定义tab样式，过渡效果 实现网易tab，微博tab，微信tab等so easy,集成了SpringIndicator拖拽效果
-- [richeditor](https://github.com/wasabeef/richeditor-android) | RichEditor for Android 是 Android 平台下一个所见即所得的文本编辑器控件
-- [StatedFragment](https://github.com/nuuneoi/StatedFragment) | 保存Fragment的状态
-- [PopoverView](https://github.com/lupidan/PopoverView) | 一个模仿iOS UIPopoverController效果的控件
-- [CreditsRoll](https://github.com/frakbot/CreditsRoll) | 实现星球大战字幕效果。
-- [MatchView](https://github.com/Rogero0o/MatchView) | 电影级TextView动画效果, 绝对惊艳你的双眼
-- [SwipeMenuListView](https://github.com/baoyongzhang/SwipeMenuListView) |  listView侧滑删除效果：SwipeMenuListView
-- [Side-Menu.Android](https://github.com/Yalantis/Side-Menu.Android) |  分类侧滑菜单
-- [SlidingMenu](https://github.com/xudafeng/SlidingMenu) | 炫酷侧滑菜单布局框架, iOS版本的实现：[SlideMenuView](https://github.com/xudafeng/SlideMenuView)
-- [ParallaxSwipeBack](https://github.com/bushijie/ParallaxSwipeBack) |  带视觉差的侧滑返回，类似于新版微信和lofter的侧滑返回效果。核心代码小于50行。
-- [AndroidFlowLayout](https://github.com/LyndonChin/AndroidFlowLayout) | A flow layout for Android
-- [ViewPagerIndicator](https://github.com/LuckyJayce/ViewPagerIndicator) | 取代TabHost, 实现滑动tab, 引导页等效果
-- [Android-ScreenSlidePager](https://github.com/LyndonChin/Android-ScreenSlidePager) | Full screen slide pager to display images fetched from Internet by Picasso
-- [MaterialViewPager](https://github.com/florent37/MaterialViewPager) |  MaterialViewPager
-- [FlipViewPager.Draco](https://github.com/Yalantis/FlipViewPager.Draco) |  FlipViewPager.Draco
-- [android-shape-imageview](https://github.com/siyamed/android-shape-imageview) | 图片圆角、三角、五角、圆形、多角
-- [NotBoringActionBar](https://github.com/flavienlaurent/NotBoringActionBar) | 隐藏图片的导航栏
-- [MultiCardMenu](https://github.com/wujingchao/MultiCardMenu) |  仿QQ手机管家首页菜单写的一个开源组件MultiCardMenu
-- [fit-chart](https://github.com/txusballesteros/fit-chart) | fit-chart 一个类似于谷歌健康应用的轮子（wheel view）视图，效果很不错
-- [BGABadgeView-Android](https://github.com/bingoogolapple/BGABadgeView-Android) | Badge控件分享，各式各样的徽章控件
-- [Android-ItemTouchHelper-Demo](https://github.com/iPaulPro/Android-ItemTouchHelper-Demo) | 可拖拽 RecyclerView, [讲解](http://www.devtf.cn/?p=795)
-- [浮动操作按钮详解](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0718/3197.html) | 讲解浮动操作按钮，从官方的和第三方库[makovkastar/FloatingActionButton](https://github.com/futuresimple/android-floating-action-button) 和 [futuresimple/android-floating-action-button](https://github.com/makovkastar/FloatingActionButton) 这样的第三方库, 的两方面讲解,同时还讲到了如何自定义CoordinatorLayout Behavior
-- [advanced-textview](https://github.com/chiuki/advanced-textview) |  advanced-textview各种高级功能的textview，包括动画，阴影，各种字体，艺术字，HTML格式显示，表情等
-- [QuickReturn](https://github.com/lawloretienne/QuickReturn) | 几乎所有可以滑动的 View 加上快速返回的 Header 或者 Footer，使用非常方便
-- [Android-PickerView](https://github.com/saiwu-bigkoo/Android-PickerView) | 仿iOS的PickerView控件，有时间选择和选项选择并支持一二三级联动效果
-- [idisfkj.picker](https://github.com/idisfkj/idisfkj.picker) | 滑轮选择器,[教程](https://segmentfault.com/a/1190000004595715)
-- [DraggedViewPager](https://github.com/yueban/DraggedViewPager) | 可以在多个 Page 之间可以拖放元素的控件
-- [MultiViewPager](https://github.com/Pixplicity/MultiViewPager) | 对 ViewPager 的一个扩展，Page 可宽可窄，表现很像 Gallelry
-- [Android-Week-View](https://github.com/alamkanak/Android-Week-View) | Android Week View是一种用于应用程序中显示日历的安卓库。它支持自定义样式
-- [MaterialCalendarView](https://github.com/jonisaa/MaterialCalendarView) | 是一款遵循 Material Design 风格的 Android 日历
-- [WeekCalendar](https://github.com/nomanr/WeekCalendar) | 周模式的日历自定义控件，支持 4.0 以上
-- [DragLinearLayout](https://github.com/justasm/DragLinearLayout) | DragLinearLayout:自定义的线性布局，里面的UI可以自由拖动
-- [floatingsearchview](https://github.com/arimorty/floatingsearchview) | floatingsearchview 一个带搜索下拉列表提示的搜索控件
-- [LabelView](https://github.com/corerzhang/LabelView) | LabelView 一个简单的标签控件 支持自定义 文字大小（textSize）, 间距（labelTopPadding）,背景色（backgroundColor）， 和方向（direction）等
-- [MaterialCalendarView](https://github.com/jonisaa/MaterialCalendarView) | 是一款遵循 Material Design 风格的 Android 日历
-- [SlideDetailsLayout](https://github.com/cnbleu/SlideDetailsLayout) |  SlideDetailsLayout:高仿淘宝、京东商品详情页面的上拉加载图文详情功能
+ 名称 | 简介
+ -----|-----
+[Awesome-MaterialDesign](https://github.com/lightSky/Awesome-MaterialDesign) | MaterialDesignCenter改名为Awesome-MaterialDesign，优化了布局，新增了不少库。
+[awesome-android-ui](https://github.com/wasabeef/awesome-android-ui) | ui库，非常多的ui及特效。
+[ChipsLibrary](https://github.com/AndroidDeveloperLB/ChipsLibrary) | 在Android EditText中实现打Tag功能。
+[bitmapMesh](https://github.com/7heaven/bitmapMesh) | 拉窗帘效果
+[ObservableScrollView](https://github.com/ksoichiro/Android-ObservableScrollView) | 在滚动的视图观测滚动事件的Android库它易于与在Android 5.0 Lollipop中引入的工具条Toolbar相交互，并能够帮助实现Material Design apps的外观
+[iconify](https://github.com/JoanZapata/android-iconify) | iconify 图片与文字同一行显示。
+[iosched](https://github.com/google/iosched) | The Google I/O 2014 Android App，Android 5.0 and Material Design。
+[MaterialList](https://github.com/dexafree/MaterialList) | MaterialList 。
+[material design card](https://dribbble.com/search?q=material+design+card) | material design card 
+[MaterialDesignExample](https://github.com/chenyangcun/MaterialDesignExample) | 本APP用来演示Material Design控件的使用http://www.aswifter.com/2015/07/02/Material-Design-Example-5/ , [使用说明](http://www.aswifter.com/2015/08/01/android-material-design-animation/)
+[InstaMaterial](https://github.com/frogermcs/InstaMaterial) | InstalMaterial 项目(非常多的UI样式：ViewAnimator、RecyclerView、拍照), [InstalMaterial学习笔记之Reveal效果](http://www.jianshu.com/p/35492fb2c269)
+[NavigationDrawer-MaterialDesign](https://github.com/rudsonlive/NavigationDrawer-MaterialDesign) | 一个Material Design的抽屉模板库，分分钟搭起一个程序框架
+[MaterialEditText](https://github.com/rengwuxian/MaterialEditText) | 直接继承EditText, 无需修改Java文件即能实现自定义控件颜色, [直接拿来用！十大Material Design开源项目](http://www.csdn.net/article/2014-11-21/2822753-material-design-libs)
+[fab](https://github.com/shell-software/fab) | Floating Action Button library for Android
+[labelview](https://github.com/linger1216/labelview) | 贴纸效果, 如：淘宝商品侧贴折扣
+[SearchMenuAnim](https://github.com/kongnanlive/SearchMenuAnim) |  一个很棒的带动画的搜索框
+[SearchAnimation](https://github.com/NiaNingXue/SearchAnimation) | 一个很棒的带动画的搜索框, 支持低版本
+[快速支持emoji表情显示](http://www.eoeandroid.com/thread-567299-1-1.html) | 让项目快速支持emojicon表情的显示, 并可判断用户输入的内容中是否含有 emojicon 表情以及过滤掉emojicon
+[Context-Menu.Android](https://github.com/Yalantis/Context-Menu.Android) | 可以方便快速集成漂亮带有动画效果的上下文菜单
+[Titanic](https://github.com/RomainPiel/Titanic) |  可以显示水位上升下降的TextView
+[AndroidSwipeLayout](https://github.com/daimajia/AndroidSwipeLayout) | 滑动Layout，支持单个View，ListView，GridView，[demo-apk](https://github.com/daimajia/AndroidSwipeLayout/releases/download/v1.0.0/AndroidSwipeLayout-Demo-1.0.1-snapshot.apk)
+[android-typeface-helper](https://github.com/norbsoft/android-typeface-helper) | Android Typeface Helper 可以帮你轻松实现自定义字体的库
+[android-lockpattern](https://code.google.com/p/android-lockpattern/) | Android的图案密码解锁, [文档介绍](https://code.google.com/p/android-lockpattern/wiki/QuickUse)
+[ToggleButton](https://github.com/zcweng/ToggleButton) | 状态切换的 Button，类似 iOS，用 View 实现
+[android-typeface-helper](https://github.com/norbsoft/android-typeface-helper) | Android Typeface Helper 可以帮你轻松实现自定义字体的库
+[GuideBackgroundColorAnimation](https://github.com/TaurusXi/GuideBackgroundColorAnimation) | 实现滑动ViewPager渐变背景色。
+[Toolbar](https://github.com/xamarin/monodroid-samples/tree/master/android_l/Toolbar) | Toolbar替换Android Toolbar，[说明](http://blog.xamarin.com/android-tips-hello-toolbar-goodbye-action-bar/)
+[PagerSlidingTabStrip](https://github.com/jpardogo/PagerSlidingTabStrip) | 一个支持Material Design的PagerSlidingTabStrip
+[MaterialViewPager](https://github.com/florent37/MaterialViewPager) | 一个易于使用的 Material Design ViewPager 库
+[PinnedListView](http://www.eoeandroid.com/thread-567853-1-1.html) | PinnedListView悬浮Head效果修改，[github pinned-section-listview](https://github.com/beworker/pinned-section-listview)
+[APP启动引导页](http://www.eoeandroid.com/thread-564018-1-1.html) | APP应用中最常用的APP启动引导页，常见的4种引导项目方式：splash，viewpage，viewflipper，scrollview
+[AwesomeText](https://github.com/JMPergar/AwesomeText) |  简化TextViews中Spans使用的库
+[dialogplus](https://github.com/orhanobut/dialogplus) | 一个简单容易使用的对话框——DialogPlus
+[material-dialogs](https://github.com/afollestad/material-dialogs) | Material Design风格Dialogs
+[CardView](https://github.com/chiemy/CardView) | 3d卡片效果-国人
+[FilterMenu](https://github.com/linroid/FilterMenu) | 这是一个自定义的圆形菜单, 效果非常酷
+[GridPasswordView](https://github.com/Jungerr/GridPasswordView) | 类似微信, 支付宝支付时候的输入密码页面效果，带格子的密码输入框
+[PersistentSearch](https://github.com/Quinny898/PersistentSearch) | 模仿Google Now, Google Maps Google Play的SearchBar，下拉列表匹配、录音
+[Droppy](https://github.com/shehabic/Droppy) | Android 下简洁好看的 Dropdown 菜单
+[UltimateRecyclerView](https://github.com/cymcsg/UltimateRecyclerView) |  这是一个终极的 RecyclerView，有下拉刷新、滑动删除、拖拽、加载更多、丰富动画等功能
+[SmartTabLayout](https://github.com/ogaclejapan/SmartTabLayout) | SmartTabLayout实现viewpgaer页面导航效果，简化并实现android的TabHost效果，顶部滑动tab，引导页，可以自定义tab样式，过渡效果 实现网易tab，微博tab，微信tab等so easy,集成了SpringIndicator拖拽效果
+[richeditor](https://github.com/wasabeef/richeditor-android) | RichEditor for Android 是 Android 平台下一个所见即所得的文本编辑器控件
+[StatedFragment](https://github.com/nuuneoi/StatedFragment) | 保存Fragment的状态
+[PopoverView](https://github.com/lupidan/PopoverView) | 一个模仿iOS UIPopoverController效果的控件
+[CreditsRoll](https://github.com/frakbot/CreditsRoll) | 实现星球大战字幕效果。
+[MatchView](https://github.com/Rogero0o/MatchView) | 电影级TextView动画效果, 绝对惊艳你的双眼
+[SwipeMenuListView](https://github.com/baoyongzhang/SwipeMenuListView) |  listView侧滑删除效果：SwipeMenuListView
+[Side-Menu.Android](https://github.com/Yalantis/Side-Menu.Android) |  分类侧滑菜单
+[SlidingMenu](https://github.com/xudafeng/SlidingMenu) | 炫酷侧滑菜单布局框架, iOS版本的实现：[SlideMenuView](https://github.com/xudafeng/SlideMenuView)
+[ParallaxSwipeBack](https://github.com/bushijie/ParallaxSwipeBack) |  带视觉差的侧滑返回，类似于新版微信和lofter的侧滑返回效果。核心代码小于50行。
+[AndroidFlowLayout](https://github.com/LyndonChin/AndroidFlowLayout) | A flow layout for Android
+[ViewPagerIndicator](https://github.com/LuckyJayce/ViewPagerIndicator) | 取代TabHost, 实现滑动tab, 引导页等效果
+[Android-ScreenSlidePager](https://github.com/LyndonChin/Android-ScreenSlidePager) | Full screen slide pager to display images fetched from Internet by Picasso
+[MaterialViewPager](https://github.com/florent37/MaterialViewPager) |  MaterialViewPager
+[FlipViewPager.Draco](https://github.com/Yalantis/FlipViewPager.Draco) |  FlipViewPager.Draco
+[android-shape-imageview](https://github.com/siyamed/android-shape-imageview) | 图片圆角、三角、五角、圆形、多角
+[NotBoringActionBar](https://github.com/flavienlaurent/NotBoringActionBar) | 隐藏图片的导航栏
+[MultiCardMenu](https://github.com/wujingchao/MultiCardMenu) |  仿QQ手机管家首页菜单写的一个开源组件MultiCardMenu
+[fit-chart](https://github.com/txusballesteros/fit-chart) | fit-chart 一个类似于谷歌健康应用的轮子（wheel view）视图，效果很不错
+[BGABadgeView-Android](https://github.com/bingoogolapple/BGABadgeView-Android) | Badge控件分享，各式各样的徽章控件
+[Android-ItemTouchHelper-Demo](https://github.com/iPaulPro/Android-ItemTouchHelper-Demo) | 可拖拽 RecyclerView, [讲解](http://www.devtf.cn/?p=795)
+[浮动操作按钮详解](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0718/3197.html) | 讲解浮动操作按钮，从官方的和第三方库[makovkastar/FloatingActionButton](https://github.com/futuresimple/android-floating-action-button) 和 [futuresimple/android-floating-action-button](https://github.com/makovkastar/FloatingActionButton) 这样的第三方库, 的两方面讲解,同时还讲到了如何自定义CoordinatorLayout Behavior
+[advanced-textview](https://github.com/chiuki/advanced-textview) |  advanced-textview各种高级功能的textview，包括动画，阴影，各种字体，艺术字，HTML格式显示，表情等
+[QuickReturn](https://github.com/lawloretienne/QuickReturn) | 几乎所有可以滑动的 View 加上快速返回的 Header 或者 Footer，使用非常方便
+[Android-PickerView](https://github.com/saiwu-bigkoo/Android-PickerView) | 仿iOS的PickerView控件，有时间选择和选项选择并支持一二三级联动效果
+[idisfkj.picker](https://github.com/idisfkj/idisfkj.picker) | 滑轮选择器,[教程](https://segmentfault.com/a/1190000004595715)
+[DraggedViewPager](https://github.com/yueban/DraggedViewPager) | 可以在多个 Page 之间可以拖放元素的控件
+[MultiViewPager](https://github.com/Pixplicity/MultiViewPager) | 对 ViewPager 的一个扩展，Page 可宽可窄，表现很像 Gallelry
+[Android-Week-View](https://github.com/alamkanak/Android-Week-View) | Android Week View是一种用于应用程序中显示日历的安卓库。它支持自定义样式
+[MaterialCalendarView](https://github.com/jonisaa/MaterialCalendarView) | 是一款遵循 Material Design 风格的 Android 日历
+[WeekCalendar](https://github.com/nomanr/WeekCalendar) | 周模式的日历自定义控件，支持 4.0 以上
+[DragLinearLayout](https://github.com/justasm/DragLinearLayout) | DragLinearLayout:自定义的线性布局，里面的UI可以自由拖动
+[floatingsearchview](https://github.com/arimorty/floatingsearchview) | floatingsearchview 一个带搜索下拉列表提示的搜索控件
+[LabelView](https://github.com/corerzhang/LabelView) | LabelView 一个简单的标签控件 支持自定义 文字大小（textSize）, 间距（labelTopPadding）,背景色（backgroundColor）， 和方向（direction）等
+[MaterialCalendarView](https://github.com/jonisaa/MaterialCalendarView) | 是一款遵循 Material Design 风格的 Android 日历
+[SlideDetailsLayout](https://github.com/cnbleu/SlideDetailsLayout) |  SlideDetailsLayout:高仿淘宝、京东商品详情页面的上拉加载图文详情功能
 
 ##### 卫星菜单
  * [android-satellite-menu](https://github.com/siyamed/android-satellite-menu) - 点击主按钮，会弹出多个围绕着主按钮排列的子按钮，从而形成一个弹出式菜单。子按钮弹出和消失的动画效果都很棒。这种弹出式菜单按钮应用在Path app中。
