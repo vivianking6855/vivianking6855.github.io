@@ -7,7 +7,7 @@ tags: [Android,学习资源]
 comments: true
 ---
 
-# Android 学习资料收集                                                        
+# [Android 学习资料收集](https://github.com/Freelander/Android_Data)                                                        
 
 ## 目录
 
@@ -280,3 +280,5 @@ comments: true
 ## License
 
 以上内容采用 [CC BY-NC-SA 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh) 进行许可, 转载请注明出处, 版权归本人及所有贡献者所有
+
+> [github 原创地址](https://github.com/Freelander/Android_Data)
