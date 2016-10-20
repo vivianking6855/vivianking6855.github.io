@@ -43,7 +43,7 @@ comments: true
 [App 研发录](http://book.douban.com/subject/26649050/) | 本书作者是包建强, 本书是作者多年 App 开发的经验总结, 从 App 架构的角度, 重点总结了 Android 应用开发中常见的实用技巧和疑难问题解决方法, 为打造高质量 App 提供有价值的实践指导, 迅速提升应用开发能力和解决疑难问题的能力. 这本书非常有利于 Android 开发者进阶.
 [Android 设计模式源码分析](http://book.douban.com/subject/26644935/) | 本书作者是开发技术前线创立者之一 Mr.Simple, 该书从 Android 源码的角度由浅入深地剖析设计模式的运用, 让工程师们把设计与模式重视起来, 提升自己的设计能力与代码质量
 
-<h2 id="开发环境/工具"> 开发环境/工具 </h2>
+<h2 id="开发环境工具"> 开发环境/工具 </h2>
 (附上: 由 [@脉脉不得语](http://weibo.com/234959219) 收集维护超多开发工具下载地址 [AndroidDevTools](https://github.com/inferjay/AndroidDevTools), 后五个工具资料在 [stormzhang](http://stormzhang.com/) 博客中找到的,[地址](http://stormzhang.com/android/2015/05/26/android-tools/))
 
  环境/工具 | 简述
