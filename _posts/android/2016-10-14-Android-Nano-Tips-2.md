@@ -48,6 +48,9 @@ Android一些SDK比较分裂，为此google官方提供了Android Support Librar
     - 为了API level 13(即Android 3.2)及更高版本。
     - 一般不常用，平板开发中能用到。
 
+## [通过Spannable对象设置textview的样式](http://www.cnblogs.com/tianzhijiexian/p/4222393.html)
+
+
 
 > [DesignSupportLibraryDemo](https://github.com/xuyisheng/DesignSupportLibraryDemo)
 

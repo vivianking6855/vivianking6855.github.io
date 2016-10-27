@@ -42,6 +42,7 @@ github搜索：[https://github.com/search](https://github.com/search)
 - [开发资源](#开发资源)
     - [他人开源总结](#他人开源总结)
     - [中文开发博客列表](#中文开发博客列表)
+    - [源码解析](#源码解析)
 - [工具](#工具)
 
 
@@ -618,8 +619,8 @@ DEMO演示：
 
 * [fontawesome](http://fontawesome.io/icons/) - Font-Awesome图标。
 * [material-design-responsive-design](http://www.uisdc.com/material-design-responsive-design) - 深聊Material Design复杂响应式设计，[comprehensive-material-design-note](http://www.uisdc.com/comprehensive-material-design-note) - 帮你全面彻底搞定Material design的学习笔记。
-* [Iconics](https://github.com/mikepenz/Android-Iconics) - 这是一个可以让你在你的项目中使用几乎任何字体图标的库。默认包含 FontAwesome 和 Material Design Icons 还包含 Meteocons 插件。你甚至可以添加任何你自定义的字体图标（typeface）。 
-
+* [Iconics](https://github.com/mikepenz/Android-Iconics) - 这是一个可以让你在你的项目中使用几乎任何字体图标的库。默认包含 FontAwesome 和 Material Design Icons 还包含 Meteocons 插件。你甚至可以添加任何你自定义的字体图标（typeface）。
+* [Android 设计指南非官方简体中文版 http://adchs.github.io](https://github.com/sunjw/adchs)
 
 <h1 id="开发资源"> 开发资源 </h1>
 
@@ -669,8 +670,12 @@ Android源代码](http://www.apkbus.com/plugin.php?id=codesrc&modo=all)。
  * [搜索最好的 Android 代码——Codota](http://www.imooc.com/article/1086) -  从这里搜索超过七百万精品代码实例——Codota,，不仅只有Github，而且还有知名博客和开发者网站，让你搜索一个东西，不用在找上半天.
 
 
+<h2 id="源码解析"> [源码解析](http://a.codekk.com/) </h2>
+
+
 <h1 id="工具"> 工具 </h1>
 
 [Dev Tool](https://github.com/inferjay/AndroidDevTools)
- 
 
+[AndroidStudioUserGuide](https://github.com/peerless2012/AndroidStudioUserGuide)
+ 
