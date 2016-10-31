@@ -41,7 +41,7 @@ comments: true
 ![](http://i.imgur.com/bxzsdUM.jpg)
 
 
-> [推荐资源网站 helloxcx](www.helloxcx.com)
+> [推荐资源网站 helloxcx](http://www.helloxcx.com/)
 
 > [推荐微信公众平台 wxopen](http://wxopen.notedown.cn/)
 
