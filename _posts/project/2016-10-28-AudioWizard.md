@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AudioWizard
-date: 2016-11-01
+date: 2016-10-28
 excerpt: "AudioWizard项目总结"
 project: true
 tags: [Projects]
