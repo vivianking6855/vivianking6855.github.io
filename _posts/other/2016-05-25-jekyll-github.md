@@ -3,7 +3,7 @@ layout: post
 title: Jekyll + Github搭建blog
 date: 2016-05-25
 excerpt: "Jekyll + Github搭建blog 记录"
-tags: [Other]
+tags: [其他]
 comments: true
 ---
 
