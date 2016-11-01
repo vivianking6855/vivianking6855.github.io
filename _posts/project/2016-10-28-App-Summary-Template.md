@@ -3,7 +3,7 @@ layout: post
 title: App SummaryTemplate
 date: 2016-07-15
 excerpt: "Project 项目总结模板"
-tags: [Project]
+tags: [项目]
 comments: true
 ---
 
