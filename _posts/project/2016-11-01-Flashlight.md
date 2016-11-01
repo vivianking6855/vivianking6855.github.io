@@ -36,7 +36,7 @@ Android版本已发布[google paly](https://play.google.com/store/apps/details?i
 ---
 <h1 id="开发方式和架构内容"> 开发方式和架构内容 </h1>
 1. Android开发
-   搭配framework节点接口开关Flashlight
+ - 搭配framework节点接口开关Flashlight
 2. 使用Git作为版本管理
 3. 使用Android Studio开发客户端
 4. 使用Play Store和升级服务器作为升级方式
