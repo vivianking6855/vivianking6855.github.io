@@ -2,7 +2,7 @@
 layout: post
 title: Flashlight
 date: 2016-11-01
-excerpt: "Flashlight 项目总结"
+excerpt: "Flashlight项目总结"
 project: true
 tags: [Projects]
 comments: true

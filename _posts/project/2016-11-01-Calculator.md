@@ -2,7 +2,7 @@
 layout: post
 title: Caculator
 date: 2016-11-01
-excerpt: "Caculator 项目总结"
+excerpt: "Caculator项目总结"
 project: true
 tags: [Projects]
 comments: true
