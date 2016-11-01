@@ -3,7 +3,7 @@ layout: post
 title: Android UI
 date: 2016-10-19
 excerpt: "Android UI"
-tags: [Android, 基础]
+tags: [Android, 知识点]
 comments: true
 ---
 
