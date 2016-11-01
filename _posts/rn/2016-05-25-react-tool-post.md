@@ -3,7 +3,7 @@ layout: post
 title: ReactNative Windows下npm设定小结
 date: 2016-05-25
 excerpt: "ReactNative Windows下npm设定小结"
-tags: [react]
+tags: [ReactNative]
 comments: true
 ---
 

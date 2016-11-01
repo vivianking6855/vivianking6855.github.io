@@ -3,7 +3,7 @@ layout: post
 title: React 实战之JSX - 组件生命周期和通讯
 date: 2016-05-25
 excerpt: "React 实战之JSX - 组件生命周期和通讯"
-tags: [react]
+tags: [ReactNative]
 comments: true
 ---
 
