@@ -3,7 +3,7 @@ layout: post
 title: Android 学习资料收集 
 date: 2016-07-15
 excerpt: "Android 学习资料收集"
-tags: [Android,学习资源]
+tags: [Android]
 comments: true
 ---
 

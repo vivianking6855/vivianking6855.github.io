@@ -3,7 +3,7 @@ layout: post
 title: 微信小程序
 date: 2016-09-23
 excerpt: "微信小程序"
-tags: [杂项]
+tags: [其他]
 comments: true
 ---
 
