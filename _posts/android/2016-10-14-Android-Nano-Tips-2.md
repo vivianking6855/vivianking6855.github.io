@@ -2,7 +2,7 @@
 layout: post
 title: Android 之 微技巧 （二）
 date: 2016-10-19
-excerpt: "Android 之  微技巧 （二）"
+excerpt: "外观和交互三个重要工具：Design Library, AppCompat, Support Library"
 tags: [Android, 知识点]
 comments: true
 ---
@@ -48,14 +48,6 @@ Android一些SDK比较分裂，为此google官方提供了Android Support Librar
     - 为了API level 13(即Android 3.2)及更高版本。
     - 一般不常用，平板开发中能用到。
 
-## [通过Spannable对象设置textview的样式](http://www.cnblogs.com/tianzhijiexian/p/4222393.html)
- 
-## [Android Gradle Plugin指南](http://blog.csdn.net/qinxiandiqi/article/details/37757065)
-   - [Build Variants（构建变种版本）](http://blog.csdn.net/qinxiandiqi/article/details/37906449) 
-
-
-<br>
-<br>
 
 > [DesignSupportLibraryDemo](https://github.com/xuyisheng/DesignSupportLibraryDemo)
 

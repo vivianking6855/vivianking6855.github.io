@@ -2,29 +2,29 @@
 layout: post
 title: Android 之 微技巧 （一）
 date: 2016-10-14
-excerpt: "Android 之  微技巧 （一）"
+excerpt: "Snackbar, CoordinatorLayout, Annotations,热更新"
 tags: [Android, 知识点]
 comments: true
 ---
 
-## Dialog, Toast, Snackbar
+## 1. Dialog, Toast, Snackbar
 
 [Dialog, Toast, Snackbar](http://blog.csdn.net/guolin_blog/article/details/51336415)
 
-## Android状态栏微技巧，带你真正理解沉浸式模式
+## 2. Android状态栏微技巧，带你真正理解沉浸式模式
 
 [沉浸式模式](http://blog.csdn.net/sinyu890807/article/details/51763825)
 
-## Android drawable
+## 3. Android drawable
 
 [你所不知道的drawable的那些细节](http://blog.csdn.net/sinyu890807/article/details/50727753)
 
-## CoordinatorLayout ：super-powered FrameLayout
+## 4. CoordinatorLayout ：super-powered FrameLayout
 
 [CoordinatorLayout](http://blog.csdn.net/xyz_lmn/article/details/48055919)
 
 
-## Annotations
+## 5. Annotations
 
 [Java注解Annotation基础](http://www.open-open.com/lib/view/open1423558996951.html)：注解是一种元数据，起到了”描述，配置“的作用。
 
@@ -62,9 +62,12 @@ comments: true
 
 当然并不是说上述框架就一定没有使用反射了，其实上述其中部分框架内部还是有部分实现是依赖于反射的，但是很少而且一般都做了缓存的处理。所以相对来说，效率影响很小。
 
-## android热更新技术研究 
+## 6. android热更新技术研究 
 [android热更新技术研究](http://blog.csdn.net/qq_25943493/article/details/51463884)  
 
+
+<br>
+<br>
 
 > [Android 如何编写基于编译时注解的项目](http://blog.csdn.net/lmj623565791/article/details/51931859)
 
