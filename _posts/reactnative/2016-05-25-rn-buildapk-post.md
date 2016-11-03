@@ -13,7 +13,7 @@ comments: true
 
 在android/app下面生成keystore file： 
 
-   - 可以用工具Eclipse，AndroidStudio生成。</br>
+   - 可以用工具Eclipse，AndroidStudio生成。<br>
    - 命令：keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
      
      密码可以自行设定，这里以123456为例
@@ -56,12 +56,12 @@ comments: true
  
  - 设定enableProguardInRelease为ture来开启proguard混淆。
 
-   混淆可以减小APK文件的大小：proguard会移除掉React Native Java（和它的依赖库中）中没有被使用到的部分。</br>
+   混淆可以减小APK文件的大小：proguard会移除掉React Native Java（和它的依赖库中）中没有被使用到的部分。<br>
 
-   如果需要添加一些库的混淆可以修改app/proguard-rules.pro文件。</br>
+   如果需要添加一些库的混淆可以修改app/proguard-rules.pro文件。<br>
    
 #### 4. 打包文件
-   - 进入/android/目录，cmd执行gradlew assembleRelease</br>
+   - 进入/android/目录，cmd执行gradlew assembleRelease
    - 打包后的文件在 android/app/build/outputs/apk目录中。
      例如app-release.apk
    
