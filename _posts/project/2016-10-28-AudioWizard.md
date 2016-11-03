@@ -59,6 +59,24 @@ Android版本已发布，设备出厂预装
         google defect issue. google issue ID 175143, [Type defect](https://code.google.com/p/android/issues/detail?id=175143)
 
         解决方案： app端取消硬體加速後，crahs有大幅降低（2/1 -> 40/1）。不過波形圖會稍有卡頓
+        
+- 动态支援不同设备的某些功能
+  
+      AudioWizard是apk release到不同专案。因各专案对耳機列表有不同的需求。因此为了有更多靈活性和更好的擴展性。
+      
+      采用設定"DTS tuning_configs"  +  “property” 方案，实现动态改變支援列表。無需更新AW. 只要BSP配置特定的configs文件和property。
+      
+      并新建confluence 对各专案动态支援耳机列表做记录和监测：AudioWizard Confluence - AMAX Team
+  
+- 不同专案定制产品
+  
+      AudioWizard是apk release到不同专案。因个别定制专案对manifest，resource有不同需求。
+      
+      此次是因为个别专案需要移除QuickSettings上icon。
+      
+      解决方案是gradle productFlavors 搭配内部jekins build系统规则，build出特殊专案对应apk，并自动release到对应专案。
+      
+      详见档案整理：F:\Manager\AudioWizard\Datum\QuickSettings
 
 ---
 <h1 id="其他"> 其他 </h1>

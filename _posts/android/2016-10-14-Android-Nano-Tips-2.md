@@ -49,8 +49,13 @@ Android一些SDK比较分裂，为此google官方提供了Android Support Librar
     - 一般不常用，平板开发中能用到。
 
 ## [通过Spannable对象设置textview的样式](http://www.cnblogs.com/tianzhijiexian/p/4222393.html)
+ 
+## [Android Gradle Plugin指南](http://blog.csdn.net/qinxiandiqi/article/details/37757065)
+   - [Build Variants（构建变种版本）](http://blog.csdn.net/qinxiandiqi/article/details/37906449) 
 
 
+<br>
+<br>
 
 > [DesignSupportLibraryDemo](https://github.com/xuyisheng/DesignSupportLibraryDemo)
 
