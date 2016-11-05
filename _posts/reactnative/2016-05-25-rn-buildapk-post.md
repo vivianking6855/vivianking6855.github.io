@@ -2,8 +2,8 @@
 layout: post
 title: ReactNative 学习笔记 RN android apk 打包
 date: 2016-06-26
-excerpt: "ReactNative 学习笔记 RN android apk 打包"
-tags: [ReactNative,学习笔记]
+excerpt: "RN android apk 打包"
+tags: [ReactNative]
 comments: true
 ---
 

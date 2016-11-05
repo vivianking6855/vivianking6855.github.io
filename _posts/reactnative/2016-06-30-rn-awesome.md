@@ -2,7 +2,7 @@
 layout: post
 title: ReactNative Awesome
 date: 2016-05-25
-excerpt: "ReactNative Awesome"
+excerpt: "Awesome Library"
 tags: [ReactNative]
 comments: true
 ---
