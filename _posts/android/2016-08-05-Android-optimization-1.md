@@ -2,8 +2,8 @@
 layout: post
 title: Android性能优化 （一）
 date: 2016-07-15
-excerpt: "Android性能优化 （一）"
-tags: [Android, 知识点]
+excerpt: "性能相关的基础"
+tags: [Android]
 comments: true
 ---
 

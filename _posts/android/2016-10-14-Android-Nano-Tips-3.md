@@ -2,8 +2,8 @@
 layout: post
 title: Android 之 微技巧 （三）
 date: 2016-10-14
-excerpt: "Spannable, Gradle"
-tags: [Android, 知识点，DiffUtil]
+excerpt: "Spannable, Gradle, DiffUtil"
+tags: [Android]
 comments: true
 ---
 

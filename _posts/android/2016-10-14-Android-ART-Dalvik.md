@@ -3,7 +3,7 @@ layout: post
 title: Android 之 Dalvik和ART
 date: 2016-10-14
 excerpt: "Android 之 Dalvik和ART"
-tags: [Android, 知识点]
+tags: [Android]
 comments: true
 ---
 
