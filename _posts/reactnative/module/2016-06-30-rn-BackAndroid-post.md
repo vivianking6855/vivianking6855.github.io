@@ -2,8 +2,8 @@
 layout: post
 title: ReactNative 学习笔记 物理back键
 date: 2016-06-30
-excerpt: "ReactNative 学习笔记 物理back键"
-tags: [ReactNative,学习笔记]
+excerpt: "物理back键"
+tags: [ReactNative]
 comments: true
 ---
 

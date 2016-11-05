@@ -2,8 +2,8 @@
 layout: post
 title: ReactNative 学习笔记 Component - Image，Picker
 date: 2016-06-03
-excerpt: "ReactNative 学习笔记 Component - Image，Picker"
-tags: [ReactNative,学习笔记]
+excerpt: "Image，Picker"
+tags: [ReactNative]
 comments: true
 ---
 

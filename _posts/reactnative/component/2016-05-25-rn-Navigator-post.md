@@ -2,8 +2,8 @@
 layout: post
 title: ReactNative 学习笔记 Component - Navigator
 date: 2016-05-27
-excerpt: "ReactNative 学习笔记 Component - Navigator"
-tags: [ReactNative,学习笔记]
+excerpt: "Navigator"
+tags: [ReactNative]
 comments: true
 ---
 

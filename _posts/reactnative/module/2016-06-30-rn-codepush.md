@@ -2,8 +2,8 @@
 layout: post
 title: ReactNative 学习笔记 Code Push 热更新
 date: 2016-07-15
-excerpt: "ReactNative 学习笔记 Code Push 热更新"
-tags: [ReactNative,学习笔记]
+excerpt: "Code Push 热更新"
+tags: [ReactNative]
 comments: true
 ---
 
