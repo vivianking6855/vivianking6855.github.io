@@ -89,9 +89,9 @@ Android版本已发布，设备出厂预装
 
 <h2 id="项目档案"> 项目档案 </h2>
 
-- [项目进度](F:\Manager\AudioWizard)
+- 项目进度：[F:\Manager\AudioWizard](F:\Manager\AudioWizard)
 
-- [项目档案](F:\Manager\AudioWizard)
+- 项目档案：[F:\Manager\AudioWizard](F:\Manager\AudioWizard)
 
 
 ---
