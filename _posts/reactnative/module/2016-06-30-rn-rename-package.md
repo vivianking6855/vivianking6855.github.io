@@ -9,11 +9,31 @@ comments: true
 
 ## Android包名修改
 
-### 方案一
 1. AndroidStudio打开项目 right click to "Open Module Setting".
     - Go to the Flavours tab. 
     - Change the applicationID to whatever package name you want. Press OK. 
-2. 删除app 和 依赖包build, 例如  
+2. 调整AndroidManifest.xml中个别包名依赖项
+
+    例如：
+    
+        <!-- 个推3.0电子围栏功能所需权限 -->
+        <!-- 浮动通知权限 -->
+        <!-- 自定义权限 -->
+        <uses-permission android:name="getui.permission.GetuiService.com.wenxitek.mijiang" />
+        <!--替换为第三方应用的包名-->
+        <permission
+                android:name="getui.permission.GetuiService.com.wenxitek.mijiang"
+                android:protectionLevel="normal" >
+        </permission><!--替换为第三方应用的包名-->
+        <!-- 个推SDK权限配置结束 -->
+
+        <provider
+             android:name="com.igexin.download.DownloadProvider"
+             android:authorities="downloads.com.wenxitek.mijiang"
+             android:exported="true"
+             android:process=":pushservice" />
+
+4. 删除app 和 依赖包build, 例如  
     - rimraf android\app\build
     - rimraf android\build
     - rimraf node_modules\react-native-audioplayer\android\build
@@ -25,25 +45,20 @@ comments: true
 4. aapt查看包名
     
     aapt dump badging "apkfile"
-    
-### 方案二
 
-1. Uncheck "Compact Empty Middle Packages "
-2. 修改directory为新的name
-    - Right-click it
-    - Select Refactor
-    - Click on Rename
-    - In the Pop-up dialog, click on Rename Package instead of Rename Directory
-
-3. open Gradle Build File (app\build.gradle). Update the applicationId to your new Package Name
 
 
 ## IOS包名修改
 
 
+
+
 <br>
 <br>
 <br>
+
 > [android-studio-rename-package](http://stackoverflow.com/questions/16804093/android-studio-rename-package)
 
-> [application-id](https://developer.android.com/studio/build/application-id.html)
+> [Android application-id](https://developer.android.com/studio/build/application-id.html)
+
+> [如何在xcode中修改app的包名](http://blog.csdn.net/wolfking_2009/article/details/13986991)

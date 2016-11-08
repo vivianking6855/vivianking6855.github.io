@@ -15,6 +15,7 @@ comments: true
 - [平台支持](#平台支持)
 - [开发方式和架构内容](#开发方式和架构内容)
 - [遇到的问题](#遇到的问题)
+- [项目优化](#项目优化)
 - [其他](#其他)
     - [项目档案](#项目档案)
 - [总结](#总结)
@@ -84,6 +85,21 @@ Android版本已发布，设备出厂预装
       解决方案是gradle productFlavors 搭配内部jekins build系统规则，build出特殊专案对应apk，并自动release到对应专案。
       
       详见档案整理：F:\Manager\AudioWizard\Datum\QuickSettings
+      
+---
+<h1 id="项目优化"> 项目优化 </h1>
+
+- SurfaceView重写波形图View，加速波形图和main UI的渲染效率
+    
+        git amax_L/packages/apps/AudioWizardView common_version branch (2.0)
+        tag name: View_Optimization
+- 重构之前的首页View层叠方式为多Fragment方式加载。独立功能为单独的Fragment, 例如ICE，HPX等
+
+        git amax_L/packages/apps/AudioWizardView common_version branch (2.0)
+        tag name: View_Optimization
+- Advanced Effect页面移除ViewPager，用GroupView方式。因为页面不需要滑动功能。
+
+
 
 ---
 <h1 id="其他"> 其他 </h1>
