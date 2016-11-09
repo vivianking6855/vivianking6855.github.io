@@ -64,12 +64,11 @@ comments: true
    - 进入/android/目录，cmd执行gradlew assembleRelease
    - 打包后的文件在 android/app/build/outputs/apk目录中。
      例如app-release.apk
-     
-     首先：进入项目根目录下的 /android/ 目录中；
+    
 
 注意：
 
-- 如果gradlew assembleRelease时提示错误或没有安装 gradle 工具。需要安装 gradle 工具和配置好 GRADLE_HOME 和 PATH
+- 如果gradlew assembleRelease时提示错误或没有安装 gradle 工具。可以自行下载后放到你的C:\Users\yournamne\.gradle\wrapper\dists下面
 - gradle版本需要跟 /android/gradle/wrapper/gradele-wrapper.properties 文件中的版本配置保持一致。
 - gradlew clean 可以清理缓存。
    
