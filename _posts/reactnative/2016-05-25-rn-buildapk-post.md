@@ -25,7 +25,7 @@ comments: true
    打开android/app中的build.gradle文件和android/gradle.properties
 
    - 加入signingConfigs用来签名
-   
+
         -> android/app/build.gradle
        	
        	signingConfigs {
