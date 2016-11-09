@@ -26,7 +26,6 @@ comments: true
 
    - 加入signingConfigs用来签名
    
-
         -> android/app/build.gradle
        	
        	signingConfigs {
@@ -64,6 +63,14 @@ comments: true
    - 进入/android/目录，cmd执行gradlew assembleRelease
    - 打包后的文件在 android/app/build/outputs/apk目录中。
      例如app-release.apk
+     
+     首先：进入项目根目录下的 /android/ 目录中；
+
+注意：
+
+- 如果出现错误或者没有安装 gradle 工具，需要安装 gradle 工具和配置好 GRADLE_HOME 和 PATH
+- gradle版本需要跟 /android/gradle/wrapper/gradele-wrapper.properties 文件中的版本配置保持一致。
+- gradlew clean 可以清理缓存。
    
 
 ![](http://i.imgur.com/S8sLXQ9.png)
