@@ -27,7 +27,7 @@ comments: true
    - 加入signingConfigs用来签名
 
         -> android/app/build.gradle
-       	
+
        	signingConfigs {
             release {
                 storeFile file(MYAPP_RELEASE_STORE_FILE)
@@ -47,7 +47,7 @@ comments: true
 
 
         -> android/gradle.properties
-        
+
         MYAPP_RELEASE_STORE_FILE=my-release-key.keystore
         MYAPP_RELEASE_KEY_ALIAS=my-key-alias
         MYAPP_RELEASE_STORE_PASSWORD=123456
