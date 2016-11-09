@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Android 之 微技巧 （一）
-date: 2016-10-14
+title: 2016-09-14 Android 之 微技巧 （一）
+date: 2016-09-14
 excerpt: "Snackbar, CoordinatorLayout, Annotations,热更新"
 tags: [Android]
 comments: true

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android 之 微技巧 （三）
+title: 2016-10-14 Android 之 微技巧 （三）
 date: 2016-10-14
 excerpt: "Spannable, Gradle, DiffUtil，library中的switch, AndroidUtilCode,SurfaceView"
 tags: [Android]
@@ -44,9 +44,13 @@ comments: true
     
 - SurfaceTexture不需要显示到屏幕上。适合于需要对图像流处理后再显示。例如Android Camera开发
 
-    可以用SurfaceTexture接收来自camera的图像流，然后从SurfaceTexture中取得图像帧的拷贝进行处理，处理完毕后再送给另一个SurfaceView用于显示即可。
+    可以用SurfaceTexture接收来自camera的图像流。
+    
+    然后从SurfaceTexture中取得图像帧的拷贝进行处理。
+    
+    处理完毕后再送给另一个SurfaceView用于显示即可。
 
-游戏中的应用评估：
+游戏中场景应用小结：
 
 - 如果你的游戏不吃CPU，用View就比较好，符合标准Android操作方式，由系统决定刷新surface的时机。
 - 一般2D游戏开发使用SurfaceView足够，因为它也是google专们扩展用于2D游戏开发的画布
