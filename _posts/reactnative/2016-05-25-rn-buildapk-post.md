@@ -69,7 +69,7 @@ comments: true
 
 注意：
 
-- 如果用AndroidStudio的gradle打包，gradle assembleRelease时提示错误或没有安装 gradle 工具。需要安装 gradle 工具和配置好 GRADLE_HOME 和 PATH
+- 如果gradlew assembleRelease时提示错误或没有安装 gradle 工具。需要安装 gradle 工具和配置好 GRADLE_HOME 和 PATH
 - gradle版本需要跟 /android/gradle/wrapper/gradele-wrapper.properties 文件中的版本配置保持一致。
 - gradlew clean 可以清理缓存。
    
