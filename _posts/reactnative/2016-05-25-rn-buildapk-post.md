@@ -22,42 +22,43 @@ comments: true
    
    
 #### 2. 添加签名和混淆
-   打开android/app中的build.gradle文件和android/gradle.properties
+打开android/app中的build.gradle文件和android/gradle.properties
 
-   - 加入signingConfigs用来签名
+- 加入signingConfigs用来签名
 
-        -> android/app/build.gradle
-
-       	signingConfigs {
-            release {
-                storeFile file(MYAPP_RELEASE_STORE_FILE)
-                storePassword MYAPP_RELEASE_STORE_PASSWORD
-                keyAlias MYAPP_RELEASE_KEY_ALIAS
-                keyPassword MYAPP_RELEASE_KEY_PASSWORD
+       -> android/app/build.gradle
+    
+           	signingConfigs {
+                release {
+                    storeFile file(MYAPP_RELEASE_STORE_FILE)
+                    storePassword MYAPP_RELEASE_STORE_PASSWORD
+                    keyAlias MYAPP_RELEASE_KEY_ALIAS
+                    keyPassword MYAPP_RELEASE_KEY_PASSWORD
+                }
             }
-        }
-
-        buildTypes {
-            release {
-                minifyEnabled enableProguardInReleaseBuilds
-                proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-    			signingConfig signingConfigs.release
+    
+            buildTypes {
+                release {
+                    minifyEnabled enableProguardInReleaseBuilds
+                    proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        			signingConfig signingConfigs.release
+                }
             }
-        }
+    
+    
+       -> android/gradle.properties
+    
+            MYAPP_RELEASE_STORE_FILE=my-release-key.keystore
+            MYAPP_RELEASE_KEY_ALIAS=my-key-alias
+            MYAPP_RELEASE_STORE_PASSWORD=123456
+            MYAPP_RELEASE_KEY_PASSWORD=123456
 
-
-        -> android/gradle.properties
-
-        MYAPP_RELEASE_STORE_FILE=my-release-key.keystore
-        MYAPP_RELEASE_KEY_ALIAS=my-key-alias
-        MYAPP_RELEASE_STORE_PASSWORD=123456
-        MYAPP_RELEASE_KEY_PASSWORD=123456
  
- - 设定enableProguardInRelease为ture来开启proguard混淆。
+- 设定enableProguardInRelease为ture来开启proguard混淆。
+    
+    混淆可以减小APK文件的大小：proguard会移除掉React Native Java（和它的依赖库中）中没有被使用到的部分。<br>
 
-   混淆可以减小APK文件的大小：proguard会移除掉React Native Java（和它的依赖库中）中没有被使用到的部分。<br>
-
-   如果需要添加一些库的混淆可以修改app/proguard-rules.pro文件。<br>
+    如果需要添加一些库的混淆可以修改app/proguard-rules.pro文件。<br>
    
 #### 4. 打包文件
    - 进入/android/目录，cmd执行gradlew assembleRelease
@@ -68,7 +69,7 @@ comments: true
 
 注意：
 
-- 如果出现错误或者没有安装 gradle 工具，需要安装 gradle 工具和配置好 GRADLE_HOME 和 PATH
+- 如果用AndroidStudio的gradle打包，gradle assembleRelease时提示错误或没有安装 gradle 工具。需要安装 gradle 工具和配置好 GRADLE_HOME 和 PATH
 - gradle版本需要跟 /android/gradle/wrapper/gradele-wrapper.properties 文件中的版本配置保持一致。
 - gradlew clean 可以清理缓存。
    
