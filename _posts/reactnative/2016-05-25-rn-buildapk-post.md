@@ -36,7 +36,7 @@ comments: true
                 keyPassword MYAPP_RELEASE_KEY_PASSWORD
             }
         }
-        
+
         buildTypes {
             release {
                 minifyEnabled enableProguardInReleaseBuilds
@@ -44,8 +44,8 @@ comments: true
     			signingConfig signingConfigs.release
             }
         }
-        
-    
+
+
         -> android/gradle.properties
         
         MYAPP_RELEASE_STORE_FILE=my-release-key.keystore
