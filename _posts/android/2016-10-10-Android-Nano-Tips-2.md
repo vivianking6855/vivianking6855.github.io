@@ -3,7 +3,7 @@ layout: post
 title: 2016-10-10 Android 之 微技巧 （二）
 date: 2016-10-10
 excerpt: "外观和交互三个重要工具：Design Library, AppCompat, Support Library"
-tags: [Android, 知识点]
+tags: [Android]
 comments: true
 ---
 
