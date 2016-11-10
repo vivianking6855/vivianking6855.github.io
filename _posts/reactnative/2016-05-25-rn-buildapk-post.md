@@ -69,6 +69,12 @@ comments: true
 注意：
 
 - 如果gradlew assembleRelease时提示错误或没有安装 gradle 工具。可以自行下载后放到你的C:\Users\yournamne\.gradle\wrapper\dists下面
+  - 把下载完成的zip包放入对应的文件夹，解压到当前目录
+     - 例如提示下载gradle 2.4，你可以cancel
+     - 此时已经生成路径： C:\Users\vivian\.gradle\wrapper\dists\gradle-2.4-all\6r4uqcc6ovnq6ac6s0txzcpc0
+     - 把下载完成的zip包放入对应的文件夹，解压到当前目录
+  - gradle-2.4-all.zip.part 重命名为 gradle-2.4-all.zip.ok. 这样rn就会认为已经下载完成
+  - 重新运行gradlew assembleRelease
 - gradle版本需要跟 /android/gradle/wrapper/gradele-wrapper.properties 文件中的版本配置保持一致。
 - gradlew clean 可以清理缓存。
    
