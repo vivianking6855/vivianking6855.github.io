@@ -1,8 +1,8 @@
 ---
 layout: post
-title: ReactNative 学习笔记 初篇 环境搭建和知识储备
+title: ReactNative 学习笔记 环境搭建和知识储备
 date: 2016-05-24
-excerpt: "学习笔记 初篇 环境搭建和知识储备"
+excerpt: "环境搭建和知识储备"
 tags: [ReactNative]
 comments: true
 ---
@@ -32,9 +32,9 @@ comments: true
 - [JS COACH](https://js.coach/react-native?search=viewp&page=2)
 
 
-##  ReactNative 第2节  环境搭建 ##
-[ReactNative环境搭建](https://yunpan.cn/cREqTK2G6zGmr)
-（提取码：751f）
+## ReactNative 第2节  环境搭建
+[ReactNative环境搭建](https://github.com/vivianking6855/vivianking6855.github.io/blob/master/_posts/doc/React-Native%20%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.pdf)
+
 
 ## ReactNative 第3节 IDE
 
