@@ -61,7 +61,6 @@ comments: true
 
 
 <br>
-<br>
 
 
 > [android support-library revisions](https://developer.android.com/topic/libraries/support-library/revisions.html)
