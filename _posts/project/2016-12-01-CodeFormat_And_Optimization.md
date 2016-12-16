@@ -32,6 +32,8 @@ Google Java编程风格
 - [Google Java编程风格指南中文版 ](http://www.cnblogs.com/lanxuezaipiao/p/3534447.html)
 - [GitBook下载地址](https://www.gitbook.com/book/jervyshi/google-java-styleguide-zh/details)
 
+实际项目follow编程风格：Android Style Guide.docx
+
 ### 前端代码规范
 
 [前端代码规范 及 最佳实践](https://coderlmn.github.io/code-standards/) 
