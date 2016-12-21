@@ -23,6 +23,9 @@ comments: true
 
 [CoordinatorLayout](http://blog.csdn.net/xyz_lmn/article/details/48055919)
 
+[CoordinatorLayout](https://segmentfault.com/a/1190000002888109)
+
+[Github Code](https://github.com/vivianking6855/android-ui/tree/ui-advanced)
 
 ## 5. Annotations
 
