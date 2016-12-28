@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2016-11-09 Android 之 微技巧 （四）
+title: 2016-11-09 Android 之 微技巧 （四）Customized View
 date: 2016-11-09
 excerpt: "Customized View"
 tags: [Android]

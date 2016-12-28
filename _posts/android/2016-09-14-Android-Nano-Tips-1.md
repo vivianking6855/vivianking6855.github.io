@@ -1,15 +1,15 @@
 ---
 layout: post
-title: 2016-09-14 Android 之 微技巧 （一）
+title: 2016-09-14 Android 之 微技巧 （一）ExpandableListView, Annotations,热更新
 date: 2016-09-14
-excerpt: "Snackbar, CoordinatorLayout, Annotations,热更新"
+excerpt: "ExpandableListView, Annotations,热更新"
 tags: [Android]
 comments: true
 ---
 
-## 1. Dialog, Toast, Snackbar
+## 1. ExpandableListView的使用详解
 
-[Dialog, Toast, Snackbar](http://blog.csdn.net/guolin_blog/article/details/51336415)
+[ExpandableListView的使用详解](http://blog.csdn.net/jamy2015/article/details/51131583)
 
 ## 2. Android状态栏微技巧，带你真正理解沉浸式模式
 
@@ -19,15 +19,7 @@ comments: true
 
 [你所不知道的drawable的那些细节](http://blog.csdn.net/sinyu890807/article/details/50727753)
 
-## 4. CoordinatorLayout ：super-powered FrameLayout
-
-[CoordinatorLayout](http://blog.csdn.net/xyz_lmn/article/details/48055919)
-
-[CoordinatorLayout](https://segmentfault.com/a/1190000002888109)
-
-[Github Code](https://github.com/vivianking6855/android-ui/tree/ui-advanced)
-
-## 5. Annotations
+## 4. Annotations
 
 [Java注解Annotation基础](http://www.open-open.com/lib/view/open1423558996951.html)：注解是一种元数据，起到了”描述，配置“的作用。
 
@@ -65,11 +57,10 @@ comments: true
 
 当然并不是说上述框架就一定没有使用反射了，其实上述其中部分框架内部还是有部分实现是依赖于反射的，但是很少而且一般都做了缓存的处理。所以相对来说，效率影响很小。
 
-## 6. android热更新技术研究 
+## 5. android热更新技术研究 
 [android热更新技术研究](http://blog.csdn.net/qq_25943493/article/details/51463884)  
 
 
-<br>
 <br>
 
 
