@@ -19,7 +19,7 @@ CoordinatorLayout的使用核心是Behavior.
 
 - Dependency，依赖：来控制其他View
 - Child依据Dependency来做事情，Child设定Behavior
-- Behavior：当Dependency变化 (position, width, height)时，通过Behavior连接Child
+- [Behavior](http://www.jianshu.com/p/a506ee4afecb)：当Dependency变化 (position, width, height)时，通过Behavior连接Child
 
         -----------Behavior的两个核心方法
         /**
