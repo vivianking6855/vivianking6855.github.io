@@ -2,7 +2,7 @@
 layout: post
 title: 2016-12-28 Android 之 微技巧 （七）M new feature 2
 date: 2016-12-28
-excerpt: "CoordinatorLayout, AppBarLayout, CollapsingToolbarLayout"
+excerpt: "CoordinatorLayout, AppBarLayout, CollapsingToolbarLayout，NestedScrollView"
 tags: [Android]
 comments: true
 ---
@@ -128,15 +128,72 @@ Dependency Change -> 触发Behavior onDependentViewChanged -> Child Change
 
 ## 2. 玩转AppBarLayout
 
-AppBarLayout继承自LinearLayout，布局方向为垂直方向。
+AppBarLayout继承自LinearLayout，布局方向为垂直方向。所以你可以把它当成垂直布局的LinearLayout来使用。
 
-所以你可以把它当成垂直布局的LinearLayout来使用。
+AppBarLayout可以定制当某个可滚动View的滚动手势发生变化时，其内部的子View实现何种动作。
 
-AppBarLayout是在LinearLayou上加了一些材料设计的概念，它可以让你定制当某个可滚动View的滚动手势发生变化时，其内部的子View实现何种动作。
+核心属性：app:layout_scrollFlags。 如果View想要滚动出屏幕需要设置这个flag。没有设置这个flag的view将被固定在屏幕顶部。
+
+核心Code:
+
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context="com.ui.advanced.advanceddemo.appbarlayout.AppBarLayoutActivity">
+    
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+    
+            <!--scroll: 所有想滚动出屏幕的view都需要设置这个flag，没有设置这个flag的view将被固定在屏幕顶部。
+                例如，TabLayout 没有设置这个值，将会停留在屏幕顶部-->
+            <!--enterAlways: 设置这个flag时，向下的滚动都会导致该view变为可见，启用快速“返回模式”-->
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:logo="@drawable/ic_star"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:subtitle="@string/tool_bar_sub_title"
+                app:title="@string/app_bar"
+                app:titleMarginStart="30dp" />
+    
+            <!-- if 当ViewPager过多展示不开，需要滚动时设置app:tabMode="scrollable"-->
+            <!--否则默认不需要设置，默认为app:tabMode="fixed"，ViewPager平分宽度-->
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabMode="scrollable" />
+    
+        </android.support.design.widget.AppBarLayout>
+    
+        <!--"@string/appbar_scrolling_view_behavior"系统的-->
+        <!--不加app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            会导致RecyclerView在Toolbar下面，被TabLayout遮盖-->
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    
+    </android.support.design.widget.CoordinatorLayout>
 
 
 [玩转AppBarLayout，更酷炫的顶部栏 ](http://www.jianshu.com/p/d159f0176576)
 
+
+CoordinatorLayout,AppBarLayout,CollapsingToolbarLayout,NestedScrollView搭配起来可以实现下面的效果
+
+![](http://i.imgur.com/vP6PGiO.gif)
 
 <br>
 
