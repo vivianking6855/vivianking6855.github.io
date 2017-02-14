@@ -117,7 +117,7 @@ RemoteViews:远程View
 
 
 
-[github Code](https://github.com/vivianking6855/android-advanced/tree/remoteviews)
+[github Code](https://github.com/vivianking6855/android-advanced)
 
 
 

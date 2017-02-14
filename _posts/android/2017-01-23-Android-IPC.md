@@ -107,6 +107,8 @@ AIDL进行进程间通讯的流程
 核心Code
 
 
+[github Code](https://github.com/vivianking6855/android-advanced)
+
 ### 5. ContentProvider 
 
 ContentProvider天生支持跨进程数据传递，是Android中提供的专门用于不同应用间进行数据共享的方式。
