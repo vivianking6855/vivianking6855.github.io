@@ -260,3 +260,5 @@ Android中最常见的四类具有不同功能特性的线程池。他们都是�
 > [《Android开发艺术探索》](http://download.csdn.net/download/jsntghf/9602444)
 
 > [《Android开发艺术探索》 Github Code](https://github.com/singwhatiwanna/android-art-res)
+
+> [聊聊并发](http://ifeve.com/volatile/) 
