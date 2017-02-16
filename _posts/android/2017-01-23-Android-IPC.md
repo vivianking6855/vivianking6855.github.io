@@ -316,6 +316,7 @@ AIDL进行进程间通讯的流程
     
 核心Code
 
+- [BookManagerService.java](https://github.com/vivianking6855/android-advanced/blob/master/IPC/app/src/main/java/com/vv/ipc/book/BookManagerService.java)
 
 2）客户端
 
@@ -329,7 +330,8 @@ AIDL进行进程间通讯的流程
 - 添加书
 - 注册新书通知
  
-核心Code
+核心Code: [BookManagerActivity.java](https://github.com/vivianking6855/android-advanced/blob/master/IPC/app/src/main/java/com/vv/ipc/book/BookManagerActivity.java) 
+
 
 3）AIDL接口创建 和 AIDL接口的实现（远程服务器端Service的实现）
 
@@ -342,26 +344,37 @@ AIDL进行进程间通讯的流程
 核心Code
 
     // Book.aidl
-    package com.vv.ipc.aidl;
+    package com.vv.ipc.book;
     
     parcelable Book;
     
-    // Book.java
-    public class Book implements Parcelable {
-       ......
-    
-    }
-    
     // IBookManager.aidl
-    package com.vv.ipc.aidl;
+    package com.vv.ipc;
     
-    import com.vv.ipc.aidl.Book;
+    import com.vv.ipc.book.Book;
+    import com.vv.ipc.INewBookListener;
     
     interface IBookManager {
-         List<Book> getList();
-         void add(in Book book);
+        // get all book list
+        List<Book> getBookList();
+        // add one book
+        void addBook(in Book book);
+        // get book list size
+        int getBookSize();
+        // register and unregister new book listener
+        void registerListener(INewBookListener listener);
+        void unregisterListener(INewBookListener listener);
     }
 
+    
+    // INewBookListener.aidl
+    package com.vv.ipc;
+    
+    import com.vv.ipc.book.Book;
+    
+    interface INewBookListener {
+        void onNewBookArrived(in Book newBook);
+    }
 
 
 [github Code](https://github.com/vivianking6855/android-advanced)
