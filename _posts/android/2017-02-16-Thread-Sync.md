@@ -173,9 +173,75 @@ Java中每个对象都仅有一个内置同步锁。有线程持有锁时，其�
     - 阻塞队列的概念是一个指定长度的队列：如果队列满了，添加新元素的操作会被阻塞等待，直到有空位为止。
     - 当队列为空时候，请求队列元素的操作同样会阻塞等待，直到有可用元素为止。
     - 多用于多线程的排队等候，特别是生产者-消费者的情景
-- Future 与Runnable,Callable进行交互的接口。线程执行结束后取返回的结果等等，还提供了cancel终止线程。
+- [Future](https://www.oschina.net/question/54100_83333) 线程执行结束后取返回的结果。还提供了cancel终止线程。
+
+核心Code
+
+        private void testFuture() {
+            // get return of Callable
+            List<Future<String>> results = new ArrayList<Future<String>>();
+            ExecutorService pool = Executors.newCachedThreadPool();
+            for (int i = 0; i < 10; i++) {
+                results.add(pool.submit(new UserCallable()));
+            }
+            for (Future<String> res : results) {
+                try {
+                    Log.d(TAG, "get Callable result " + res.get());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+            }
+    
+            pool.shutdown();
+        }
+
 - CompletionService ExecutorService的扩展，可以获得线程执行结果的
-- Semaphore 一个计数信号量
+- [Semaphore 一个计数信号量](http://blog.csdn.net/kevin_luan/article/details/12832523)
+    - Semaphore可以控制某个资源可被同时访问的个数，acquire()获取一个许可，如果没有就等待，而release()释放一个许可。
+    - 比如可以设置共享文件的最大客户端访问个数。
+    - Semaphore维护了当前访问的个数，提供同步机制，控制同时访问的个数。
+    - 在数据结构中链表可以保存“无限”的节点，用Semaphore可以实现有限大小的链表。
+
+核心Code
+
+    /**
+     * 控制资源被允许访问的线程数
+     */
+    private void testSemaphore() {
+        final TestSemaphore testSemaphore = new TestSemaphore();
+        for(int i=0; i< 10; i++) {
+            cachedPool.execute(new Runnable() {
+                @Override
+                public void run() {
+                    testSemaphore.start();
+                }
+            });
+        }
+    }
+
+    private class TestSemaphore {
+        private Semaphore semaphore = new Semaphore(3);
+        private final static int TIMEOUT = 500;
+
+        public void start() {
+            try {
+                boolean getAccquire = semaphore.tryAcquire(TIMEOUT, TimeUnit.MILLISECONDS);
+                if(getAccquire) {
+                    Log.d(TAG, "tryAcquire true; now working; tname = " + Thread.currentThread().getName());
+                    SystemClock.sleep(2000);
+                    semaphore.release();
+                    Log.d(TAG, "work done, release semaphore; tname = " + Thread.currentThread().getName());
+                }else {
+                    Log.d(TAG, "tryAcquire false." + "; tname = " + Thread.currentThread().getName());
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    
 - ReentrantLock 可重入的互斥锁定 Lock，功能类似synchronized，但要强大的多
 - CountDownLatch 在完成其他线程中操作之前，允许一个或多个线程一直等待
 - CyclicBarrier 允许一组线程互相等待，直到到达某个公共屏障点
