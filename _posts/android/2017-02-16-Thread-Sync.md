@@ -159,6 +159,23 @@ Java中每个对象都仅有一个内置同步锁。有线程持有锁时，其�
     
     }
 
+### volatile 实现多线访问变量的一致性
+
+在当前的Java内存模型下，线程可以把变量保存在本地内存（比如机器的寄存器）中，而不是直接在主存中进行读写。
+
+这就可能造成一个线程在主存中修改了一个变量的值，而另外一个线程还继续使用它在寄存器中的变量值的拷贝，造成数据的不一致。 
+
+volatile用来确保多线访问变量的一致性。工作原理：
+
+- Volatile修饰的成员变量在每次被线程访问时，都强迫从共享内存中重读该成员变量的值。
+- 当成员变量发生变化时，强迫线程将变化值回写到共享内存。这样在任何时刻，两个不同的线程总是看到某个成员变量的同一个值。 
+
+注意事项：
+
+- volatile不保证原子操作，所以，很容易读到脏数据。
+- 在两个或者更多的线程访问的成员变量上使用volatile。
+- 当要访问的变量已在synchronized代码块中，或者为常量时，不必使用。
+
 ## concurrent包
 
 虽然synchronized已经足够强大，但想要用好也挺不容易。
@@ -174,88 +191,36 @@ Java中每个对象都仅有一个内置同步锁。有线程持有锁时，其�
     - 当队列为空时候，请求队列元素的操作同样会阻塞等待，直到有可用元素为止。
     - 多用于多线程的排队等候，特别是生产者-消费者的情景
 - [Future](https://www.oschina.net/question/54100_83333) 线程执行结束后取返回的结果。还提供了cancel终止线程。
-
-核心Code
-
-        private void testFuture() {
-            // get return of Callable
-            List<Future<String>> results = new ArrayList<Future<String>>();
-            ExecutorService pool = Executors.newCachedThreadPool();
-            for (int i = 0; i < 10; i++) {
-                results.add(pool.submit(new UserCallable()));
-            }
-            for (Future<String> res : results) {
-                try {
-                    Log.d(TAG, "get Callable result " + res.get());
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
-                }
-            }
-    
-            pool.shutdown();
-        }
-
 - CompletionService ExecutorService的扩展，可以获得线程执行结果的
-- [Semaphore 一个计数信号量](http://blog.csdn.net/kevin_luan/article/details/12832523)
+- [Semaphore 一个计数信号量，控制资源被允许访问的线程数](http://blog.csdn.net/kevin_luan/article/details/12832523)
     - Semaphore可以控制某个资源可被同时访问的个数，acquire()获取一个许可，如果没有就等待，而release()释放一个许可。
     - 比如可以设置共享文件的最大客户端访问个数。
     - Semaphore维护了当前访问的个数，提供同步机制，控制同时访问的个数。
     - 在数据结构中链表可以保存“无限”的节点，用Semaphore可以实现有限大小的链表。
+- ReentrantLock 可重入的互斥锁定 Lock，功能类似synchronized，但要强大的多.
+    - 搭配Condition实现条件锁
+    - synchronized可以解决的问题，可以不用ReentrantLock
+    - Demo逻辑
+        - 医院每天定时下班
+        - 挂号队列有数量限制，挂号满之后等待
+        - 房间病人为空时，等待
+- CountDownLatch 在完成其他线程中操作之前，允许一个或多个线程一直等待。例如工人工作全部完成后，楼房开始销售
+- CyclicBarrier 允许一组线程互相等待，直到到达某个公共屏障点。 例如每个运动员都准备好后，运动员才能开始赛跑
 
-核心Code
+    [CountDownLatch和CyclicBarrier的区别](http://blog.csdn.net/kjfcpua/article/details/7300286)
 
-    /**
-     * 控制资源被允许访问的线程数
-     */
-    private void testSemaphore() {
-        final TestSemaphore testSemaphore = new TestSemaphore();
-        for(int i=0; i< 10; i++) {
-            cachedPool.execute(new Runnable() {
-                @Override
-                public void run() {
-                    testSemaphore.start();
-                }
-            });
-        }
-    }
-
-    private class TestSemaphore {
-        private Semaphore semaphore = new Semaphore(3);
-        private final static int TIMEOUT = 500;
-
-        public void start() {
-            try {
-                boolean getAccquire = semaphore.tryAcquire(TIMEOUT, TimeUnit.MILLISECONDS);
-                if(getAccquire) {
-                    Log.d(TAG, "tryAcquire true; now working; tname = " + Thread.currentThread().getName());
-                    SystemClock.sleep(2000);
-                    semaphore.release();
-                    Log.d(TAG, "work done, release semaphore; tname = " + Thread.currentThread().getName());
-                }else {
-                    Log.d(TAG, "tryAcquire false." + "; tname = " + Thread.currentThread().getName());
-                }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-    
-- ReentrantLock 可重入的互斥锁定 Lock，功能类似synchronized，但要强大的多
-- CountDownLatch 在完成其他线程中操作之前，允许一个或多个线程一直等待
-- CyclicBarrier 允许一组线程互相等待，直到到达某个公共屏障点
 - [CopyOnWriteArrayList](http://ifeve.com/java-copy-on-write/) 
     - CopyOnWrite容器即写时复制的容器。
     - 通俗的理解是当我们往一个容器添加元素的时候，不直接往当前容器添加，而是先将当前容器进行Copy，复制出一个新的容器，然后新的容器里添加元素，添加完元素之后，再将原容器的引用指向新的容器。
     - 这样做的好处是我们可以对CopyOnWrite容器进行并发的读，而不需要加锁，因为当前容器不会添加任何元素。
     - 所以CopyOnWrite容器也是一种读写分离的思想，读和写不同的容器。
-- ConcurrentHashMap
+    - 缺点
+        - 内存占用问题
+        - 数据一致性问题。CopyOnWrite容器只能保证数据的最终一致性，不能保证数据的实时一致性。所以如果你希望写入的的数据，马上能读到，请不要使用CopyOnWrite容器。
+- [ConcurrentHashMap，多线程环境下的，线程安全的HashMap](http://ifeve.com/concurrenthashmap/)
 
-部分实践Code
 
-
-
+[核心Code](https://github.com/vivianking6855/android-advanced/blob/master/ThreadSync/app/src/main/java/com/vv/threadsync/current)
 
 ## 实践 生产者-消费者模型
 
