@@ -8,7 +8,9 @@ comments: true
 ---
 
 
-## 内容
+## 简介
+
+内容包括三部分：
 
 - 如何有效加载Bitmap
     - 由于Bitmap的特殊性以及Android对单个应用所施加的内存限制，比如16MB，这导致Bitmap加载时很容易出现OOM
