@@ -313,6 +313,22 @@ ImageLoader需要正确的处理这些特殊情况。
 [Github Code](https://github.com/vivianking6855/android-advanced/tree/master/ImageCache/app/src/main/java/com/vv/imagecache)
 
 
+## 开源库
 
+图片缓存已经有很多的开源库：([详情介绍点击这里，搜索ImageLoader](https://github.com/Trinea/android-open-project)）
+
+1. Android-Universal-Image-Loader
+2. picasso
+3. Cube ImageLoader
+4. fresco
+5. Glide
+
+<br>
+
+
+
+> [Android 开源项目分类汇总 ](https://github.com/Trinea/android-open-project)
+
+> [Android 学习资料收集](https://github.com/Freelander/Android_Data)
 
 
