@@ -308,7 +308,57 @@ ImageLoader需要正确的处理这些特殊情况。
 
 ## ImageLoader的使用
 
-照片墙: 从网络加载图片并在GridView中显示.覆盖了：图片加载，缓存策略，列表的滑动流畅性
+照片墙
+
+- 从网络加载图片并在GridView中显示.覆盖了：图片加载，缓存策略，列表的滑动流畅性
+- 非WIFI环境下，流量提示
+
+    提示核心Code
+    
+    
+        if (!mIsWifi) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("初次使用会从网络下载大概5MB的图片，确认要下载吗？");
+            builder.setTitle("注意");
+            builder.setPositiveButton("是", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Utils.sCanGetBitmapFromNetWork = true;
+                    mImageAdapter.notifyDataSetChanged();
+                }
+            });
+            builder.setNegativeButton("否", null);
+            builder.show();
+        }
+        
+- 优化列表的卡顿现象
+    - 主线程中不做太耗时的操作：getView中通过ImageLoader的bindBitmap来异步加载图片
+    - 用户频繁滑动，瞬间可能产生上百个异步任务，会造成线程池拥堵和大量的UI更新。
+        - 列表滑动时停止加载图片
+        - getView仅列表静止时才能加载图片
+        - [开启硬件加速](https://developer.android.com/guide/topics/graphics/hardware-accel.html)。绝大多数情况下，硬件加速都可以解决莫名的卡顿问题。
+
+解决列表卡顿核心Code
+
+    // MainActivity
+    mImageGridView.setOnScrollListener(this);
+
+    @Override
+    public void onScrollStateChanged(AbsListView view, int scrollState) {
+        if (scrollState == AbsListView.OnScrollListener.SCROLL_STATE_IDLE) {
+            Utils.sIsGridViewIdle = true;
+            mImageAdapter.notifyDataSetChanged();
+        } else {
+            Utils.sIsGridViewIdle = false;
+        }
+    }
+    
+    //ImageAdapter
+    if (Utils.sIsGridViewIdle && Utils.sCanGetBitmapFromNetWork) {
+        imageView.setTag(uri);
+        mImageLoader.bindBitmap(uri, imageView, Utils.sImageWidth, Utils.sImageWidth);
+    }
+
 
 [Github Code](https://github.com/vivianking6855/android-advanced/tree/master/ImageCache/app/src/main/java/com/vv/imagecache)
 
