@@ -1,15 +1,13 @@
 ---
 layout: post
-title: Android性能优化 （一）内存优化篇
+title: Android性能优化 （二）内存 OOM
 date: 2016-07-15
-excerpt: "内存优化篇"
+excerpt: "内存 OOM"
 tags: [Android]
 comments: true
 ---
 
-## 内存优化篇
-
-### 内存示意图
+# 内存示意图
 
 ![](http://i.imgur.com/2ylcYWn.png)
 
@@ -26,7 +24,7 @@ comments: true
 
    - 进程分为native进程（c/c++实现）和java进程（dalvik实例的linux进程。入口函数是java的main函数。
     
-   - 每一个android上的java进程实际上就是一个linux进程只是进程中多了一个dalvik虚拟机实例。
+   - 每一个android上的java进程实际上就是一个linux进程，只是进程中多了一个dalvik虚拟机实例。
     
    - Android系统中的应用程序基本都是java进程，如桌面、电话、联系人、状态栏等等。
 
@@ -38,7 +36,7 @@ comments: true
 
   - C/C++申请的内存空间在native heap中，而java申请的内存空间则在dalvik heap中。
 
-4. Android的 java程序为什么容易出现OOM
+# Android的 java程序为什么容易出现OOM
 
    - 这个是因为Android系统对dalvik的vm heapsize作了硬性限制，当java进程申请的java空间超过阈值时，就会抛出OOM异常。
     
@@ -48,8 +46,7 @@ comments: true
     
         也就是说，在RAM充足的情况下，也可能发生OOM。
 
-
-5. 内存泄露
+# 内存泄露
 
     首先看下dalvik的Garbage Collection，GC会选择回收没有直接或者间接引用到GC Roots的点。如下图蓝色部分。
     
@@ -60,18 +57,43 @@ comments: true
 
 ![](http://i.imgur.com/RuracHg.png)
 
-5.1. 常见的内存泄漏
+## 常见的内存泄漏
 
-（1）Context泄漏
+### (1) Context泄漏
+ 
+   示例 1： 静态变量导致的内存泄漏
+     
+     public class MainActivity extends Activity implements OnDataArrivedListener {
+        private static final String TAG = "MainActivity";
     
-   示例： 非静态内部类的静态实例容易造成内存泄漏。
+        private static Context sContext;
+    
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+            sContext = this;
+        }
+
+      public class MainActivity extends Activity implements OnDataArrivedListener {
+        private static final String TAG = "MainActivity";
+    
+        private static View sView;
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+            sView = new View(this);
+            
+            
+   示例 2： 非静态内部类的静态实例容易造成内存泄漏。
 
    下面的静态内部类对象持有MainActivity的引用，在Activity销毁时MainActivity无法回收。
     
    对于lauchMode不是singleInstance的Activity，应该避免在activity里面实例化其非静态内部类的静态实例
 
-    public class MainActivity extends Activity
-    {
+    public class MainActivity extends Activity {
        static Demo sInstance = null;
             
         @Override
@@ -79,14 +101,14 @@ comments: true
         {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
-            if (sInstance == null)
-            {
+            
+            if (sInstance == null) {
                sInstance= new Demo();
             }
         }
         class Demo
         {
-            voiddoSomething()
+            void doSomething()
             {  
                 System.out.print("dosth.");
             }
@@ -102,18 +124,17 @@ comments: true
 - 如果一个acitivity的非静态内部类的生命周期不受控制，那么避免使用它；正确的方法是使用一个静态的内部类，并且对它的外部类有一WeakReference（例如 static Handler创建时可以把外部类的weakreference传进来）
 
 
-（2）使用handler时的内存问题
-
+### (2) 使用handler时的内存问题
 
    Handler通过发送Message与其他线程交互，Message发出之后是存储在目标线程的MessageQueue中的，而有时候Message也不是马上就被处理的，可能会驻留比较久的时间。
     
-   在Message类中存在一个成员变量 target，它强引用了handler实例，如果Message在Queue中一直存在，就会导致handler实例无法被回收，如果handler对应的类是非静态内部类 ，则会导致外部类实例（Activity或者Service）不会被回收，这就造成了外部类实例的泄露。 
+   在Message类中存在一个成员变量 target，它强引用了handler实例，如果Message在Queue中一直存在，就会导致handler实例无法被回收。
+   
+   如果handler对应的类是非静态内部类 ，则会导致外部类实例（Activity或者Service）不会被回收，这就造成了外部类实例的泄露。 
     
    所以正确处理Handler等之类的内部类，应该将自己的Handler定义为静态内部类，并且在类中增加一个成员变量，用来弱引用外部类实例，如下：
 
-    
-    public class OutterClass  
-    {  
+    public class OutterClass {  
             ......  
             ......  
             static class InnerClass  
@@ -125,9 +146,9 @@ comments: true
     }  
     
     
-（3）注册某个对象后未反注册 ： 注册广播接收器、注册观察者等等，比如：
+### (3) 注册某个对象后未反注册 ： 注册广播接收器、注册观察者等等
 
-   示例：监听系统中的电话服务以获取一些信息(如信号强度等)
+   示例 1：监听系统中的电话服务以获取一些信息(如信号强度等)
     
     假设我们希望在锁屏界面(LockScreen)中，监听系统中的电话服务以获取一些信息(如信号强度等)，则可以在LockScreen中定义一个PhoneStateListener的对象，同时将它注册到TelephonyManager服务中。
     
@@ -136,12 +157,19 @@ comments: true
     但是如果在释放LockScreen对象的时候忘记取消我们之前注册的PhoneStateListener对象，则会导致LockScreen无法被GC回收。
     
     如果不断的使锁屏界面显示和消失，则最终会由于大量的LockScreen对象没有办法被回收而引起OutOfMemory,使得system_process进程挂掉。
+    
+   示例 2： 单例模式导致的内存泄漏
 
-（4）集合中对象没清理造成的内存泄露
+    Activity中注册了单例模式的Listener，如果没有unregister，Activity会无法被及时释放。
+    
+    因为单例模式的特点是其生命周期和Application保持一致。
+
+
+### (4) 集合中对象没清理造成的内存泄露
 
 　　例如对象的引用的集合不再使用时，如果没有把它的引用从集合中清理掉，这样这个集合就会越来越大。如果这个集合是static的话，那情况就更严重了。
 
-   示例：某公司的ROM的锁屏曾经就存在内存泄漏问题：
+    示例：某公司的ROM的锁屏曾经就存在内存泄漏问题：
 
     这个泄漏是因为LockScreen每次显示时会注册几个callback，它们保存在KeyguardUpdateMonitor的ArrayList<InfoCallback>、ArrayList<SimStateCallback>等ArrayList实例中。
     
@@ -151,13 +179,13 @@ comments: true
     
     由于锁屏是驻留在system_server进程里，所以导致结果是手机重启。
 
-（5）资源对象没关闭造成的内存泄露，比如(Cursor，File文件等)
+### (5) 资源对象没关闭造成的内存泄露，比如(Cursor，File文件等)
 
-   对于资源性对象在不使用的时候，应该立即调用它的close()函数，将其关闭掉，然后再置为null.
+    对于资源性对象在不使用的时候，应该立即调用它的close()函数，将其关闭掉，然后再置为null.
 
-（6）构造Adapter时，没有使用缓存的 convertView，可以使用Android最新组件RecyclerView,替代ListView来避免
+### (6) 构造Adapter时，没有使用缓存的 convertView，可以使用Android最新组件RecyclerView,替代ListView来避免
 
- (7) Bitmap使用不当
+### (7) Bitmap使用不当
  
  必要的措施：
  
@@ -195,11 +223,24 @@ comments: true
               
    PS: 对象的引用强度 SoftRefrence > WeakReference
 
+### (8) 属性动画没有释放导致的内存泄漏
 
+属性动画有一类无限循环的动画。
+
+如果Activity有播放动画，但是没有在onDestroy中去停止动画，Activity的View被动画持有导致Activity无法释放。
+
+        ObjectAnimator animator = ObjectAnimator.ofFloat(mButton, "rotation",
+                0, 360).setDuration(2000);
+        animator.setRepeatCount(ValueAnimator.INFINITE);
+        animator.start();
+        //animator.cancel();
+        
 
 ## 内存检测工具
-[leak-canary git hub](https://github.com/square/leakcanary)
+
+- MAT
+- [leak-canary git hub](https://github.com/square/leakcanary)
+- FindBugs
 
 
 > [Android最佳性能实践(一)——合理管理内存 ](http://blog.csdn.net/guolin_blog/article/details/42238627)
-
