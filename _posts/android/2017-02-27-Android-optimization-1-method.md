@@ -85,18 +85,36 @@ comments: true
 - 开发过程中避免写出有内存泄漏的代码
 - 通过一些分析工具如MAT，[leakcanary](https://github.com/square/leakcanary)，FindBugs等
 
-详见：[ Android性能优化 （二）内存 OOM](https://github.com/vivianking6855/vivianking6855.github.io/blob/master/_posts/android/2016-08-05-Android-optimization-2-OOM.md)
+详见：[ Android性能优化 （二）内存 OOM](http://vivianking6855.github.io/Android-optimization-2-OOM/)
 
 ## 响应速度优化
 
 响应速度优化核心思想是避免在主线程中做耗时的操作。耗时的操作应该放到异步任务中执行。
 
+## ListView优化
 
-## ListView优化 和 Bitmap优化
+构造Adapter时，没有使用缓存的 convertView，可以使用Android最新组件RecyclerView,替代ListView来避免
 
+## Bitmap优化
 
+主要是BitmapFactory.Options 和缓存。详见[ Android Bitmap的加载和Cache](http://vivianking6855.github.io/Android-Bitmap-Cache/)
 
 ## 线程优化
 
+线程优化的思想是采用线程池，避免程序中存在大量的Thread. 控制最大并发数等。详见下面两篇blog~
+
+[Android的线程和线程池](http://vivianking6855.github.io/Multi-Thread/)
+
+[线程同步](http://vivianking6855.github.io/Thread-Sync/)
+
 ## 性能优化建议
 
+性能优化的小建议：
+
+- 避免创建过多的对象
+- 不要过多使用枚举，枚举占用内容空间比整型大
+- 常量请使用static final来修饰
+- 使用一些Android特有的数据结构，比如SparseArray，Pair等，它们都具有更好的性能
+- 适当使用软引用和弱引用
+- 采用内存缓存和磁盘缓存
+- 尽量采用静态内部类，避免潜在的由于内部类而导致的内存泄漏。
