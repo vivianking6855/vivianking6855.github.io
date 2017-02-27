@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Android性能优化 （一）Android的性能优化方法
-date: 2016-07-15
+date: 2017-2-27
 excerpt: "Android的性能优化方法"
 tags: [Android]
 comments: true
@@ -85,7 +85,7 @@ comments: true
 - 开发过程中避免写出有内存泄漏的代码
 - 通过一些分析工具如MAT，[leakcanary](https://github.com/square/leakcanary)，FindBugs等
 
-详见： Android性能优化 （二）内存 OOM
+详见：[ Android性能优化 （二）内存 OOM](https://github.com/vivianking6855/vivianking6855.github.io/blob/master/_posts/android/2016-08-05-Android-optimization-2-OOM.md)
 
 ## 响应速度优化
 
