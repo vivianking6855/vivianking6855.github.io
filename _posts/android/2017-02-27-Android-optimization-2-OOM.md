@@ -94,6 +94,7 @@ comments: true
    对于lauchMode不是singleInstance的Activity，应该避免在activity里面实例化其非静态内部类的静态实例
 
     public class MainActivity extends Activity {
+    
        static Demo sInstance = null;
             
         @Override
@@ -106,6 +107,7 @@ comments: true
                sInstance= new Demo();
             }
         }
+        
         class Demo
         {
             void doSomething()
