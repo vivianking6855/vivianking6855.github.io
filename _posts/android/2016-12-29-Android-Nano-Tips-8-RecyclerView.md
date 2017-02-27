@@ -1,13 +1,13 @@
 ---
 layout: post
-title: 2016-12-29 Android 之 微技巧 （八）RecyclerView
+title: 2016-12-29 Android 之 微技巧 （八）RecyclerView, DiffUtil, RecyclerViewUtils
 date: 2016-12-29
-excerpt: "RecyclerView"
+excerpt: "RecyclerView, DiffUtil, RecyclerViewUtils"
 tags: [Android]
 comments: true
 ---
 
-## 1. RecyclerView
+## 一、 RecyclerView
 
 RecylerView相对于ListView的优点：
 
@@ -33,7 +33,6 @@ RecylerView相对于ListView的优点：
 - ItemDecoration - 负责绘制Item附近的分割线
 - ItemAnimator - 为Item的一般操作添加动画效果，如，增删条目等
 
-[Github Code](https://github.com/vivianking6855/android-ui/tree/ui-advanced)
 
 ### Reference
 
@@ -53,7 +52,7 @@ RecylerView相对于ListView的优点：
 - [RecyclerViewItemAnimators](https://github.com/gabrielemariotti/RecyclerViewItemAnimators)
 
 
-## 3. [DiffUtil](http://blog.csdn.net/zxt0601/article/details/52562770) support-v7:24.2.0的新工具类
+## 二、 [DiffUtil](http://blog.csdn.net/zxt0601/article/details/52562770) support-v7:24.2.0的新工具类
 
 DiffUtil可以提高RecyclerView的差异化效率
 
@@ -63,5 +62,10 @@ DiffUtil可以提高RecyclerView的差异化效率
 - [效果展示](http://www.itwendao.com/article/detail/51690.html)  
 - [使用 Payload 提高 RecyclerView 渲染效率](http://www.tuicool.com/articles/EnyARvQ)
 
-[Github Code](https://github.com/vivianking6855/android-ui/tree/ui-advanced)
+
+## 三、 [RecyclerViewUtils](https://github.com/captain-miao/RecyclerViewUtils)
+
+refresh,load more,sticky header,expand,index
+
+
 
