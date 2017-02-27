@@ -54,5 +54,11 @@ Configuring Your App for Multidex with Gradle，need to perform the following st
           android:name="android.support.multidex.MultiDexApplication"
 
 
+以上只是最基本的用法，更深入的了解可以参看：
 
-> [Build Apps with more than 65,000 methods](http://developer.android.com/tools/building/multidex.html)
+[Android Dex分包之旅](http://yydcdut.com/2016/03/20/split-dex/index.html)
+
+[android 傻瓜式 MultiDex 插件，从此再也不用担心方法数问题！](http://blog.csdn.net/u014608640/article/details/53080216)
+
+
+> [Google Build Apps with more than 65,000 methods](http://developer.android.com/tools/building/multidex.html)
