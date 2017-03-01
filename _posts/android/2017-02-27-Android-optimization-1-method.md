@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Android性能优化 （一）Android的性能优化方法
+title: Android性能优化（一）Android的性能优化方法概述
 date: 2017-2-27
-excerpt: "Android的性能优化方法"
+excerpt: "Android的性能优化方法概述"
 tags: [Android]
 comments: true
 ---
@@ -118,3 +118,7 @@ comments: true
 - 适当使用软引用和弱引用
 - 采用内存缓存和磁盘缓存
 - 尽量采用静态内部类，避免潜在的由于内部类而导致的内存泄漏。
+
+
+
+> 《Android开发艺术探索》
