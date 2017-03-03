@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2015.11 Caculator
+title: 2015-11-01 Caculator
 date: 2015-11-01
 excerpt: "Caculator项目总结"
 project: true

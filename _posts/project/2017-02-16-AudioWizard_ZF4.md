@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2016.10 AudioWizard
+title: 2016-10-28 AudioWizard
 date: 2016-10-28
 excerpt: "AudioWizard项目总结"
 project: true
