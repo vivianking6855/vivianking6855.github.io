@@ -3,7 +3,7 @@ layout: post
 title: 2016-12-19 Android 之 微技巧 （五）EventBus
 date: 2016-12-19
 excerpt: "EventBus"
-tags: [Android微技巧]
+tags: [Android 微技巧]
 comments: true
 ---
 

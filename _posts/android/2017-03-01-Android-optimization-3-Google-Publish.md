@@ -3,7 +3,7 @@ layout: post
 title: Android性能优化（三）Google Android 性能优化典范实践之 Render
 date: 2017-3-1
 excerpt: "Google Android 性能优化典范实践之 Render"
-tags: [Android进阶]
+tags: [Android 性能优化]
 comments: true
 ---
 

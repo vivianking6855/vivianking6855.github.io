@@ -3,7 +3,7 @@ layout: post
 title: 2017-2-15 Android的线程和线程池
 date: 2017-2-15
 excerpt: "Android的线程和线程池"
-tags: [Android基础]
+tags: [Android 基础]
 comments: true
 ---
 

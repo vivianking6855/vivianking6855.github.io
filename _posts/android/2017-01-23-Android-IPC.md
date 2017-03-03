@@ -3,7 +3,7 @@ layout: post
 title: 2017-1-23 IPC - Inter-Process Communication 进程间通信
 date: 2017-1-23
 excerpt: "IPC 进程间通信"
-tags: [Android基础]
+tags: [Android 基础]
 comments: true
 ---
 

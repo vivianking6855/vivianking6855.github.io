@@ -3,7 +3,7 @@ layout: post
 title: 2017-2-16 线程同步
 date: 2017-2-16
 excerpt: "线程同步"
-tags: [Android基础]
+tags: [Android 基础]
 comments: true
 ---
 
