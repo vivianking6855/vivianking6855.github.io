@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2016-12-30 Android 之 微技巧 （九）ConstraintLayout
+title: 2016-12-30 UI - ConstraintLayout
 date: 2016-12-30
 excerpt: "ConstraintLayout"
 tags: [Android 微技巧]

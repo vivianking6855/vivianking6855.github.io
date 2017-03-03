@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2016-12-19 Android 之 微技巧 （五）EventBus
+title: 2016-12-19 开源库 - EventBus
 date: 2016-12-19
 excerpt: "EventBus"
 tags: [Android 微技巧]

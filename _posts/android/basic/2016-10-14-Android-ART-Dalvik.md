@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android 之 Dalvik和ART
+title: 2016-10-14 Android 之 Dalvik和ART
 date: 2016-10-14
 excerpt: "Android 之 Dalvik和ART"
 tags: [Android 基础]

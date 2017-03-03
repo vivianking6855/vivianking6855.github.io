@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2016-10-14 Android 之 微技巧 （三）Spannable, Gradle, AndroidUtilCode,SurfaceView
+title: 2016-10-14 UI - Spannable, Gradle, AndroidUtilCode,SurfaceView
 date: 2016-10-14
 excerpt: "Spannable, Gradle, library中的switch, AndroidUtilCode,SurfaceView"
 tags: [Android 微技巧]

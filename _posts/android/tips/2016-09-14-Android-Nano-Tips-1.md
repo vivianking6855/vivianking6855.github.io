@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 2016-09-14 Android 之 微技巧 （一）ExpandableListView, Annotations,热更新
+title: 2016-09-14 UI - ExpandableListView, Annotations
 date: 2016-09-14
-excerpt: "ExpandableListView, Annotations,热更新"
+excerpt: "ExpandableListView, Annotations"
 tags: [Android 微技巧]
 comments: true
 ---
@@ -57,8 +57,6 @@ comments: true
 
 当然并不是说上述框架就一定没有使用反射了，其实上述其中部分框架内部还是有部分实现是依赖于反射的，但是很少而且一般都做了缓存的处理。所以相对来说，效率影响很小。
 
-## 5. android热更新技术研究 
-[android热更新技术研究](http://blog.csdn.net/qq_25943493/article/details/51463884)  
 
 
 <br>

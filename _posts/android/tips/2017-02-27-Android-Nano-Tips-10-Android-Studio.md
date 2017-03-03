@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2017-2-27 Android 之 微技巧 （十）Android Studio 使用第三方库
+title: 2017-2-27 工具 - Android Studio 使用第三方库
 date: 2017-2-27
 excerpt: "Android Studio 使用第三方库"
 tags: [Android 微技巧]

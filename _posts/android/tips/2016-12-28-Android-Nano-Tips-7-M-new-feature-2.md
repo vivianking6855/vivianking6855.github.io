@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2016-12-28 Android 之 微技巧 （七）M new feature 2
+title: 2016-12-28 UI - M new feature 2
 date: 2016-12-28
 excerpt: "CoordinatorLayout, AppBarLayout, CollapsingToolbarLayout，NestedScrollView"
 tags: [Android 微技巧]

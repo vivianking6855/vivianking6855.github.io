@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2016-12-29 Android 之 微技巧 （八）RecyclerView, DiffUtil, RecyclerViewUtils
+title: 2016-12-29 UI - RecyclerView, DiffUtil, RecyclerViewUtils
 date: 2016-12-29
 excerpt: "RecyclerView, DiffUtil, RecyclerViewUtils"
 tags: [Android 微技巧]

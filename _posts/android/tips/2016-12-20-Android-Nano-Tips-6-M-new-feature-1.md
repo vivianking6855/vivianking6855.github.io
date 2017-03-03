@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2016-12-28 Android 之 微技巧 （六）M new feature 1
+title: 2016-12-28 UI - M new feature 1
 date: 2016-12-28
 excerpt: "Snackbar, Percent，NestedScrolling, TextInputLayout"
 tags: [Android 微技巧]

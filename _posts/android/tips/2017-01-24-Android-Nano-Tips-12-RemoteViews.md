@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2017-1-24 RemoteViews
+title: 2017-1-24 UI - RemoteViews
 date: 2017-1-24
 excerpt: "RemoteViews"
 tags: [Android 微技巧]
