@@ -3,7 +3,7 @@ layout: post
 title: 2017-2-27 Android性能优化（二）内存 OOM
 date: 2017-2-27
 excerpt: "内存 OOM"
-tags: [Android]
+tags: [Android进阶]
 comments: true
 ---
 

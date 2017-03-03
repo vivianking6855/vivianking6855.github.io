@@ -3,7 +3,7 @@ layout: post
 title: 2017-2-22 Android Bitmap的加载和Cache
 date: 2017-2-22
 excerpt: "Android Bitmap的加载和Cache"
-tags: [Android]
+tags: [Android基础]
 comments: true
 ---
 

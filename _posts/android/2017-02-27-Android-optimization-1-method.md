@@ -3,7 +3,7 @@ layout: post
 title: 2017-2-27 Android性能优化（一）Android的性能优化方法概述
 date: 2017-2-27
 excerpt: "Android的性能优化方法概述"
-tags: [Android]
+tags: [Android进阶]
 comments: true
 ---
 

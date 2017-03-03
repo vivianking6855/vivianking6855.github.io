@@ -3,7 +3,7 @@ layout: post
 title: 2017-1-24 RemoteViews
 date: 2017-1-24
 excerpt: "RemoteViews"
-tags: [Android]
+tags: [Android微技巧]
 comments: true
 ---
 

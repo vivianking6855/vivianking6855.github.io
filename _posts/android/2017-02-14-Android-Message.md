@@ -3,7 +3,7 @@ layout: post
 title: 2017-2-14 Android Messenge
 date: 2017-2-14
 excerpt: "Android Message"
-tags: [Android]
+tags: [Android基础]
 comments: true
 ---
 
