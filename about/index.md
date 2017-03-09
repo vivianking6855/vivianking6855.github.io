@@ -12,7 +12,8 @@ date: 2016-05-25
 ## Technology
 * Android
 * ReactNative
-* H5
+* Java
+* H5,CSS,JS
 * C#,WPF
 * C++,MFC
 
@@ -22,3 +23,4 @@ date: 2016-05-25
 
 ## 联系方式
 * work_man2012@126.com
+* vivian_sun@asus.com
