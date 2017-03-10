@@ -13,6 +13,7 @@ comments: true
 
 
 # 目录
+
 - [项目内容](#项目内容)  
 - [Members](#Members) 
 - [平台支持](#平台支持)
@@ -24,8 +25,7 @@ comments: true
 - [总结](#总结)
 
 
-<h1 id="项目内容"> 项目内容 </h1>
-----------------------------------
+# <h1 id="项目内容"> 项目内容 </h1>
 
 AudioWizard 音频向导。 支援很多音频特效：
 
@@ -37,21 +37,20 @@ AudioWizard 音频向导。 支援很多音频特效：
 - 户外
 
 
-<h1 id="Members"> Members </h1>
-----------------------------------
+# <h1 id="Members"> Members </h1>
+
 
 - venjee
 - Raygee
 
 
-<h1 id="平台支持"> 平台支持 </h1>
-----------------------------------
+# <h1 id="平台支持"> 平台支持 </h1>
+
 
 Android版本已发布，设备出厂预装
 
 
-<h1 id="开发方式和架构内容"> 开发方式和架构内容 </h1>
-----------------------------------
+# <h1 id="开发方式和架构内容"> 开发方式和架构内容 </h1>
 
 1. Android开发
  - 搭配BSP接口实现多种音效和配置
@@ -63,8 +62,7 @@ Android版本已发布，设备出厂预装
 6. 使用Lint, FindBugs, monkey test做app代码和quanlity检查
 
 
-<h1 id="遇到的问题"> 遇到的问题 </h1>
-----------------------------------
+# <h1 id="遇到的问题"> 遇到的问题 </h1>
 
 - Visualizer issue（详见[档案Visulizer......](F:\Manager\AudioWizard\Datum)）
     - Visualizer 釋放問題，底層執行緒問題造成AW crash. google defect issue.
@@ -98,8 +96,7 @@ Android版本已发布，设备出厂预装
       详见档案整理：F:\Manager\AudioWizard\Datum\QuickSettings
       
 
-<h1 id="项目优化"> 项目优化 </h1>
-----------------------------------
+# <h1 id="项目优化"> 项目优化 </h1>
 
 - SurfaceView重写波形图View，加速波形图和main UI的渲染效率
     
@@ -113,8 +110,7 @@ Android版本已发布，设备出厂预装
 
 
 
-<h1 id="其他"> 其他 </h1>
-----------------------------------
+# <h1 id="其他"> 其他 </h1>
 
 <h2 id="项目档案"> 项目档案 </h2>
 
@@ -124,8 +120,7 @@ Android版本已发布，设备出厂预装
 
 
 
-<h1 id="总结"> 总结 </h1>
-----------------------------------
+# <h1 id="总结"> 总结 </h1>
 
 - AudioWizard 分View 和 Service两支app
   
