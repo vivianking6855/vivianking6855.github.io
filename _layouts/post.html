@@ -10,7 +10,12 @@ layout: default
 		  </div>
 		</div>
 	{% endif %}
-    <div class="col-md-9" role="main">
+	{% if page.lefttrees %}
+	<div class="col-md-9" role="main">
+	{% endif %}
+	{% if !page.lefttrees %}
+	<div class="col-md-12" role="main">
+	{% endif %}
       <div class="panel docs-content">
         <div class="wrapper">
             <header class="post-header">
