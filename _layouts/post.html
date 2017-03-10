@@ -9,11 +9,8 @@ layout: default
 			{% include lefttree.html %} 
 		  </div>
 		</div>
-	{% endif %}
-	{% if page.lefttrees %}
 	<div class="col-md-9" role="main">
-	{% endif %}
-	{% if !page.lefttrees %}
+	{% else %}
 	<div class="col-md-12" role="main">
 	{% endif %}
       <div class="panel docs-content">
