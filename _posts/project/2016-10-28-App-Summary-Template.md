@@ -1,9 +1,10 @@
 ---
 layout: post
-title: 2016-10-28 App Summary Template
+title: App Summary Template
 date: 2016-10-28
 excerpt: "Project 项目总结模板"
 project: true
+categories: Projects
 tags: [Projects]
 comments: true
 ---

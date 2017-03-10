@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 2016-12-01 代码规范和优化
+title: 代码规范和优化
 date: 2016-12-01
 excerpt: "代码规范和优化"
-project: true
+categories: Projects
 tags: [Projects]
 comments: true
 ---

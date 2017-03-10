@@ -1,9 +1,10 @@
 ---
 layout: post
-title: 2016-10-28 AudioWizard
+title: AudioWizard
 date: 2016-10-28
 excerpt: "AudioWizard项目总结"
 project: true
+categories: Projects
 tags: [Projects]
 comments: true
 ---

@@ -1,9 +1,10 @@
 ---
 layout: post
-title: 2015-10-01 Flashlight
+title: Flashlight
 date: 2015-10-01
 excerpt: "Flashlight项目总结"
 project: true
+categories: Projects
 tags: [Projects]
 comments: true
 ---

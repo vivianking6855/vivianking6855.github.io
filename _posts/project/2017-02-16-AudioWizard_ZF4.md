@@ -1,24 +1,14 @@
 ---
 layout: post
-title: 2017-2-16 AudioWizard_ZF4
+title: AudioWizard_ZF4
 date: 2017-2-16
 excerpt: "AudioWizard_ZF4项目总结"
 project: true
+categories: Projects
 tags: [Projects]
 comments: true
 ---
 
-
-# 目录
-- [项目内容](#项目内容)  
-- [Members](#Members) 
-- [平台支持](#平台支持)
-- [开发方式和架构内容](#开发方式和架构内容)
-- [遇到的问题](#遇到的问题)
-- [项目优化](#项目优化)
-- [其他](#其他)
-    - [项目档案](#项目档案)
-- [总结](#总结)
 
 ---
 <h1 id="项目内容"> 项目内容 </h1>

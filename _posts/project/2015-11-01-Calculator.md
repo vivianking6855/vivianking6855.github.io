@@ -1,9 +1,10 @@
 ---
 layout: post
-title: 2015-11-01 Caculator
+title: Caculator
 date: 2015-11-01
 excerpt: "Caculator项目总结"
 project: true
+categories: Projects
 tags: [Projects]
 comments: true
 ---
