@@ -14,7 +14,6 @@ comments: true
 
 
 # 前言
----------
 
 对于构建一流外观和交互的现代应用，有三个非常重要的工具：
 
@@ -22,8 +21,9 @@ comments: true
 - AppCompat
 - 所有 Android Support Library
 
-# Material Design 开发利器 ： Android Design Support Library
-------------
+# Android Design Support Library
+
+Material Design 开发利器 ： Android Design Support Library
 
 官方在Android Support Library 22.2.0中增加了Design Support Library用来在低版本中支持Material Design。
 
@@ -40,7 +40,6 @@ compile 'com.android.support:design:22.2.0'
 并且，这些新的 widget 在 Android Studio Layout 编辑器中也是可用的（在 CustomView 中找到他们）。
 
 # [ANDROID SUPPORT兼容包详解 ](http://stormzhang.com/android/2015/03/29/android-support-library/)
-------------
 
 Android一些SDK比较分裂，为此google官方提供了Android Support Library package 系列的包来保证高版本sdk开发的向下兼容性。
 
@@ -60,8 +59,7 @@ Android一些SDK比较分裂，为此google官方提供了Android Support Librar
     - 为了API level 13(即Android 3.2)及更高版本。
     - 一般不常用，平板开发中能用到。
 
-<br>
-<br>
+<br/>
 
 
 > [DesignSupportLibraryDemo](https://github.com/xuyisheng/DesignSupportLibraryDemo)

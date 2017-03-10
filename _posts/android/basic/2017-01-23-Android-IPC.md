@@ -14,13 +14,11 @@ comments: true
 
 
 # 一、IPC含义
------------
 
 IPC Inter-Process Communication.含义为进程间通信或者跨进程通信，是指两个进程之间进行数据交换的过程。
 
 
 # 二、Android中的多进程模式
-------------------------
 
 在Android中使用多进程只有一种方法：给四大组件（Activity，Service，Receiver,ContentProvider)在AndroidMenifest中制定android:process属性
 
@@ -33,7 +31,6 @@ IPC Inter-Process Communication.含义为进程间通信或者跨进程通信，
 
 
 # 三、IPC的基础概念
------------------
 
 - 当通过Intent和和Binder传输数据时，需要用到Serializable和Parcelable把数据序列化
 - Binder
@@ -44,7 +41,6 @@ IPC Inter-Process Communication.含义为进程间通信或者跨进程通信，
     - Binder主要用在Service中，包括AIDL和Messenger（底层其实是AIDL)
 
 # 四、Android中的IPC方式
-----------------------
 
 跨进程通信方式有很多：Intent传递Bundle数据，共享文件，Binder，Intent传递Bundle数据,ContentProvider,Socket.
 
@@ -402,7 +398,6 @@ ContentProvider天生支持跨进程数据传递，是Android中提供的专门�
 Socket网络通讯也可以实现数据传递
 
 # 五、Binder连接池
--------------------
 
 大量的业务模块都需要使用AIDL来进行进程通讯的时候，不可能每个业务模块创建一个Service。
 
@@ -423,7 +418,6 @@ Binder连接池的主要作用就是将每个业务模块的Binder请求统一�
 核心Code
 
 # 六、选择合适的IPC方式
-----------------------
 
 ![](http://i.imgur.com/x7EfgS9.jpg)
 

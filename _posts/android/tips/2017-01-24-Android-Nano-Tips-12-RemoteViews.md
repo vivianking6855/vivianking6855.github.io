@@ -12,9 +12,7 @@ comments: true
 {:toc}
 
 
-
 # 一、 RemoteViews含义
--------------------
 
 RemoteViews:远程View
 
@@ -26,7 +24,6 @@ RemoteViews:远程View
 
 
 # 二、 RemoteViews的基础概念
---------------------------
 
 - PendingIntent
     - 待定，即将发生的Intent
@@ -38,7 +35,6 @@ RemoteViews:远程View
         - 发送广播
 
 # 三、 RemoteViews内部机制
---------------------
 
 - 应用中每调一次set方法，RemoteViews中就会添加一个对应的Action对象
 - 用NotificationManager和AppWidgetManager来提交我们的更新时，Action对象就会传输到远程进程并在远程进程中依次执行
@@ -48,7 +44,6 @@ RemoteViews:远程View
 
 
 # 四、 RemoteViews实践
--------------------
 
 模拟的通知栏效果并实现跨进程的UI更新,逻辑如下：
 

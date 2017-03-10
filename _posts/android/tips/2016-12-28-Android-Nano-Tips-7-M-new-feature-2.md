@@ -12,9 +12,7 @@ comments: true
 {:toc}
 
 
-
 # 1. CoordinatorLayout ：super-powered FrameLayout
-----------------
 
 CoodinatorLayout 从名字上可以看就是帮我们协调子View的，一个通信的桥梁，连接不同的view。
 
@@ -134,7 +132,6 @@ Dependency Change -> 触发Behavior onDependentViewChanged -> Child Change
 
 
 # 2. 玩转AppBarLayout
----------------------
 
 AppBarLayout继承自LinearLayout，布局方向为垂直方向。所以你可以把它当成垂直布局的LinearLayout来使用。
 

@@ -13,22 +13,18 @@ comments: true
 
 
 # 1. ExpandableListView的使用详解
--------------------
 
 [ExpandableListView的使用详解](http://blog.csdn.net/jamy2015/article/details/51131583)
 
 # 2. Android状态栏微技巧，带你真正理解沉浸式模式
---------------------------------------------
 
 [沉浸式模式](http://blog.csdn.net/sinyu890807/article/details/51763825)
 
 # 3. Android drawable
-----------------------
 
 [你所不知道的drawable的那些细节](http://blog.csdn.net/sinyu890807/article/details/50727753)
 
 # 4. Annotations
-----------------
 
 [Java注解Annotation基础](http://www.open-open.com/lib/view/open1423558996951.html)：注解是一种元数据，起到了”描述，配置“的作用。
 
@@ -65,7 +61,6 @@ comments: true
 类似的库还有非常多，大多这些的库都是为了自动帮我们完成日常编码中需要重复编写的部分。
 
 当然并不是说上述框架就一定没有使用反射了，其实上述其中部分框架内部还是有部分实现是依赖于反射的，但是很少而且一般都做了缓存的处理。所以相对来说，效率影响很小。
-
 
 
 <br>

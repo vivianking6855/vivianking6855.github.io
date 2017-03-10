@@ -14,7 +14,6 @@ comments: true
 
 
 # Android Message
------------------
 
 为什么我们在Android程序中需要多线程？
 
@@ -51,7 +50,6 @@ comments: true
 这时就需要用到Android Message机制。
 
 # Message
-----------
 
 介绍Android Message机制前，我们先了解下[Message](https://android.googlesource.com/platform/frameworks/base/+/android-cts-7.1_r2/core/java/android/os/Message.java)。Message是线程之间传递信息的载体，包含了对消息的描述和任意的数据对象。
 
@@ -64,7 +62,6 @@ comments: true
 
 
 # 消息机制
-----------
 
 Android的Message机制主要是指Handler的运行机制已经Handler所附带的MessageQueue和Looper的工作过程。
 
@@ -108,7 +105,6 @@ Android的消息机制三大模块：[Handler,  Looper,  MessageQueue](https://a
     
 - Handler的工作主要包含消息的发送和接收过程
 
-
 ## 流程
 
 a)	Handler发送消息的过程仅仅是向消息队列插入了一条消息
@@ -118,8 +114,7 @@ b)	MessageQueue的next方法就会返回这条消息给Looper
 c)	Looper收到消息后就开始处理了，最终消息有Looper交由Hander处理
     即Handler的dispatchMessage方法会被调用。这是Handler就进入了处理消息的阶段。
 
-子线程能够通过消息机制更新主线程UI的关键点：
-子线程用主线程的Handler发送消息给主线程，更新UI
+子线程能够通过消息机制更新主线程UI的关键点：子线程用主线程的Handler发送消息给主线程，更新UI
 
 ## 1.	Message Queue
 

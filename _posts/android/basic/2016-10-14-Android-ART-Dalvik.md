@@ -8,9 +8,11 @@ tags: [Android 基础]
 comments: true
 ---
 
+* content
+{:toc}
+
 
 # 什么是Dalvik
--------------
 
 Dalvik是Google公司自己设计用于Android平台的Java虚拟机。
 
@@ -23,7 +25,6 @@ Dalvik虚拟机是Google等厂商合作开发的Android移动设备平台的核�
 独立的进程可以防止在虚拟机崩溃的时候所有程序都被关闭。
 
 # 什么是ART
-------------
 
 Android操作系统已经成熟，Google的Android团队开始将注意力转向一些底层组件，其中之一是负责应用程序运行的Dalvik运行时。
 

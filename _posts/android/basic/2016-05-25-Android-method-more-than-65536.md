@@ -9,7 +9,6 @@ comments: true
 ---
 
 
-
 介绍如何解决Android 应用方法数不能超过65K的问题
 
 google官网的做法可参看 [Configure Apps with Over 64K Methods](https://developer.android.com/studio/build/multidex.html)

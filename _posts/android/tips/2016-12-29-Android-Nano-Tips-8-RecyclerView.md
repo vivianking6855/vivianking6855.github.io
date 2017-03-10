@@ -13,7 +13,6 @@ comments: true
 
 
 # 一、 RecyclerView
-----------------------
 
 RecylerView相对于ListView的优点：
 
@@ -59,7 +58,6 @@ RecylerView相对于ListView的优点：
 
 
 # 二、 [DiffUtil](http://blog.csdn.net/zxt0601/article/details/52562770) support-v7:24.2.0的新工具类
--------------------------------
 
 DiffUtil可以提高RecyclerView的差异化效率
 
@@ -71,7 +69,6 @@ DiffUtil可以提高RecyclerView的差异化效率
 
 
 # 三、 [RecyclerViewUtils](https://github.com/captain-miao/RecyclerViewUtils)
----------------------
 
 refresh,load more,sticky header,expand,index
 

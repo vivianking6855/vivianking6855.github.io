@@ -14,7 +14,6 @@ comments: true
 
 
 # 基础概念
------------
 
 线程的“同步”不是指平常所说的两件事情同时进行，是使多个线程之间协调工作。
 
@@ -28,7 +27,6 @@ comments: true
 2.	多线程简化开发库 java.util.concurrent
 
 # Synchronized关键字
---------------------
 
 - synchronized 是Java提供的用于实现同步的关键字
 - synchronized关键字用来取得一个对象的同步锁
@@ -185,7 +183,6 @@ volatile用来确保多线访问变量的一致性。工作原理：
 - 当要访问的变量已在synchronized代码块中，或者为常量时，不必使用。
 
 # concurrent包
---------------
 
 虽然synchronized已经足够强大，但想要用好也挺不容易。
 
@@ -231,10 +228,9 @@ volatile用来确保多线访问变量的一致性。工作原理：
 
 [核心Code](https://github.com/vivianking6855/android-advanced/blob/master/ThreadSync/app/src/main/java/com/vv/threadsync/current)
 
-# 实践 生产者-消费者模型
----------------------
+# 实践
 
-Concurrent经典的例子：生产者和消费者的问题。
+生产者-消费者模型。 Concurrent经典的例子：生产者和消费者的问题。
 
 1.	生产者不断的生产馒头，放入一个篮子里，而消费者不断的从篮子里拿馒头吃。
 

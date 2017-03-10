@@ -10,7 +10,6 @@ comments: true
 
 
 # 简介
---------
 
 内容包括三部分：
 
@@ -28,7 +27,6 @@ comments: true
     - ListView和GridView由于要加载大量的自视图，用户快速滑动时就容易出现卡顿现
 
 # 一、 Bitmap的高效加载
---------------------
 
 - 如何加载一个图片
 
@@ -86,7 +84,6 @@ comments: true
     }
     
 # 二、 Android中的缓存策略
------------------------
 
 缓存策略在Android中有着广泛的使用场景，尤其是在图片加载这个场景下，缓存策略就变得更为重要。
 
@@ -234,8 +231,7 @@ Android 3.1提供的一个缓存类。是一个泛型类，内部采用一个Lin
             ......
         }
         
-# ImageLoader实践
------------------
+# 三、 ImageLoader实践
 
 一个优秀的ImageLoader应该具备：
 
@@ -311,8 +307,7 @@ ImageLoader需要正确的处理这些特殊情况。
         }
     };
 
-# ImageLoader的使用
------------------
+# 四、 ImageLoader的使用
 
 照片墙
 
@@ -369,8 +364,7 @@ ImageLoader需要正确的处理这些特殊情况。
 [Github Code](https://github.com/vivianking6855/android-advanced/tree/master/ImageCache/app/src/main/java/com/vv/imagecache)
 
 
-# 开源库
---------
+# 五、 开源库
 
 图片缓存已经有很多的开源库：([详情介绍点击这里，搜索ImageLoader](https://github.com/Trinea/android-open-project)）
 
