@@ -3,15 +3,25 @@ layout: post
 title: AudioWizard_ZF4
 date: 2017-2-16
 excerpt: "AudioWizard_ZF4项目总结"
-project: true
 categories: Projects
 tags: [Projects]
 comments: true
 ---
 
+# 目录
+- [项目内容](#项目内容)  
+- [Members](#Members)  
+- [平台支持](#平台支持)
+- [开发方式和架构内容](#开发方式和架构内容)
+- [遇到的问题](#遇到的问题)
+- [项目优化](#项目优化)
+- [其他](#其他)
+    - [项目档案](#项目档案)
+- [总结](#总结)
 
----
+
 <h1 id="项目内容"> 项目内容 </h1>
+----------------------------------
 
 AudioWizard 音频向导。 
 
@@ -23,18 +33,21 @@ AudioWizard 音频向导。
 - 听力补偿
 - DTS音场效果
 
----
+
 <h1 id="Members"> Members </h1>
+----------------------------------
+
 - venjee
 - Raygee
 
----
+
 <h1 id="平台支持"> 平台支持 </h1>
+----------------------------------
 
 Android版本已发布，设备出厂预装
 
----
 <h1 id="开发方式和架构内容"> 开发方式和架构内容 </h1>
+----------------------------------
 
 1. Android开发
  - 搭配BSP接口实现多种音效和配置
@@ -46,8 +59,9 @@ Android版本已发布，设备出厂预装
 6. 使用Lint, FindBugs, monkey test做app代码和quanlity检查
 
 
----
+
 <h1 id="遇到的问题"> 遇到的问题 </h1>
+----------------------------------
 
 - DTS database 有图版本size过大 > 8M
 
@@ -56,12 +70,13 @@ Android版本已发布，设备出厂预装
     - 请DTS提供无icon版本。
     - search “DISTINCT Type,SubType” from database,  22 items list as below. app自行预载配件对应icon。
 
----
+
 <h1 id="项目优化"> 项目优化 </h1>
+----------------------------------
 
 
----
 <h1 id="其他"> 其他 </h1>
+----------------------------------
 
 <h2 id="项目档案"> 项目档案 </h2>
 
@@ -70,8 +85,8 @@ Android版本已发布，设备出厂预装
 - 项目档案：[F:\Manager\AudioWizard](F:\Manager\AudioWizard)
 
 
----
 <h1 id="总结"> 总结 </h1>
+----------------------------------
 
 - AudioWizard 分View 和 Service两支app
   
