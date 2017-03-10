@@ -1,18 +1,26 @@
 ---
 layout: post
-title: 2017-1-23 IPC - Inter-Process Communication 进程间通信
+title: IPC - Inter-Process Communication 进程间通信
 date: 2017-1-23
 excerpt: "IPC 进程间通信"
+categories: Android
 tags: [Android 基础]
 comments: true
 ---
 
-## 一、IPC含义
+* content
+{:toc}
+
+
+
+# 一、IPC含义
+-----------
 
 IPC Inter-Process Communication.含义为进程间通信或者跨进程通信，是指两个进程之间进行数据交换的过程。
 
 
-## 二、Android中的多进程模式
+# 二、Android中的多进程模式
+------------------------
 
 在Android中使用多进程只有一种方法：给四大组件（Activity，Service，Receiver,ContentProvider)在AndroidMenifest中制定android:process属性
 
@@ -24,7 +32,8 @@ IPC Inter-Process Communication.含义为进程间通信或者跨进程通信，
 - Application会多次创建
 
 
-## 三、IPC的基础概念
+# 三、IPC的基础概念
+-----------------
 
 - 当通过Intent和和Binder传输数据时，需要用到Serializable和Parcelable把数据序列化
 - Binder
@@ -34,19 +43,20 @@ IPC Inter-Process Communication.含义为进程间通信或者跨进程通信，
     - 从Android应用层来说，Binder是客户端和服务器端进行通信的媒介
     - Binder主要用在Service中，包括AIDL和Messenger（底层其实是AIDL)
 
-## 四、Android中的IPC方式
+# 四、Android中的IPC方式
+----------------------
 
 跨进程通信方式有很多：Intent传递Bundle数据，共享文件，Binder，Intent传递Bundle数据,ContentProvider,Socket.
 
 下面一一来看下每个方式。
 
-### 1. Intent附加extras传递信息
+## 1. Intent附加extras传递信息
 
 三大组件（Activity，Service，Receiver)都支持Intent传递Bundle数据（Bundle有实现Parcelable接口）
 
 Intent 方式较为简单，暂不包含在示例中
 
-### 2. 通过共享文件的方式共享数据
+## 2. 通过共享文件的方式共享数据
 
 - file文件
     - android基于Linux对文件并发读写没有限制
@@ -59,7 +69,7 @@ Intent 方式较为简单，暂不包含在示例中
 
 file文件在并发读写时会有问题，而SharedPreferences多进模式下读写不可靠，暂不包含在示例中
 
-### 3. Messenger - 轻量级的IPC方案
+## 3. Messenger - 轻量级的IPC方案
 
 Messenger：信使，可以在不同进程中传递Message对象。是一种轻量级的IPC方案。底层实现也是AIDL，不过系统做了封装。
 
@@ -230,7 +240,7 @@ Messenger是轻量级的进程间通信，以串行方式处理客户端发来�
 
 主要为了传递消息，如果要跨进程调用服务器端的方法，可以使用AIDL来实现跨进程的方法调用。
 
-### 4. AIDL - 最常用的进程间通讯方式
+## 4. AIDL - 最常用的进程间通讯方式
 
 Messenger是串行的方式处理消息，如果大量的消息同时发送的情景就不太合适了。但是我们可以使用AIDL来实现跨进程的方法调用。
 
@@ -379,7 +389,7 @@ AIDL进行进程间通讯的流程
 
 [github Code](https://github.com/vivianking6855/android-advanced)
 
-### 5. ContentProvider 
+## 5. ContentProvider 
 
 ContentProvider天生支持跨进程数据传递，是Android中提供的专门用于不同应用间进行数据共享的方式。
 
@@ -387,11 +397,12 @@ ContentProvider天生支持跨进程数据传递，是Android中提供的专门�
 
 [Android之ContentProvider详解](http://blog.csdn.net/x605940745/article/details/16118939)
 
-### 6. Socket
+## 6. Socket
 
 Socket网络通讯也可以实现数据传递
 
-## 五、Binder连接池
+# 五、Binder连接池
+-------------------
 
 大量的业务模块都需要使用AIDL来进行进程通讯的时候，不可能每个业务模块创建一个Service。
 
@@ -411,7 +422,8 @@ Binder连接池的主要作用就是将每个业务模块的Binder请求统一�
 
 核心Code
 
-## 六、选择合适的IPC方式
+# 六、选择合适的IPC方式
+----------------------
 
 ![](http://i.imgur.com/x7EfgS9.jpg)
 

@@ -1,14 +1,14 @@
 ---
 layout: post
-title: 2016-09-21 如何解决Android应用方法数不能超过65K的问题
+title: 如何解决Android应用方法数不能超过65K的问题
 date: 2016-09-21
 excerpt: "如何解决Android应用方法数不能超过65K的问题"
+categories: Android
 tags: [Android 基础]
 comments: true
 ---
 
 
-## Introduction
 
 介绍如何解决Android 应用方法数不能超过65K的问题
 

@@ -1,15 +1,20 @@
 ---
 layout: post
-title: 2017-2-15 Android的线程和线程池
+title: Android的线程和线程池
 date: 2017-2-15
 excerpt: "Android的线程和线程池"
+categories: Android
 tags: [Android 基础]
 comments: true
 ---
 
-# Android的线程和线程池
+* content
+{:toc}
 
-## 一、Android的线程
+
+
+# 一、Android的线程
+-----------------
 
 线程在Android中是一个很重要的概念。Android沿用了Java的线程模型，线程也分为主线程（UI线程）和子线程。
 
@@ -23,7 +28,7 @@ B.	子线程：往往用于执行耗时的操作
 
 例如一样网络数据加载，I/O操作，DB操作等
 
-### Android中线程形态
+## Android中线程形态
 
 Android中扮演线程角色的有：
 
@@ -42,7 +47,7 @@ Android中扮演线程角色的有：
 
 在操作系统中，线程是操作系统调度的最小单元。但是线程是一种受限的系统资源，不可能无限地产生，并且线程的创建和销毁都会有相应的开销。
 
-### 线程实践
+## 线程实践
 
 1.	AsyncTask 模拟下载文件。注意事项
     - AsyncTask的execute必须在UI线程调用
@@ -99,7 +104,8 @@ Android中扮演线程角色的有：
         startService(intent);
     }
 
-## 二、线程池
+# 二、线程池
+------------
 
 在一个进程中频繁地创建和销毁线程，不是高效的做法。正确的做法是采用线程池。一个线程池中会缓存一定数量的线程，通过线程池可以避免因为频繁创建和销毁线程所带来的系统开销。
 
@@ -107,13 +113,13 @@ Android中扮演线程角色的有：
 
 当T1 + T3 远大于 T2时，采用多线程技术可以显著减少处理器单元的闲置时间，增加处理器单元的吞吐能力。
 
-### 线程池的优点
+## 线程池的优点
 
 1. 重用线程池中的线程，避免因线程的创建和销毁所带来的性能开销。
 2. 能有效的控制线程的最大并发数，避免大量的线程之间因互相抢占系统资源而导致的阻塞现象
 3. 能够对线程进行简单的管理，并提供定时执行以及制定间隔循环执行等功能
 
-### ThreadPoolExecutor
+## ThreadPoolExecutor
 
 Android中的线程池概念来源于Java的Executor，Executor是一个接口，真正的线程池的实现为ThreadPoolExecutor。
 
@@ -137,7 +143,7 @@ Android中的线程池概念来源于Java的Executor，Executor是一个接口�
     - 如果2中无法将任务插入到任务队列，往往是由于任务队列已满，这个时候如果线程数量未达到线程池规定的最大值，那么会立刻启动一个非核心线程来执行任务
     - 如果3中线程数量已经达到线程池规定的最大值，那么就拒绝执行此任务。ThreadPoolExcecutor会调用RejectedExecutionHandler来通知调用者
 
-### [AsynTask中的线程池配置](https://android.googlesource.com/platform/frameworks/base/+/android-cts-7.1_r2/core/java/android/os/AsyncTask.java)
+## [AsynTask中的线程池配置](https://android.googlesource.com/platform/frameworks/base/+/android-cts-7.1_r2/core/java/android/os/AsyncTask.java)
 
 - 核心线程数： [2，4]
 - 线程池的最大线程数：CPU核心数的2倍 + 1
@@ -172,7 +178,7 @@ Android中的线程池概念来源于Java的Executor，Executor是一个接口�
                 THREAD_POOL_EXECUTOR = threadPoolExecutor;
         }
         
-### 四类常见的线程池
+## 四类常见的线程池
 
 Android中最常见的四类具有不同功能特性的线程池。他们都是直接或间接通过配置ThreadPoolExecutor来实现自己的功能特性。
 
@@ -226,7 +232,7 @@ Android中最常见的四类具有不同功能特性的线程池。他们都是�
                                             new LinkedBlockingQueue<Runnable>()));
             }
 
-### 线程池实践
+## 线程池实践
 
     private void initThreadPool() {
         fixedThreadPool = Executors.newFixedThreadPool(4);

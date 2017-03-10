@@ -1,13 +1,20 @@
 ---
 layout: post
-title: 2017-2-16 线程同步
+title: 线程同步
 date: 2017-2-16
 excerpt: "线程同步"
+categories: Android
 tags: [Android 基础]
 comments: true
 ---
 
-## 基础概念
+* content
+{:toc}
+
+
+
+# 基础概念
+-----------
 
 线程的“同步”不是指平常所说的两件事情同时进行，是使多个线程之间协调工作。
 
@@ -20,24 +27,25 @@ comments: true
 1.	最基础的Synchronized关键字
 2.	多线程简化开发库 java.util.concurrent
 
-## Synchronized关键字
+# Synchronized关键字
+--------------------
 
 - synchronized 是Java提供的用于实现同步的关键字
 - synchronized关键字用来取得一个对象的同步锁
 - synchronized 可以用来修饰的方法，代码块和对象/类
 
-### 同步锁的原理
+## 同步锁的原理
 
 Java中每个对象都仅有一个内置同步锁。有线程持有锁时，其他任何线程都不能访问被锁住的部分，直到该线程释放同步锁
 
-### synchronized的使用
+## synchronized的使用
 
 1.	取得对象的同步锁 ：synchronized(object)
 2.	Synchronized修饰方法（同步方法）：
     - synchronized void show() 相当于synchronized(this)的缩写
     - static synchronized void show() 相当于  synchronized(当前类名.class) 
 
-### synchronized之协调和调度
+## synchronized之协调和调度
 
 线程的同步锁对象可以调用notify、notifyAll、wait 这三个方法来实现线程间协调和调度
 
@@ -50,7 +58,7 @@ Java中每个对象都仅有一个内置同步锁。有线程持有锁时，其�
 - notifyAll()
     - 唤醒在此同步锁上等待的所有线程。同样只有当前线程放弃此同步锁后，才可以执行被唤醒的线程。
 
-### synchronized实践
+## synchronized实践
 
 1.实现数字的正确输出
   
@@ -159,7 +167,7 @@ Java中每个对象都仅有一个内置同步锁。有线程持有锁时，其�
     
     }
 
-### volatile 实现多线访问变量的一致性
+## volatile 实现多线访问变量的一致性
 
 在当前的Java内存模型下，线程可以把变量保存在本地内存（比如机器的寄存器）中，而不是直接在主存中进行读写。
 
@@ -176,7 +184,8 @@ volatile用来确保多线访问变量的一致性。工作原理：
 - 在两个或者更多的线程访问的成员变量上使用volatile。
 - 当要访问的变量已在synchronized代码块中，或者为常量时，不必使用。
 
-## concurrent包
+# concurrent包
+--------------
 
 虽然synchronized已经足够强大，但想要用好也挺不容易。
 
@@ -222,7 +231,8 @@ volatile用来确保多线访问变量的一致性。工作原理：
 
 [核心Code](https://github.com/vivianking6855/android-advanced/blob/master/ThreadSync/app/src/main/java/com/vv/threadsync/current)
 
-## 实践 生产者-消费者模型
+# 实践 生产者-消费者模型
+---------------------
 
 Concurrent经典的例子：生产者和消费者的问题。
 

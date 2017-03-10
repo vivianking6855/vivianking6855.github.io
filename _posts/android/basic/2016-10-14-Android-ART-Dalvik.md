@@ -1,15 +1,16 @@
 ---
 layout: post
-title: 2016-10-14 Android 之 Dalvik和ART
+title: Android 之 Dalvik和ART
 date: 2016-10-14
 excerpt: "Android 之 Dalvik和ART"
+categories: Android
 tags: [Android 基础]
 comments: true
 ---
 
-## Dalvik和ART的区别
 
-### 什么是Dalvik
+# 什么是Dalvik
+-------------
 
 Dalvik是Google公司自己设计用于Android平台的Java虚拟机。
 
@@ -21,7 +22,8 @@ Dalvik虚拟机是Google等厂商合作开发的Android移动设备平台的核�
 
 独立的进程可以防止在虚拟机崩溃的时候所有程序都被关闭。
 
-### 什么是ART
+# 什么是ART
+------------
 
 Android操作系统已经成熟，Google的Android团队开始将注意力转向一些底层组件，其中之一是负责应用程序运行的Dalvik运行时。
 
@@ -36,14 +38,14 @@ ART则完全改变了这套做法，在应用安装时就预编译字节码到�
 在移除解释代码这一过程后，应用程序执行将更有效率，启动更快。
 
  
-### ART优点
+## ART优点
 
 1. 系统性能的显著提升。
 2. 应用启动更快、运行更快、体验更流畅、触感反馈更及时。
 3. 更长的电池续航能力。
 4. 支持更低的硬件。
 
-### ART缺点
+## ART缺点
 
 1. 更大的存储空间占用，可能会增加10%-20%
 2. 更长的应用安装时间。

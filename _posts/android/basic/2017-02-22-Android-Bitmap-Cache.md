@@ -1,14 +1,16 @@
 ---
 layout: post
-title: 2017-2-22 Android Bitmap的加载和Cache
+title: Android Bitmap的加载和Cache
 date: 2017-2-22
 excerpt: "Android Bitmap的加载和Cache"
+categories: Android
 tags: [Android 基础]
 comments: true
 ---
 
 
-## 简介
+# 简介
+--------
 
 内容包括三部分：
 
@@ -25,7 +27,8 @@ comments: true
 - 如何优化列表卡顿现象
     - ListView和GridView由于要加载大量的自视图，用户快速滑动时就容易出现卡顿现
 
-## 一、 Bitmap的高效加载
+# 一、 Bitmap的高效加载
+--------------------
 
 - 如何加载一个图片
 
@@ -82,7 +85,8 @@ comments: true
         return inSampleSize;
     }
     
-## 二、 Android中的缓存策略
+# 二、 Android中的缓存策略
+-----------------------
 
 缓存策略在Android中有着广泛的使用场景，尤其是在图片加载这个场景下，缓存策略就变得更为重要。
 
@@ -101,7 +105,7 @@ comments: true
     - LruCache用于实现内存缓存
     - DiskLruCache则用于存储设备缓存
 
-### LruCache
+## LruCache
 
 Android 3.1提供的一个缓存类。是一个泛型类，内部采用一个LinkedHashMap以强引用的方式存储外界的缓存对象。
 
@@ -133,13 +137,13 @@ Android 3.1提供的一个缓存类。是一个泛型类，内部采用一个Lin
         return mMemoryCache.get(key);
     }
     
-### DiskLruCache
+## DiskLruCache
 
 - 用于实现存储设备缓存，即磁盘缓存。
 - 通过将缓存对象写入文件系统从而实现缓存的效果。
 - Android官方文档的推荐，但它不属于Android的一部分，[下载地址](https://android.googlesource.com/platform/libcore/+/android-4.1.1_r1/luni/src/main/java/libcore/io/DiskLruCache.java)
 
-#### 1. 创建核心Code
+### 1. 创建核心Code
 
         private static final long DISK_CACHE_SIZE = 1024 * 1024 * 50;
         
@@ -165,7 +169,7 @@ Android 3.1提供的一个缓存类。是一个泛型类，内部采用一个Lin
 - 第三个参数表示单个节点所对应的数据的个数，一般设为1
 - 第四个参数表述缓存的总大小，例如50M
 
-#### 2. DiskLruCache的缓存添加
+### 2. DiskLruCache的缓存添加
 
 - 缓存添加时通过Editor完成的，Editor表示一个缓存对象的编辑对象。
 - 以图片缓存举例
@@ -211,7 +215,7 @@ Android 3.1提供的一个缓存类。是一个泛型类，内部采用一个Lin
             mDiskLruCache.flush();
         }
 
-#### 3. DiskLruCache的缓存查找
+### 3. DiskLruCache的缓存查找
 
 - 先从url获取key
 - 通过get方法得到Snapshot对象，接着可以得到缓存的文件输入流
@@ -230,7 +234,8 @@ Android 3.1提供的一个缓存类。是一个泛型类，内部采用一个Lin
             ......
         }
         
-## ImageLoader实践
+# ImageLoader实践
+-----------------
 
 一个优秀的ImageLoader应该具备：
 
@@ -306,7 +311,8 @@ ImageLoader需要正确的处理这些特殊情况。
         }
     };
 
-## ImageLoader的使用
+# ImageLoader的使用
+-----------------
 
 照片墙
 
@@ -363,7 +369,8 @@ ImageLoader需要正确的处理这些特殊情况。
 [Github Code](https://github.com/vivianking6855/android-advanced/tree/master/ImageCache/app/src/main/java/com/vv/imagecache)
 
 
-## 开源库
+# 开源库
+--------
 
 图片缓存已经有很多的开源库：([详情介绍点击这里，搜索ImageLoader](https://github.com/Trinea/android-open-project)）
 
