@@ -14,7 +14,6 @@ comments: true
 
 
 # 内存示意图
-------------
 
 ![](http://i.imgur.com/2ylcYWn.png)
 
@@ -44,7 +43,6 @@ comments: true
   - C/C++申请的内存空间在native heap中，而java申请的内存空间则在dalvik heap中。
 
 # Android的 java程序为什么容易出现OOM
--------------------
 
    - 这个是因为Android系统对dalvik的vm heapsize作了硬性限制，当java进程申请的java空间超过阈值时，就会抛出OOM异常。
     
@@ -55,7 +53,6 @@ comments: true
         也就是说，在RAM充足的情况下，也可能发生OOM。
 
 # 内存泄露
---------------
 
     首先看下dalvik的Garbage Collection，GC会选择回收没有直接或者间接引用到GC Roots的点。如下图蓝色部分。
     
@@ -248,7 +245,6 @@ comments: true
         
 
 # 内存检测工具
---------------
 
 - MAT
 - [leak-canary git hub](https://github.com/square/leakcanary)

@@ -8,11 +8,16 @@ tags: [ReactNative]
 comments: true
 ---
 
-## 1. npm 安装
+* content
+{:toc}
+
+
+# 1. npm 安装
+
 npm install --save libname (from network)
 npm install --save "E:\Download\react-native-router-master" (from local)
 
-## 2. 设定npm全局模块以及cache的路径
+# 2. 设定npm全局模块以及cache的路径
 
 npm作为一个NodeJS的模块管理。需要先配置npm的全局模块的存放路径以及cache的路径。
 
@@ -32,7 +37,7 @@ prefix=D:\Program Files\nodejs\node_global
 
 cache=D:\Program Files\nodejs\node_cache
 
-## 3. npm升级插件
+# 3. npm升级插件
 
 npm可以很方便的升级各种插件。例如升级express框架命令
 
@@ -41,21 +46,21 @@ npm可以很方便的升级各种插件。例如升级express框架命令
 
 也可以使用安装命令来重装，在这里是等效于update：npm install -g express
 
-### 3.1 升级npm自身
+## 3.1 升级npm自身
 1. 先cd到nodejs安装目录：（例如： D:\Program Files\nodejs）
 
     cd "D:\Program Files\nodejs"
 
 2. npm update npm
 
-### 3.2 npm 常用命令
+## 3.2 npm 常用命令
 1. npm info react-native
 2. npm update -g react-native-cli：更新cli
 3. 查看用户配置文件：过npm config get userconfig
 3. 查看全局配置文件： npm config get globalconfig 
 4. npm config list 列出config
 
-### 3.3 升级react-native
+## 3.3 升级react-native
 
 ### 3.3.1 升级react-native和项目templates文件
 
@@ -69,16 +74,18 @@ npm可以很方便的升级各种插件。例如升级express框架命令
 2. package.json里面update version到最新，然后npm install就全部升级了
 
 
-## 4. 管理npm registries工具：[nrm](https://www.npmjs.com/package/nrm)
+# 4. 管理npm registries工具：[nrm](https://www.npmjs.com/package/nrm)
+
 管理npm registries,工具
 
 安装：npm install -g nrm
 
+# 5. nodejs 升级
 
-## 5. nodejs 升级
 直接从[nodejs官网](https://nodejs.org/en/)下载
 
-## 6. npm 翻墙
+# 6. npm 翻墙
+
 npm翻墙提速
 1. 关闭npm的https
 
@@ -97,7 +104,8 @@ npm翻墙提速
     npm config delete http-proxy
     npm config delete https-proxy
 
-## Tips
+# Tips
+
 1. 删除路径过长文件夹，例如node_modules. 可以用rimraf （安装：npm install rimraf -g)
 2. 官方推荐的yarn(Facebook发布的新的node.js包管理器Yarn替代npm）
  

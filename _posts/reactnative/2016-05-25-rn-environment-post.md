@@ -9,35 +9,34 @@ comments: true
 ---
 
 
-## ReactNative 第1节 必备的学习网站
+# ReactNative 第1节 必备的学习网站
 
-### 官网
+## 官网
 - [ReactNative 官网](https://facebook.github.io/react-native/) 
 - [ReactNative CN](http://reactnative.cn/docs/0.26/getting-started.html)
 - [React 官网](http://facebook.github.io/react/index.html)
 - [React 中文](http://react-china.org/)
 
-### 学习指南
+## 学习指南
 - [React Native 学习指南](https://github.com/reactnativecn/react-native-guide)
 - [React Native CN Github](https://github.com/reactnativecn)
 - [awesome-react-native](https://github.com/jondot/awesome-react-native)
 
-### blog & 视频
+## blog & 视频
 - [江清清的技术专栏](http://www.lcode.org/) 
 - [React Native布局实践 开发京东客户端首页]( http://blog.csdn.net/yuanguozhengjust/article/category/6058018)
 - [手把手教ReactNative](http://reactnative.cn/post/759)
 - [推荐5个值得学习React Native的开源项目](http://www.tuicool.com/articles/BrIvMvE)
 
-### JS lib
+## JS lib
 - [JS库查询](https://cdnjs.com/)
 - [JS COACH](https://js.coach/react-native?search=viewp&page=2)
 
-
-## ReactNative 第2节  环境搭建
+# ReactNative 第2节  环境搭建
 [ReactNative环境搭建](https://github.com/vivianking6855/vivianking6855.github.io/blob/master/_posts/doc/React-Native%20%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.pdf)
 
 
-## ReactNative 第3节 IDE
+# ReactNative 第3节 IDE
 
 React Native 的开发基本上是 Javascript ＋ 系统原生开发语言（Java，Objective-C，Swift）
 
@@ -89,7 +88,7 @@ React Native 的开发基本上是 Javascript ＋ 系统原生开发语言（Jav
 > [React Native 开发之 IDE 选型和配置](http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112392&idx=1&sn=135e29ddde3050d469be98db815c267e&scene=1&srcid=07018VwWxB6oc9FwO7daEAbX#rd)
 
 
-## ReactNative 第4节 建议学习的相关技术
+# ReactNative 第4节 建议学习的相关技术
 
 1. HTML+CSS3
    
@@ -114,7 +113,7 @@ React Native 的开发基本上是 Javascript ＋ 系统原生开发语言（Jav
   React Native内部实现了一套自己的JS通信技术，能够提供高效的通信，从而实现APP的动态改变、高效展示。所以有必要了解React Native的底层通信技术，以便后期对APP进行优化
 
 
-##  ReactNative 第5节 测试ReactNativeProject ##
+#  ReactNative 第5节 测试ReactNativeProject
 
  1. cmd运行命令行：react-native init AwesomeProject
  2. cd AwesomeProject，cmd运行 react-native start
@@ -127,17 +126,19 @@ React Native 的开发基本上是 Javascript ＋ 系统原生开发语言（Jav
 
 
 
-## Tips ##
+# Tips ##
 
-### node_modules文件名或扩展名太长如何删除 ##
+## node_modules文件名或扩展名太长如何删除
+
 步骤一：npm install -g rimraf
 
 步骤二：rimraf node_modules
 
-### Run on a Device 
+## Run on a Device 
 adb reverse tcp:8081 tcp:8081
 
-### 避免中文乱码
+## 避免中文乱码
+
 修改WebStorm默认保存的文件编码格式：File > Settings > Editor > File Encodings  
 
 IDE Encoding 和 Project Encoding 改成 UTF-8

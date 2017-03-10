@@ -10,7 +10,7 @@ comments: true
 
 
 
-#### 1. 生成一个签名密钥
+# 1. 生成一个签名密钥
 
 在android/app下面生成keystore file： 
 
@@ -22,7 +22,8 @@ comments: true
     会生成一个叫做my-release-key.keystore的密钥库文件
    
    
-#### 2. 添加签名和混淆
+# 2. 添加签名和混淆
+
 打开android/app中的build.gradle文件和android/gradle.properties
 
 - 加入signingConfigs用来签名
@@ -61,7 +62,8 @@ comments: true
 
     如果需要添加一些库的混淆可以修改app/proguard-rules.pro文件。<br>
    
-#### 4. 打包文件
+# 3. 打包文件
+
    - 进入/android/目录，cmd执行gradlew assembleRelease
    - 打包后的文件在 android/app/build/outputs/apk目录中。
      例如app-release.apk

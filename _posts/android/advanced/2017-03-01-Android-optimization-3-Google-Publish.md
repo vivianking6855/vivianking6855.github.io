@@ -14,7 +14,6 @@ comments: true
 
 
 # 前言
-------
 
 2015年初google发布了[Android性能优化典范](https://www.youtube.com/watch?v=qk5F6Bxqhr4&list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE)，帮助开发者创建更快更优秀的Android App。
 
@@ -26,7 +25,6 @@ comments: true
 
 
 # 一、 Android渲染机制
-----------------
 
 首先了解下Android的渲染机制。
 
@@ -43,7 +41,6 @@ comments: true
 
 
 # 二、 卡顿的原因
----------------
 
 大多数用户感知到的卡顿等性能问题的最主要根源都是因为渲染性能。
 
@@ -63,7 +60,6 @@ comments: true
 
 
 # 三、 性能问题点
----------------
 
 ## 1. UI组件Overdraw问题
 
@@ -113,7 +109,6 @@ comments: true
 
 
 # 四、 问题定位和调试工具
----------------------------
 
 我们可以通过一些工具来定位和调试：
 
@@ -146,10 +141,7 @@ HierarchyViewer工具查找Activity中的布局是否过于复杂
 - FindBugs插件
 - [LeakCanary](https://www.liaohuqiu.net/cn/posts/leak-canary-read-me/)
 
-
-
 # 五、 实践
------------
 
 
 
