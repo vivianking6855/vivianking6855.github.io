@@ -3,6 +3,7 @@ layout: post
 title: ReactNative 学习笔记 修改包名
 date: 2016-06-30
 excerpt: "修改包名"
+categories: ReactNative
 tags: [ReactNative]
 comments: true
 ---

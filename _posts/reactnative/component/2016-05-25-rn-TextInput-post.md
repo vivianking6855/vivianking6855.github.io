@@ -3,6 +3,7 @@ layout: post
 title: ReactNative 学习笔记 Component - TextInput，Touchable
 date: 2016-06-03
 excerpt: "TextInput，Touchable"
+categories: ReactNative
 tags: [ReactNative]
 comments: true
 ---

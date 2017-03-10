@@ -3,7 +3,8 @@ layout: post
 title: React 实战之JSX - 入门
 date: 2016-05-25
 excerpt: "React 实战之JSX - 入门"
-tags: [ReactNative]
+categories: ReactNative
+tags: [React]
 comments: true
 ---
 

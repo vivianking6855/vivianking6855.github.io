@@ -3,6 +3,7 @@ layout: post
 title: ReactNative 学习笔记 Community- 组件，页面通讯
 date: 2016-06-30
 excerpt: "组件，页面通讯"
+categories: ReactNative
 tags: [ReactNative]
 comments: true
 ---

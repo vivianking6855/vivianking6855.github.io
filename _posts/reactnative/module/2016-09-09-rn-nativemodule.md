@@ -3,6 +3,7 @@ layout: post
 title: ReactNative 学习笔记 Android Native Module
 date: 2016-06-30
 excerpt: "Android Native Module"
+categories: ReactNative
 tags: [ReactNative]
 comments: true
 ---

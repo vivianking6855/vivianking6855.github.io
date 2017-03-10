@@ -3,6 +3,7 @@ layout: post
 title: ReactNative 学习笔记 Component - ViewPager， 异步网络数据
 date: 2016-06-08
 excerpt: "ViewPager， 异步网络数据"
+categories: ReactNative
 tags: [ReactNative]
 comments: true
 ---

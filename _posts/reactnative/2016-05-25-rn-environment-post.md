@@ -3,6 +3,7 @@ layout: post
 title: ReactNative 学习笔记 环境搭建和知识储备
 date: 2016-05-24
 excerpt: "环境搭建和知识储备"
+categories: ReactNative
 tags: [ReactNative]
 comments: true
 ---

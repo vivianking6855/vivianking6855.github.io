@@ -3,6 +3,7 @@ layout: post
 title: ReactNative 学习笔记 RN android apk 打包
 date: 2016-06-26
 excerpt: "RN android apk 打包"
+categories: ReactNative
 tags: [ReactNative]
 comments: true
 ---

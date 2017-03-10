@@ -3,6 +3,7 @@ layout: post
 title: ReactNative 学习笔记 Component - Image，Picker
 date: 2016-06-03
 excerpt: "Image，Picker"
+categories: ReactNative
 tags: [ReactNative]
 comments: true
 ---
