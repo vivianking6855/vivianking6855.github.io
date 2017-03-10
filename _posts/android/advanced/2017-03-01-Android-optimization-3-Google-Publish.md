@@ -6,6 +6,7 @@ excerpt: "Google Android 性能优化典范实践之 Render"
 categories: Android
 tags: [Android 进阶]
 comments: true
+lefttrees: true
 ---
 
 * content

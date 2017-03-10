@@ -8,10 +8,6 @@ tags: [Android 基础]
 comments: true
 ---
 
-* content
-{:toc}
-
-
 # 什么是Dalvik
 
 Dalvik是Google公司自己设计用于Android平台的Java虚拟机。
