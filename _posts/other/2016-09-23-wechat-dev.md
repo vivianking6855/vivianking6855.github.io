@@ -8,7 +8,8 @@ tags: [其他]
 comments: true
 ---
 
-## 微信小程序
+# 微信小程序
+------------
 
 ![](http://i.imgur.com/ZyCznig.png)
 
@@ -23,7 +24,9 @@ comments: true
 [==全文==](http://tech.163.com/16/0922/13/C1IRTBJB00097U7R.html)
 
 
-## 下载工具和Demo
+# 下载工具和Demo
+------------
+
 从0.9.092300开始不再需要破解，可以直接使用（选择无APPID）
 
 可以下载工具和破解包体验。个人感觉目录结构类似android. 页面和语法跟Android，RN都很类似。
@@ -35,7 +38,8 @@ comments: true
 [下载地址](https://github.com/vivianking6855/vivianking6855.github.io/blob/master/datum/tools/wechat_web_devtools_0.9.092300_x64.exe)
 
 
-## 附录图
+# 附录图
+------------
 
 ![](http://i.imgur.com/4Azhlkm.jpg)
 
