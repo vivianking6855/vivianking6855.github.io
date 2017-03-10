@@ -9,30 +9,31 @@ baseurl: ''
 #description: 今日事今日毕，生命经不起等待
 #meta_description: 今日事今日毕，生命经不起等待
 #motto: 今日事今日毕，生命经不起等待
-#banner: 今日事今日毕，生命经不起等待
+banner: 今日事今日毕
 
 
 #permalink: /:categories/:year/:month/:day/:title/
 permalink: /:year/:month/:day/:title/
 paginate: 10
 
-exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile', 'node_modules', 'LICENSE']
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
 
 
 github_username: vivianking6855
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 
 FB:
   comments :
     provider : duoshuo
     duoshuo:
         short_name : vivianking68
-    disqus :
-        short_name : vivianking68
-    # facebook :
-    #   appid : 123
+    #disqus :
+    #    short_name : vivianking68
+    #facebook : 
+    #   appid : vivian.sun.169405
     #   num_posts: 5
     #   width: 580
     #   colorscheme: light
