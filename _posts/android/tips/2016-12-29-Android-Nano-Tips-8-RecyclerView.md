@@ -1,13 +1,19 @@
 ---
 layout: post
-title: 2016-12-29 UI - RecyclerView, DiffUtil, RecyclerViewUtils
+title: UI - RecyclerView, DiffUtil, RecyclerViewUtils
 date: 2016-12-29
 excerpt: "RecyclerView, DiffUtil, RecyclerViewUtils"
+categories: Android
 tags: [Android 微技巧]
 comments: true
 ---
 
-## 一、 RecyclerView
+* content
+{:toc}
+
+
+# 一、 RecyclerView
+----------------------
 
 RecylerView相对于ListView的优点：
 
@@ -34,7 +40,7 @@ RecylerView相对于ListView的优点：
 - ItemAnimator - 为Item的一般操作添加动画效果，如，增删条目等
 
 
-### Reference
+## Reference
 
 [RecyclerView技术栈](http://www.jianshu.com/p/16712681731e)
 
@@ -46,13 +52,14 @@ RecylerView相对于ListView的优点：
 
 [真实项目运用-RecyclerView封装](http://blog.csdn.net/u014315849/article/details/52537700)
 
-### 开源库
+## 开源库
 
 - [SectionedRecyclerViewAdapter](https://github.com/luizgrp/SectionedRecyclerViewAdapter)
 - [RecyclerViewItemAnimators](https://github.com/gabrielemariotti/RecyclerViewItemAnimators)
 
 
-## 二、 [DiffUtil](http://blog.csdn.net/zxt0601/article/details/52562770) support-v7:24.2.0的新工具类
+# 二、 [DiffUtil](http://blog.csdn.net/zxt0601/article/details/52562770) support-v7:24.2.0的新工具类
+-------------------------------
 
 DiffUtil可以提高RecyclerView的差异化效率
 
@@ -63,7 +70,8 @@ DiffUtil可以提高RecyclerView的差异化效率
 - [使用 Payload 提高 RecyclerView 渲染效率](http://www.tuicool.com/articles/EnyARvQ)
 
 
-## 三、 [RecyclerViewUtils](https://github.com/captain-miao/RecyclerViewUtils)
+# 三、 [RecyclerViewUtils](https://github.com/captain-miao/RecyclerViewUtils)
+---------------------
 
 refresh,load more,sticky header,expand,index
 

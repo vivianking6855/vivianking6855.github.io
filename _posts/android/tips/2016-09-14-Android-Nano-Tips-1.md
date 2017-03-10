@@ -1,31 +1,40 @@
 ---
 layout: post
-title: 2016-09-14 UI - ExpandableListView, Annotations
+title: UI - ExpandableListView, Annotations
 date: 2016-09-14
 excerpt: "ExpandableListView, Annotations"
+categories: Android
 tags: [Android 微技巧]
 comments: true
 ---
 
-## 1. ExpandableListView的使用详解
+* content
+{:toc}
+
+
+# 1. ExpandableListView的使用详解
+-------------------
 
 [ExpandableListView的使用详解](http://blog.csdn.net/jamy2015/article/details/51131583)
 
-## 2. Android状态栏微技巧，带你真正理解沉浸式模式
+# 2. Android状态栏微技巧，带你真正理解沉浸式模式
+--------------------------------------------
 
 [沉浸式模式](http://blog.csdn.net/sinyu890807/article/details/51763825)
 
-## 3. Android drawable
+# 3. Android drawable
+----------------------
 
 [你所不知道的drawable的那些细节](http://blog.csdn.net/sinyu890807/article/details/50727753)
 
-## 4. Annotations
+# 4. Annotations
+----------------
 
 [Java注解Annotation基础](http://www.open-open.com/lib/view/open1423558996951.html)：注解是一种元数据，起到了”描述，配置“的作用。
 
-### 注解框架 和 编译时注解的框架
+## 注解框架 和 编译时注解的框架
 
-#### AndroidAnnotations - 注解框架
+### AndroidAnnotations - 注解框架
 
 [AndroidAnnotations](http://my.oschina.net/jack1900/blog/296953)是一个开源框架，旨在加快Android开发的效率。
 
@@ -42,7 +51,7 @@ comments: true
 
 它们的实现原理都是一致的，都是通过反射机制实现的。
 
-#### 编译时注解的框架
+### 编译时注解的框架
 
 在Android应用开发中，我们常常为了提升开发效率会选择使用一些基于注解的框架，但是由于反射造成一定运行效率的损耗，
 

@@ -1,18 +1,19 @@
 ---
 layout: post
-title: 2016-12-30 UI - ConstraintLayout
+title: UI - ConstraintLayout
 date: 2016-12-30
 excerpt: "ConstraintLayout"
+categories: Android
 tags: [Android 微技巧]
 comments: true
 ---
 
 
-## ConstraintLayout（拖动来写布局）
+# ConstraintLayout（拖动来写布局）
 
 [一步步理解使用 ConstraintLayout](http://www.jianshu.com/p/793f76cf9fea)
 
-### 关键点：
+## 关键点：
 
 - Constraint Handle 约束手柄
 - View Inspector.列出所选控件的属性,对齐方式以及所有的约束.
@@ -27,7 +28,7 @@ comments: true
 
 [Github Code](https://github.com/vivianking6855/android-ui/tree/ui-advanced)
 
-### Reference
+## Reference
 
 > [了解使用Android ConstraintLayout](http://quanqi.org/2016/05/20/code-labs-constraint-layout/)
 

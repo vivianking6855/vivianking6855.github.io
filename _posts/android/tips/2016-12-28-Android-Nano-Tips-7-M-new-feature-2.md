@@ -1,19 +1,26 @@
 ---
 layout: post
-title: 2016-12-28 UI - M new feature 2
+title: UI - M new feature 2
 date: 2016-12-28
 excerpt: "CoordinatorLayout, AppBarLayout, CollapsingToolbarLayout，NestedScrollView"
+categories: Android
 tags: [Android 微技巧]
 comments: true
 ---
 
-## 1. CoordinatorLayout ：super-powered FrameLayout
+* content
+{:toc}
+
+
+
+# 1. CoordinatorLayout ：super-powered FrameLayout
+----------------
 
 CoodinatorLayout 从名字上可以看就是帮我们协调子View的，一个通信的桥梁，连接不同的view。
 
 CoordinatorLayout的使用核心是Behavior.
 
-### 一个最简单的实践
+## 一个最简单的实践
 
 最简单的实践包括：
 
@@ -43,13 +50,13 @@ CoordinatorLayout的使用核心是Behavior.
                 return true;
         }
 
-### 触发流程
+## 触发流程
 
 Dependency Change -> 触发Behavior onDependentViewChanged -> Child Change
 
 当然还有一个依赖检查：layoutDependsOn，判断Child是否依赖Dependency
 
-### 核心Code
+## 核心Code
 
         -----------Behavior两个方法实现
         /**
@@ -126,7 +133,8 @@ Dependency Change -> 触发Behavior onDependentViewChanged -> Child Change
 [Github Code](https://github.com/vivianking6855/android-ui/tree/ui-advanced/AdvancedDemo/app/src/main/java/com/ui/advanced/advanceddemo/coordinatorlayout/start)
 
 
-## 2. 玩转AppBarLayout
+# 2. 玩转AppBarLayout
+---------------------
 
 AppBarLayout继承自LinearLayout，布局方向为垂直方向。所以你可以把它当成垂直布局的LinearLayout来使用。
 

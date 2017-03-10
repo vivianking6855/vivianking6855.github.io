@@ -1,25 +1,35 @@
 ---
 layout: post
-title: 2016-10-14 UI - Spannable, Gradle, AndroidUtilCode,SurfaceView
+title: UI - Spannable, Gradle, AndroidUtilCode,SurfaceView
 date: 2016-10-14
 excerpt: "Spannable, Gradle, library中的switch, AndroidUtilCode,SurfaceView"
+categories: Android
 tags: [Android 微技巧]
 comments: true
 ---
 
+* content
+{:toc}
 
-## 1. [通过Spannable对象设置textview的样式](http://www.cnblogs.com/tianzhijiexian/p/4222393.html)
- 
-## 2. [Android Gradle Plugin指南](http://blog.csdn.net/qinxiandiqi/article/details/37757065)
-   - [Build Variants（构建变种版本）](http://blog.csdn.net/qinxiandiqi/article/details/37906449) 
 
-## 3. [Android library中不能使用switch-case访问资源ID](http://zmywly8866.github.io/2014/12/24/android-can-not-use-switch-to-load-resource-in-libproject-solution.html)
+# 1. [通过Spannable对象设置textview的样式](http://www.cnblogs.com/tianzhijiexian/p/4222393.html)
+--------
+
+# 2. [Android Gradle Plugin指南](http://blog.csdn.net/qinxiandiqi/article/details/37757065)
+-------
+
+[Build Variants（构建变种版本）](http://blog.csdn.net/qinxiandiqi/article/details/37906449) 
+
+# 3. [Android library中不能使用switch-case访问资源ID](http://zmywly8866.github.io/2014/12/24/android-can-not-use-switch-to-load-resource-in-libproject-solution.html)
+----------
 
 解决方案是：改为 if else
 
-## 4. [AndroidUtilCode-Android 开发人员不得不收集的代码](https://github.com/Blankj/AndroidUtilCode)
+# 4. [AndroidUtilCode-Android 开发人员不得不收集的代码](https://github.com/Blankj/AndroidUtilCode)
+----------
 
-## 5. [View、SurfaceView、SurfaceTexture](http://blog.csdn.net/fulinwsuafcie/article/details/48583849)
+# 5. [View、SurfaceView、SurfaceTexture](http://blog.csdn.net/fulinwsuafcie/article/details/48583849)
+----------
 
 - [SurfaceView的实现原理分析](http://blog.csdn.net/luoshengyang/article/details/8661317)
 - SurfaceView和View最本质的区别在于，surfaceView是在一个新起的单独线程中可以重新绘制画面。而View必须在UI的主线程中更新画面。

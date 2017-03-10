@@ -1,14 +1,14 @@
 ---
 layout: post
-title: 2016-12-19 开源库 - EventBus
+title: 开源库 - EventBus
 date: 2016-12-19
 excerpt: "EventBus"
+categories: Android
 tags: [Android 微技巧]
 comments: true
 ---
 
-
-## EventBus （解除高度耦合的通讯框架）
+# EventBus （解除高度耦合的通讯框架）
 
 [EventBus框架： 一个典型的发布者-订阅者模式](https://github.com/greenrobot/EventBus )
 
