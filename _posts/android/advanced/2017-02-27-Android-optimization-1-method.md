@@ -1,14 +1,20 @@
 ---
 layout: post
-title: 2017-2-27 Android性能优化（一）Android的性能优化方法概述
+title: Android性能优化（一）Android的性能优化方法概述
 date: 2017-2-27
 excerpt: "Android的性能优化方法概述"
+categories: Android
 tags: [Android 进阶]
 comments: true
 ---
 
+* content
+{:toc}
+
+
 
 #　一、 布局优化
+----------------
 
 1. 布局优化的思想：尽量减少布局文件的层级。层级少了，Android绘制的工作量少了，程序的性能自然就高了。
 
@@ -71,6 +77,7 @@ comments: true
     
 
 # 二、 绘制优化
+--------------
 
 绘制优化是指View的onDraw方法要避免执行大量的操作
 
@@ -80,6 +87,7 @@ comments: true
     - 虽然程序很难保证16ms这个时间，但是尽量降低onDraw方法的复杂度总是有效的。
 
 # 三、 内存泄漏优化
+-----------------
 
 内存泄漏是在开发过程需要重视的问题。内存泄漏优化分两个方面：
 
@@ -89,18 +97,22 @@ comments: true
 详见：[ Android性能优化 （二）内存 OOM](http://vivianking6855.github.io/Android-optimization-2-OOM/)
 
 # 四、 响应速度优化
+----------------
 
 响应速度优化核心思想是避免在主线程中做耗时的操作。耗时的操作应该放到异步任务中执行。
 
 # 五、 ListView优化
+------------------
 
 构造Adapter时，没有使用缓存的 convertView，可以使用Android最新组件RecyclerView,替代ListView来避免
 
 # 六、 Bitmap优化
+------------------
 
 主要是BitmapFactory.Options 和缓存。详见[ Android Bitmap的加载和Cache](http://vivianking6855.github.io/Android-Bitmap-Cache/)
 
 # 七、 线程优化
+----------------
 
 线程优化的思想是采用线程池，避免程序中存在大量的Thread. 控制最大并发数等。详见下面两篇blog~
 
@@ -109,6 +121,7 @@ comments: true
 [线程同步](http://vivianking6855.github.io/Thread-Sync/)
 
 # 八、 耗电优化
+-------------------
 
 电量其实是目前手持设备最宝贵的资源之一，大多数设备都需要不断的充电来维持继续使用。
 
@@ -134,6 +147,7 @@ Purdue University研究了最受欢迎的一些应用的电量消耗：
 请关注程序的电量消耗，用户可以通过手机的设置选项观察到那些耗电量大户，并可能决定卸载他们。所以尽量减少程序的电量消耗是非常有必要的。
 
 # 九、 性能优化小建议
+-------------------
 
 性能优化的小建议：
 

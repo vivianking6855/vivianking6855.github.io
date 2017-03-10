@@ -1,14 +1,20 @@
 ---
 layout: post
-title: 2017-3-1 Android性能优化（三）Google Android 性能优化典范实践之 Render
+title: Android性能优化（三）Google Android 性能优化典范实践之 Render
 date: 2017-3-1
 excerpt: "Google Android 性能优化典范实践之 Render"
+categories: Android
 tags: [Android 进阶]
 comments: true
 ---
 
+* content
+{:toc}
+
+
 
 # 前言
+------
 
 2015年初google发布了[Android性能优化典范](https://www.youtube.com/watch?v=qk5F6Bxqhr4&list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE)，帮助开发者创建更快更优秀的Android App。
 
@@ -18,8 +24,9 @@ comments: true
 
 我们先从Android的渲染机制开始实践。
 
----
+
 # 一、 Android渲染机制
+----------------
 
 首先了解下Android的渲染机制。
 
@@ -34,8 +41,9 @@ comments: true
 
 ![](http://i.imgur.com/lSqISqJ.png)
 
----
+
 # 二、 卡顿的原因
+---------------
 
 大多数用户感知到的卡顿等性能问题的最主要根源都是因为渲染性能。
 
@@ -53,8 +61,9 @@ comments: true
 
 ![](http://i.imgur.com/SiZVlJ9.png)
 
----
+
 # 三、 性能问题点
+---------------
 
 ## 1. UI组件Overdraw问题
 
@@ -103,8 +112,8 @@ comments: true
 - 最后，如果前面这个activity的内存都有全部正确释放，那么在空白activity被启动之后的内存快照中应该不会有前面那个activity中的任何对象了。
 
 
----
 # 四、 问题定位和调试工具
+---------------------------
 
 我们可以通过一些工具来定位和调试：
 
@@ -140,6 +149,7 @@ HierarchyViewer工具查找Activity中的布局是否过于复杂
 
 
 # 五、 实践
+-----------
 
 
 
