@@ -12,17 +12,7 @@ comments: true
 {:toc}
 
 
-# 目录
-- [项目内容](#项目内容)  
-- [平台支持](#平台支持)
-- [开发方式和架构内容](#开发方式和架构内容)
-- [其他](#其他)
-    - [项目档案](#项目档案)
-- [总结](#总结)
-
-
-<h1 id="项目内容"> 项目内容 </h1>
-----------------------------------
+# 一、 项目内容
 
 Android 手电筒工具。 Unbundle to ALL。
 
@@ -30,9 +20,7 @@ Android 手电筒工具。 Unbundle to ALL。
 - widget
 - cover flashlight.
 
-
-<h1 id="平台支持"> 平台支持 </h1>
-----------------------------------
+# 二、 平台支持
 
 Android版本已发布[google paly](https://play.google.com/store/apps/details?id=com.asus.flashlight) 
 
@@ -40,9 +28,7 @@ Android版本已发布[google paly](https://play.google.com/store/apps/details?i
 - store评分4.6
 - 排名Top 10
 
-
-<h1 id="开发方式和架构内容"> 开发方式和架构内容 </h1>
-----------------------------------
+# 三、 开发方式和架构内容
 
 1. Android开发
  - 搭配framework节点接口开关Flashlight
@@ -52,22 +38,28 @@ Android版本已发布[google paly](https://play.google.com/store/apps/details?i
 5. 使用Android官网，github，Stackoverflow和codekk作为主要的知识查找
 6. 使用Lint, FindBugs, monkey test做app代码和quanlity检查
 
+# 四、 数据缓存机制
 
+# 五、 安全
 
-<h1 id="其他"> 其他 </h1>
-----------------------------------
+# 六、 遇到的问题
 
-<h2 id="项目档案"> 项目档案 </h2>
+# 七、 项目优化
+
+# 八、 其他
+
+## 项目档案
 
 - [项目进度](N:\Project\Manager\FlashLight) 
 
 - [项目档案](N:\Project\Manager\FlashLight)
 
-
-
-<h1 id="总结"> 总结 </h1>
-----------------------------------
+# 九、 总结
 
 - 主要是项目维护和新功能开发
 - Android默认Camera API速度在频率闪烁时，效率太低。优化为framework层直接提供节点接口来开关灯
+
+# 十、 Reference
+
+
 

@@ -12,20 +12,7 @@ comments: true
 {:toc}
 
 
-# 目录
-
-- [项目内容](#项目内容)  
-- [Members](#Members) 
-- [平台支持](#平台支持)
-- [开发方式和架构内容](#开发方式和架构内容)
-- [遇到的问题](#遇到的问题)
-- [项目优化](#项目优化)
-- [其他](#其他)
-    - [项目档案](#项目档案)
-- [总结](#总结)
-
-
-# <h1 id="项目内容"> 项目内容 </h1>
+# 一、 项目内容
 
 AudioWizard 音频向导。 支援很多音频特效：
 
@@ -36,21 +23,16 @@ AudioWizard 音频向导。 支援很多音频特效：
 - 智能模式
 - 户外
 
-
-# <h1 id="Members"> Members </h1>
-
+Members
 
 - venjee
 - Raygee
 
-
-# <h1 id="平台支持"> 平台支持 </h1>
-
+# 二、 平台支持
 
 Android版本已发布，设备出厂预装
 
-
-# <h1 id="开发方式和架构内容"> 开发方式和架构内容 </h1>
+# 三、 开发方式和架构内容
 
 1. Android开发
  - 搭配BSP接口实现多种音效和配置
@@ -61,8 +43,11 @@ Android版本已发布，设备出厂预装
 5. 使用Android官网，github，Stackoverflow和codekk作为主要的知识查找
 6. 使用Lint, FindBugs, monkey test做app代码和quanlity检查
 
+# 四、 数据缓存机制
 
-# <h1 id="遇到的问题"> 遇到的问题 </h1>
+# 五、 安全
+
+# 六、 遇到的问题
 
 - Visualizer issue（详见[档案Visulizer......](F:\Manager\AudioWizard\Datum)）
     - Visualizer 釋放問題，底層執行緒問題造成AW crash. google defect issue.
@@ -94,9 +79,8 @@ Android版本已发布，设备出厂预装
       解决方案是gradle productFlavors 搭配内部jekins build系统规则，build出特殊专案对应apk，并自动release到对应专案。
       
       详见档案整理：F:\Manager\AudioWizard\Datum\QuickSettings
-      
 
-# <h1 id="项目优化"> 项目优化 </h1>
+# 七、 项目优化
 
 - SurfaceView重写波形图View，加速波形图和main UI的渲染效率
     
@@ -109,20 +93,21 @@ Android版本已发布，设备出厂预装
 - Advanced Effect页面移除ViewPager，用GroupView方式。因为页面不需要滑动功能。
 
 
+# 八、 其他
 
-# <h1 id="其他"> 其他 </h1>
-
-<h2 id="项目档案"> 项目档案 </h2>
+## 项目档案
 
 - 项目进度：[F:\Manager\AudioWizard](F:\Manager\AudioWizard)
 
 - 项目档案：[F:\Manager\AudioWizard](F:\Manager\AudioWizard)
 
-
-
-# <h1 id="总结"> 总结 </h1>
+# 九、 总结
 
 - AudioWizard 分View 和 Service两支app
   
     Service负责音效处理。View主要负责页面显示
+    
 - SurfaceView自定义控件优化波形图显示
+
+# 十、 Reference
+
