@@ -23,7 +23,7 @@ comments: true
 
 - [神奇的Android Studio Template](http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650820341&idx=1&sn=fa0b3094e1970989ffdff05c878ba53d&scene=4#wechat_redirect)
 - [Android Studio自定义模板](http://blog.csdn.net/lmj623565791/article/details/51635533)
-- [实现自定义Template](https://zhuanlan.zhihu.com/p/21301904#tipjar) . 可以参考的插件：
+- [实现自定义Template](https://zhuanlan.zhihu.com/p/21301904#tipjar) . 可以参考的模板：
     - [MaterialNavigationDrawerActivity](https://github.com/kanytu/Android-studio-material-template)
     - [DrawerWithTabsActivity和RecyclerRefreshActivity](https://github.com/MontazzeStudio/android-studio-template)
     - [SwipeRefreshLayout，还有一些常用的模板](https://github.com/gabrielemariotti/AndroidStudioTemplate)
