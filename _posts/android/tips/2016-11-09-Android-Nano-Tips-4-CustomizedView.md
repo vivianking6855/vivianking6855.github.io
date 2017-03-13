@@ -82,3 +82,5 @@ How to create Customized View and 属性”key”.
 > [深入了解View](https://link.zhihu.com/?target=http%3A//blog.csdn.net/guolin_blog/article/details/12921889)
 
 > [Android 深入理解Android中的自定义属性](https://link.zhihu.com/?target=http%3A//blog.csdn.net/lmj623565791/article/details/45022631)
+
+> [自定义View实战](http://blog.csdn.net/column/details/12934.html)
