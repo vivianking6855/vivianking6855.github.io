@@ -28,4 +28,3 @@ comments: true
 ## 联系方式
 
 * work_man2012@126.com
-* vivian_sun@asus.com
