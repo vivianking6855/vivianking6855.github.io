@@ -28,3 +28,6 @@ comments: true
     - [DrawerWithTabsActivity和RecyclerRefreshActivity](https://github.com/MontazzeStudio/android-studio-template)
     - [SwipeRefreshLayout，还有一些常用的模板](https://github.com/gabrielemariotti/AndroidStudioTemplate)
     - [Material Design Icon模板](https://github.com/intrications/material-design-icons-adt-template)
+
+
+# [AndroidStudio Gradle基本配置](http://www.jianshu.com/p/cd8fe9b16369)
