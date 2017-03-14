@@ -43,7 +43,7 @@ lefttrees: true
 
   - C/C++申请的内存空间在native heap中，而java申请的内存空间则在dalvik heap中。
 
-# Android的 java程序为什么容易出现OOM
+# 为什么容易出现OOM
 
    - 这个是因为Android系统对dalvik的vm heapsize作了硬性限制，当java进程申请的java空间超过阈值时，就会抛出OOM异常。
     
@@ -130,8 +130,8 @@ lefttrees: true
 
 - 不要对activity的context长期引用(一个activity的引用的生存周期应该和activity的生命周期相同)
 - 如果可以的话，尽量使用关于application的context来替代和activity相关的context
-- 如果一个acitivity的非静态内部类的生命周期不受控制，那么避免使用它；正确的方法是使用一个静态的内部类，并且对它的外部类有一WeakReference（例如 static Handler创建时可以把外部类的weakreference传进来）
-
+- 如果一个acitivity的非静态内部类的生命周期不受控制，那么避免使用它；
+- 正确的方法是使用一个静态的内部类，并且对它的外部类有一WeakReference（例如 static Handler创建时可以把外部类的weakreference传进来）
 
 ### (2) 使用handler时的内存问题
 
@@ -155,57 +155,60 @@ lefttrees: true
     }  
     
     
-### (3) 注册某个对象后未反注册 ： 注册广播接收器、注册观察者等等
+### (3) 注册某个对象后未反注册
 
-   示例 1：监听系统中的电话服务以获取一些信息(如信号强度等)
-    
-    假设我们希望在锁屏界面(LockScreen)中，监听系统中的电话服务以获取一些信息(如信号强度等)，则可以在LockScreen中定义一个PhoneStateListener的对象，同时将它注册到TelephonyManager服务中。
-    
-    对于LockScreen对象，当需要显示锁屏界面的时候就会创建一个LockScreen对象，而当锁屏界面消失的时候LockScreen对象就会被释放掉。
-    
-    但是如果在释放LockScreen对象的时候忘记取消我们之前注册的PhoneStateListener对象，则会导致LockScreen无法被GC回收。
-    
-    如果不断的使锁屏界面显示和消失，则最终会由于大量的LockScreen对象没有办法被回收而引起OutOfMemory,使得system_process进程挂掉。
-    
-   示例 2： 单例模式导致的内存泄漏
+注册广播接收器、注册观察者等等
 
-    Activity中注册了单例模式的Listener，如果没有unregister，Activity会无法被及时释放。
+- 示例 1：监听系统中的电话服务以获取一些信息(如信号强度等)
     
-    因为单例模式的特点是其生命周期和Application保持一致。
+  假设我们希望在锁屏界面(LockScreen)中，监听系统中的电话服务以获取一些信息(如信号强度等)，则可以在LockScreen中定义一个PhoneStateListener的对象，同时将它注册到TelephonyManager服务中。
+    
+  对于LockScreen对象，当需要显示锁屏界面的时候就会创建一个LockScreen对象，而当锁屏界面消失的时候LockScreen对象就会被释放掉。
+    
+  但是如果在释放LockScreen对象的时候忘记取消我们之前注册的PhoneStateListener对象，则会导致LockScreen无法被GC回收。
+    
+  如果不断的使锁屏界面显示和消失，则最终会由于大量的LockScreen对象没有办法被回收而引起OutOfMemory,使得system_process进程挂掉。
+    
+- 示例 2： 单例模式导致的内存泄漏
+
+  Activity中注册了单例模式的Listener，如果没有unregister，Activity会无法被及时释放。
+    
+  因为单例模式的特点是其生命周期和Application保持一致。
 
 
 ### (4) 集合中对象没清理造成的内存泄露
 
-　　例如对象的引用的集合不再使用时，如果没有把它的引用从集合中清理掉，这样这个集合就会越来越大。如果这个集合是static的话，那情况就更严重了。
+例如对象的引用的集合不再使用时，如果没有把它的引用从集合中清理掉，这样这个集合就会越来越大。如果这个集合是static的话，那情况就更严重了。
 
-    示例：某公司的ROM的锁屏曾经就存在内存泄漏问题：
+- 示例：某公司的ROM的锁屏曾经就存在内存泄漏问题：
 
-    这个泄漏是因为LockScreen每次显示时会注册几个callback，它们保存在KeyguardUpdateMonitor的ArrayList<InfoCallback>、ArrayList<SimStateCallback>等ArrayList实例中。
+  这个泄漏是因为LockScreen每次显示时会注册几个callback，它们保存在KeyguardUpdateMonitor的ArrayList<InfoCallback>、ArrayList<SimStateCallback>等ArrayList实例中。
+     
+  但是在LockScreen解锁后，这些callback没有被remove掉，导致ArrayList不断增大， callback对象不断增多。
     
-    但是在LockScreen解锁后，这些callback没有被remove掉，导致ArrayList不断增大， callback对象不断增多。
+  这些callback对象的size并不大，heap增长比较缓慢，需要长时间地使用手机才能出现OOM。
     
-    这些callback对象的size并不大，heap增长比较缓慢，需要长时间地使用手机才能出现OOM。
-    
-    由于锁屏是驻留在system_server进程里，所以导致结果是手机重启。
+  由于锁屏是驻留在system_server进程里，所以导致结果是手机重启。
 
-### (5) 资源对象没关闭造成的内存泄露，比如(Cursor，File文件等)
+### (5) 资源对象没关闭造成的内存泄露
 
-    对于资源性对象在不使用的时候，应该立即调用它的close()函数，将其关闭掉，然后再置为null.
+比如(Cursor，File文件等)。 对于资源性对象在不使用的时候，应该立即调用它的close()函数，将其关闭掉，然后再置为null.
 
-### (6) 构造Adapter时，没有使用缓存的 convertView，可以使用Android最新组件RecyclerView,替代ListView来避免
+### (6) 构造Adapter时，没有使用缓存的 convertView
+
+可以使用Android最新组件RecyclerView,替代ListView来避免
 
 ### (7) Bitmap使用不当
  
- 必要的措施：
+必要的措施：
  
-   第一、及时的销毁。
+- 第一、及时的销毁。
 
    虽然，系统能够确认Bitmap分配的内存最终会被销毁，但是由于它占用的内存过多，所以很可能会超过Java堆的限制。
     
    因此，在用完Bitmap时，要及时的recycle掉。recycle并不能确定立即就会将Bitmap释放掉，但是会给虚拟机一个暗示：“该图片可以释放了”。
 
-
-   第二、设置一定的采样率。
+- 第二、设置一定的采样率。
 
    有时候，我们要显示的区域很小，没有必要将整个图片都加载出来，而只需要记载一个缩小过的图片。
    
@@ -218,7 +221,7 @@ lefttrees: true
     options.inSampleSize = 2;//图片宽高都为原来的二分之一，即图片为原来的四分之一    
     Bitmap bitmap =BitmapFactory.decodeStream(cr.openInputStream(uri), null, options); preview.setImageBitmap(bitmap);   
 
-   第三、巧妙的运用软引用（SoftRefrence）
+- 第三、巧妙的运用软引用（SoftRefrence）
 
    有些时候，我们使用Bitmap后没有保留对它的引用，因此就无法调用Recycle函数。
    
