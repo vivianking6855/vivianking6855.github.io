@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Android性能优化（三）Google Android 性能优化典范实践之 Render
-date: 2017-3-1
-excerpt: "Google Android 性能优化典范实践之 Render"
+title: Android性能优化（三）Google典范之开篇
+date: 2017-3-13
+excerpt: "Google典范之开篇"
 categories: Android
 tags: [Android 进阶]
 comments: true
@@ -142,12 +142,8 @@ HierarchyViewer工具查找Activity中的布局是否过于复杂
 - FindBugs插件
 - [LeakCanary](https://www.liaohuqiu.net/cn/posts/leak-canary-read-me/)
 
-# 五、 实践
 
-
-
-布局优化和性能优化建议等可参看[Android的性能优化方法概述](http://vivianking6855.github.io/Android-optimization-1-method/)
-
+布局优化和性能优化建议等可参看上一篇[Android的性能优化方法概述](http://vivianking6855.github.io/2017/02/27/Android-optimization-1-method/)
 
 
 > [Google 发布 Android 性能优化典范](http://www.oschina.net/news/60157/android-performance-patterns?sid=07vbqo00ovnh233e0ain6ue5a6)
