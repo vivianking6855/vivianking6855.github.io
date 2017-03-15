@@ -157,5 +157,18 @@ Purdue University研究了最受欢迎的一些应用的电量消耗：
 <br/><br/>
 
 
+# 性能优化专题
+
+- [性能优化（一）：方法概述](http://vivianking6855.github.io/2017/02/27/Android-optimization-1-method/)
+- [性能优化（二）内存 OOM](http://vivianking6855.github.io/2017/02/27/Android-optimization-2-OOM/)
+- [Android性能优化（三）Google典范之开篇](http://vivianking6855.github.io/2017/03/13/Android-optimization-3-Google-Publish/)
+- [性能优化（四）Google典范之Render实践](http://vivianking6855.github.io/2017/03/14/Android-optimization-4-Google-Publish-Render/)
+
+
+
+# Reference
+
+<br>
+
 
 > 《Android开发艺术探索》
