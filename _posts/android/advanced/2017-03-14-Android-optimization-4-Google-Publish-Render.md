@@ -43,13 +43,264 @@ lefttrees: true
 
 ## 2. Overdraw方案
 
-   通过Show GPU Overdraw去检测(开发者选项 -> 调试GPU过度绘制 -> 显示GPU过度绘制)
+   通过Show GPU Overdraw去检测(开发者选项 -> 调试GPU过度绘制 -> 显示GPU过度绘制区域)
 
    最终可以通过移除不必要的背景以及使用canvas.clipRect解决大多数问题
 
-### (1) 移除不必要的background
+### 2.1 移除不必要的background
 
-### (2）clipRect的妙用
+贴下Overdraw情况图
+
+蓝色，淡绿，淡红，深红代表了4种不同程度的Overdraw情况。
+
+我们的目标就是尽量减少红色Overdraw，看到更多的蓝色区域。
+
+![](http://i.imgur.com/BJCf3ps.png)
+
+#### 示例核心Code 和 GPU Overdraw情况
+
+----------MainActivity
+
+    public class MainActivity extends AppCompatActivity implements HomeAdapter.OnItemClickLitener {
+        private final static String TAG = MainActivity.class.getSimpleName();
+    
+        private RecyclerView recyclerView;
+        private HomeAdapter homeAdapter;
+    
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+    
+            initView();
+        }
+    
+        private void initView() {
+            // init recycler view
+            recyclerView = (RecyclerView) findViewById(R.id.homelist);
+            homeAdapter = new HomeAdapter(this);
+            homeAdapter.setOnItemClickLitener(this);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            recyclerView.setAdapter(homeAdapter);
+        }
+    
+        @Override
+        public void onItemClick(View view, int position) {
+        }
+    
+        @Override
+        public void onItemLongClick(View view, int position) {
+    
+        }
+    }
+
+-------------HomeAdapter
+
+    public class HomeAdapter extends RecyclerView.Adapter {
+        public final static String TAG = HomeAdapter.class.getSimpleName();
+    
+        private ArrayList<Droid> mData;
+        private Context mContext;
+    
+    
+        // click listener
+        private OnItemClickLitener mOnItemClickLitener;
+    
+        public HomeAdapter(Context context) {
+            mContext = context;
+            initData();
+        }
+    
+        protected void initData() {
+            mData = (ArrayList) Droid.generateDatas();
+        }
+    
+        @Override
+        public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            MyViewHolder holder = new MyViewHolder(LayoutInflater.from(mContext).inflate(R.layout.recycler_item_bad, parent,
+                    false));
+            return holder;
+        }
+    
+        @Override
+        public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
+            MyViewHolder viewHolder = (MyViewHolder) holder;
+            Droid droid = mData.get(position);
+            viewHolder.date.setText(droid.date);
+            viewHolder.msg.setText(droid.msg);
+            viewHolder.name.setText(droid.name);
+    
+            viewHolder.icon.setBackgroundColor(Color.parseColor("#F5F5DC"));
+            viewHolder.icon.setImageResource(droid.imageId);
+        }
+    
+    
+        @Override
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position, List payloads) {
+            super.onBindViewHolder(holder, position, payloads);
+        }
+    
+        @Override
+        public int getItemCount() {
+            return mData.size();
+        }
+    
+        // view holder
+        class MyViewHolder extends RecyclerView.ViewHolder {
+    
+            public ImageView icon;
+            public TextView name;
+            public TextView date;
+            public TextView msg;
+    
+            public MyViewHolder(View view) {
+                super(view);
+                icon = (ImageView) view.findViewById(R.id.id_chat_icon);
+                name = (TextView) view.findViewById(R.id.id_chat_name);
+                date = (TextView) view.findViewById(R.id.id_chat_date);
+                msg = (TextView) view.findViewById(R.id.id_chat_msg);
+            }
+        }
+    }
+    
+------------acitivity_main_bad
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+    
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/homelist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white" />
+    
+    </LinearLayout>
+
+------------recycler_item_bad
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    
+        <ImageView
+            android:id="@+id/id_chat_icon"
+            android:layout_width="@dimen/avatar_dimen"
+            android:layout_height="@dimen/avatar_dimen"
+            android:layout_margin="@dimen/avatar_layout_margin"
+            android:src="@drawable/camera" />
+    
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:orientation="vertical">
+    
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="horizontal"
+                android:textColor="#78A">
+    
+                <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/id_chat_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="bottom"
+                    android:padding="@dimen/narrow_space"
+                    android:text="@string/hello" />
+    
+                <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/id_chat_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:padding="@dimen/narrow_space"
+                    android:text="@string/hello"
+                    android:textStyle="italic" />
+            </RelativeLayout>
+    
+            <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/id_chat_msg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:padding="@dimen/narrow_space"
+                android:text="@string/hello" />
+        </LinearLayout>
+    </LinearLayout>
+
+[完整Code](https://github.com/vivianking6855/android-advanced/tree/master/PerformanceDemo)
+
+
+GPU Overdraw情况如下图，基本都是红色: 4X+ overdraw
+
+![](http://i.imgur.com/Ir76PpT.png)
+
+
+#### 优化背景
+
+- 不必要的Background 1
+    
+    我们主布局的文件已经是background为white了，那么可以移除RecyclerView的白色背景
+    
+- 不必要的Background 2
+    
+    Item布局中的LinearLayout的android:background="@android:color/darker_gray"
+    
+    它的两个item已经填满整个layout，而且每个item的背景都要求是白色
+    
+- 不必要的Background 3
+    
+    Item布局中的RelativeLayout的android:background="@android:color/white"
+    
+- 不必要的Background 4
+    
+    Item布局中id为id_msg的TextView的android:background="@android:color/white"
+    
+- 不必要的Background 5
+
+    Adapter中的onBindViewHolder，每个icon设置了背景色（主要是当没有icon图的时候去显示）
+
+    然后又设置了一个头像。那么就造成了overdraw，有头像的完全没必要去绘制背景
+    
+        // bad code
+        //viewHolder.icon.setBackgroundColor(Color.parseColor("#F5F5DC"));
+        //viewHolder.icon.setImageResource(droid.imageId);
+        
+        // optimized code
+        if (droid.imageId == -1) {
+            viewHolder.icon.setBackgroundColor(Color.parseColor("#F5F5DC"));
+            viewHolder.icon.setImageResource(android.R.color.transparent);
+        } else {
+            viewHolder.icon.setImageResource(droid.imageId);
+            viewHolder.icon.setBackgroundResource(android.R.color.transparent);
+        }
+        
+- 不必要的Background 6
+
+    我们的Activity背景是白色，layout中去设置了背景色白色。
+
+    因为Activity的布局最终会添加在DecorView中，这个DecorView中的背景就没有必要了
+    
+        setContentView(R.layout.activity_main);
+        getWindow().setBackgroundDrawable(null);
+
+#### 优化后效果
+
+基本都是理想的 1X Overdraw
+
+![](http://i.imgur.com/ZTvGmKi.png)
+
+
+### 2.2 clipRect的妙用
 
 
 # AS 三步找到 Hierarchy Viewer

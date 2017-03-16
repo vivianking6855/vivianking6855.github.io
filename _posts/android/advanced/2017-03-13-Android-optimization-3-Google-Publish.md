@@ -150,7 +150,6 @@ HierarchyViewer工具查找Activity中的布局是否过于复杂
 - [性能优化（四）Google典范之Render实践](http://vivianking6855.github.io/2017/03/14/Android-optimization-4-Google-Publish-Render/)
 
 
-
 # Reference
 
 <br>
