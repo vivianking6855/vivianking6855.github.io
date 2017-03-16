@@ -4,7 +4,7 @@ title: UI - RemoteViews
 date: 2017-1-24
 excerpt: "RemoteViews"
 categories: Android
-tags: [Android 微技巧]
+tags: [Android 基础]
 comments: true
 ---
 

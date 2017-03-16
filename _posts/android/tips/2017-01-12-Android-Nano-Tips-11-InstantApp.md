@@ -3,7 +3,7 @@ layout: post
 title: Android InstantAPP - 即搜即得应用
 date: 2017-1-12
 excerpt: "Android InstantAPP - 即搜即得应用"
-tags: [Android 微技巧]
+tags: [Android 基础]
 comments: true
 ---
 

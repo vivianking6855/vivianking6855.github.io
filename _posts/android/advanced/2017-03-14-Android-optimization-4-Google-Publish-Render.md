@@ -33,7 +33,6 @@ lefttrees: true
 优化前layout xml：
 
 
-
 ### (2）Layout 设计优化
 
 除了使用Hierarchy Viewer检测无用控件和层级外，在布局设计时如果可以加入下面的优化思想就更好了。
@@ -49,15 +48,13 @@ lefttrees: true
 
 ### 2.1 移除不必要的background
 
-贴下Overdraw情况图
-
-蓝色，淡绿，淡红，深红代表了4种不同程度的Overdraw情况。
+贴下Overdraw颜色说明图。蓝色，淡绿，淡红，深红代表了4种不同程度的Overdraw情况。
 
 我们的目标就是尽量减少红色Overdraw，看到更多的蓝色区域。
 
 ![](http://i.imgur.com/BJCf3ps.png)
 
-#### 示例核心Code 和 GPU Overdraw情况
+#### 修改前核心Code和GPU Overdraw情况
 
 ----------MainActivity
 
@@ -301,6 +298,12 @@ GPU Overdraw情况如下图，基本都是红色: 4X+ overdraw
 
 
 ### 2.2 clipRect的妙用
+
+有一些自定义View，例如扑克牌层叠View, 经常会存在很多不必要的绘制。
+
+多张卡片叠加，叠加的区域肯定是过度绘制了。这时候我们可以用clipRect解决这类问题。
+
+下面通过一个实例来展示，那么首先看一个效果图
 
 
 # AS 三步找到 Hierarchy Viewer
