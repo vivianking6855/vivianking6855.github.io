@@ -32,7 +32,7 @@ lefttrees: true
 
 ### 1. Layout 设计优化
 
-除了使用Hierarchy Viewer检测无用控件和层级外，在布局设计时如果可以加入下面的优化思想就更好了。
+在布局设计时，就应该考虑最优化思想。下面列出一些常用的技巧：
 
 - 有选择地使用性能较低的ViewGroup.比如不嵌套的情况下，用LinearLayout和FrameLayout代替RelativeLayout.
     - RelativeLayout功能比较复杂，布局过程需要花费更多的CPU时间
@@ -99,20 +99,30 @@ lefttrees: true
     </LinearLayout>
 
 
-Hierarchy Viewer 分析图示：
-
-
-
-点击LinearLayout，然后点击三色Obtain layout time icon. 可以看到两个子View上面都有了3个圈圈
-
-- 取色范围为红、黄、绿色。
-- 三个圈圈分别代表measure 、layout、draw的速度，并且你也可以看到实际的运行的速度
-- 如果你发现某个View上的圈是红色，那么说明这个View相对其他的View，该操作运行最慢，注意只是相对别的View，并不是说就一定很慢。
-- 红色的指示能给你一个判断的依据，具体慢不慢还是需要你自己去判断的。
-
 上面的布局文件展示了两种写法：一个是Linearlayout嵌套的，一个是RelativeLayout搭配StubView和<merge>
 
-从图中来看方案二教快一些（可以多次点击Profile Node取样）
+从图中来看方案二教快一些（可以多次点击Profile Node取样）。Hierarchy Viewer 分析图示：
+
+[图一（ViewStub未显示）](vivianking6855.github.io/datum/images/hv_analysis_1.jpg)
+
+[图二（ViewStub 对应offline layout显示）](vivianking6855.github.io/datum/images/hv_analysis_2.jpg)
+
+
+点击LinearLayout，然后点击三色Obtain layout time icon. 三个点从左起依次代表View的Measure, Layout和Draw的性能. 
+
+另外颜色表示该View的该项时间指数, 分为: 
+
+- 绿色, 表示该View的此项性能比该View Tree中超过50%的View都要快. 
+- 黄色, 表示该View的此项性能比该View Tree中超过50%的View都要慢. 
+- 红色, 表示该View的此项性能是View Tree中最慢的.
+    - 红色说明这个View相对其他的View，该操作运行最慢，注意只是相对别的View，并不是说就一定很慢。
+    - 红色的指示能给你一个判断的依据，具体慢不慢还是需要你自己去判断的。
+
+如果你的界面的Tree View中红点较多, 那就需要注意了. 一般来说: 
+
+- Measure红点, 可能是布局中嵌套RelativeLayout, 或是嵌套LinearLayout都使用了weight属性. 
+- Layout红点, 可能是布局层级太深. 
+- Draw红点, 可能是自定义View的绘制有问题, 复杂计算等.
 
 ## 二、 Overdraw方案
 
@@ -503,6 +513,11 @@ GPU Overdraw情况如下图，都是红色: 4X+ overdraw
 
 [效果图](vivianking6855.github.io/datum/images/cliprect_good.jpg)
 
+
+### 3. onDraw方法要避免执行大量的操作
+
+- onDraw中不要创建新的局部对象。频繁调用时，如果一瞬间产生大量的临时对象会占用过多的内存而且会导致系统更加频发的gc，降低程序的执行效率。
+- onDraw中不要做耗时任务，也不能执行成千上万的循环操作，尽管每次循环都很轻量级，但是大量的循环仍然十分强占CPU的时间片，会造成View的绘制过程不流畅。
 
 # AS 三步找到 Hierarchy Viewer
 

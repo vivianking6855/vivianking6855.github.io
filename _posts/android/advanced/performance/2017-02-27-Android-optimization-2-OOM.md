@@ -20,53 +20,49 @@ lefttrees: true
 
 1. Stack和Heap：
 
-   - Stack空间（进栈和出栈）由操作系统控制，其中主要存储函数地址、函数参数、局部变量、还有一些基础类型等等，所以Stack空间不需要很大，一般为几MB大小。
+    - Stack空间（进栈和出栈）由操作系统控制，其中主要存储函数地址、函数参数、局部变量、还有一些基础类型等等，所以Stack空间不需要很大，一般为几MB大小。
+    - Heap空间的使用由程序员控制，程序员可以使用malloc、new、free、delete等函数调用来操作这片地址空间。
 
-   - Heap空间的使用由程序员控制，程序员可以使用malloc、new、free、delete等函数调用来操作这片地址空间。
-
-        Heap为程序完成各种复杂任务提供内存空间，所以空间比较大，一般为几百MB到几GB。  
+        Heap为程序完成各种复杂任务提供内存空间，所以空间比较大，一般为几百MB到几GB。
+        
         Heap空间由程序员管理，所以容易出现使用不当导致严重问题。
 
 2. Android中的进程
 
-   - 进程分为native进程（c/c++实现）和java进程（dalvik实例的linux进程。入口函数是java的main函数。
-    
-   - 每一个android上的java进程实际上就是一个linux进程，只是进程中多了一个dalvik虚拟机实例。
-    
-   - Android系统中的应用程序基本都是java进程，如桌面、电话、联系人、状态栏等等。
+    - 进程分为native进程（c/c++实现）和java进程（dalvik实例的linux进程。入口函数是java的main函数。
+    - 每一个android上的java进程实际上就是一个linux进程，只是进程中多了一个dalvik虚拟机实例。
+    - Android系统中的应用程序基本都是java进程，如桌面、电话、联系人、状态栏等等。
 
 3. Android中进程的堆内存 Heap
 
-  - 进程空间中的heap空间是我们需要重点关注的。
-
-  - heap空间完全由程序员控制，我们使用的malloc、C++ new和java new所申请的空间都是heap空间。
-
-  - C/C++申请的内存空间在native heap中，而java申请的内存空间则在dalvik heap中。
+    - 进程空间中的heap空间是我们需要重点关注的。
+    - heap空间完全由程序员控制，我们使用的malloc、C++ new和java new所申请的空间都是heap空间。
+    - C/C++申请的内存空间在native heap中，而java申请的内存空间则在dalvik heap中。
 
 # 为什么容易出现OOM
 
-   - 这个是因为Android系统对dalvik的vm heapsize作了硬性限制，当java进程申请的java空间超过阈值时，就会抛出OOM异常。
+- 这个是因为Android系统对dalvik的vm heapsize作了硬性限制，当java进程申请的java空间超过阈值时，就会抛出OOM异常。
     
-        （这个阈值可以是48M、24M、16M等，视机型而定），可以通过adb shell getprop | grep dalvik.vm.heapgrowthlimit查看此值。
+    这个阈值可以是48M、24M、16M等，视机型而定，可以通过adb shell getprop | grep dalvik.vm.heapgrowthlimit查看此值。
     
-    - 程序发生OMM并不表示RAM不足，而是因为程序申请的java heap对象超过了dalvik vm heapgrowthlimit。
+- 程序发生OMM并不表示RAM不足，而是因为程序申请的java heap对象超过了dalvik vm heapgrowthlimit。
     
-        也就是说，在RAM充足的情况下，也可能发生OOM。
+    也就是说，在RAM充足的情况下，也可能发生OOM。
 
 # 内存泄露
 
-    首先看下dalvik的Garbage Collection，GC会选择回收没有直接或者间接引用到GC Roots的点。如下图蓝色部分。
+首先看下dalvik的Garbage Collection，GC会选择回收没有直接或者间接引用到GC Roots的点。如下图蓝色部分。
     
-    Java内存泄漏指的是进程中某些对象（垃圾对象）已经没有使用价值了，但是它们却可以直接或间接地引用到gc roots导致无法被GC回收。
+Java内存泄漏指的是进程中某些对象（垃圾对象）已经没有使用价值了，但是它们却可以直接或间接地引用到gc roots导致无法被GC回收。
     
-    无用的对象占据着内存空间，使得实际可使用内存变小，形象地说法就是内存泄漏了。
+无用的对象占据着内存空间，使得实际可使用内存变小，形象地说法就是内存泄漏了。
 
 
 ![](http://i.imgur.com/RuracHg.png)
 
 ## 常见的内存泄漏
 
-### (1) Context泄漏
+### 1. Context泄漏
  
    示例 1： 静态变量导致的内存泄漏
      
@@ -133,7 +129,7 @@ lefttrees: true
 - 如果一个acitivity的非静态内部类的生命周期不受控制，那么避免使用它；
 - 正确的方法是使用一个静态的内部类，并且对它的外部类有一WeakReference（例如 static Handler创建时可以把外部类的weakreference传进来）
 
-### (2) 使用handler时的内存问题
+### 2. 使用handler时的内存问题
 
    Handler通过发送Message与其他线程交互，Message发出之后是存储在目标线程的MessageQueue中的，而有时候Message也不是马上就被处理的，可能会驻留比较久的时间。
     
@@ -155,7 +151,7 @@ lefttrees: true
     }  
     
     
-### (3) 注册某个对象后未反注册
+### 3. 注册某个对象后未反注册
 
 注册广播接收器、注册观察者等等
 
@@ -176,7 +172,7 @@ lefttrees: true
   因为单例模式的特点是其生命周期和Application保持一致。
 
 
-### (4) 集合中对象没清理造成的内存泄露
+### 4. 集合中对象没清理造成的内存泄露
 
 例如对象的引用的集合不再使用时，如果没有把它的引用从集合中清理掉，这样这个集合就会越来越大。如果这个集合是static的话，那情况就更严重了。
 
@@ -190,52 +186,52 @@ lefttrees: true
     
   由于锁屏是驻留在system_server进程里，所以导致结果是手机重启。
 
-### (5) 资源对象没关闭造成的内存泄露
+### 5. 资源对象没关闭造成的内存泄露
 
 比如(Cursor，File文件等)。 对于资源性对象在不使用的时候，应该立即调用它的close()函数，将其关闭掉，然后再置为null.
 
-### (6) 构造Adapter时，没有使用缓存的 convertView
+### 6. 构造Adapter时，没有使用缓存的 convertView
 
 可以使用Android最新组件RecyclerView,替代ListView来避免
 
-### (7) Bitmap使用不当
+### 7. Bitmap使用不当
  
 必要的措施：
  
 - 第一、及时的销毁。
 
-   虽然，系统能够确认Bitmap分配的内存最终会被销毁，但是由于它占用的内存过多，所以很可能会超过Java堆的限制。
+    虽然，系统能够确认Bitmap分配的内存最终会被销毁，但是由于它占用的内存过多，所以很可能会超过Java堆的限制。
     
-   因此，在用完Bitmap时，要及时的recycle掉。recycle并不能确定立即就会将Bitmap释放掉，但是会给虚拟机一个暗示：“该图片可以释放了”。
+    因此，在用完Bitmap时，要及时的recycle掉。recycle并不能确定立即就会将Bitmap释放掉，但是会给虚拟机一个暗示：“该图片可以释放了”。
 
 - 第二、设置一定的采样率。
 
-   有时候，我们要显示的区域很小，没有必要将整个图片都加载出来，而只需要记载一个缩小过的图片。
+    有时候，我们要显示的区域很小，没有必要将整个图片都加载出来，而只需要记载一个缩小过的图片。
    
-   这时候可以设置一定的采样率，那么就可以大大减小占用的内存。
+    这时候可以设置一定的采样率，那么就可以大大减小占用的内存。
    
-   如下面的代码：
+    如下面的代码：
 
-    private ImageView preview;    
-    BitmapFactory.Options options = newBitmapFactory.Options();    
-    options.inSampleSize = 2;//图片宽高都为原来的二分之一，即图片为原来的四分之一    
-    Bitmap bitmap =BitmapFactory.decodeStream(cr.openInputStream(uri), null, options); preview.setImageBitmap(bitmap);   
+        private ImageView preview;    
+        BitmapFactory.Options options = newBitmapFactory.Options();    
+        options.inSampleSize = 2;//图片宽高都为原来的二分之一，即图片为原来的四分之一    
+        Bitmap bitmap =BitmapFactory.decodeStream(cr.openInputStream(uri), null, options); preview.setImageBitmap(bitmap);   
 
 - 第三、巧妙的运用软引用（SoftRefrence）
 
-   有些时候，我们使用Bitmap后没有保留对它的引用，因此就无法调用Recycle函数。
+    有些时候，我们使用Bitmap后没有保留对它的引用，因此就无法调用Recycle函数。
    
-   这时候巧妙的运用软引用，可以使Bitmap在内存快不足时得到有效的释放。如下：
+    这时候巧妙的运用软引用，可以使Bitmap在内存快不足时得到有效的释放。如下：
 
-    SoftReference<Bitmap>  bitmap_ref  = new SoftReference<Bitmap>(BitmapFactory.decodeStream(inputstream));   
-    ……  
-    ……  
-    if (bitmap_ref .get() != null)  
-              bitmap_ref.get().recycle(); 
+        SoftReference<Bitmap>  bitmap_ref  = new SoftReference<Bitmap>(BitmapFactory.decodeStream(inputstream));   
+        ……  
+        ……  
+        if (bitmap_ref .get() != null)  
+                  bitmap_ref.get().recycle(); 
               
-   PS: 对象的引用强度 SoftRefrence > WeakReference
+    PS: 对象的引用强度 SoftRefrence > WeakReference
 
-### (8) 属性动画没有释放导致的内存泄漏
+### 8. 属性动画没有释放导致的内存泄漏
 
 属性动画有一类无限循环的动画。
 
@@ -255,14 +251,12 @@ lefttrees: true
 - FindBugs
 
 
-
 # 性能优化专题
 
 - [性能优化（一）：方法概述](http://vivianking6855.github.io/2017/02/27/Android-optimization-1-method/)
 - [性能优化（二）内存 OOM](http://vivianking6855.github.io/2017/02/27/Android-optimization-2-OOM/)
 - [Android性能优化（三）Google典范之开篇](http://vivianking6855.github.io/2017/03/13/Android-optimization-3-Google-Publish/)
 - [性能优化（四）Google典范之Render实践](http://vivianking6855.github.io/2017/03/14/Android-optimization-4-Google-Publish-Render/)
-
 
 
 # Reference

@@ -15,24 +15,31 @@ lefttrees: true
 
 # 一、 布局优化
 
-布局优化的思想：尽量减少布局文件的层级。 如何进行布局优化
+布局优化的思想：尽量减少层级和无用的控件。 
 
-1. 删除布局中无用的控件和层级
-2. 有选择地使用性能较低的ViewGroup
-3. 采用<include>、<merge>标签和ViewStub
+1. Layout 设计优化
+
+    在布局设计时，就应该考虑最优化思想。下面列出一些常用的技巧：
+
+    - 有选择地使用性能较低的ViewGroup.比如不嵌套的情况下，用LinearLayout和FrameLayout代替RelativeLayout.
+    - 使用<include>实现布局重用，避免代码重复
+    - 使用<merge>减少布局层级结构
+    - 使用ViewStub实现延时加载
+    - 在TextView中使用Compound drawable，取代ImageView  +TextView
+    - 使用LinearLayout自带的分割线: android:divider=""
+
+2. Hierarchy Viewer工具优化布局
    
 
 详见：[性能优化（四）Google典范之Render实践中Layout优化章节](http://vivianking6855.github.io/2017/03/14/Android-optimization-4-Google-Publish-Render/)
 
-
 # 二、 绘制优化
 
-绘制优化是指View的onDraw方法要避免执行大量的操作
+1. 移除不必要的background
+2. 用clipRect优化
+3. onDraw方法要避免执行大量的操作
 
-- onDraw中不要创建新的局部对象。频繁调用时，如果一瞬间产生大量的临时对象会占用过多的内存而且会导致系统更加频发的gc，降低程序的执行效率。
-- onDraw中不要做耗时任务，也不能执行成千上万的循环操作，尽管每次循环都很轻量级，但是大量的循环仍然十分强占CPU的时间片，会造成View的绘制过程不流畅。
-    - Google官方给出的性能优化典范中的标准，View的绘制频率保证60fps是最佳，要求每帧的绘制时间不超过16ms(16ms = 1000/60)
-    - 虽然程序很难保证16ms这个时间，但是尽量降低onDraw方法的复杂度总是有效的。
+详见：[性能优化（四）Google典范之Render实践中Overdraw章节](http://vivianking6855.github.io/2017/03/14/Android-optimization-4-Google-Publish-Render/)
 
 # 三、 内存泄漏优化
 
