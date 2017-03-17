@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android性能优化（三）Google典范之开篇
+title: 性能优化（三）Google典范之开篇
 date: 2017-3-13
 excerpt: "Google典范之开篇"
 categories: Android
