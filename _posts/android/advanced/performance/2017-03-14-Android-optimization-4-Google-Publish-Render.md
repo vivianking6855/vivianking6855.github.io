@@ -4,7 +4,7 @@ title: 性能优化（四）Google典范之Render实践
 date: 2017-3-14
 excerpt: "Google典范之Render实践"
 categories: Android
-tags: [Android 进阶]
+tags: [Android 性能优化]
 comments: true
 lefttrees: true
 ---
@@ -24,17 +24,79 @@ lefttrees: true
 
 # 解决方案
 
-## 1. 通过Hierarchy Viewer去检测渲染效率，去除不必要的嵌套
+## 一、 Layout优化
 
-### 1.1 删除布局中无用的控件和层级
+我们可以在Layout设计时考虑移除层级和删除无用的控件。
 
-#### 1.1.1 优化前核心Code和Hierarchy Viewer情况
+还可以通过通过Hierarchy Viewer去检测渲染效率，去除不必要的嵌套。
+
+### 1. Layout 设计优化
+
+除了使用Hierarchy Viewer检测无用控件和层级外，在布局设计时如果可以加入下面的优化思想就更好了。
+
+- 有选择地使用性能较低的ViewGroup.比如不嵌套的情况下，用LinearLayout和FrameLayout代替RelativeLayout.
+    - RelativeLayout功能比较复杂，布局过程需要花费更多的CPU时间
+    - 但是如果要LinearLayout嵌套来代替RelativeLayout，还是建议用RelativeLayout。因为嵌套同样会降低程序的性能  
+- 使用<include>实现布局重用，避免代码重复
+- 使用<merge>减少布局层级结构
+- 使用ViewStub实现延时加载
+- 在TextView中使用Compound drawable，取代ImageView  +TextView
+- 使用LinearLayout自带的分割线: android:divider=""
+
+### 2. Hierarchy Viewer工具优化布局
 
 如果找不到Hierarchy Viewer，可以看下面的“如何找到Hierarchy Viewer？”
 
 示例layout
 
-
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    
+        <!-- Version 1. Uses nested LinearLayouts -->
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+    
+            <ImageView
+                android:id="@+id/avatar1"
+                android:layout_width="@dimen/avatar_dimen"
+                android:layout_height="@dimen/avatar_dimen"
+                android:layout_margin="@dimen/avatar_layout_margin"
+                android:onClick="hideOffline" />
+    
+            <include layout="@layout/offline" />
+    
+        </LinearLayout>
+    
+    
+        <!-- Version 2: uses a single RelativeLayout -->
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    
+            <ImageView
+                android:id="@+id/avatar2"
+                android:layout_width="@dimen/avatar_dimen"
+                android:layout_height="@dimen/avatar_dimen"
+                android:layout_margin="@dimen/avatar_layout_margin"
+                android:onClick="showOffline" />
+    
+            <ViewStub
+                android:id="@+id/offline_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/avatar2"
+                android:layout="@layout/offline" />
+    
+        </RelativeLayout>
+    
+    </LinearLayout>
 
 
 Hierarchy Viewer 分析图示：
@@ -50,25 +112,15 @@ Hierarchy Viewer 分析图示：
 
 上面的布局文件展示了两种写法：一个是Linearlayout嵌套的，一个是RelativeLayout搭配StubView和<merge>
 
-从图中来看方案二教快一些（请多次点击Profile Node取样）
+从图中来看方案二教快一些（可以多次点击Profile Node取样）
 
-Hierarchy Viewer可以帮助我们发现类似的问题。
-
-
-### 1.2 Layout 设计优化
-
-除了使用Hierarchy Viewer检测无用控件和层级外，在布局设计时如果可以加入下面的优化思想就更好了。
-
-- 有选择地使用性能较低的ViewGroup
-- 采用<include>、<merge>标签和ViewStub
-
-## 2. Overdraw方案
+## 二、 Overdraw方案
 
    通过Show GPU Overdraw去检测(开发者选项 -> 调试GPU过度绘制 -> 显示GPU过度绘制区域)
 
    最终可以通过移除不必要的背景以及使用canvas.clipRect解决大多数问题
 
-### 2.1 移除不必要的background
+### 1. 移除不必要的background
 
 贴下Overdraw颜色说明图。蓝色，淡绿，淡红，深红代表了4种不同程度的Overdraw情况。
 
@@ -76,7 +128,7 @@ Hierarchy Viewer可以帮助我们发现类似的问题。
 
 ![](http://i.imgur.com/BJCf3ps.png)
 
-#### 2.1.1 优化前核心Code和GPU Overdraw情况
+#### 优化前核心Code和GPU Overdraw情况
 
 ----------MainActivity
 
@@ -263,7 +315,7 @@ GPU Overdraw情况如下图，都是红色: 4X+ overdraw
 ![](http://i.imgur.com/Ir76PpT.png)
 
 
-#### 2.1.2 优化背景
+#### 优化背景
 
 - 不必要的Background 1
     
@@ -311,20 +363,20 @@ GPU Overdraw情况如下图，都是红色: 4X+ overdraw
         setContentView(R.layout.activity_main);
         getWindow().setBackgroundDrawable(null);
 
-#### 2.1.3 优化后效果
+####优化后效果
 
 是理想的 1X Overdraw
 
 ![](http://i.imgur.com/ZTvGmKi.png)
 
 
-### 2.2 clipRect的妙用
+### 2. clipRect的妙用
 
 有一些自定义View，例如扑克牌层叠View, 经常会存在很多不必要的绘制。
 
 多张卡片叠加，叠加的区域肯定是过度绘制了。这时候我们可以用clipRect解决这类问题。
 
-#### 2.2.1 优化前核心Code和GPU Overdraw情况
+#### 优化前核心Code和GPU Overdraw情况
 
 ------------------------ClipRectActivity
 
@@ -407,7 +459,7 @@ GPU Overdraw情况如下图，都是红色: 4X+ overdraw
 
 [效果图](vivianking6855.github.io/datum/images/cliprect_bad.jpg)
 
-#### 2.2.2 用clipRect优化
+#### 用clipRect优化
 
 逻辑上只有最后一张图需要完整的绘制，其他的都只需要绘制部
 
@@ -445,7 +497,7 @@ GPU Overdraw情况如下图，都是红色: 4X+ overdraw
         }
     }
 
-#### 2.2.3 优化后效果
+#### 优化后效果
 
 是理想的 1X Overdraw
 
@@ -454,7 +506,7 @@ GPU Overdraw情况如下图，都是红色: 4X+ overdraw
 
 # AS 三步找到 Hierarchy Viewer
 
-看Android Studio三步找到它
+看Android Studio如何三步找到它
 
 ## Step 1：
 

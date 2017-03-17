@@ -4,7 +4,7 @@ title: 性能优化（二）内存 OOM
 date: 2017-2-27
 excerpt: "内存 OOM"
 categories: Android
-tags: [Android 进阶]
+tags: [Android 性能优化]
 comments: true
 lefttrees: true
 ---
