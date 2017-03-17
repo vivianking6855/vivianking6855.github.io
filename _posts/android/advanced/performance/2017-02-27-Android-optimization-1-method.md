@@ -4,7 +4,7 @@ title: 性能优化（一）：方法概述
 date: 2017-2-27
 excerpt: "方法概述"
 categories: Android
-tags: [Android 进阶]
+tags: [Android 性能优化]
 comments: true
 lefttrees: true
 ---
@@ -89,7 +89,7 @@ lefttrees: true
 - 开发过程中避免写出有内存泄漏的代码
 - 通过一些分析工具如Android Studio自动Android Monitor，[leakcanary](https://github.com/square/leakcanary)，FindBugs等
 
-详见：[ Android性能优化 （二）内存 OOM](http://vivianking6855.github.io/Android-optimization-2-OOM/)
+详见[Android性能优化 （二）内存 OOM](http://vivianking6855.github.io/tag/#Android%20%E8%BF%9B%E9%98%B6-ref)
 
 # 四、 响应速度优化
 
@@ -101,15 +101,13 @@ lefttrees: true
 
 # 六、 Bitmap优化
 
-主要是BitmapFactory.Options 和缓存。详见[ Android Bitmap的加载和Cache](http://vivianking6855.github.io/Android-Bitmap-Cache/)
+主要是BitmapFactory.Options 和缓存。详见[Android Bitmap的加载和Cache](http://vivianking6855.github.io/tag/#Android%20%E5%9F%BA%E7%A1%80-ref)
 
 # 七、 线程优化
 
 线程优化的思想是采用线程池，避免程序中存在大量的Thread. 控制最大并发数等。详见下面两篇blog~
 
-[Android的线程和线程池](http://vivianking6855.github.io/Multi-Thread/)
-
-[线程同步](http://vivianking6855.github.io/Thread-Sync/)
+[Android的线程和线程池，线程同步](http://vivianking6855.github.io/tag/#Android%20%E5%9F%BA%E7%A1%80-ref)
 
 # 八、 耗电优化
 
@@ -157,18 +155,12 @@ Purdue University研究了最受欢迎的一些应用的电量消耗：
 <br/><br/>
 
 
-# 性能优化专题
-
-- [性能优化（一）：方法概述](http://vivianking6855.github.io/2017/02/27/Android-optimization-1-method/)
-- [性能优化（二）内存 OOM](http://vivianking6855.github.io/2017/02/27/Android-optimization-2-OOM/)
-- [Android性能优化（三）Google典范之开篇](http://vivianking6855.github.io/2017/03/13/Android-optimization-3-Google-Publish/)
-- [性能优化（四）Google典范之Render实践](http://vivianking6855.github.io/2017/03/14/Android-optimization-4-Google-Publish-Render/)
-
-
-
 # Reference
 
 <br>
 
+
+
+> 性能优化专题
 
 > 《Android开发艺术探索》

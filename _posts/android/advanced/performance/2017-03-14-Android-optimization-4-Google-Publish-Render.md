@@ -32,7 +32,7 @@ lefttrees: true
 
 如果找不到Hierarchy Viewer，可以看下面的“如何找到Hierarchy Viewer？”
 
-实例layout
+示例layout
 
 
 
@@ -405,7 +405,7 @@ GPU Overdraw情况如下图，都是红色: 4X+ overdraw
     
 GPU Overdraw情况如下图，都是红色: 4X+ overdraw
 
-![](vivianking6855.github.io/datum/images/cliprect_bad.jpg)
+[效果图](vivianking6855.github.io/datum/images/cliprect_bad.jpg)
 
 #### 2.2.2 用clipRect优化
 
@@ -449,7 +449,7 @@ GPU Overdraw情况如下图，都是红色: 4X+ overdraw
 
 是理想的 1X Overdraw
 
-![](vivianking6855.github.io/datum/images/cliprect_good.jpg)
+[效果图](vivianking6855.github.io/datum/images/cliprect_good.jpg)
 
 
 # AS 三步找到 Hierarchy Viewer
@@ -480,20 +480,13 @@ GPU Overdraw情况如下图，都是红色: 4X+ overdraw
 ![](http://i.imgur.com/ffC691e.jpg)
 
 
-# 性能优化专题
-
-- [性能优化（一）：方法概述](http://vivianking6855.github.io/2017/02/27/Android-optimization-1-method/)
-- [性能优化（二）内存 OOM](http://vivianking6855.github.io/2017/02/27/Android-optimization-2-OOM/)
-- [Android性能优化（三）Google典范之开篇](http://vivianking6855.github.io/2017/03/13/Android-optimization-3-Google-Publish/)
-- [性能优化（四）Google典范之Render实践](http://vivianking6855.github.io/2017/03/14/Android-optimization-4-Google-Publish-Render/)
-
-
-
-
 # Reference
 
 <br>
 
+
+
+> 性能优化专题
 
 > [Google 发布 Android 性能优化典范](http://www.oschina.net/news/60157/android-performance-patterns?sid=07vbqo00ovnh233e0ain6ue5a6)
 

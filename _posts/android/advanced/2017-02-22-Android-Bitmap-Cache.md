@@ -4,7 +4,7 @@ title: Android Bitmap的加载和Cache
 date: 2017-2-22
 excerpt: "Android Bitmap的加载和Cache"
 categories: Android
-tags: [Android 基础]
+tags: [Android 进阶]
 comments: true
 lefttrees: true
 ---
