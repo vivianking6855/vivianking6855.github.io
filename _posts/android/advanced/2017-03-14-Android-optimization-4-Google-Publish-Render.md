@@ -26,14 +26,36 @@ lefttrees: true
 
 ## 1. 通过Hierarchy Viewer去检测渲染效率，去除不必要的嵌套
 
-### (1) 删除布局中无用的控件和层级
+### 1.1 删除布局中无用的控件和层级
+
+#### 1.1.1 优化前核心Code和Hierarchy Viewer情况
 
 如果找不到Hierarchy Viewer，可以看下面的“如何找到Hierarchy Viewer？”
 
-优化前layout xml：
+实例layout
 
 
-### (2）Layout 设计优化
+
+
+Hierarchy Viewer 分析图示：
+
+
+
+点击LinearLayout，然后点击三色Obtain layout time icon. 可以看到两个子View上面都有了3个圈圈
+
+- 取色范围为红、黄、绿色。
+- 三个圈圈分别代表measure 、layout、draw的速度，并且你也可以看到实际的运行的速度
+- 如果你发现某个View上的圈是红色，那么说明这个View相对其他的View，该操作运行最慢，注意只是相对别的View，并不是说就一定很慢。
+- 红色的指示能给你一个判断的依据，具体慢不慢还是需要你自己去判断的。
+
+上面的布局文件展示了两种写法：一个是Linearlayout嵌套的，一个是RelativeLayout搭配StubView和<merge>
+
+从图中来看方案二教快一些（请多次点击Profile Node取样）
+
+Hierarchy Viewer可以帮助我们发现类似的问题。
+
+
+### 1.2 Layout 设计优化
 
 除了使用Hierarchy Viewer检测无用控件和层级外，在布局设计时如果可以加入下面的优化思想就更好了。
 
@@ -54,7 +76,7 @@ lefttrees: true
 
 ![](http://i.imgur.com/BJCf3ps.png)
 
-#### 修改前核心Code和GPU Overdraw情况
+#### 2.1.1 优化前核心Code和GPU Overdraw情况
 
 ----------MainActivity
 
@@ -189,8 +211,7 @@ lefttrees: true
             android:id="@+id/id_chat_icon"
             android:layout_width="@dimen/avatar_dimen"
             android:layout_height="@dimen/avatar_dimen"
-            android:layout_margin="@dimen/avatar_layout_margin"
-            android:src="@drawable/camera" />
+            android:layout_margin="@dimen/avatar_layout_margin" />
     
         <LinearLayout
             android:layout_width="match_parent"
@@ -237,12 +258,12 @@ lefttrees: true
 [完整Code](https://github.com/vivianking6855/android-advanced/tree/master/PerformanceDemo)
 
 
-GPU Overdraw情况如下图，基本都是红色: 4X+ overdraw
+GPU Overdraw情况如下图，都是红色: 4X+ overdraw
 
 ![](http://i.imgur.com/Ir76PpT.png)
 
 
-#### 优化背景
+#### 2.1.2 优化背景
 
 - 不必要的Background 1
     
@@ -290,9 +311,9 @@ GPU Overdraw情况如下图，基本都是红色: 4X+ overdraw
         setContentView(R.layout.activity_main);
         getWindow().setBackgroundDrawable(null);
 
-#### 优化后效果
+#### 2.1.3 优化后效果
 
-基本都是理想的 1X Overdraw
+是理想的 1X Overdraw
 
 ![](http://i.imgur.com/ZTvGmKi.png)
 
@@ -303,7 +324,132 @@ GPU Overdraw情况如下图，基本都是红色: 4X+ overdraw
 
 多张卡片叠加，叠加的区域肯定是过度绘制了。这时候我们可以用clipRect解决这类问题。
 
-下面通过一个实例来展示，那么首先看一个效果图
+#### 2.2.1 优化前核心Code和GPU Overdraw情况
+
+------------------------ClipRectActivity
+
+    public class ClipRectActivity extends AppCompatActivity {
+    
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_clip_rect);
+        }
+    }
+
+------------------------activity_clip_rect.xml
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    
+        <com.vv.performancedemo.view.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    
+    </LinearLayout>
+
+------------------------CardView
+
+    public class CardView extends View {
+        private final static String TAG = CardView.class.getSimpleName();
+    
+        private final static int X_OFFSET = 50; // canvas x offset
+        private final static int Y_OFFSET = 100;// canvas y offset
+        private final static int IMG_HOR_OFFSET = 200; // image cover start point
+    
+        private Bitmap[] mCards = new Bitmap[4];
+        private int[] mImgId = new int[]{
+                R.drawable.card1,
+                R.drawable.card2,
+                R.drawable.card3,
+                R.drawable.card4
+        };
+    
+        public CardView(Context context) {
+            this(context, null);
+        }
+    
+        public CardView(Context context, @Nullable AttributeSet attrs) {
+            super(context, attrs);
+            initView();
+        }
+    
+        private void initView() {
+            Bitmap bm = null;
+            for (int i = 0; i < mCards.length; i++) {
+                bm = ImageUtils.decodeSampledBitmapFromResource(getResources(), mImgId[i], 400, 600);
+                mCards[i] = Bitmap.createScaledBitmap(bm, 400, 600, false);
+            }
+    
+            setBackgroundColor(Color.parseColor("#F5F5DC"));
+        }
+    
+        @Override
+        protected void onDraw(Canvas canvas) {
+            super.onDraw(canvas);
+    
+            canvas.save();
+            canvas.translate(X_OFFSET, Y_OFFSET);
+    
+            for (Bitmap bitmap : mCards) {
+                canvas.translate(120, 0);
+                canvas.drawBitmap(bitmap, 0, 0, null);
+            }
+    
+            canvas.restore();
+        }
+    
+    }
+    
+GPU Overdraw情况如下图，都是红色: 4X+ overdraw
+
+![](vivianking6855.github.io/datum/images/cliprect_bad.jpg)
+
+#### 2.2.2 用clipRect优化
+
+逻辑上只有最后一张图需要完整的绘制，其他的都只需要绘制部
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+
+        canvas.save();
+        canvas.translate(X_OFFSET, Y_OFFSET);
+
+        for (int i = 0; i < mCards.length; i++) {
+            canvas.translate(IMG_HOR_OFFSET, 0);
+            canvas.save();
+            if (i < mCards.length - 1) {
+                canvas.clipRect(0, 0, IMG_HOR_OFFSET, mCards[i].getHeight());
+            }
+            canvas.drawBitmap(mCards[i], 0, 0, null);
+            canvas.restore();
+        }
+
+        canvas.restore();
+    }
+
+
+最后不要忘记，我们有给CardView setBackgroundColor，因此DecorView中的背景就没有必要了：
+
+    public class ClipRectActivity extends AppCompatActivity {
+    
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_clip_rect);
+    
+            getWindow().setBackgroundDrawable(null);
+        }
+    }
+
+#### 2.2.3 优化后效果
+
+是理想的 1X Overdraw
+
+![](vivianking6855.github.io/datum/images/cliprect_good.jpg)
 
 
 # AS 三步找到 Hierarchy Viewer
