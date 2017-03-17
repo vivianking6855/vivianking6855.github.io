@@ -22,10 +22,12 @@ lefttrees: true
     在布局设计时，就应该考虑最优化思想。下面列出一些常用的技巧：
 
     - 有选择地使用性能较低的ViewGroup.比如不嵌套的情况下，用LinearLayout和FrameLayout代替RelativeLayout.
-    - 使用<include>实现布局重用，避免代码重复
-    - 使用<merge>减少布局层级结构
+        - RelativeLayout功能比较复杂，布局过程需要花费更多的CPU时间
+        - 但是如果要LinearLayout嵌套来代替RelativeLayout，还是建议用RelativeLayout。因为嵌套同样会降低程序的性能  
+    - 使用include实现布局重用，避免代码重复
+    - 使用merge减少布局层级结构
     - 使用ViewStub实现延时加载
-    - 在TextView中使用Compound drawable，取代ImageView  +TextView
+    - 在TextView中使用Compound drawable，取代ImageView + TextView
     - 使用LinearLayout自带的分割线: android:divider=""
 
 2. Hierarchy Viewer工具优化布局

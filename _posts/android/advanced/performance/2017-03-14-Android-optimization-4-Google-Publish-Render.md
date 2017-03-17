@@ -37,10 +37,10 @@ lefttrees: true
 - 有选择地使用性能较低的ViewGroup.比如不嵌套的情况下，用LinearLayout和FrameLayout代替RelativeLayout.
     - RelativeLayout功能比较复杂，布局过程需要花费更多的CPU时间
     - 但是如果要LinearLayout嵌套来代替RelativeLayout，还是建议用RelativeLayout。因为嵌套同样会降低程序的性能  
-- 使用<include>实现布局重用，避免代码重复
-- 使用<merge>减少布局层级结构
+- 使用include实现布局重用，避免代码重复
+- 使用merge减少布局层级结构
 - 使用ViewStub实现延时加载
-- 在TextView中使用Compound drawable，取代ImageView  +TextView
+- 在TextView中使用Compound drawable，取代ImageView + TextView
 - 使用LinearLayout自带的分割线: android:divider=""
 
 ### 2. Hierarchy Viewer工具优化布局
@@ -99,7 +99,7 @@ lefttrees: true
     </LinearLayout>
 
 
-上面的布局文件展示了两种写法：一个是Linearlayout嵌套的，一个是RelativeLayout搭配StubView和<merge>
+上面的布局文件展示了两种写法：一个是Linearlayout嵌套的，一个是RelativeLayout搭配StubView
 
 从图中来看方案二教快一些（可以多次点击Profile Node取样）。Hierarchy Viewer 分析图示：
 
