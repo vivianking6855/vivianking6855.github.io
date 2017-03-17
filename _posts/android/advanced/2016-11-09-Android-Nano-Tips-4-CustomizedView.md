@@ -4,7 +4,7 @@ title: UI - Customized View
 date: 2016-11-09
 excerpt: "Customized View"
 categories: Android
-tags: [Android 基础]
+tags: [Android 进阶]
 comments: true
 ---
 

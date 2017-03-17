@@ -4,7 +4,7 @@ title: 开源库 - EventBus
 date: 2016-12-19
 excerpt: "EventBus"
 categories: Android
-tags: [Android 微技巧]
+tags: [Android 进阶]
 comments: true
 ---
 
