@@ -16,14 +16,12 @@ comments: true
 
 每种语言都有不同的编程风格。
 
-## 1 Android/Java 
+## 1 Android/Java
 
-Google Java编程风格
-
-- [Google Java编程风格指南中文版 ](http://www.cnblogs.com/lanxuezaipiao/p/3534447.html)
-- [GitBook下载地址](https://www.gitbook.com/book/jervyshi/google-java-styleguide-zh/details)
-
-实际项目follow编程风格：Android Style Guide.docx
+- 实际项目follow编程风格：Android Style Guide.docx
+- Google Java编程风格
+    - [Google Java编程风格指南中文版 ](http://www.cnblogs.com/lanxuezaipiao/p/3534447.html)
+    - [GitBook下载地址](https://www.gitbook.com/book/jervyshi/google-java-styleguide-zh/details)
 
 ## 2 前端代码规范
 
