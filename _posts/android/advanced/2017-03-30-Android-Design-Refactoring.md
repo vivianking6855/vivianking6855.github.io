@@ -38,13 +38,13 @@ comments: true
 - Adapter模板
 - 类型安全转换函数
 
-# 1. 重构规划项目结构
+# 一、 重构规划项目结构
 
-## 主项目
+## 1. 主项目
 
 主项目这里列出了两种思路的项目结构
 
-### 1）全部按照模块来划分
+### 1） 全部按照模块来划分
 
 - 各个独立业务模块：每个模块中都包含自己的activity, adapter, entity，engine（例如splash，UserInfo等）
 - db： sqllite相关逻辑封装
@@ -53,7 +53,7 @@ comments: true
 - Interfaces： 真正意义上的接口，命名以I作为开头
 - listener： 基于Listener的接口，命名以On作为开头
 
-### 2）Activity按照模块划分
+### 2） Activity按照模块划分
 
 - activity: 按照模块划分，把不同Activity放到不同的模块包下面
 - engine： 所有业务相关的类
@@ -71,7 +71,7 @@ comments: true
 - 此外Adapter逻辑大同小异。Entity中应该只有属性，如果确实需要，请把它已到engine包里面（当Entity有上百个时，我们可以考虑按照模块拆分）
 - 每个Activity都有着很复杂的业务逻辑，所以Activity才是最重要的。
 
-### 类库
+## 2. 类库
 
 不管是 1）还是2）都建议建立一个类库AndroidLib，将业务无关的逻辑转移到这里。
 
@@ -91,7 +91,14 @@ AndroidLib可以划分为几个部分：（全部都是业务无关）
     - 类库方便重用
 - 不建议在Activity中嵌套adapter,entity. 
 - 个人比较喜欢项目结构1），因为移除某个功能非常的便捷。
-- 这里仅列出两个示例的项目结构，大家可以依照自己的需求定制合适的项目结构。
+
+这里仅列出两个示例的项目结构，大家可以依照自己的需求定制合适的项目结构。
+
+# 二、 为Activity定义新的生命周期
+# 三、 统一事件编程模型
+# 四、 实体化编程
+# 五、 Adapter模板
+# 六、 类型安全转换函数
 
 # Reference
 
