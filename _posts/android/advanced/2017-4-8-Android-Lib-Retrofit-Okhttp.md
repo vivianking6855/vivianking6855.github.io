@@ -16,9 +16,14 @@ Retrofit： Type-safe HTTP client for Android and Java
 
 Okhttp： An HTTP+HTTP/2 client for Android and Java applications.
 
-# Retrofit
+# [Retrofit](https://github.com/square/retrofit)
 
-# OkHttp
+Retrofit是在okhttp上进行封装的，使用的是注解，使用起来相当方便，并且有很好的扩展性
+
+- Retrofit和Java领域的ORM概念类似， ORM把结构化数据转换为Java对象，而Retrofit 把REST API返回的数据转化为Java对象方便操作
+- retrofit非常适合于restful url格式的请求，更多使用注解的方式提供功能。
+
+# [OkHttp](https://github.com/square/okhttp)
 
 OkHttp OKHttp是一款高效的HTTP客户端
 
@@ -55,3 +60,7 @@ OkHttp OKHttp是一款高效的HTTP客户端
 > [okhttp教程](http://blog.csdn.net/oyangyujun/article/details/46761583)
 
 > [okHttp使用及优缺点](http://blog.csdn.net/apple_hsp/article/details/50964923) 
+
+> [Retrofit与okhttp之间的关系](http://blog.csdn.net/lmj623565791/article/details/51304204)
+
+> [Retrofit2使用简介](https://zhangjm05.coding.me/2016/07/16/retrofit2_use/)
