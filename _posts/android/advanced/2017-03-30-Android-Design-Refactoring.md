@@ -95,10 +95,41 @@ AndroidLib可以划分为几个部分：（全部都是业务无关）
 这里仅列出两个示例的项目结构，大家可以依照自己的需求定制合适的项目结构。
 
 # 二、 为Activity定义新的生命周期
-# 三、 统一事件编程模型
-# 四、 实体化编程
-# 五、 Adapter模板
-# 六、 类型安全转换函数
+
+优化onCreate里面的可读性，分为三个part来各自做一件事情
+
+- initData() 初始化数据
+- initView() 初始化控件
+- loadData() 加载数据
+
+    public abstract class BaseActivity extends AppCompatActivity {
+    
+        @Override
+        protected void onCreate(@Nullable Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+    
+            initData();
+            initView(savedInstanceState);
+            loadData();
+        }
+    
+        /**
+         * Init data.
+         */
+        protected abstract void initData();
+    
+        /**
+         * Init view.
+         *
+         * @param savedInstanceState the saved instance state
+         */
+        protected abstract void initView(Bundle savedInstanceState);
+    
+        /**
+         * Load data.
+         */
+        protected abstract void loadData();
+
 
 # Reference
 
