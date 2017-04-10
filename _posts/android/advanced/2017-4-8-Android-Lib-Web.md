@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 开源库 - Retrofit & Okhttp
+title: 开源库 - 优雅的网络和异步编程(Retrofit/Okhttp, RxAndroid/RxJava)
 date: 2017-4-8
-excerpt: "开源库 - Retrofit & Okhttp"
+excerpt: "开源库 - 优雅的网络和异步编程(Retrofit/Okhttp, RxAndroid/RxJava)"
 categories: Android
 tags: [Android 进阶]
 comments: true
@@ -10,22 +10,28 @@ comments: true
 
 # 前言
 
+项目中网络功能不可少的网络通讯和异常编程。
+
+如何进行优雅的网络和异步编程？
+
+优雅的网络编程：
+
 popular开源的[Square公司](http://square.github.io/) 出品
 
-Retrofit： Type-safe HTTP client for Android and Java
+- Okhttp： An HTTP+HTTP/2 client for Android and Java applications.
+- Retrofit： Type-safe HTTP client for Android and Java
 
-Okhttp： An HTTP+HTTP/2 client for Android and Java applications.
+优雅的异步编程：
 
-# [Retrofit](https://github.com/square/retrofit)
+- [RxJava](https://github.com/ReactiveX/RxJava)
+- [RxAndroid](https://github.com/ReactiveX/RxAndroid)
 
-Retrofit是在okhttp上进行封装的，使用的是注解，使用起来相当方便，并且有很好的扩展性
 
-- Retrofit和Java领域的ORM概念类似， ORM把结构化数据转换为Java对象，而Retrofit 把REST API返回的数据转化为Java对象方便操作
-- retrofit非常适合于restful url格式的请求，更多使用注解的方式提供功能。
+[Github Code: WebDemo](https://github.com/vivianking6855/android-advanced)
 
-# [OkHttp](https://github.com/square/okhttp)
+# 优雅的网络编程之[OkHttp](https://github.com/square/okhttp)
 
-OkHttp OKHttp是一款高效的HTTP客户端
+OkHttp OKHttp是一款高效的HTTP客户端。
 
 - 支持SPDY, 可以合并多个到同一个主机的请求
 - 使用连接池技术减少请求的延迟(如果SPDY是可用的话)，支持连接同一地址的链接共享同一个socket，通过连接池来减小响应延迟
@@ -50,7 +56,21 @@ OkHttp OKHttp是一款高效的HTTP客户端
 缺点
 
 - 第一缺点是消息回来需要切到主线程，主线程要自己去写
-- 第二传入调用比较复杂。
+- 第二传入调用比较复杂
+
+
+# 优雅的网络编程之[Retrofit](https://github.com/square/retrofit)
+
+一般的小型项目okhttp基本够用。
+
+Retrofit是在okhttp上进行封装。使用的是注解。对[restful](http://www.ruanyifeng.com/blog/2011/09/restful.html) url具有很大的优势。
+
+- Retrofit和Java领域的ORM概念类似， ORM把结构化数据转换为Java对象，而Retrofit 把REST API返回的数据转化为Java对象方便操作
+- retrofit非常适合于restful url格式的请求，更多使用注解的方式提供功能。
+
+
+优雅的异步编程
+
 
 
 # Reference
