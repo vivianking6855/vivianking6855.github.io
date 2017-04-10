@@ -61,8 +61,11 @@ comments: true
             targetCompatibility JavaVersion.VERSION_1_8
         }
 
-## 4. sync 项目既可以
+## 4. 使用
 
+配置好后，先sync下Project. 现在可以开始使用啦：
+
+    new Button(this).setOnClickListener(v -> {onBackPressed();});
 
 ## 5. 注意事项
 
