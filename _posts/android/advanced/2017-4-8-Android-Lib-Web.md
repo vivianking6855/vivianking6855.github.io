@@ -42,7 +42,7 @@ OkHttp OKHttp是一款高效的HTTP客户端。
 - 使用GZIP压缩减少传输的数据量
 - 缓存响应避免重复的网络请求
 
-### API档案
+### 参考文档
 
 [官方使用简介](http://square.github.io/okhttp/#overview)
 
@@ -57,6 +57,32 @@ OkHttp OKHttp是一款高效的HTTP客户端。
 - 消息callback，支持请求回调，直接返回对象、对象集合
 - 支持session的保持
 
+### 核心Code
+
+    /**
+     * call okhttp sync method
+     */
+    public UrlConfig getConfig() {
+        try {
+            Request request = new Request.Builder()
+                    .url(Const.URL_CONFIG)
+                    .build();
+
+            Response response = mOkHttpClient.newCall(request).execute();
+            if (!response.isSuccessful()) {
+                Log.w(TAG, "getConfig failed " + response);
+                return null;
+            }
+
+            UrlConfig config = mGson.fromJson(response.body().charStream(), UrlConfig.class);
+            return config;
+        } catch (Exception ex) {
+            Log.w(TAG, "getConfig ex:", ex);
+        }
+
+        return null;
+    }
+
 ## 2. Retrofit
 
 ### 简介
@@ -68,7 +94,7 @@ Retrofit是在okhttp上进行封装。使用的是注解。对[restful](http://w
 - Retrofit和Java领域的ORM概念类似， ORM把结构化数据转换为Java对象，而Retrofit 把REST API返回的数据转化为Java对象方便操作
 - retrofit非常适合于restful url格式的请求，更多使用注解的方式提供功能。
 
-### API档案
+### 参考文档
 
 # 优雅的异步编程
 
@@ -76,24 +102,98 @@ Retrofit是在okhttp上进行封装。使用的是注解。对[restful](http://w
 
 ### 简介
 
-RxJava最核心的两个东西是Observables（被观察者，事件源）和Subscribers（观察者）。
+ReactiveX 是一个专注于异步编程与控制可观察数据（或者事件）流的API。它组合了观察者模式，迭代器模式和函数式编程的优秀思想。
 
-- Observables发出一系列事件
-- Subscribers处理这些事件。事件可以是任何东西：触摸事件，web接口调用返回的数据等
-- 一个Observable可以发出零个或者多个事件，知道结束或者出错。
-- 每发出一个事件，就会调用它的Subscriber的onNext方法，最后调用Subscriber.onNext()或者Subscriber.onError()结束
+RxJava 是 ReactiveX 在 Java 上的开源的实现。
 
-Rxjava的有点像设计模式中的观察者模式。
+各种优雅的异步线程掌控和自由的线程切换。非常的强大。
 
-但是RxJava中，如果一个Observerble没有任何的的Subscriber，那么这个Observable是不会发出任何事件的。
+两个主要的类 ： Observable（观察者） 和 Subscriber（订阅者）
 
-### API档案
+- Observable：一个 Observable是发出数据流或者事件的类
+- Subscriber： 一个对这些发出的 items （数据流或者事件）进行处理（采取行动）的类
+- 一个 Observable 的标准流发出一个或多个 item，然后成功完成或者出错。
+- 一个 Observable 可以有多个 Subscribers
+- 事件可以是任何东西：触摸事件，web接口调用返回的数据等
 
-[RxJava 和 RxAndroid](http://www.cnblogs.com/zhaoyanjun/p/5175502.html)这篇是RxJava和RxAndroid的中文介绍
+总之
 
+- Observable和Subscriber可以做任何事情
+    - Observable可以是一个数据库查询，Subscriber用来显示查询结果
+    - Observable可以是屏幕上的点击事件，Subscriber用来响应点击事件
+    - Observable可以是一个网络请求，Subscriber用来显示请求结果
+- Observable和Subscriber是独立于中间的变换过程的
+    - 在Observable和Subscriber中间可以增减任何数量的map
+    - 整个系统是高度可组合的，操作数据是一个很简单的过程
+
+核心Code
+
+    // website
+    private CompositeDisposable compositeDisposable;
+
+    public void okhttpConfigClick(View view) {
+        Disposable config = (Observable.fromCallable(() -> WebsiteEngine.getInstance().getConfig()).subscribeOn(Schedulers.io()))
+                .subscribe(urlConfig -> {
+                            final String result = WebsiteEngine.getGson().toJson(urlConfig.Debug).toString();
+                            Log.d(TAG, "" + result);
+                        },
+                        error -> Log.w(TAG, "okhttpConfigClick ex:", error),
+                        () -> Log.d(TAG, "okhttpConfigClick complete"));
+        compositeDisposable.add(config);
+    }
+
+### 参考文档
+
+简单的使用可以参看
+
+[RxJava 入门](http://www.imooc.com/article/2298)
+
+[RxJava 使用场景举例](http://blog.csdn.net/xjbclz/article/details/53151011)
+
+更深入的使用：
+
+[RxJava 和 RxAndroid系列介绍](http://www.cnblogs.com/zhaoyanjun/p/5175502.html)
+
+[深入浅出RxJava系列](http://blog.csdn.net/lzyzsd/article/details/41833541)
 
 ## 2. RxAndroid
 
+### 参考文档
+
+
+
+## 3. 内存泄漏
+
+使用 RxJava 不会魔术般的缓解内存泄露危机。为了防止可能的内存泄露，在Activity或Fragment的onDestroy 里，释放资源。
+
+rxjava2 释放如下：
+
+    private Disposable mConfigDisposable;
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (mConfigDisposable != null && !mConfigDisposable.isDisposed()) {
+            mConfigDisposable.dispose();
+        }
+    }
+        
+这样将会停止通知，并允许垃圾回收机制释放对象，防止任何 RxJava 造成内存泄露。
+
+如果你正在处理多个，可以用CompositeDisposable在同一时间进行释放
+
+    private CompositeDisposable compositeDisposable;
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (compositeDisposable != null && !compositeDisposable.isDisposed()) {
+            compositeDisposable.dispose();
+        }
+    }
 
 # Reference
 
@@ -103,4 +203,10 @@ Rxjava的有点像设计模式中的观察者模式。
 
 > [Retrofit2使用简介](https://zhangjm05.coding.me/2016/07/16/retrofit2_use/)
 
-> [RxJava 和 RxAndroid](http://www.cnblogs.com/zhaoyanjun/p/5175502.html)
+> [RxJava 入门](http://www.imooc.com/article/2298)
+
+> [RxJava 使用场景举例](http://blog.csdn.net/xjbclz/article/details/53151011)
+
+> [RxJava 和 RxAndroid系列介绍](http://www.cnblogs.com/zhaoyanjun/p/5175502.html)
+
+> [深入浅出RxJava系列](http://blog.csdn.net/lzyzsd/article/details/41833541)

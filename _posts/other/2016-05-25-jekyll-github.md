@@ -44,6 +44,10 @@ comments: true
 
 [友盟](https://i.umeng.com/user/products)
 
+# Github release
+
+[github release的创建](http://www.jianshu.com/p/79ecf4fe5079)
+
 
 <br/><br/>
 > [Jekyll 模板数据](http://havee.me/internet/2013-07/jekyll-template-data.html)
