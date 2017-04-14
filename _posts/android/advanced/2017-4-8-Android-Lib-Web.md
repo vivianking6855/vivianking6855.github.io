@@ -87,6 +87,8 @@ OkHttp OKHttp是一款高效的HTTP客户端。
 
 ### 简介
 
+简单来说就是一个HTTP请求工具，与volley功能类似，都是用于简化HTTP请求的库。但是相比其他工具，Retrofit的解耦更彻底：例如通过注解来配置请求参数，根据需求来选择使用不同的CallAdapter（请求适配器，如：RxJava，Java8, Guava）、Converter（反序列化工具，如json, protobuff, xml, moshi）等。
+
 一般的小型项目okhttp基本够用。
 
 Retrofit是在okhttp上进行封装。使用的是注解。对[restful](http://www.ruanyifeng.com/blog/2011/09/restful.html) url具有很大的优势。
@@ -94,55 +96,158 @@ Retrofit是在okhttp上进行封装。使用的是注解。对[restful](http://w
 - Retrofit和Java领域的ORM概念类似， ORM把结构化数据转换为Java对象，而Retrofit 把REST API返回的数据转化为Java对象方便操作
 - retrofit非常适合于restful url格式的请求，更多使用注解的方式提供功能。
 
-### 参考文档
-
-# 优雅的异步编程
-
-## 1. RxJava
-
-### 简介
-
-ReactiveX 是一个专注于异步编程与控制可观察数据（或者事件）流的API。它组合了观察者模式，迭代器模式和函数式编程的优秀思想。
-
-RxJava 是 ReactiveX 在 Java 上的开源的实现。
-
-各种优雅的异步线程掌控和自由的线程切换。非常的强大。
-
-两个主要的类 ： Observable（观察者） 和 Subscriber（订阅者）
-
-- Observable：一个 Observable是发出数据流或者事件的类
-- Subscriber： 一个对这些发出的 items （数据流或者事件）进行处理（采取行动）的类
-- 一个 Observable 的标准流发出一个或多个 item，然后成功完成或者出错。
-- 一个 Observable 可以有多个 Subscribers
-- 事件可以是任何东西：触摸事件，web接口调用返回的数据等
-
-总之
-
-- Observable和Subscriber可以做任何事情
-    - Observable可以是一个数据库查询，Subscriber用来显示查询结果
-    - Observable可以是屏幕上的点击事件，Subscriber用来响应点击事件
-    - Observable可以是一个网络请求，Subscriber用来显示请求结果
-- Observable和Subscriber是独立于中间的变换过程的
-    - 在Observable和Subscriber中间可以增减任何数量的map
-    - 整个系统是高度可组合的，操作数据是一个很简单的过程
 
 核心Code
 
-    // website
-    private CompositeDisposable compositeDisposable;
+
+    /**
+     * get config sync through retrofit
+     */
+    public UrlConfig getConfigThroughRetrofit() {
+        try {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(Const.URL_CONFIG_BASE)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+
+            IWebSiteService service = retrofit.create(IWebSiteService.class);
+            Call<UrlConfig> call = service.getUrlConfig();
+            return call.execute().body();
+        } catch (Exception ex) {
+            Log.w(TAG, "getConfigThroughRetrofit ex:", ex);
+        }
+
+        return null;
+    }
+
+    /**
+     * search sync through retrofit
+     * filter :
+     * "/1.1/threadview/search?key=" + key + "&start=" + startPosition + "&limit=" + SEARCH_LIMIT + "&sortby=dateline&order=desc";
+     */
+    public ArrayList<SearchEntity> searchThroughRetrofit(String key) {
+        try {
+            final int pos = 0;
+            final int limit = 5;
+
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(Const.URL_SEARCH_BASE)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+
+            IWebSiteService service = retrofit.create(IWebSiteService.class);
+            Call<ResponseBody> call = service.search(key, 0, 5, "dateline", "desc");
+
+            // parse array
+            JsonParser parser = new JsonParser();
+            JsonArray array = parser.parse(call.execute().body().string()).getAsJsonArray();
+            ArrayList<SearchEntity> list = new ArrayList<SearchEntity>();
+            if (array != null) {
+                for (JsonElement ele : array) {
+                    SearchEntity entity = mGson.fromJson(ele, SearchEntity.class);
+                    list.add(entity);
+                }
+            }
+
+            return list;
+        } catch (Exception ex) {
+            Log.w(TAG, "searchThroughRetrofit ex:", ex);
+        }
+
+        return null;
+    }
+    
+    
+    public interface IWebSiteService {
+        @GET("search")
+        Call<ResponseBody> search(@Query("key") String key,
+                                  @Query("start") int start,
+                                  @Query("limit") int limit,
+                                  @Query("sortby") String sortby, @Query("order") String order);
+    
+        @GET(Const.URL_CONFIG_EXTENDS)
+        Call<UrlConfig> getUrlConfig();
+    }         
+            
+
+### 参考文档
+
+[Retrofit2使用简介](https://zhangjm05.coding.me/2016/07/16/retrofit2_use/)
+
+[Retrofit2 官方Doc](http://square.github.io/retrofit/2.x/retrofit/overview-summary.html)
+
+## 注意事项
+
+Gson解析时，要注意对JsonArray 的解析
+
+示例
+
+            Response response = mOkHttpClient.newCall(request).execute();
+            if (!response.isSuccessful()) {
+                Log.w(TAG, "search ex:", new IOException("Unexpected code " + response));
+            }
+
+            // parse array
+            JsonParser parser = new JsonParser();
+            JsonArray array = parser.parse(response.body().string()).getAsJsonArray();
+            ArrayList<SearchEntity> list = new ArrayList<SearchEntity>();
+            if (array != null) {
+                for (JsonElement ele : array) {
+                    SearchEntity entity = mGson.fromJson(ele, SearchEntity.class);
+                    list.add(entity);
+                }
+            }
+
+            return list;
+
+
+
+# 优雅的异步编程 RxJava & RxAndroid
+
+## 简介
+
+ReactiveX 是一个专注于异步编程与控制可观察数据（或者事件）流的API。
+
+它组合了观察者模式，迭代器模式和函数式编程的优秀思想。
+
+- 两个主要的类 ： Observable（观察者） 和 Subscriber（订阅者）
+- Observable是发出数据流或者事件；Subscriber对发出的items进行处理
+- 事件可以是任何东西：触摸事件，web接口调用返回的数据等
+
+RxAndroid是RxJava在Android上的一个扩展和Retorfit、OkHttp组合起来使用，效果惊人的简洁。似乎可以完全替代eventBus和OTTO(事件总线框架浅析)。
+
+核心Code
 
     public void okhttpConfigClick(View view) {
-        Disposable config = (Observable.fromCallable(() -> WebsiteEngine.getInstance().getConfig()).subscribeOn(Schedulers.io()))
+        Disposable config = Observable.fromCallable(() -> WebsiteEngine.getInstance().getConfig())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(urlConfig -> {
                             final String result = WebsiteEngine.getGson().toJson(urlConfig.Debug).toString();
                             Log.d(TAG, "" + result);
+                            mTVShow.setText(result);
                         },
                         error -> Log.w(TAG, "okhttpConfigClick ex:", error),
                         () -> Log.d(TAG, "okhttpConfigClick complete"));
         compositeDisposable.add(config);
     }
 
-### 参考文档
+    public void okhttpSearchClick(View view) {
+        final String search_key = "zenfone3";
+        Disposable search = Single.fromCallable(() -> WebsiteEngine.getInstance().search(search_key))
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(list -> {
+                            final String result = WebsiteEngine.getGson().toJson(list).toString();
+                            Log.d(TAG, "" + result);
+                            mTVShow.setText(result);
+                        },
+                        error -> Log.w(TAG, "okhttpSearchClick ex:", error));
+        compositeDisposable.add(search);
+    }
+    
+
+## 参考文档
 
 简单的使用可以参看
 
@@ -156,13 +261,7 @@ RxJava 是 ReactiveX 在 Java 上的开源的实现。
 
 [深入浅出RxJava系列](http://blog.csdn.net/lzyzsd/article/details/41833541)
 
-## 2. RxAndroid
-
-### 参考文档
-
-
-
-## 3. 内存泄漏
+## 内存泄漏
 
 使用 RxJava 不会魔术般的缓解内存泄露危机。为了防止可能的内存泄露，在Activity或Fragment的onDestroy 里，释放资源。
 
@@ -200,13 +299,3 @@ rxjava2 释放如下：
 > [Android OkHttp完全解析](http://blog.csdn.net/lmj623565791/article/details/47911083)
 
 > [Retrofit与okhttp之间的关系](http://blog.csdn.net/lmj623565791/article/details/51304204)
-
-> [Retrofit2使用简介](https://zhangjm05.coding.me/2016/07/16/retrofit2_use/)
-
-> [RxJava 入门](http://www.imooc.com/article/2298)
-
-> [RxJava 使用场景举例](http://blog.csdn.net/xjbclz/article/details/53151011)
-
-> [RxJava 和 RxAndroid系列介绍](http://www.cnblogs.com/zhaoyanjun/p/5175502.html)
-
-> [深入浅出RxJava系列](http://blog.csdn.net/lzyzsd/article/details/41833541)
