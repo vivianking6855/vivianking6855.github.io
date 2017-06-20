@@ -371,7 +371,7 @@ CircleProgress-----------------------------------------------
     }
 
 
-# 的SurfaceView的canvas
+# SurfaceView的canvas
 
 SurfaceView中定义一个专门的线程来完成画图工作，应用程序不需要等待View的刷图，提高性能。主要用在游戏，高品质动画方面的画图。
 
@@ -872,7 +872,7 @@ SurfaceView中定义一个专门的线程来完成画图工作，应用程序不
 [更多性能优化](http://vivianking6855.github.io/2017/02/27/Android-optimization-1-method/)
 
 
-# 五、 开源库
+# 开源库
 
 [Android 开源项目分类汇总](https://github.com/Trinea/android-open-project) ： 里面自定义控件非常之多，可以学习
 
