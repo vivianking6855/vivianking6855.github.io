@@ -250,18 +250,18 @@ Java内存泄漏指的是进程中某些对象（垃圾对象）已经没有使�
 - [leak-canary git hub](https://github.com/square/leakcanary)
 - FindBugs
 
-
-# 性能优化专题
-
-- [性能优化（一）：方法概述](http://vivianking6855.github.io/2017/02/27/Android-optimization-1-method/)
-- [性能优化（二）内存 OOM](http://vivianking6855.github.io/2017/02/27/Android-optimization-2-OOM/)
-- [Android性能优化（三）Google典范之开篇](http://vivianking6855.github.io/2017/03/13/Android-optimization-3-Google-Publish/)
-- [性能优化（四）Google典范之Render实践](http://vivianking6855.github.io/2017/03/14/Android-optimization-4-Google-Publish-Render/)
-
-
 # Reference
 
 <br>
 
+> 性能优化专题
+
+[性能优化（一）：方法概述](http://vivianking6855.github.io/2017/02/27/Android-optimization-1-method/)
+
+[性能优化（二）内存 OOM](http://vivianking6855.github.io/2017/02/27/Android-optimization-2-OOM/)
+
+[性能优化（三）Google典范之开篇](http://vivianking6855.github.io/2017/03/13/Android-optimization-3-Google-Publish/)
+
+[性能优化（四）Google典范之Render实践](http://vivianking6855.github.io/2017/03/14/Android-optimization-4-Google-Publish-Render/)
 
 > [Android最佳性能实践(一)——合理管理内存 ](http://blog.csdn.net/guolin_blog/article/details/42238627)

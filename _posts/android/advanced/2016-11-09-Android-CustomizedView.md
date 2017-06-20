@@ -55,6 +55,9 @@ comments: true
     比如输入法中的手写控件、图文混排控件（现在很多都是通过webview加载网页实现了）、词典取词控件、图表控件、个性化进度条、
     
     弹幕显示控件、Markdown控件、IDE代码编辑控件等。
+    
+    - 普通View适合于处理量比较小，帧率比较小的动画，比如说象棋游戏之类的
+    - SurfaceView适合游戏，高品质动画方面的画图。因为SurfaceView中定义一个专门的线程来完成画图工作，不需要等待View的刷图，提高性能。
 
 # 自定义View Class & 属性实践
 
@@ -64,7 +67,7 @@ How to create Customized View and 属性”key”.
 
 # 自定义View项目实践
 
-[Github Code](https://github.com/vivianking6855/android-ui/tree/ui-basic)
+[Github Code](https://github.com/vivianking6855/android-ui)
 
 # 优质开源库
 
