@@ -159,13 +159,13 @@ Purdue University研究了最受欢迎的一些应用的电量消耗：
     使用Android自带的容器SparseArray/SparseBooleanArray/LongSparseArray
     SparseArray是android里为<Interger,Object>这样的Hashmap而专门写的类,目的是提高效率，其核心是折半查找函数（binarySearch）。
     在Android中，当我们需要定义
- 	 
- 	 HashMap<Integer, E> hashMap = new HashMap<Integer, E>();
+    
+    HashMap<Integer, E> hashMap = new HashMap<Integer, E>();
 
     我们可以使用如下的方式来取得更好的性能.
-    
+
     SparseArray<E> sparseArray = new SparseArray<E>();
-    
+
 14.	避免枚举类型
     
     Enums消耗是静态常量的两倍	
