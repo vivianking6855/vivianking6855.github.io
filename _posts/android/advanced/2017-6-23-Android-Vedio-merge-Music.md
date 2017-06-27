@@ -275,7 +275,7 @@ MediaExtractor facilitates extraction of demuxed, typically encoded, media data 
     
     }
 
-Github 地址： 
+Github 地址： [https://github.com/vivianking6855/android-advanced/tree/master/Media/media](https://github.com/vivianking6855/android-advanced/tree/master/Media/media)
 
 Demo使用时请先允许storage权限。
 
