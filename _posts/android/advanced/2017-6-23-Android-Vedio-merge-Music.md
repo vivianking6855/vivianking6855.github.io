@@ -20,7 +20,8 @@ Android 视频的分离和合成主要是用MediaExtractor和MediaMuxer这两个
 
 可以用编辑视频，例如剪裁，加入背景音乐，搞笑音乐等。
 
-#　技术基础
+
+# 技术基础
 
 ## MediaExtractor
 
