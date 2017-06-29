@@ -141,5 +141,8 @@ TeamLeader
 - 《Git权威指南》： 详细介绍Git的书。
 
 
+# Tips
 
+[awesome-android-tips](https://github.com/jiang111/awesome-android-tips) 
 
+[创建安卓app的30个经验教训](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2016/0218/3978.html)

@@ -38,5 +38,7 @@ comments: true
 
 ## 2. 深入优化代码
 
-TODO
 
+# Reference
+
+[Android技术积累:开发规范](http://keeganlee.me/post/android/20150709) 

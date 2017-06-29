@@ -13,6 +13,30 @@ lefttrees: true
 {:toc}
 
 
+
+# 前言
+
+关于性能优化的问题，主要关注的有：
+
+- 内存
+- CPU
+- 耗电
+- 卡顿
+- 渲染
+- 进程存活率等
+
+性能优化注意事项：
+
+- 不要过早的做性能优化，app先求能用再求好用。在需求都还没完成的时候，花大量时间在优化上是本末倒置的
+- 优化要用实际数据说话，建议借助测试工具进行检测
+    - 网易的Emmagee
+    - 腾讯的GT和APT
+    - 科大讯飞的iTest
+    - Google的Battery Historian
+
+合理优化，数据量化
+
+
 # 一、 布局优化
 
 布局优化的思想：尽量减少层级和无用的控件。 
@@ -48,9 +72,14 @@ lefttrees: true
 内存泄漏是在开发过程需要重视的问题。内存泄漏优化分两个方面：
 
 - 开发过程中避免写出有内存泄漏的代码
+- 大量使用类似Material Design的风格，不仅安装包可以变小，还可以减少内存的占用，渲染性能与加载性能都会有一定的提升。
 - 通过一些分析工具如Android Studio自动Android Monitor，[leakcanary](https://github.com/square/leakcanary)，FindBugs等
 
 详见[Android性能优化 （二）内存 OOM](http://vivianking6855.github.io/tag/#Android%20%E8%BF%9B%E9%98%B6-ref)
+
+内存优化并不就是说程序占用的内存越少就越好。
+
+如果因为想要保持更低的内存占用，而频繁触发执行gc操作，在某种程度上反而会导致应用性能整体有所下降。需要综合考虑权衡。
 
 # 四、 响应速度优化
 
@@ -210,3 +239,13 @@ Purdue University研究了最受欢迎的一些应用的电量消耗：
 [性能优化（四）Google典范之Render实践](http://vivianking6855.github.io/2017/03/14/Android-optimization-4-Google-Publish-Render/)
 
 > 《Android开发艺术探索》
+
+> [Android内存优化之OOM](http://www.csdn.net/article/2015-09-18/2825737/5)
+
+> [Google 发布 Android 性能优化典范](http://www.oschina.net/news/60157/android-performance-patterns?sid=07vbqo00ovnh233e0ain6ue5a6)
+
+> [优达学城 Android 系统性能 Video](https://cn.udacity.com/course/android-performance--ud825)
+
+> [Google Android Performance Patterns YouTube ](https://www.youtube.com/playlist?list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE)
+
+> [性能优化系列总篇](http://www.trinea.cn/android/database-performance/)

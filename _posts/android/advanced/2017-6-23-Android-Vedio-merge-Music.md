@@ -284,8 +284,16 @@ Demo使用时请先允许storage权限。
 # Reference
 
 
-
 > [Android 视频分离和合成(MediaMuxer和MediaExtractor)](http://m.blog.csdn.net/zhi184816/article/details/52514138)
 
+> [Android Multimedia框架总结（二十四）MediaMuxer实现手机屏幕录制成gif图](http://blog.csdn.net/hejjunlin/article/details/53866405)
 
+> [Android-->MediaMuxer,MediaCodec,AudioRecord及Camera实现音频视频混合MP4文件](http://blog.csdn.net/u010164190/article/details/53114041)
 
+> [Android在MediaMuxer和MediaCodec录制视频示例 - audio+video](http://blog.csdn.net/luoyouren/article/details/52135476)
+
+> [Android音视频处理之MediaMuxer](http://www.jianshu.com/p/aeadf260258a)
+
+> [Android中如何提取和生成mp4文件](http://ticktick.blog.51cto.com/823160/1710743)
+
+> [android MediaCodec 音频编解码的实现——转码](http://blog.csdn.net/TinsanMr/article/details/51049179)
