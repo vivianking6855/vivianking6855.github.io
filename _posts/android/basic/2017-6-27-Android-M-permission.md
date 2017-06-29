@@ -11,7 +11,7 @@ comments: true
 # 简介
 
 从Android M 6.0开始, app需要在运行时请求权限。当然不是指所有权限，仅google定义的部分危险权限。
-、
+
 6.0之前的系统，dangerous权限是安装时授权的。（targetSdkVersion 23及以上）
 
 permission的保护等级有4种
