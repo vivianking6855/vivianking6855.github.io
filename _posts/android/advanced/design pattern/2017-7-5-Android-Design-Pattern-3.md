@@ -304,8 +304,8 @@ Java.util.List就是定义了一个增（add）、删（remove）、改（set）
 # 设计模式专题
 
 - [设计模式专题一：创建型模式5种](http://vivianking6855.github.io/2017/07/03/Android-Design-Pattern-1/) 
-- [设计模式专题二：结构型模式7种](http://vivianking6855.github.io/2017/07/03/Android-Design-Pattern-1/) 
-- [设计模式专题二：行为型模式11种](http://vivianking6855.github.io/2017/07/03/Android-Design-Pattern-1/) 
+- [设计模式专题二：结构型模式7种](http://vivianking6855.github.io/2017/07/03/Android-Design-Pattern-2/) 
+- [设计模式专题二：行为型模式11种](http://vivianking6855.github.io/2017/07/03/Android-Design-Pattern-3/) 
 
 Github Code: [https://github.com/vivianking6855/android-advanced/tree/master/DesignPattern](https://github.com/vivianking6855/android-advanced/tree/master/DesignPattern)
 
