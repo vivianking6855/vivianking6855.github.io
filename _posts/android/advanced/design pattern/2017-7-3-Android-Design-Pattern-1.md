@@ -47,7 +47,7 @@ java的设计模式有N多种，据不完全统计，迄今为止，网络出现
 
 # 创建型模式5种
 
-## 1. 单例模式（Singleton Pattern）
+## 1. 单例模式（Singleton Pattern）-- Android常用模式
 
 ### 简介
 
@@ -282,7 +282,7 @@ Android底层对MediaPlayer的创建。
 
 MediaPlayerFactory是Android底层为了创建不同的MediaPlayer所定义的一个类。
 
-## 4. 原型模式（Prototype Pattern）
+## 4. 原型模式（Prototype Pattern）-- Android常用模式
 
 ### 简介
 
@@ -432,7 +432,7 @@ Intent类，该类也实现了Cloneable接口
     	......
     }
 
-## 5. 建造者模式（Builder Pattern）
+## 5. 建造者模式（Builder Pattern）-- Android常用模式
 
 ### 简介
 
