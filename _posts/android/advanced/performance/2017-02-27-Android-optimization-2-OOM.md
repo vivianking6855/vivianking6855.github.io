@@ -43,7 +43,9 @@ lefttrees: true
 
 - 这个是因为Android系统对dalvik的vm heapsize作了硬性限制，当java进程申请的java空间超过阈值时，就会抛出OOM异常。
     
-    这个阈值可以是48M、24M、16M等，视机型而定，可以通过adb shell getprop | grep dalvik.vm.heapgrowthlimit查看此值。
+    这个阈值可以是48M、24M、16M等，视机型而定，可以通过
+    
+    "adb shell getprop | grep dalvik.vm.heapgrowthlimit查看此值。"
     
 - 程序发生OMM并不表示RAM不足，而是因为程序申请的java heap对象超过了dalvik vm heapgrowthlimit。
     
