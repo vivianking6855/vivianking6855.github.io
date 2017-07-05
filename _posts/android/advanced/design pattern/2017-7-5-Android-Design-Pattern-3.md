@@ -168,7 +168,7 @@ Android的广播机制，其本质也是观察者模式。例如LocalBroadcastMa
 
 总之，在Android中观察者模式还是被用得很频繁的。
 
-## 14. 中介者模式
+## 14. 中介者模式（Mediator Pattern）
 
 ### 简介
 
@@ -180,7 +180,7 @@ Android的广播机制，其本质也是观察者模式。例如LocalBroadcastMa
 
 Binder机制
 
-## 15. 访问者模式
+## 15. 访问者模式（Visitor Pattern）
 
 ### 简介
 
@@ -194,7 +194,7 @@ Binder机制
 
 访问者模式正好解决了数据结构和数据操作分离的问题，避免某些操作污染了数据对象类。
 
-## 16. 解释器模式
+## 16. 解释器模式（Interpreter Pattern）
 
 ### 简介
 
@@ -206,7 +206,7 @@ PackageParser这个类对AndroidManifest.xml这个配置文件的解析过程，
 
 ### 已有示例
 
-## 17. 迭代器模式
+## 17. 迭代器模式（Iterator Pattern）
 
 ### 简介
 
@@ -220,7 +220,7 @@ PackageParser这个类对AndroidManifest.xml这个配置文件的解析过程，
 
 比如数据库查询使用Cursor，当我们使用SQLiteDataBase的query方法查询数据库时，会返回一个Cursor游标对象，该游标对象实际上就是一个具体的迭代器。
 
-## 18. 备忘录模式
+## 18. 备忘录模式（Memento Pattern）
 
 ### 简介
 
@@ -232,7 +232,7 @@ PackageParser这个类对AndroidManifest.xml这个配置文件的解析过程，
 
 Activity的onSaveInstanceState和onRestoreInstanceState就是通过Bundle这种序列化的数据结构来存储Activity的状态，至于其中存储的数据结构，这两个方法不用关心。
 
-## 19. 责任链模式
+## 19. 责任链模式（Chain of Responsibility Pattern）
 
 ### 简介
 
@@ -250,7 +250,7 @@ ViewGroup事件投递的递归调用就类似一条责任链，一旦寻找到�
 
 具体的体现在View的onTouchEvent方法中的返回值，如果OnTouchEvent返回false，那么意味着当前View不会是该次事件的责任人，将不会对该事件持有。
 
-## 20. 状态模式
+## 20. 状态模式（State Pattern）
 
 ### 简介
 
@@ -280,7 +280,7 @@ Java.util.List就是定义了一个增（add）、删（remove）、改（set）
 
 但因为它们策略一样，不考虑速度的情况下，使用时完全可以互相替换使用。
 
-## 22. 命令模式
+## 22. 命令模式（Command Pattern）
 
 ### 简介
 
@@ -292,7 +292,7 @@ Java.util.List就是定义了一个增（add）、删（remove）、改（set）
 
 示例：Handler.post后Handler.handleMessage。
 
-## 23. 模板模式
+## 23. 模板模式（Template Method Pattern）
 
 ### 简介
 

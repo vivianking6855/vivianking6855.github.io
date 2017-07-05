@@ -16,7 +16,7 @@ lefttrees: true
 
 # 结构型模式7种
 
-## 6. 适配器模式
+## 6. 适配器模式（Adapter Pattern）
 
 ### 简介
 
@@ -34,7 +34,7 @@ lefttrees: true
 
 不同的数据提供者使用一个适配器来向一个相同的客户提供服务。ListView或GridView的Adapter。
 
-## 7. 桥接模式
+## 7. 桥接模式（Bridge Pattern）
 
 ### 简介
 
@@ -52,7 +52,7 @@ Window和WindowManager之间的关系。
 
 而WindowManager则为实现部分的基类，WindowManagerImpl则为实现部分具体的逻辑实现。
 
-## 8. 装饰模式
+## 8. 装饰模式（Decorator Pattern）
 
 ### 简介
 
@@ -66,7 +66,7 @@ Activity继承自ContextThemeWrapper，ContextThemeWrapper继承自ContextWrappe
 
 ContextWrapper就是我们找的装饰者。
 
-## 9. 组合模式
+## 9. 组合模式（Composite Pattern）
 
 ### 简介
 
@@ -78,7 +78,7 @@ ContextWrapper就是我们找的装饰者。
 
 View和ViewGroup的组合
 
-## 10. 外观模式
+## 10. 外观模式（Facade Pattern）
 
 ### 简介
 
@@ -90,7 +90,7 @@ View和ViewGroup的组合
 
 ContextImpl
 
-## 11. 享元模式
+## 11. 享元模式（Flyweight Pattern）
 
 ### 简介
 
@@ -102,7 +102,7 @@ ContextImpl
 
 Message.obtainMessage通过重用Message对象来避免大量的Message对象被频繁的创建和销毁。
 
-## 12. 代理模式
+## 12. 代理模式（Proxy pattern）
 
 ### 简介
 
