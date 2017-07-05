@@ -34,12 +34,7 @@ lefttrees: true
 
 ### 核心Code 
 
-我们先来自己实现一个观察者模式
-
-
-
-
-其实java中提供了Observable类和Observer接口供我们快速的实现该模式
+java中提供了Observable类和Observer接口供我们快速的实现该模式
 
 ----------------被观察者
 
@@ -270,15 +265,187 @@ View.onVisibilityChanged方法，就是提供了一个状态模式的实现，�
 
 策略模式让算法独立于使用它的客户而独立变换。
 
-### 核心Code 
+
+### 核心Code
+
+假设我们要出去旅游，而去旅游出行的方式有很多，有步行，有坐火车，有坐飞机等等。
+
+不使用任何模式有一个致命的缺点，一旦出行的方式要增加，我们就不得不增加新的else if语句，而这违反了面向对象的原则之一，对修改封闭。
+
+策略模式则可以完美的解决这一切。应用了策略模式后，如果我们想增加新的出行方式，完全不必要修改现有的类，我们只需要实现策略接口即可，这就是面向对象中的对扩展开放准则。
+
+假设现在我们增加了一种自行车出行的方式。只需新增一个类即可。
+
+    -------------------不使用任何模式
+
+
+    public class TravelStrategy {
+        enum Strategy {
+            WALK, PLANE, SUBWAY
+        }
+    
+        private Strategy strategy;
+    
+        public TravelStrategy(Strategy strategy) {
+            this.strategy = strategy;
+        }
+    
+        public void travel() {
+            if (strategy == Strategy.WALK) {
+                print("walk");
+            } else if (strategy == Strategy.PLANE) {
+                print("plane");
+            } else if (strategy == Strategy.SUBWAY) {
+                print("subway");
+            }
+        }
+    
+        public void print(String str) {
+            System.out.println("出行旅游的方式为：" + str);
+        }
+    
+        public static void main(String[] args) {
+            TravelStrategy walk = new TravelStrategy(Strategy.WALK);
+            walk.travel();
+    
+            TravelStrategy plane = new TravelStrategy(Strategy.PLANE);
+            plane.travel();
+    
+            TravelStrategy subway = new TravelStrategy(Strategy.SUBWAY);
+            subway.travel();
+        }
+    }
+
+    -------------策略模式
+
+    ---接口
+
+    public interface IStrategy {
+        void travel();
+    }
+    
+    ---各种travel方式类
+    
+    public class PlaneStrategy implements IStrategy {
+        @Override
+        public void travel() {
+            System.out.println("plane");
+        }
+    }
+    
+    public class SubwayStrategy implements IStrategy {
+        @Override
+        public void travel() {
+            System.out.println("subway");
+        }
+    }
+    
+    public class WalkStrategy implements IStrategy {
+        @Override
+        public void travel() {
+            System.out.println("walk");
+        }
+    }
+    
+    ---包装策略的类
+    
+    public class TravelContext {
+        IStrategy strategy;
+    
+        public IStrategy getStrategy() {
+            return strategy;
+        }
+    
+        public void setStrategy(IStrategy strategy) {
+            this.strategy = strategy;
+        }
+    
+        public void travel() {
+            if (strategy != null) {
+                strategy.travel();
+            }
+        }
+    }
+    
+    ---实际使用
+    
+    public class TravalStrategyNew {
+        public static void main(String[] args) {
+            TravelContext travelContext = new TravelContext();
+            travelContext.setStrategy(new PlaneStrategy());
+            travelContext.travel();
+            travelContext.setStrategy(new WalkStrategy());
+            travelContext.travel();
+            travelContext.setStrategy(new SubwayStrategy());
+            travelContext.travel();
+        }
+    }
+
 
 ### 已有示例
 
-Java.util.List就是定义了一个增（add）、删（remove）、改（set）、查（indexOf）策略
+Java.util.List
 
-至于实现这个策略的ArrayList、LinkedList等类，只是在具体实现时采用了不同的算法。
+- Java.util.List就是定义了一个增（add）、删（remove）、改（set）、查（indexOf）策略
+- 至于实现这个策略的ArrayList、LinkedList等类，只是在具体实现时采用了不同的算法。
+- 它们策略一样，不考虑速度的情况下，使用时完全可以互相替换使用。
 
-但因为它们策略一样，不考虑速度的情况下，使用时完全可以互相替换使用。
+属性动画中插值器TimeInterpolator 
+
+- 它的作用就是根据时间流逝的百分比来来计算出当前属性值改变的百分比
+- 使用属性动画的时候,可以通过set方法对插值器进行设置.可以看到内部维持了一个时间插值器的引用，并设置了getter和setter方法，默认情况下是先加速后减速的插值器
+    
+    set方法如果传入的是null，则是线性插值器
+    
+- 而时间插值器TimeInterpolator是个接口，有一个接口继承了该接口，就是Interpolator这个接口，其作用是为了保持兼容
+
+    private static final TimeInterpolator sDefaultInterpolator =
+    		new AccelerateDecelerateInterpolator();  
+    		
+    private TimeInterpolator mInterpolator = sDefaultInterpolator; 
+    
+    @Override
+    public void setInterpolator(TimeInterpolator value) {
+    	if (value != null) {
+    		mInterpolator = value;
+    	} else {
+    		mInterpolator = new LinearInterpolator();
+    	}
+    }
+
+    @Override
+    public TimeInterpolator getInterpolator() {
+    	return mInterpolator;
+    }
+    
+    public interface Interpolator extends TimeInterpolator {
+        // A new interface, TimeInterpolator, was introduced for the new android.animation
+        // package. This older Interpolator interface extends TimeInterpolator so that users of
+        // the new Animator-based animations can use either the old Interpolator implementations or
+        // new classes that implement TimeInterpolator directly.
+    }
+    
+- 还有一个BaseInterpolator插值器实现了Interpolator接口，并且是一个抽象类
+
+    abstract public class BaseInterpolator implements Interpolator {
+        private int mChangingConfiguration;
+        /**
+         * @hide
+         */
+        public int getChangingConfiguration() {
+            return mChangingConfiguration;
+        }
+    
+        /**
+         * @hide
+         */
+        void setChangingConfiguration(int changingConfiguration) {
+            mChangingConfiguration = changingConfiguration;
+        }
+    }
+ 
+- 平时我们使用的时候，通过设置不同的插值器，实现不同的动画速率变换效果，比如线性变换，回弹，自由落体等等。这些都是插值器接口的具体实现，也就是具体的插值器策略。 
+
 
 ## 22. 命令模式（Command Pattern）
 
