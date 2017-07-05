@@ -446,6 +446,164 @@ Java.util.List
  
 - 平时我们使用的时候，通过设置不同的插值器，实现不同的动画速率变换效果，比如线性变换，回弹，自由落体等等。这些都是插值器接口的具体实现，也就是具体的插值器策略。 
 
+    public class LinearInterpolator extends BaseInterpolator implements NativeInterpolatorFactory {
+    
+        public LinearInterpolator() {
+        }
+    
+        public LinearInterpolator(Context context, AttributeSet attrs) {
+        }
+    
+        public float getInterpolation(float input) {
+            return input;
+        }
+    
+        /** @hide */
+        @Override
+        public long createNativeInterpolator() {
+            return NativeInterpolatorFactoryHelper.createLinearInterpolator();
+        }
+    }
+    
+内部使用的时候直接调用getInterpolation方法就可以返回对应的值了，也就是属性值改变的百分比。
+
+属性动画中另外一个应用策略模式的地方就是估值器，它的作用是根据当前属性改变的百分比来计算改变后的属性值。其中TypeEvaluator是一个接口。
+
+
+    public interface TypeEvaluator<T> {
+    
+        public T evaluate(float fraction, T startValue, T endValue);
+    
+    }
+    
+    public class IntEvaluator implements TypeEvaluator<Integer> {
+    
+        public Integer evaluate(float fraction, Integer startValue, Integer endValue) {
+            int startInt = startValue;
+            return (int)(startInt + fraction * (endValue - startInt));
+        }
+    }
+    
+上面的都是一些系统实现好的估值策略，在内部调用估值器的evaluate方法即可返回改变后的值。也可以自定义估值策略。
+
+开源框架Volley中，有一个重试策略接口
+
+    public interface RetryPolicy {
+    
+    
+        public int getCurrentTimeout();//获取当前请求用时（用于 Log）
+    
+    
+        public int getCurrentRetryCount();//获取已经重试的次数（用于 Log）
+    
+    
+        public void retry(VolleyError error) throws VolleyError;//确定是否重试，参数为这次异常的具体信息。在请求异常时此接口会被调用，可在此函数实现中抛出传入的异常表示停止重试。
+    }
+    
+    public class DefaultRetryPolicy implements RetryPolicy {
+    	...
+    }
+    
+    public abstract class Request<T> implements Comparable<Request<T>> {
+        private RetryPolicy mRetryPolicy;
+        public Request<?> setRetryPolicy(RetryPolicy retryPolicy) {
+            mRetryPolicy = retryPolicy;
+            return this;
+        }
+    	public RetryPolicy getRetryPolicy() {
+            return mRetryPolicy;
+        }
+    }
+    
+Volley缓存
+
+各大网络请求框架，或多或少都会使用到缓存，缓存一般会定义一个Cache接口，然后实现不同的缓存策略，如内存缓存，磁盘缓存等等
+
+缓存的实现，其实也可以使用策略模式。直接看Volley，里面也有缓存。
+
+定义了一个缓存接口
+
+    /**
+     * An interface for a cache keyed by a String with a byte array as data.
+     */
+    public interface Cache {
+        /**
+         * Retrieves an entry from the cache.
+         * @param key Cache key
+         * @return An {@link Entry} or null in the event of a cache miss
+         */
+        public Entry get(String key);
+    
+        /**
+         * Adds or replaces an entry to the cache.
+         * @param key Cache key
+         * @param entry Data to store and metadata for cache coherency, TTL, etc.
+         */
+        public void put(String key, Entry entry);
+    
+        /**
+         * Performs any potentially long-running actions needed to initialize the cache;
+         * will be called from a worker thread.
+         */
+        public void initialize();
+    
+        /**
+         * Invalidates an entry in the cache.
+         * @param key Cache key
+         * @param fullExpire True to fully expire the entry, false to soft expire
+         */
+        public void invalidate(String key, boolean fullExpire);
+    
+        /**
+         * Removes an entry from the cache.
+         * @param key Cache key
+         */
+        public void remove(String key);
+    
+        /**
+         * Empties the cache.
+         */
+        public void clear();
+    
+        /**
+         * Data and metadata for an entry returned by the cache.
+         */
+        public static class Entry {
+            /** The data returned from cache. */
+            public byte[] data;
+    
+            /** ETag for cache coherency. */
+            public String etag;
+    
+            /** Date of this response as reported by the server. */
+            public long serverDate;
+    
+            /** The last modified date for the requested object. */
+            public long lastModified;
+    
+            /** TTL for this record. */
+            public long ttl;
+    
+            /** Soft TTL for this record. */
+            public long softTtl;
+    
+            /** Immutable response headers as received from server; must be non-null. */
+            public Map<String, String> responseHeaders = Collections.emptyMap();
+    
+            /** True if the entry is expired. */
+            public boolean isExpired() {
+                return this.ttl < System.currentTimeMillis();
+            }
+    
+            /** True if a refresh is needed from the original data source. */
+            public boolean refreshNeeded() {
+                return this.softTtl < System.currentTimeMillis();
+            }
+        }
+    
+    }
+    
+它有两个实现类NoCache和DiskBasedCache，使用的时候设置对应的缓存策略即可。
 
 ## 22. 命令模式（Command Pattern）
 
