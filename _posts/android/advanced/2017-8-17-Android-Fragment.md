@@ -140,6 +140,123 @@ Fragment 生命周期
 ![](http://i.imgur.com/PqQfmUA.jpg)
 
 
+# 4. FragmentTransaction
+
+从3的demo中优化，竖屏改为一个Activity，动态改变现实不同Fragment（bookList和bookDescription)
+
+activity_mian.xml变化：移除fragmentDescription，后续动态替换
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/layoutRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    
+        <!-- List of Book Titles ** using the ListFragment **-->
+        <fragment
+            android:id="@+id/fragmentTitles"
+            android:name="com.open.dynamicfragments.BookListFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    
+    </LinearLayout>
+
+
+MainActivity变化：onCreate加入判断，是否动态支援显示；onSelectedBookChanged 动态替换Fragment
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment bookDescFragment =
+                fm.findFragmentById(R.id.fragmentDescription);
+        // If not found than we're doing dynamic mgmt
+        mIsDynamic = bookDescFragment == null || !bookDescFragment.isInLayout();
+
+        // Load the list fragment if necessary
+        if (mIsDynamic) {
+            // Begin transaction
+            FragmentTransaction ft = fm.beginTransaction();
+            // Create the Fragment and add
+            BookListFragment listFragment = new BookListFragment();
+            ft.add(R.id.layoutRoot, listFragment, "bookList");
+            ft.commit();
+        }
+    }
+    
+    
+     @Override
+    public void onSelectedBookChanged(int bookIndex) {
+        BookDescFragment bookDescFragment;
+        FragmentManager fm = getSupportFragmentManager();
+
+        // Check validity of fragment reference
+        if (mIsDynamic) {
+            // Handle dynamic switch to description fragment
+            FragmentTransaction ft = fm.beginTransaction();
+            bookDescFragment = new BookDescFragment();
+
+            // Create the fragment and attach book index
+            bookDescFragment = new BookDescFragment();
+            Bundle args = new Bundle();
+            args.putInt(BookDescFragment.BOOK_INDEX, bookIndex);
+            bookDescFragment.setArguments(args);
+
+            // Replace the book list with the description
+            ft.replace(R.id.layoutRoot,
+                    bookDescFragment, "bookDescription");
+            ft.addToBackStack(null);
+
+            //ft.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
+            ft.commit();
+        } else {
+            // Use the already visible description fragment
+            bookDescFragment = (BookDescFragment)
+                    fm.findFragmentById(R.id.fragmentDescription);
+            bookDescFragment.setBook(bookIndex);
+        }
+    }
+
+
+BookDescFragment变化： onCreateView加入getArguments处理
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View viewHierarchy = inflater.inflate(R.layout.fragment_book_desc, container, false);
+
+        initView(viewHierarchy);
+
+        return viewHierarchy;
+    }
+
+    private void initView(View viewHierarchy) {
+        // Load array of book descriptions
+        mBookDescriptions = getResources().getStringArray(R.array.bookDescriptions);
+        // Get reference to book description text view
+        mBookDescriptionTextView = (TextView)
+                viewHierarchy.findViewById(R.id.bookDescription);
+
+        // Retrieve the book index if attached
+        Bundle args = getArguments();
+        int bookIndex = args != null ?
+                args.getInt(BOOK_INDEX, BOOK_INDEX_NOT_SET) :
+                BOOK_INDEX_NOT_SET;
+
+        // If we find the book index, use it
+        if (bookIndex != BOOK_INDEX_NOT_SET) {
+            setBook(bookIndex);
+        }
+    }
+
+
+
+
 # Reference
 
 
