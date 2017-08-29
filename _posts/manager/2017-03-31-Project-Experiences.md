@@ -3,8 +3,8 @@ layout: post
 title: Project Experiences
 date: 2017-3-31
 excerpt: "Project Experiences"
-categories: Projects
-tags: [Projects]
+categories: 管理
+tags: [管理]
 comments: true
 ---
 

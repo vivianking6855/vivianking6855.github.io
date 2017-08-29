@@ -3,8 +3,8 @@ layout: post
 title: 管理 - STAR法则
 date: 2017-5-25
 excerpt: "管理 - STAR法则"
-categories: Projects
-tags: [Projects]
+categories: 管理
+tags: [管理]
 comments: true
 ---
 

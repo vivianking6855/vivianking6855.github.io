@@ -3,8 +3,8 @@ layout: post
 title: 管理 - 产品文档 
 date: 2017-7-17
 excerpt: "管理 - 产品文档"
-categories: Projects
-tags: [Projects]
+categories: 管理
+tags: [管理]
 comments: true
 lefttrees: true
 ---
