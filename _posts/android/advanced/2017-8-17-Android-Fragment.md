@@ -142,7 +142,9 @@ Fragment 生命周期
 
 # 4. FragmentTransaction
 
-从3的demo中优化，竖屏改为一个Activity，动态改变现实不同Fragment（bookList和bookDescription)
+FragmentTransaction 实现Activity中Fragment的灵活管理和切换。
+
+Demo是在Demo 3的基础上进行优化，竖屏改为一个Activity，动态改变现实不同Fragment（bookList和bookDescription)
 
 activity_mian.xml变化：移除fragmentDescription，后续动态替换
 
