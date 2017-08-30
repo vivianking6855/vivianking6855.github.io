@@ -8,7 +8,9 @@ tags: [Android 基础]
 comments: true
 ---
 
-# Android 8.0 新特性及开发指南 （Android Oreo 奥利奥）
+# Android 8.0 新特性
+
+Android O： Android Oreo 奥利奥
 
 android 官方介绍
 
@@ -19,7 +21,7 @@ android 官方介绍
 - [开发者必看｜Android 8.0 新特性及开发指南]( http://www.cnblogs.com/qyun/p/6715195.html)
 - [Android O新特性和行为变更总结](https://mp.weixin.qq.com/s?__biz=MzI1NjEwMTM4OA==&mid=2651232573&idx=1&sn=56963d1ecb1eeea2c82ec88d9667c0b0&chksm=f1d9e45ec6ae6d480b1b8ab73b)
 
-# 功能API和行为变更
+# 功能，API和行为变更
 
 android 官方介绍
 
