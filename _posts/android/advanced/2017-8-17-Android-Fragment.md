@@ -257,7 +257,11 @@ BookDescFragment变化： onCreateView加入getArguments处理
     }
 
 
+5. Rich Navigation
 
+Swipe navigation and Action Bar navigation, you could check android default template here:
+
+![](http://i.imgur.com/rXoj18B.jpg)
 
 # Reference
 
