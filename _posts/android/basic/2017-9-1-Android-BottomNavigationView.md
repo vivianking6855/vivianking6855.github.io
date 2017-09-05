@@ -188,7 +188,7 @@ MainActivity.java
 
 - BottomNavigationView的默认高度为56dp
 - 官方建议菜单项不多于5个
-- 为了方便设置图标的颜色,建议使用SVG图片或矢量图
+- 为了方便设置图标的颜色,建议使用SVG图片（Scalable Vector Graphics矢量图)
 
 # Reference
 
