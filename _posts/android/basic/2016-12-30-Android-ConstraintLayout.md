@@ -4,7 +4,7 @@ title: UI - ConstraintLayout
 date: 2016-12-30
 excerpt: "ConstraintLayout"
 categories: Android
-tags: [Android 微技巧]
+tags: [Android 基础]
 comments: true
 ---
 

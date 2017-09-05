@@ -4,7 +4,7 @@ title: UI - RecyclerView, DiffUtil, RecyclerViewUtils
 date: 2016-12-29
 excerpt: "RecyclerView, DiffUtil, RecyclerViewUtils"
 categories: Android
-tags: [Android 微技巧]
+tags: [Android 基础]
 comments: true
 ---
 
