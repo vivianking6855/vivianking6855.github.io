@@ -10,7 +10,7 @@ comments: true
 
 # 简介
 
-Material Design 很早就有了BottomNavigationView类，不过知道Support Library 25 才增加了BottomNavigationView控件。 
+Material Design 很早就有了BottomNavigationView类，不过直到Support Library 25 才增加了BottomNavigationView控件。 
 
 # 基本用法
 
@@ -57,7 +57,7 @@ activity_main.xml
     
     </LinearLayout>
 
-BottomNavigationView的其他属性：
+BottomNavigationView的几个重要属性：
 
 - app:itemIconTint 设置图标的颜色。可以依据state_checked设定normal和check状态的颜色
 - app:itemTextColor 设置文字的颜色。。可以依据state_checked设定normal和check状态的颜色
@@ -134,13 +134,13 @@ MainAcitivy.java
     
     }
 
-Android Studio创建Activity时选择就可以自动生成上面的Code：
+Android Studio创建Activity时选择下图中红色的部分，可以自动生成上面的Code：
 
 ![](http://i.imgur.com/CIY01UA.jpg)
 
 # 如何去掉BottomNavigationView的动画效果
 
-不过当item个数大于三个的时候，会出现不一样的效果：一会儿带文字，一会儿不带文字，时高时低，时大时小
+BottomNavigationView有一些限制。当item个数大于三个的时候，会出现不一样的效果：一会儿带文字，一会儿不带文字，时高时低，时大时小
 
 这在大陆算是较为奇怪的体验，特别是大陆很多app都是4个bottom icon.
 
