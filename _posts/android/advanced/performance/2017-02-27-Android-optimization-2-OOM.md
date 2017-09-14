@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 性能优化（二）内存 OOM
+title: 性能优化（二）内存管理 & Memory Leak & OOM
 date: 2017-2-27
-excerpt: "内存 OOM"
+excerpt: "内存管理 & Memory Leak & OOM"
 categories: Android
 tags: [Android 性能优化]
 comments: true
@@ -14,7 +14,9 @@ lefttrees: true
 
 
 
-# 内存示意图
+# 内存管理
+
+内存示意图
 
 ![](http://i.imgur.com/2ylcYWn.png)
 
@@ -39,26 +41,13 @@ lefttrees: true
     - heap空间完全由程序员控制，我们使用的malloc、C++ new和java new所申请的空间都是heap空间。
     - C/C++申请的内存空间在native heap中，而java申请的内存空间则在dalvik heap中。
 
-# 为什么容易出现OOM
-
-- 这个是因为Android系统对dalvik的vm heapsize作了硬性限制，当java进程申请的java空间超过阈值时，就会抛出OOM异常。
-    
-    这个阈值可以是48M、24M、16M等，视机型而定，可以通过
-    
-    "adb shell getprop | grep dalvik.vm.heapgrowthlimit查看此值。"
-    
-- 程序发生OMM并不表示RAM不足，而是因为程序申请的java heap对象超过了dalvik vm heapgrowthlimit。
-    
-    也就是说，在RAM充足的情况下，也可能发生OOM。
-
-# 内存泄露
+# Memory Leak 内存泄露
 
 首先看下dalvik的Garbage Collection，GC会选择回收没有直接或者间接引用到GC Roots的点。如下图蓝色部分。
     
 Java内存泄漏指的是进程中某些对象（垃圾对象）已经没有使用价值了，但是它们却可以直接或间接地引用到gc roots导致无法被GC回收。
     
 无用的对象占据着内存空间，使得实际可使用内存变小，形象地说法就是内存泄漏了。
-
 
 ![](http://i.imgur.com/RuracHg.png)
 
@@ -246,14 +235,41 @@ Java内存泄漏指的是进程中某些对象（垃圾对象）已经没有使�
         //animator.cancel();
         
 
+# OOM（Out Of Memory）内存溢出
+
+## 为什么容易出现OOM
+
+- 这个是因为Android系统对dalvik的vm heapsize作了硬性限制，当java进程申请的java空间超过阈值时，就会抛出OOM异常。
+    
+    这个阈值可以是48M、24M、16M等，视机型而定，可以通过
+    
+    "adb shell getprop | grep dalvik.vm.heapgrowthlimit查看此值。"
+    
+- 程序发生OMM并不表示RAM不足，而是因为程序申请的java heap对象超过了dalvik vm heapgrowthlimit。
+
+    也就是说内存占有量超过了VM所分配的最大。在RAM充足的情况下，也可能发生OOM。
+    
+## 常见的OOM的情景
+
+- 一次性申请很多内存，加载对象过大（比如创建大的数组或者是载入大的文件，图片）
+- 相应资源过多，来不及释放
+- 持续发生了内存泄漏(Memory Leak)，累积到一定程度导致OOM
+
+## 如何解决
+
+- 在内存引用上做些处理，常用的有软引用、强化引用、弱引用
+- 在内存中加载图片时直接在内存中作处理，如边界压缩
+- 动态回收内存
+- 优化Dalvik虚拟机的堆内存分配
+- 自定义堆内存大小
+
 # 内存检测工具
 
 - MAT
 - [leak-canary git hub](https://github.com/square/leakcanary)
 - FindBugs
 
-
-OOM是内存优化当中比较突出的一点，尽量减少OOM的概率对内存优化有着很大的意义。
+Memory Leak 和 OOM是内存优化当中比较突出的问题，尽量减少Leak和OOM的概率对内存优化有着很大的意义。
 
 # Reference
 
@@ -263,7 +279,7 @@ OOM是内存优化当中比较突出的一点，尽量减少OOM的概率对内�
 
 [性能优化（一）：方法概述](http://vivianking6855.github.io/2017/02/27/Android-optimization-1-method/)
 
-[性能优化（二）内存 OOM](http://vivianking6855.github.io/2017/02/27/Android-optimization-2-OOM/)
+[性能优化（二）内存管理 & Memory Leak & OOM](http://vivianking6855.github.io/2017/02/27/Android-optimization-2-OOM/)
 
 [性能优化（三）Google典范之开篇](http://vivianking6855.github.io/2017/03/13/Android-optimization-3-Google-Publish/)
 
