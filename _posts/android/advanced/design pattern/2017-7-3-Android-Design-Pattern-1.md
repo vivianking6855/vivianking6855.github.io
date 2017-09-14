@@ -55,20 +55,34 @@ java的设计模式有N多种，据不完全统计，迄今为止，网络出现
 
 ### 核心Code 
 
-实现方法详解看[这里](http://www.jianshu.com/p/eb30a388c5fc)
+实现方法详解看[七种方式实现Singleton模式](https://github.com/francistao/LearningNotes/blob/master/Part3/Algorithm/%E5%89%91%E6%8C%87Offer/1.%E4%B8%83%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0singleton%E6%A8%A1%E5%BC%8F.md)
 
-    public class Singleton {
-        private static class SingletonHolder {
-            private static final Singleton INSTANCE = new Singleton();
-        }
+	/**
+	 * 单例模式，使用静态内部类，线程安全（推荐）
+	 */
+	public static class Singleton5 {
+		private final static class SingletonHolder {
+			private static final Singleton5 INSTANCE = new Singleton5();
+		}
+
+		private static Singleton5 getInstance() {
+			return SingletonHolder.INSTANCE;
+		}
+	}
+
+	/**
+	 * 静态内部类，使用枚举方式，线程安全（推荐）
+	 */
+	public enum Singleton6 {
+		INSTANCE;
+		public void whateverMethod() {
+
+		}
+	}
+	
     
-        private Singleton() {
-        }
+也可以参看这一篇[聊一聊Java的单例](http://www.jianshu.com/p/eb30a388c5fc)  
     
-        public static final Singleton getInstance() {
-            return SingletonHolder.INSTANCE;
-        }
-    }
     
 ### 已有示例
 
