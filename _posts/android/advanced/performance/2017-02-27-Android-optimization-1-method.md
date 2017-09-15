@@ -148,12 +148,13 @@ Purdue University研究了最受欢迎的一些应用的电量消耗：
 
 3.  UI不可见时，及时释放资源
 4.	页面布局，尽量避免太多层级，避免被VM回收。
-5.	使用多进程，UI与work进程分离。长时间的操作要放到worker线程以减少ANR。
-6.	拆分时请注意，一个空进程也要额外占1.4MB，需评估拆分是否划算？
+5.	使用多进程，UI与work进程分离。长时间的操作要放到worker线程以减少ANR。拆分时请注意，一个空进程也要额外占1.4MB，需评估拆分是否划算？
+6.	线程
+    - 线程不再需要继续执行的时候要记得及时关闭，开启线程数量不易过多，一般和自己机器内核数一样最好，推荐开启线程的时候，使用线程池。
 7.	使用优化后的lib和硬件加速。使用外部lib时注意，确保使用的是为移动环境优化后的lib
-8.	BraodcastReceiver，ContentObserver，FileObserver，Cursor
+8.	BraodcastReceiver，ContentObserver，FileObserver，Service的解绑和释放 
     
-    BraodcastReceiver，ContentObserver，FileObserver，Cursor在Activity onDeatory或者某类声明周期结束之后一定要unregister或者close掉，
+    BraodcastReceiver，ContentObserver，FileObserver，Service在Activity onDeatory或者某类声明周期结束之后一定要解绑或者close掉，
     否则这个Activity类会被system强引用，不会被内存回收。
     
 9.	Activity引用WeakReference
@@ -164,7 +165,10 @@ Purdue University研究了最受欢迎的一些应用的电量消耗：
 
     例如：不能这样使用sBackground的生命周期比Activity要长
 
-    1)	对activity的引用应该控制在activity的生命周期之内；
+    1)	对activity的引用应该控制在activity的生命周期之内。
+    
+       - 应该尽量避免有appliction进程级别的对象来引用Activity级别的对象，如果有的话也应该在Activity结束的时候解引用。
+       - 如不应用applicationContext在Activity中获取资源。Service也一样。
     
     2)	如果不能就考虑使用getApplicationContext或者getApplication；
     
@@ -217,7 +221,28 @@ Purdue University研究了最受欢迎的一些应用的电量消耗：
 27. 对于那些无法避免需要创建对象的情况，可以考虑对象池模型。
     - 通过对象池来解决频繁创建与销毁的问题。
     - 需要注意结束使用之后，需要手动释放对象池中的对象
-
+28. static的合理使用，避免频繁的使用static关键字修饰
+    - 一般用来修饰基本数据类型或者轻量级对象，尽量避免修饰集合或者大对象，常用作修饰全局配置项、工具类方法、内部类。
+    - 由于static声明变量的生命周期其实是和APP的生命周期一样的（进程级别）。大量的使用的话，就会占据内存空间不释放，积少成多也会造成内存的不断开销，直至挂掉。
+29. BitMap隐患
+    - Bitmap的不当处理极可能造成OOM，绝大多数情况应用程序OOM都是因这个原因，在操作的时候必须小心。
+    - 及时释放recycle。由于Dalivk并不会主动的去回收，需要开发者在Bitmap不被使用的时候recycle掉。
+    - 设置一定的压缩率。需求允许的话，应该去对BItmap进行一定的缩放，通过BitmapFactory.Options的inSampleSize属性进行控制。仅只想获得Bitmap的属性，其实并不需要根据BItmap的像素去分配内存，只需在解析读取Bmp的时候使用BitmapFactory.Options的inJustDecodeBounds属性。
+    - 建议在加载网络图片的时候，使用软引用或者弱引用并进行本地缓存，推荐使用android-Volley,Picasso、Fresco
+30. 页面背景图
+    - 在布局和代码中设置背景和图片的时候，如果是纯色，尽量使用color；如果是规则图形，尽量使用shape画图；如果稍微复杂点，可以使用9patch图；如果不能使用9patch的情况下，针对几种主流分辨率的机型进行切图。
+31. View缓存
+    - 在ListView和GridView中，列表中的很多项(convertView)是可以重用的，不需要每次getView就重新生成一项。
+    - 页面的绘制其实是很耗时的，findViewById也比较慢。所以不重用View，在有列表的时候就尤为显著了，经常会出现滑动很卡的现象。
+    - 推荐使用recyclerview
+32. handler 清理
+    - 在Activity的onDestroy方法中调用handler.removeCallbacksAndMessages(null);取消所有的消息的处理，包括待处理的消息；
+33. Cursor及时关闭
+    - 在查询SQLite数据库时，会返回一个Cursor，当查询完毕后，及时关闭，这样就可以把查询的结果集及时给回收掉。
+34. I/O流
+    - I/O流操作完毕，读写结束，记得关闭。
+35. String/StringBuffer
+    - 当有较多的字符创需要拼接的时候，推荐使用StringBuffer。
 
 <br/><br/>
 
