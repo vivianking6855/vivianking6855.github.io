@@ -528,6 +528,8 @@ MainActivity.java (MVP的presenter没有移除）
 - 若是项目逻辑和模块较为复杂，为了避免Activity过于庞大，MVP是一个不错的选择。
 - MVP和MVVM一起使用对复杂和界面状态和行为逻辑复杂的项目，可以很大的降低耦合和维护成本。
 
+[Sample Code下载](https://github.com/vivianking6855/android-template/tree/master/android-architecture)
+
 # Reference
 
 以上图片均是从下面参看地址摘取，若有任何问题，请通知下，我会立即删除。
