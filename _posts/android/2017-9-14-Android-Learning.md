@@ -56,10 +56,10 @@ comments: true
     - [性能优化（四）Google典范之Render实践](http://vivianking6855.github.io/2017/03/14/Android-optimization-4-Google-Publish-Render/)
 
 ## 设计模式
-
-    - [Android Design-Pattern （三）](http://vivianking6855.github.io/2017/07/05/Android-Design-Pattern-3/)
-    - [Android Design-Pattern （二）](http://vivianking6855.github.io/2017/07/04/Android-Design-Pattern-2/)
-    - [Android Design-Pattern （一）](http://vivianking6855.github.io/2017/07/03/Android-Design-Pattern-1/)
+ 
+ - [Android Design-Pattern （三）](http://vivianking6855.github.io/2017/07/05/Android-Design-Pattern-3/)
+ - [Android Design-Pattern （二）](http://vivianking6855.github.io/2017/07/04/Android-Design-Pattern-2/)
+ - [Android Design-Pattern （一）](http://vivianking6855.github.io/2017/07/03/Android-Design-Pattern-1/)
 
 # 第二部分
 
@@ -76,12 +76,12 @@ comments: true
 - 算法
     - [Algorithm - 最大公约数和最小公倍数](http://vivianking6855.github.io/2017/08/29/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E5%92%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/)
 
-#　第四部分
+# 第四部分
 
 - 网络
 - 操作系统
 
-#　第五部分
+# 第五部分
 
 ## 推荐书籍
 
