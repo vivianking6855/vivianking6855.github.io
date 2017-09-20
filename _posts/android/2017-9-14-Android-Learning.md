@@ -131,7 +131,10 @@ comments: true
     - 《人月神话》 推荐理由：管理复杂项目的见解深刻，并有大量软件工程的实践。
     - 《人件》 推荐理由：给技术管理者或者希望走向管理方向的人参考。最近在看第二遍，收获很大。软件即人件，软件开发不光要解决技术问题，更重要是人的问题。为何很多工作加班才能解决？公司为何无法留住员工？读完这本书可以找到一些答案。
 
-摘录自[Android_Data#书籍](https://github.com/Freelander/Android_Data#%E4%B9%A6%E7%B1%8D) 和 [移动开发必读书单](https://mp.weixin.qq.com/s/vyeQUNKkiCjTrSyRrcH7lw)
+摘录自
+
+- [Android_Data#书籍](https://github.com/Freelander/Android_Data#%E4%B9%A6%E7%B1%8D)
+- [移动开发必读书单](https://mp.weixin.qq.com/s/vyeQUNKkiCjTrSyRrcH7lw)
 
 ## 项目
 
@@ -154,3 +157,15 @@ comments: true
     - [Project Experiences](http://vivianking6855.github.io/2017/03/31/Project-Experiences/)
     - [代码规范和优化](http://vivianking6855.github.io/2016/12/01/CodeFormat_And_Optimization/)
     - [App Summary Template](http://vivianking6855.github.io/2016/10/28/App-Summary-Template/)
+
+# 参考资料
+
+- [LearningNotes](https://github.com/francistao/LearningNotes)
+- [Android 学习资料收集](https://github.com/Freelander/Android_Data)  
+- [Anroid开源库 TimLiu](https://github.com/Tim9Liu9/TimLiu-Android)
+- [张鸿洋 微信推送](https://github.com/hongyangAndroid/hongyangWeixinArticles)
+- [Android官网博客 Android Developers Blog](http://android-developers.blogspot.com/) 
+- [android学习之路 ](http://stormzhang.com/android/2014/07/07/learn-android-from-rookie/)
+- [开源项目源码解析地址](http://p.codekk.com)
+- [Android 开源项目分类汇总](https://github.com/Trinea/android-open-project)
+- [Android库收集](https://github.com/wasabeef/awesome-android-libraries)
