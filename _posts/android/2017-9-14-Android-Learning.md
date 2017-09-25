@@ -35,7 +35,6 @@ comments: true
     - [Android Design Support Library](http://vivianking6855.github.io/2016/10/10/Android-Nano-Tips-2-design-support-library/)
     - [ExpandableListView, Annotations](http://vivianking6855.github.io/2016/09/14/Android-Nano-Tips-1/)
 - [Android 进阶](http://vivianking6855.github.io/tag/#Android%20%E8%BF%9B%E9%98%B6-ref)
-    - [Code Template 1 - Basic基础组合](http://vivianking6855.github.io/2017/09/01/Template-Basic/)
     - [Android Fragment](http://vivianking6855.github.io/2017/08/17/Android-Fragment/)
     - [Kotlin](http://vivianking6855.github.io/2017/06/23/Kotlin/)
     - [Android 视频分离和合成](http://vivianking6855.github.io/2017/06/19/Android-Vedio-merge-Music/)
@@ -54,12 +53,15 @@ comments: true
     - [性能优化（二）内存管理 & Memory Leak & OOM](http://vivianking6855.github.io/2017/02/27/Android-optimization-2-OOM/)
     - [性能优化（三）Google典范之开篇](http://vivianking6855.github.io/2017/03/13/Android-optimization-3-Google-Publish/)
     - [性能优化（四）Google典范之Render实践](http://vivianking6855.github.io/2017/03/14/Android-optimization-4-Google-Publish-Render/)
+- Android项目开发模板
+    - [Code Template 1 - Basic基础组合](http://vivianking6855.github.io/2017/09/01/Template-Basic/)
 
 ## 设计模式
  
  - [Android Design-Pattern （三）](http://vivianking6855.github.io/2017/07/05/Android-Design-Pattern-3/)
  - [Android Design-Pattern （二）](http://vivianking6855.github.io/2017/07/04/Android-Design-Pattern-2/)
  - [Android Design-Pattern （一）](http://vivianking6855.github.io/2017/07/03/Android-Design-Pattern-1/)
+ - [Android框架 之 MVC, MVP, MVVM](http://vivianking6855.github.io/2017/09/08/Android-Architecture/)
 
 # 第二部分
 
