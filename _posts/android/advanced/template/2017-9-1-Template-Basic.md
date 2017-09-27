@@ -31,8 +31,13 @@ Code Template 1是Basic基础组合，主要包含下面的控件和模块：
 
 # 框架
 
-采用MPV框架，目录结构
+采用MPV框架
+
+## 目录结构
 
 ![](https://i.imgur.com/uhtDKKJ.jpg)
 
+## 框架说明
 
+- MainActivity: HomePagerAdapter 加载四个Fragment
+- 四个Fragment：FirstFragment, SecondFragment, ThirdFragment, FourthFragment

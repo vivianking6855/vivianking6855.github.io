@@ -63,6 +63,9 @@ comments: true
  - [Android Design-Pattern （一）](http://vivianking6855.github.io/2017/07/03/Android-Design-Pattern-1/)
  - [Android框架 之 MVC, MVP, MVVM](http://vivianking6855.github.io/2017/09/08/Android-Architecture/)
 
+## [精彩third party library](http://vivianking6855.github.io/2017/09/25/Android-ThirdParty-Library/)
+
+
 # 第二部分
 
 - Java基础
