@@ -51,6 +51,8 @@ RecylerView相对于ListView的优点：
 
 [真实项目运用-RecyclerView封装](http://blog.csdn.net/u014315849/article/details/52537700)
 
+[RecyclerView系列](http://www.jianshu.com/p/991062d964cf)
+
 ## 开源库
 
 - [SectionedRecyclerViewAdapter](https://github.com/luizgrp/SectionedRecyclerViewAdapter)
@@ -71,6 +73,7 @@ DiffUtil可以提高RecyclerView的差异化效率
 # 三、 [RecyclerViewUtils](https://github.com/captain-miao/RecyclerViewUtils)
 
 refresh,load more,sticky header,expand,index
+
 
 
 
