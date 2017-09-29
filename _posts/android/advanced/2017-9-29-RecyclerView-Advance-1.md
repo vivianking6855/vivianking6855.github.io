@@ -262,9 +262,9 @@ recycler_item.xml
     </FrameLayout>
 
 
-（6）SimpleRecyclerListActivity
+（6）SimpleRecyclerActivity
 
-    public class SimpleRecyclerListActivity extends BaseActivity implements ISampleListener {
+    public class SimpleRecyclerActivity extends BaseActivity implements ISampleListener {
         private SamplePresenter mPresenter;
         private TextView mHint;
     
@@ -327,10 +327,11 @@ recycler_item.xml
 ![](https://i.imgur.com/QaDn8MR.png)
 
 
-# Sample Code下载
-
 # RecyclerView封装系列
 
-RecyclerView封装 一
-RecyclerView封装 二
+- [RecyclerView封装 一](http://vivianking6855.github.io/2017/09/29/RecyclerView-Advance-1/)
+- RecyclerView封装 二
+
+
+# [Sample Code下载](https://github.com/vivianking6855/android-library/tree/master/HugeRecyclerView)
 
