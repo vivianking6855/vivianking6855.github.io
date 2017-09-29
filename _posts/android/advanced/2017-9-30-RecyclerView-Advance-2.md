@@ -127,7 +127,7 @@ lefttrees: true
         <TextView
             android:id="@+id/header"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/recycler_item_first_h"
+            android:layout_height="@dimen/recycler_item_h"
             android:gravity="center"
             android:text="Header" />
     </FrameLayout>
@@ -141,7 +141,7 @@ lefttrees: true
         <TextView
             android:id="@+id/footer"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/recycler_item_first_h"
+            android:layout_height="@dimen/recycler_item_h"
             android:gravity="center"
             android:text="Footer" />
     </FrameLayout>
@@ -150,7 +150,7 @@ HeadFooterActivity 同 SimpleRecyclerActivity基本一样，我们加上两句
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_head_rooter);
+        setContentView(R.layout.activity_head_footer);
 
         RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         LinearLayoutManager lm = new LinearLayoutManager(this);
