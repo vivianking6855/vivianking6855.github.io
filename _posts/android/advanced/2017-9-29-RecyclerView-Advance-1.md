@@ -16,7 +16,19 @@ lefttrees: true
 
 # 简介
 
-先帖效果图，我们想实现的是下面这样的效果：
+先帖效果图，我们想实现的一系列效果：
+
+- Header,Footer
+
+    ![](https://i.imgur.com/w6rp5sD.png)
+
+    ![](https://i.imgur.com/fATcYUi.png)
+
+- Endless Footer
+
+    ![](https://i.imgur.com/0uHAXxz.jpg)
+
+    ![](https://i.imgur.com/5jcGgJt.jpg)
 
 
 下面开始动作起来吧
@@ -32,7 +44,7 @@ lefttrees: true
 
 下面我一步一步来实现
 
-（1） 创建 HugeRecyclerView extends RecyclerView
+##（1） 创建 HugeRecyclerView extends RecyclerView
 
     public class HugeRecyclerView extends RecyclerView {
     
@@ -56,7 +68,7 @@ lefttrees: true
         }
     }
         
-（2）model
+##（2）model
 
     public class SampleDataApi {
     
@@ -87,7 +99,7 @@ lefttrees: true
     }
         
 
-（3） presenter
+##（3） presenter
 
     public class SamplePresenter {
         private static final String TAG = "SecondPresenter";
@@ -137,15 +149,17 @@ lefttrees: true
     
    里面用到了retrolambda和rxjava，rxandroid，记得配置gradle
    
-（4）Adapter
+##（4）Adapter
 
-    public class SampleRecyclerAdapter extends
-            BaseRecyclerAdapter<SampleModel, SampleRecyclerAdapter.ItemViewHolder> {
-    
+       public class SampleRecyclerAdapter extends RecyclerView.Adapter {
         private Context mContext;
+    
+        // model data
+        protected List<SampleModel> mItemList;
     
         public SampleRecyclerAdapter(Context context) {
             mContext = context;
+            mItemList = new ArrayList<>();
         }
     
         public void setData(List<SampleModel> data) {
@@ -161,14 +175,19 @@ lefttrees: true
         }
     
         @Override
-        public ItemViewHolder onCreateItemViewHolder(ViewGroup parent, int viewType) {
+        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             return new ItemViewHolder(LayoutInflater.from(mContext)
                     .inflate(R.layout.recycler_item, parent, false));
         }
     
         @Override
-        public void onBindItemViewHolder(ItemViewHolder holder, int position) {
-            holder.hint.setText(mItemList.get(position).mTitle);
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+            ((ItemViewHolder) holder).hint.setText(mItemList.get(position).mTitle);
+        }
+    
+        @Override
+        public int getItemCount() {
+            return mItemList == null ? 0 : mItemList.size();
         }
     
         class ItemViewHolder extends RecyclerView.ViewHolder {
@@ -179,52 +198,11 @@ lefttrees: true
                 hint = (TextView) view.findViewById(R.id.tv_content);
             }
         }
-    
     }
+    
+这是最基本的用法
 
-    public abstract class BaseRecyclerAdapter<T, VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter {
-        // item type
-        private static final int TYPE_NORMAL = -1; // normal item
-    
-        // model data
-        protected List<T> mItemList;
-    
-        public BaseRecyclerAdapter() {
-            mItemList = new ArrayList<>();
-        }
-    
-        // normal item holder
-        public abstract VH onCreateItemViewHolder(ViewGroup parent, int viewType);
-    
-        // normal item bind
-        public abstract void onBindItemViewHolder(VH holder, int position);
-    
-    
-        @Override
-        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-                return onCreateItemViewHolder(parent, viewType);
-        }
-    
-        @Override
-        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-            onBindItemViewHolder((VH) holder, position);
-        }
-    
-        @Override
-        public int getItemCount() {
-            return getBasicItemCount();
-        }
-    
-        private int getBasicItemCount() {
-            return mItemList == null ? 0 : mItemList.size();
-        }
-    
-    }
-
-    
-BaseRecyclerAdapter之所以这么封装，是为了后面的footer，header和多类别layout item做准备    
-
-（5）xml
+##（5）xml
 
 activity_main.xml
 
@@ -262,7 +240,7 @@ recycler_item.xml
     </FrameLayout>
 
 
-（6）SimpleRecyclerActivity
+##（6）SimpleRecyclerActivity
 
     public class SimpleRecyclerActivity extends BaseActivity implements ISampleListener {
         private SamplePresenter mPresenter;
@@ -283,7 +261,7 @@ recycler_item.xml
     
         @Override
         protected void initView(Bundle savedInstanceState) {
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.activity_simple);
     
             RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
             LinearLayoutManager lm = new LinearLayoutManager(this);
@@ -322,7 +300,7 @@ recycler_item.xml
         }
     }
 
-看下显示效果
+## 看下显示效果
 
 ![](https://i.imgur.com/QaDn8MR.png)
 

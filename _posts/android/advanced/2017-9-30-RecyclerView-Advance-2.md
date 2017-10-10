@@ -19,24 +19,18 @@ lefttrees: true
 
 这个需求需要从Adapter入手，增加addHeader or addFooter入口。下面我们来改动BaseRecyclerAdapter
 
-先来定义一些变量，主要是Header List, size 和map方便我们操作他们。
+## (1) 先来定义一些变量，主要是Header List, size 和map方便我们操作他们。
 
-    //header view and footer view can't be recycled
-    private List<RecyclerView.ViewHolder> mHeaderViews = new ArrayList<>();
-    //store the ViewHolder for remove header view
-    private Map<View, RecyclerView.ViewHolder> mHeaderViewHolderMap = new HashMap<>();
+    //header view and footer view
+    private List<View> mHeaderViews = new ArrayList<>();
     private int mHeaderSize;
-    //header view and footer view can't be recycled
-    private List<RecyclerView.ViewHolder> mFooterViews = new ArrayList<>();
-    //store the ViewHolder for remove footer view
-    private Map<View, RecyclerView.ViewHolder> mFooterViewHolderMap = new HashMap<>();
-    private int mFooterSize;
+    private List<View> mFooterViews = new ArrayList<>();
+    private int mFooterSize;;
 
 
 想要支持多个type，关键是处理好getItemViewType和onCreateViewHolder.
 
 这两个分别是标注每个item的类别，以及依据不同的类别来创建对应的ViewHolder
-
 
     @Override
     public int getItemViewType(int position) {
@@ -46,25 +40,21 @@ lefttrees: true
         }
         return position;
     }
-    
-        @Override
+
+    @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // normal
         if (TYPE_NORMAL == viewType) {
             return onCreateItemViewHolder(parent, viewType);
         }
         if (viewType < mHeaderSize) {// header
-            return mHeaderViews.get(viewType);
+            return new ViewHolder(mHeaderViews.get(viewType));
         }
         // footer
-        return mFooterViews.get(viewType - getBasicItemCount() - mHeaderSize);
+        return new ViewHolder(mFooterViews.get(viewType - getBasicItemCount() - mHeaderSize));
     }
     
-    private boolean isContentView(int position) {
-        return position >= mHeaderSize && position < (getBasicItemCount() + mHeaderSize);
-    }
-
-    private int getBasicItemCount() {
+    public int getBasicItemCount() {
         return mItemList == null ? 0 : mItemList.size();
     }
     
@@ -73,48 +63,47 @@ lefttrees: true
 - 在getItemViewType，我们判断如果是正常的内容就返回TYPE_NORMAL，header or footer我们就返回 position作为type
 - 在onCreateViewHolder，如果是TYPE_NORMAL我们就返回正常的ViewHolder，如果是header or footer我们就依据position返回对应的header or footer
 
-另外，我们要给外部提供接口可以操作header和footer
+## （2) 外部提供接口可以操作header和footer
 
     public void addHeaderView(View view) {
-            RecyclerView.ViewHolder holder = new RecyclerView.ViewHolder(view) {
-            };
-            holder.setIsRecyclable(false);
-            mHeaderViewHolderMap.put(view, holder);
-            mHeaderViews.add(holder);
+        mHeaderViews.add(view);
+        mHeaderSize = mHeaderViews.size();
+        notifyItemInserted(mHeaderSize - 1);
+    }
+
+    public void removeHeaderView(View view) {
+        if (mHeaderViews.remove(view)) {
             mHeaderSize = mHeaderViews.size();
-            notifyItemInserted(mHeaderSize - 1);
-        }
-    
-        public void removeHeaderView(View view) {
-            RecyclerView.ViewHolder viewHolder = mHeaderViewHolderMap.get(view);
-            if (mHeaderViews.remove(viewHolder)) {
-                mHeaderSize = mHeaderViews.size();
-                mHeaderViewHolderMap.remove(view);
-                notifyDataSetChanged();
-            }
-        }
-    
-        public void addFooterView(View view) {
-            RecyclerView.ViewHolder holder = new RecyclerView.ViewHolder(view) {
-            };
-            holder.setIsRecyclable(false);
-            mFooterViewHolderMap.put(view, holder);
-            mFooterViews.add(holder);
-            mFooterSize = mFooterViews.size();
-            notifyItemInserted(mFooterSize - 1);
-        }
-    
-        public void removeFooterView(View view) {
-            RecyclerView.ViewHolder viewHolder = mFooterViewHolderMap.get(view);
-            if (viewHolder != null && mFooterViews.remove(viewHolder)) {
-                mFooterSize = mFooterViews.size();
-                mFooterViewHolderMap.remove(view);
-                notifyDataSetChanged();
-            }
+            notifyDataSetChanged();
         }
     }
+
+    public List<View> getHeaderView() {
+        return mHeaderViews;
+    }
+
+    public void addFooterView(View view) {
+        mFooterViews.add(view);
+        mFooterSize = mFooterViews.size();
+        notifyItemInserted(mFooterSize - 1);
+    }
+
+    public void removeFooterView(View view) {
+        if (mFooterViews.remove(view)) {
+            mFooterSize = mFooterViews.size();
+            notifyDataSetChanged();
+        }
+    }
+
+    public List<View> getFooterView() {
+        return mFooterViews;
+    }
     
+[BaseRecyclerAdapter全部Code请看这里](https://github.com/vivianking6855/android-library/tree/master/HugeRecyclerView/hugerecyclerview/src/main/java/com/open/hugerecyclerview/adapter)
+      
 准备Okay，我们来用吧
+
+## （3）使用
 
 首先创建两个xml存放header和footer的布局，我这放了两个一样的，字串改了下
 
@@ -146,31 +135,74 @@ lefttrees: true
             android:text="Footer" />
     </FrameLayout>
 
-HeaderFooterActivity 同 SimpleRecyclerActivity基本一样，我们加上两句
+HeaderFooterActivity 同 SimpleRecyclerActivity基本一样，我们加上几句,看星星下面的几句，使用就是这么简单。
 
-    @Override
-    protected void initView(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_head_footer);
+       @Override
+        protected void initView(Bundle savedInstanceState) {
+            setContentView(R.layout.activity_head_footer);
+    
+            RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+            LinearLayoutManager lm = new LinearLayoutManager(this);
+            mRecyclerView.setLayoutManager(lm);
+            mAdapter = new HeaderFooterRecyclerAdapter(this);
+            mRecyclerView.setAdapter(mAdapter);
+    
+            // add header and foot for RecyclerView
+            mAdapter.addHeaderView(getLayoutInflater().inflate(R.layout.recycler_header, mRecyclerView, false));
+            mAdapter.addHeaderView(getLayoutInflater().inflate(R.layout.recycler_header, mRecyclerView, false));
+            mAdapter.addFooterView(getLayoutInflater().inflate(R.layout.recycler_footer, mRecyclerView, false));
+            mAdapter.addFooterView(getLayoutInflater().inflate(R.layout.recycler_footer, mRecyclerView, false));
+    
+            mHint = (TextView) findViewById(R.id.tv_hint);
+        }
 
-        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        LinearLayoutManager lm = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(lm);
-        mAdapter = new SampleRecyclerAdapter(this);
-        mRecyclerView.setAdapter(mAdapter);
 
-        // add header and foot for RecyclerView ******************
-        mAdapter.addHeaderView(getLayoutInflater().inflate(R.layout.recycler_header, mRecyclerView, false));
-        mAdapter.addHeaderView(getLayoutInflater().inflate(R.layout.recycler_header, mRecyclerView, false));
-        mAdapter.addHeaderView(getLayoutInflater().inflate(R.layout.recycler_header, mRecyclerView, false));
-        mAdapter.addFooterView(getLayoutInflater().inflate(R.layout.recycler_footer, mRecyclerView, false));
-        mAdapter.addFooterView(getLayoutInflater().inflate(R.layout.recycler_footer, mRecyclerView, false));
+EndlessRecyclerAdapter我们添加两个接口setData和addData
 
-        mHint = (TextView) findViewById(R.id.tv_hint);
+    public class EndlessRecyclerAdapter extends
+            BaseRecyclerAdapter<SampleModel, EndlessRecyclerAdapter.ItemViewHolder> {
+        private Context mContext;
+    
+        public EndlessRecyclerAdapter(Context context) {
+            mContext = context;
+        }
+    
+        public void setData(List<SampleModel> data) {
+            mItemList.clear();
+            mItemList.addAll(data);
+            notifyDataSetChanged();
+        }
+    
+        public void addData(List<SampleModel> data) {
+            mItemList.addAll(data);
+            notifyDataSetChanged();
+        }
+    
+        @Override
+        public EndlessRecyclerAdapter.ItemViewHolder onCreateItemViewHolder(ViewGroup parent, int viewType) {
+            return new EndlessRecyclerAdapter.ItemViewHolder(LayoutInflater.from(mContext)
+                    .inflate(R.layout.recycler_item, parent, false));
+        }
+    
+        @Override
+        public void onBindItemViewHolder(EndlessRecyclerAdapter.ItemViewHolder holder, int position) {
+            holder.hint.setText(mItemList.get(position).mTitle);
+        }
+    
+        class ItemViewHolder extends RecyclerView.ViewHolder {
+            private TextView hint;
+    
+            ItemViewHolder(View view) {
+                super(view);
+                hint = (TextView) view.findViewById(R.id.tv_content);
+            }
+        }
+    
     }
     
-看星星下面的几句，使用就是这么简单。
 
-来看看效果：
+
+## 来看看效果
 
 ![](https://i.imgur.com/w6rp5sD.png)
 
