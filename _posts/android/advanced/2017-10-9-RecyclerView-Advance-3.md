@@ -14,7 +14,7 @@ lefttrees: true
 
 
 
-# 封装三、 加下拉刷新
+# 封装三、 上拉/上滑刷新
 
 思路是找到RecycleView滚动到底的消息，然后给它加上一个footer，依据数据加载的状态来显示不同的footer
 
