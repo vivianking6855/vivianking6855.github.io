@@ -13,7 +13,7 @@ lefttrees: true
 {:toc}
 
 
-# 2. 加上Header和Footer
+# 封装二、 加上Header和Footer
 
 我们希望RecyclerView可以支持加入多个Header和Footer，虽然比较常用的是单个Header和Footer
 

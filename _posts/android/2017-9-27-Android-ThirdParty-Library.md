@@ -6,7 +6,13 @@ excerpt: "Android 精彩三方库"
 categories: 资料集
 tags: [资料集]
 comments: true
+lefttrees: true
 ---
+
+* content
+{:toc}
+
+
 
 # UI
 
@@ -36,16 +42,29 @@ comments: true
 
     ![](https://raw.githubusercontent.com/captain-miao/me.github.com/master/screenshot/refresh_and_load_more.gif)
 
+# 图像
+
+- Picasso [Square公司](http://square.github.io/)
+- [Fresco](https://github.com/facebook/fresco) Facebook
+- Glide ： 2014年google I/O大会上发布的官方推荐
+    - [Glide和Picasso对比](http://jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0327/2650.html)
+
+# 数据
+
+- [Gson](https://github.com/google/gson) Google： json数据
+- [Fastjson](https://github.com/alibaba/fastjson) Alibaba： json数据
+- [GreenDao](https://github.com/greenrobot/greenDAO) [Square公司](http://square.github.io/)： database
 
 # 网络
 
-- [Square Retrofit/Okhttp](http://vivianking6855.github.io/2017/04/08/Android-Lib-Web/)
-- [Google Volley](https://github.com/google/volley)
+- [Square Retrofit/Okhttp](http://vivianking6855.github.io/2017/04/08/Android-Lib-Web/) retrofit是对okhttp做了一层封装 
+- [Google Volley](https://github.com/google/volley) 
+- OkHttp [Square公司](http://square.github.io/)
 
 # 并发和通讯
 
-- [RxAndroid/RxJava](http://vivianking6855.github.io/2017/04/08/Android-Lib-Web/)
-- [EventBus](http://vivianking6855.github.io/2016/12/19/Android-Lib-EventBus/) 
+- [RxAndroid/RxJava](http://vivianking6855.github.io/2017/04/08/Android-Lib-Web/) RxAndroid是RxJava的扩展, 优雅地处理异步请求.
+- [EventBus](http://vivianking6855.github.io/2016/12/19/Android-Lib-EventBus/) 优化的publish/subscribe消息总线， [快速使用](http://greenrobot.org/eventbus/documentation/how-to-get-started/)
 
 # 性能检测
 
@@ -69,3 +88,4 @@ comments: true
 - [开源项目源码解析地址](http://p.codekk.com)
 - [Android 开源项目分类汇总](https://github.com/Trinea/android-open-project)
 - [Android库收集](https://github.com/wasabeef/awesome-android-libraries)
+- [Android 开发人员不得不收集的代码](https://github.com/Blankj/AndroidUtilCode)

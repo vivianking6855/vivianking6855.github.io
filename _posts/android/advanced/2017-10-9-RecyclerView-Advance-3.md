@@ -14,7 +14,7 @@ lefttrees: true
 
 
 
-# 3. 加下拉刷新
+# 封装三、 加下拉刷新
 
 思路是找到RecycleView滚动到底的消息，然后给它加上一个footer，依据数据加载的状态来显示不同的footer
 
@@ -97,7 +97,7 @@ lefttrees: true
         }
     }
 
-BaseEndlessFooterView主要处理一些view的显示因此逻辑
+BaseEndlessFooterView主要处理一些view的显示逻辑
 
 
     /**
@@ -403,7 +403,7 @@ BaseEndlessFooterView主要处理一些view的显示因此逻辑
     
 ## 准备完毕，我们来用吧
 
-大部分都类似，不过我增加了mHugeOnScrollListener和OnRefreshSuccess等refresh监听，依据load more的结果来控制footerview的显示
+Activity的Code大部分都类似，不过我增加了mHugeOnScrollListener和OnRefreshSuccess等refresh监听，依据load more的结果来控制footerview的显示
 
     public class EndlessActivity extends BaseActivity implements IEndlessListener {
         private static final String TAG = "EndlessActivity";
@@ -472,6 +472,14 @@ BaseEndlessFooterView主要处理一些view的显示因此逻辑
         }
     
         private void refreshData() {
+            if (!NetworkUtils.isConnected(EndlessActivity.this)) {
+                mFooterUtil.setError(EndlessActivity.this, mRecyclerView, PAGE_SIZE, mFooterClick);
+                Log.w(TAG, "net work no connected");
+                ToastUtils.INSTANCE.showToast(EndlessActivity.this, "net work no connected",
+                        Toast.LENGTH_SHORT);
+                return;
+            }
+    
             // loading more data
             mFooterUtil.setLoading(EndlessActivity.this, mRecyclerView, PAGE_SIZE);
             mPresenter.refreshData();
@@ -504,6 +512,13 @@ BaseEndlessFooterView主要处理一些view的显示因此逻辑
             mCurrentNum += data.size();
             mFooterUtil.setNormal(EndlessActivity.this, mRecyclerView, PAGE_SIZE);
         }
+        
+        private View.OnClickListener mFooterClick = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                refreshData();
+            }
+        };
     
         @Override
         public void OnRefreshFail(String error) {
@@ -522,6 +537,8 @@ BaseEndlessFooterView主要处理一些view的显示因此逻辑
 ![](https://i.imgur.com/0uHAXxz.jpg)
 
 ![](https://i.imgur.com/5jcGgJt.jpg)
+
+![](https://i.imgur.com/1JwjYs6.jpg)
 
 # RecyclerView封装系列
 
