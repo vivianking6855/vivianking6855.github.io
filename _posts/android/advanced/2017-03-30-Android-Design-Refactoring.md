@@ -134,6 +134,15 @@ AndroidLib可以划分为几个部分：（全部都是业务无关）
          */
         protected abstract void loadData();
 
+# MVP 项目结构
+
+这里贴出自己使用的基于MVP架构的项目结构
+
+
+![](https://i.imgur.com/zbW9vDL.png)
+
+
+github[下载地址](https://github.com/vivianking6855/android-advanced/tree/master/AppUniform)
 
 # Reference
 
