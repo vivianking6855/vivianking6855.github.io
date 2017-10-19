@@ -274,3 +274,5 @@ Purdue University研究了最受欢迎的一些应用的电量消耗：
 > [Google Android Performance Patterns YouTube ](https://www.youtube.com/playlist?list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE)
 
 > [性能优化系列总篇](http://www.trinea.cn/android/database-performance/)
+
+> [Android性能优化全方面解析](http://blog.csdn.net/sw950729/article/details/72124008)
