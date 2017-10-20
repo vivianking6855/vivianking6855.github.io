@@ -68,7 +68,7 @@ VCS我用的github上code地址
         // publish
         publish {
             userOrg = 'xxx'//step2 创建的organization名字 
-            groupId = 'com.open'// group id, jcenter上的路径,即lib使用的时候的groupid（step 5中有说明）
+            groupId = 'com.open.library'// group id, jcenter上的路径,即lib使用的时候的groupid（step 5中有说明）
             artifactId = 'utilslib'//step2 创建的项目名称
             publishVersion = '1.0.0'//发布版本号
             desc = 'this is for test'//描述，可选
@@ -109,10 +109,22 @@ Mac系统：
 
 # step 5 在项目中使用发布的库
 
+使用起来非常方便：
 
+在module的build.gradle中添加
 
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
 
+    // utils library
+    compile 'com.open.library:utilslib:1.0.171019'
+}
 
+我们来看下lib库使用的这个组合“com.open.library:utilslib:1.0.171019”
+
+- com.open.library : publish中配置的group id
+- utilslib： publish中配置的artifactId，即项目名称
+- 1.0.171019： publish中配置的版本号
 
 # 遇到的问题
 
@@ -155,11 +167,9 @@ Mac系统：
 
 # 参考资料
 
+- [新版Bintray,如何使用Gradle发布项目到Jcenter仓库](http://www.jianshu.com/p/e2cc4f66b1e7)
 - [扫盲Android Studio 仓库jCenter并发布自己的开源库](http://blog.csdn.net/u013231041/article/details/70174354)
 - [使用gradle发布Android studio lib库到jCenter代码库](http://blog.csdn.net/chentong2419/article/details/47981713) 
 - [Android Library项目发布到JCenter最简单的配置方法](http://www.cnblogs.com/shiwei-bai/archive/2015/11/24/4991636.html)
-- [新版Bintray,如何使用Gradle发布项目到Jcenter仓库](http://www.jianshu.com/p/e2cc4f66b1e7)
-
-http://blog.csdn.net/chentong2419/article/details/47981713
 
 
