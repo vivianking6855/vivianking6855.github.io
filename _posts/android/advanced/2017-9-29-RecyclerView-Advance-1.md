@@ -33,18 +33,6 @@ lefttrees: true
     ![](https://i.imgur.com/1JwjYs6.jpg)
 
 
-# RecyclerView封装系列
-
-RecycleView系列一步步实现了上面的效果
-
-- [RecyclerView封装 一](http://vivianking6855.github.io/2017/09/29/RecyclerView-Advance-1/)
-- [RecyclerView封装 二](http://vivianking6855.github.io/2017/09/30/RecyclerView-Advance-2/)
-- [RecyclerView封装 三](http://vivianking6855.github.io/2017/09/30/RecyclerView-Advance-3/)
-- [RecyclerView封装 四](http://vivianking6855.github.io/2017/09/30/RecyclerView-Advance-4/)
-- [RecyclerView封装 五](http://vivianking6855.github.io/2017/09/30/RecyclerView-Advance-5/)
-
-# [Sample Code下载](https://github.com/vivianking6855/android-library/tree/master/HugeRecyclerView)
-
 # 封装一、 创建RecyclerView，给他点数据
 
 这里我们使用的MVP架构。如果对这个架构不熟悉可以先看看[这里](http://vivianking6855.github.io/2017/09/08/Android-Architecture/)
@@ -315,4 +303,17 @@ recycler_item.xml
 ## 看下显示效果
 
 ![](https://i.imgur.com/QaDn8MR.png)
+
+
+# RecyclerView封装系列
+
+RecycleView系列一步步实现了上面的效果
+
+- [RecyclerView封装 一](http://vivianking6855.github.io/2017/09/29/RecyclerView-Advance-1/)
+- [RecyclerView封装 二](http://vivianking6855.github.io/2017/09/30/RecyclerView-Advance-2/)
+- [RecyclerView封装 三](http://vivianking6855.github.io/2017/09/30/RecyclerView-Advance-3/)
+- [RecyclerView封装 四](http://vivianking6855.github.io/2017/09/30/RecyclerView-Advance-4/)
+- [RecyclerView封装 五](http://vivianking6855.github.io/2017/09/30/RecyclerView-Advance-5/)
+
+# [Sample Code下载](https://github.com/vivianking6855/android-library/tree/master/HugeRecyclerView)
 
