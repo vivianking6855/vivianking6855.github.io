@@ -36,7 +36,6 @@ lefttrees: true
 
 合理优化，数据量化
 
-
 # 一、 布局优化
 
 布局优化的思想：尽量减少层级和无用的控件。 
@@ -77,13 +76,22 @@ lefttrees: true
 
 详见[Android性能优化 （二）内存 OOM](http://vivianking6855.github.io/tag/#Android%20%E8%BF%9B%E9%98%B6-ref)
 
-内存优化并不就是说程序占用的内存越少就越好。
+内存优化并不就是说程序占用的内存越少就越好。如果因为想要保持更低的内存占用，而频繁触发执行gc操作，在某种程度上反而会导致应用性能整体有所下降。需要综合考虑权衡。
 
-如果因为想要保持更低的内存占用，而频繁触发执行gc操作，在某种程度上反而会导致应用性能整体有所下降。需要综合考虑权衡。
+## 常用工具
+
+- 使用[Square Leakcanary 内存泄漏](https://github.com/square/leakcanary)来排查内存泄漏
+- 使用Android Lint工具（AndroidStudio内嵌工具)在开发时对code质量做监控
+- FindBugs在开发时对code质量做监控
+- Android Monitor实时监控
 
 # 四、 响应速度优化
 
 响应速度优化核心思想是避免在主线程中做耗时的操作。耗时的操作应该放到异步任务中执行。
+
+## 常用工具
+
+- 使用[BlockCanary 卡顿检测工具](https://github.com/markzhai/AndroidPerformanceMonitor)来检测相应速度
 
 # 五、 ListView优化
 
@@ -98,6 +106,8 @@ lefttrees: true
 线程优化的思想是采用线程池，避免程序中存在大量的Thread. 控制最大并发数等。详见下面两篇blog~
 
 [Android的线程和线程池，线程同步](http://vivianking6855.github.io/tag/#Android%20%E5%9F%BA%E7%A1%80-ref)
+
+可以使用RXAndroid，RXJava等并发工具
 
 # 八、 耗电优化
 

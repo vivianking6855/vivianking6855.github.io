@@ -12,13 +12,24 @@ comments: true
 {:toc}
 
 
-# 一、 项目内容
 
-Android 手电筒工具。 Unbundle to ALL。
+# 一、 项目简介
 
-- Flashlight app：多频率闪烁，colorful，定时关闭等
-- widget
-- cover flashlight.
+1. 功能描述
+
+    Android 手电筒工具。 Unbundle to ALL。
+    
+    - Flashlight app：多频率闪烁，colorful，定时关闭等
+    - widget
+    - cover flashlight.
+
+2. Members
+
+- cissy
+- vivian
+
+3. 开发时间：2015.11.10 ~ 2016.1.28 （项目结束）
+
 
 # 二、 平台支持
 

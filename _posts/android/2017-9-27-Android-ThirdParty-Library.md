@@ -69,6 +69,7 @@ lefttrees: true
 # 性能检测
 
 - [Square Leakcanary 内存泄漏](https://github.com/square/leakcanary)
+- Android Lint工具，AndroidStudio内嵌工具
 - [FindBugs](http://tbfungeek.github.io/2016/06/22/Android-%E8%BF%9B%E9%98%B6%E4%B9%8B%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8-Findbugs/)
 - [BlockCanary 卡顿检测工具](https://github.com/markzhai/AndroidPerformanceMonitor)
 

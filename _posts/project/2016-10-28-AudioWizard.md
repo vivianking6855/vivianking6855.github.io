@@ -12,7 +12,10 @@ comments: true
 {:toc}
 
 
-# 一、 项目内容
+
+# 一、 项目简介
+
+1. 功能描述
 
 AudioWizard 音频向导。 支援很多音频特效：
 
@@ -23,10 +26,14 @@ AudioWizard 音频向导。 支援很多音频特效：
 - 智能模式
 - 户外
 
-Members
+2. Members
 
 - venjee
 - Raygee
+- Vivian
+
+3. 开发时间：2015.8.10 ~ 2016.10.28（开发结束）
+
 
 # 二、 平台支持
 

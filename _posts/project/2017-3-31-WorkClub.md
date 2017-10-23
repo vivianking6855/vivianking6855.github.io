@@ -12,15 +12,29 @@ comments: true
 {:toc}
 
 
-# 一、 项目内容
+
+
+# 一、 项目简介
+
+1. 功能描述
 
 [墨刀地址](https://modao.cc/app/PRizIEov59JZ6Fs6NhISvQKcW3iFH0O?inapp=1)
 
-1. 登录
-2. 显示不同板块数据
-3. 聊天
-4. 发帖
-5. 搜索
+- 登录
+- 显示不同板块数据
+- 聊天
+- 发帖
+- 搜索
+
+2. Members
+
+- vivian
+- jack
+- jame
+- chris
+
+3. 开发时间：2017.2.10 ~ 至今
+
 
 # 二、 平台支持
 
@@ -30,7 +44,8 @@ Android已经上架1版
 
 # 三、 开发方式和架构内容
 
-1. 使用Git作为版本管理
+1. 使用Rect编程语言
+2. 使用Git作为版本管理
 2. 使用Android Studio，VS Code，WebStorm开发客户端
 3. 使用Laravel框架开发服务器
 3. 使用Microsoft CodePush作为js package的升级工具

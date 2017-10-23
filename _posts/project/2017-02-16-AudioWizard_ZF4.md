@@ -12,8 +12,9 @@ comments: true
 {:toc}
 
 
+# 一、 项目简介
 
-# 一、 项目内容
+1. 功能描述
 
 AudioWizard 音频向导。 
 
@@ -25,10 +26,14 @@ AudioWizard 音频向导。
 - 听力补偿
 - DTS音场效果
 
-Members
+2. Members
 
 - venjee
 - Raygee
+- Vivian
+
+3. 开发时间：2015.10.20 ~ 2017.1 (开发结束）
+
 
 # 二、 平台支持
 
