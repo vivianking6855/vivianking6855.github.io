@@ -559,7 +559,7 @@ Activity的Code大部分都类似，不过我增加了mHugeOnScrollListener和On
 
 - [RecyclerView封装 一](http://vivianking6855.github.io/2017/09/29/RecyclerView-Advance-1/)
 - [RecyclerView封装 二](http://vivianking6855.github.io/2017/09/30/RecyclerView-Advance-2/)
-- [RecyclerView封装 三](http://vivianking6855.github.io/2017/09/30/RecyclerView-Advance-3/)
+- [RecyclerView封装 三](http://vivianking6855.github.io/2017/10/09/RecyclerView-Advance-3/)
 - [RecyclerView封装 四](http://vivianking6855.github.io/2017/09/30/RecyclerView-Advance-4/)
 - [RecyclerView封装 五](http://vivianking6855.github.io/2017/09/30/RecyclerView-Advance-5/)
 
