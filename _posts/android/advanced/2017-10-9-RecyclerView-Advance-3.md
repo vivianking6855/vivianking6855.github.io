@@ -549,7 +549,7 @@ Activity的Code大部分都类似，不过我增加了mHugeOnScrollListener和On
     
 ## 看看效果图
 
-![](https://i.imgur.com/0uHAXxz.jpg)
+![](https://i.imgur.com/jl9baMT.jpg)
 
 ![](https://i.imgur.com/5jcGgJt.jpg)
 

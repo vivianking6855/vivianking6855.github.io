@@ -26,7 +26,7 @@ lefttrees: true
 
 - Endless Footer
 
-    ![](https://i.imgur.com/0uHAXxz.jpg)
+    ![](https://i.imgur.com/jl9baMT.jpg)
 
     ![](https://i.imgur.com/5jcGgJt.jpg)
     
