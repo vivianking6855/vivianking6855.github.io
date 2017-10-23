@@ -147,7 +147,7 @@ HeaderFooterActivity 同 SimpleRecyclerActivity基本一样，我们加上几句
             mAdapter = new HeaderFooterRecyclerAdapter(this);
             mRecyclerView.setAdapter(mAdapter);
     
-            // add header and foot for RecyclerView
+            // add header and foot for RecyclerView ****
             mAdapter.addHeaderView(getLayoutInflater().inflate(R.layout.recycler_header, mRecyclerView, false));
             mAdapter.addHeaderView(getLayoutInflater().inflate(R.layout.recycler_header, mRecyclerView, false));
             mAdapter.addFooterView(getLayoutInflater().inflate(R.layout.recycler_footer, mRecyclerView, false));
@@ -157,49 +157,50 @@ HeaderFooterActivity 同 SimpleRecyclerActivity基本一样，我们加上几句
         }
 
 
-EndlessRecyclerAdapter我们添加两个接口setData和addData
+HeaderFooterRecyclerAdapter继承BaseRecyclerAdapter，再加两个接口setData和addData
 
-    public class EndlessRecyclerAdapter extends
-            BaseRecyclerAdapter<SampleModel, EndlessRecyclerAdapter.ItemViewHolder> {
-        private Context mContext;
+       public class HeaderFooterRecyclerAdapter extends
+            BaseRecyclerAdapter<SampleModel, HeaderFooterRecyclerAdapter.ItemViewHolder> {
     
-        public EndlessRecyclerAdapter(Context context) {
-            mContext = context;
-        }
-    
-        public void setData(List<SampleModel> data) {
-            mItemList.clear();
-            mItemList.addAll(data);
-            notifyDataSetChanged();
-        }
-    
-        public void addData(List<SampleModel> data) {
-            mItemList.addAll(data);
-            notifyDataSetChanged();
-        }
-    
-        @Override
-        public EndlessRecyclerAdapter.ItemViewHolder onCreateItemViewHolder(ViewGroup parent, int viewType) {
-            return new EndlessRecyclerAdapter.ItemViewHolder(LayoutInflater.from(mContext)
-                    .inflate(R.layout.recycler_item, parent, false));
-        }
-    
-        @Override
-        public void onBindItemViewHolder(EndlessRecyclerAdapter.ItemViewHolder holder, int position) {
-            holder.hint.setText(mItemList.get(position).mTitle);
-        }
-    
-        class ItemViewHolder extends RecyclerView.ViewHolder {
-            private TextView hint;
-    
-            ItemViewHolder(View view) {
-                super(view);
-                hint = (TextView) view.findViewById(R.id.tv_content);
+            private Context mContext;
+        
+            public HeaderFooterRecyclerAdapter(Context context) {
+                mContext = context;
             }
+        
+            public void setData(List<SampleModel> data) {
+                mItemList.clear();
+                mItemList.addAll(data);
+                notifyDataSetChanged();
+            }
+        
+            public void addData(List<SampleModel> data) {
+                int len = mItemList.size();
+                mItemList.addAll(data);
+                notifyItemChanged(len);
+            }
+        
+            @Override
+            public ItemViewHolder onCreateItemViewHolder(ViewGroup parent, int viewType) {
+                return new ItemViewHolder(LayoutInflater.from(mContext)
+                        .inflate(R.layout.recycler_item, parent, false));
+            }
+        
+            @Override
+            public void onBindItemViewHolder(ItemViewHolder holder, int position) {
+                holder.hint.setText(mItemList.get(position).mTitle);
+            }
+        
+            class ItemViewHolder extends RecyclerView.ViewHolder {
+                private TextView hint;
+        
+                ItemViewHolder(View view) {
+                    super(view);
+                    hint = (TextView) view.findViewById(R.id.tv_content);
+                }
+            }
+        
         }
-    
-    }
-    
 
 
 ## 来看看效果

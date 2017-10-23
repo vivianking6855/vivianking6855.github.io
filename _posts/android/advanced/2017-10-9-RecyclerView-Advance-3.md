@@ -14,9 +14,15 @@ lefttrees: true
 
 
 
-# 封装三、 上拉/上滑刷新
+# 封装三、 上滑刷新
 
 思路是找到RecycleView滚动到底的消息，然后给它加上一个footer，依据数据加载的状态来显示不同的footer
+
+核心类说明
+
+- EndlessFooterUtils: 依据数据加载的状态改变底层footer的UI显示
+- HugeRecyclerOnScrollListener: 滚动监听，可以在这里处理滚动结束，加载数据的动作
+- EndlessFooterView：底层footer view，里面有不同状态对应的UI布局
 
 ## 我们先定义个footer
 
@@ -402,6 +408,15 @@ BaseEndlessFooterView主要处理一些view的显示逻辑
     
     
 ## 准备完毕，我们来用吧
+
+封装的库已经发布：[hugerecyclerview](https://bintray.com/vivianwayne1985/maven/hugerecyclerview)
+
+我们在Module的build.gradle中引入
+
+    // huge recyclerview library
+    compile 'com.open:hugerecyclerview:1.0.0'
+
+下面可以直接使用了：
 
 Activity的Code大部分都类似，不过我增加了mHugeOnScrollListener和OnRefreshSuccess等refresh监听，依据load more的结果来控制footerview的显示
 
