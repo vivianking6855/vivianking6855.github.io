@@ -56,7 +56,7 @@ RecycleView系列一步步实现了上面的效果
 
 下面我一步一步来实现
 
-##（1） 创建 HugeRecyclerView extends RecyclerView
+## 1） 创建 HugeRecyclerView extends RecyclerView
 
     public class HugeRecyclerView extends RecyclerView {
     
@@ -80,7 +80,7 @@ RecycleView系列一步步实现了上面的效果
         }
     }
         
-##（2）model
+## 2）model
 
     public class SampleDataApi {
     
@@ -111,7 +111,7 @@ RecycleView系列一步步实现了上面的效果
     }
         
 
-##（3） presenter
+## 3） presenter
 
     public class SamplePresenter {
         private static final String TAG = "SecondPresenter";
@@ -161,7 +161,7 @@ RecycleView系列一步步实现了上面的效果
     
    里面用到了retrolambda和rxjava，rxandroid，记得配置gradle
    
-##（4）Adapter
+## 4）Adapter
 
        public class SampleRecyclerAdapter extends RecyclerView.Adapter {
         private Context mContext;
@@ -214,7 +214,7 @@ RecycleView系列一步步实现了上面的效果
     
 这是最基本的用法
 
-##（5）xml
+## 5）xml
 
 activity_main.xml
 
@@ -252,7 +252,7 @@ recycler_item.xml
     </FrameLayout>
 
 
-##（6）SimpleRecyclerActivity
+## 6）SimpleRecyclerActivity
 
     public class SimpleRecyclerActivity extends BaseActivity implements ISampleListener {
         private SamplePresenter mPresenter;

@@ -24,7 +24,7 @@ lefttrees: true
 - HugeRecyclerOnScrollListener: 滚动监听，可以在这里处理滚动结束，加载数据的动作
 - EndlessFooterView：底层footer view，里面有不同状态对应的UI布局
 
-## 我们先定义个footer
+## 1）先定义个footer view
 
 依据loading, end(no more data), error显示不同的layout
 
@@ -234,7 +234,7 @@ BaseEndlessFooterView主要处理一些view的显示逻辑
         }
     }
 
-封装了一个util来控制footer view的status
+## 2）封装了一个util来控制footer view的status
 
     public class EndlessFooterUtils {
         private static final String TAG = "EndlessFooterUtils";
@@ -352,7 +352,7 @@ BaseEndlessFooterView主要处理一些view的显示逻辑
     
     }
 
-## 现在来看看滚动事件
+## 3）现在来看看滚动事件
 
 核心的思路是在onScrolled里面拿到最后一次看的item位置，然后在onScrollStateChanged里面判断是否要调用loadmore方法
 

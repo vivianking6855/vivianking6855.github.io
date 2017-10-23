@@ -19,7 +19,7 @@ lefttrees: true
 
 这个需求需要从Adapter入手，增加addHeader or addFooter入口。下面我们来改动BaseRecyclerAdapter
 
-## (1) 先来定义一些变量，主要是Header List, size 和map方便我们操作他们。
+## 1) 先来定义一些变量，主要是Header List, size 和map方便我们操作他们。
 
     //header view and footer view
     private List<View> mHeaderViews = new ArrayList<>();
@@ -63,7 +63,7 @@ lefttrees: true
 - 在getItemViewType，我们判断如果是正常的内容就返回TYPE_NORMAL，header or footer我们就返回 position作为type
 - 在onCreateViewHolder，如果是TYPE_NORMAL我们就返回正常的ViewHolder，如果是header or footer我们就依据position返回对应的header or footer
 
-## （2) 外部提供接口可以操作header和footer
+## 2) 外部提供接口可以操作header和footer
 
     public void addHeaderView(View view) {
         mHeaderViews.add(view);
@@ -103,7 +103,7 @@ lefttrees: true
       
 准备Okay，我们来用吧
 
-## （3）使用
+## 3）使用
 
 首先创建两个xml存放header和footer的布局，我这放了两个一样的，字串改了下
 
