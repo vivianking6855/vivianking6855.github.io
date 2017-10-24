@@ -18,20 +18,30 @@ lefttrees: true
 
 先帖效果图，我们想实现的一系列效果：
 
-- Header,Footer
+1. Header,Footer
 
     ![](https://i.imgur.com/w6rp5sD.png)
 
     ![](https://i.imgur.com/fATcYUi.png)
 
-- Endless Footer
+2. Endless Footer 上拉刷新
 
     ![](https://i.imgur.com/jl9baMT.jpg)
 
     ![](https://i.imgur.com/5jcGgJt.jpg)
     
     ![](https://i.imgur.com/1JwjYs6.jpg)
+    
+    ![](https://i.imgur.com/kQDYnbC.png)
+   
+    ![](https://i.imgur.com/Qco3dp7.png)
 
+3. SwipeRefreshLayout实现下拉刷新
+
+    ![](https://i.imgur.com/heGhSkj.jpg)
+
+
+接下来我们一步步来封装和实现上面的一系列效果
 
 # 封装一、 创建RecyclerView，给他点数据
 

@@ -56,64 +56,58 @@ lefttrees: true
     
     </LinearLayout>
 
-    public class EndlessFooterView extends BaseEndlessFooterView {
-        private final static String TAG = "EndlessFooterView";
+       public class EndlessFooterView extends BaseEndlessFooterView {
     
-        private TextView mLoadingText;
-        private ProgressBar mLoadingProgress;
-    
-        private Context mContext;
-    
-        public EndlessFooterView(Context context){
-            super(context);
-            mContext = context;
-            initView();
-        }
-    
-        @Override
-        protected void setContentView() {
-            inflate(mContext, R.layout.endless_footer, this);
-        }
-    
-        @Override
-        protected void setLoadingView() {
-            if (mLoadingView == null) {
-                ViewStub viewStub = (ViewStub) findViewById(R.id.loading_viewstub);
-                mLoadingView = viewStub.inflate();
-    
-                mLoadingProgress = (ProgressBar) mLoadingView.findViewById(R.id.loading_progress);
-                mLoadingText = (TextView) mLoadingView.findViewById(R.id.loading_text);
+            public EndlessFooterView(Context context) {
+                this(context, null, 0);
             }
-            mLoadingProgress.setVisibility(View.VISIBLE);
-            mLoadingText.setText(R.string.list_footer_loading);
-        }
-    
-        @Override
-        protected void setErrorView() {
-            if (mNetworkErrorView == null) {
-                ViewStub viewStub = (ViewStub) findViewById(R.id.error_viewstub);
-                mNetworkErrorView = viewStub.inflate();
+        
+            public EndlessFooterView(Context context, AttributeSet attrs) {
+                this(context, attrs, 0);
             }
+        
+            public EndlessFooterView(Context context, AttributeSet attrs, int defStyle) {
+                super(context, attrs, defStyle);
+            }
+        
+            @Override
+            protected void setContentView(Context context) {
+                inflate(context, R.layout.endless_footer, this);
+            }
+        
+            @Override
+            protected void setLoadingView() {
+                if (mLoadingView == null) {
+                    ViewStub viewStub = (ViewStub) findViewById(R.id.loading_viewstub);
+                    mLoadingView = viewStub.inflate();
+                }
+            }
+        
+            @Override
+            protected void setErrorView() {
+                if (mErrorView == null) {
+                    ViewStub viewStub = (ViewStub) findViewById(R.id.error_viewstub);
+                    mErrorView = viewStub.inflate();
+                }
+            }
+        
+            @Override
+            protected void setEndView() {
+                if (mTheEndView == null) {
+                    ViewStub viewStub = (ViewStub) findViewById(R.id.end_viewstub);
+                    mTheEndView = viewStub.inflate();
+                }
+            }
+        
         }
-    
-        @Override
-        protected void setEndView() {
-            ViewStub viewStub = (ViewStub) findViewById(R.id.end_viewstub);
-            mTheEndView = viewStub.inflate();
-        }
-    }
 
 BaseEndlessFooterView主要处理一些view的显示逻辑
 
-
-    /**
-     * loading footer view for ListView/GridView/RecyclerView when loading by spit page
-     */
     public abstract class BaseEndlessFooterView extends RelativeLayout {
         private final static String TAG = "BaseEndlessFooterView";
     
         // failed view
-        protected View mNetworkErrorView;
+        protected View mErrorView;
         // end, no more data view
         protected View mTheEndView;
         // loading views
@@ -130,7 +124,7 @@ BaseEndlessFooterView主要处理一些view的显示逻辑
         }
     
         // set view layout
-        protected abstract void setContentView();
+        protected abstract void setContentView(Context context);
     
         // set loading view
         protected abstract void setLoadingView();
@@ -142,21 +136,27 @@ BaseEndlessFooterView主要处理一些view的显示逻辑
         protected abstract void setEndView();
     
         public BaseEndlessFooterView(Context context) {
-            super(context);
+            this(context,null,0);
         }
     
         public BaseEndlessFooterView(Context context, AttributeSet attrs) {
-            super(context, attrs);
+            this(context, attrs,0);
         }
     
-        public BaseEndlessFooterView(Context context, AttributeSet attrs, int defStyleAttr) {
-            super(context, attrs, defStyleAttr);
+        public BaseEndlessFooterView(Context context, AttributeSet attrs, int defStyle) {
+            super(context, attrs, defStyle);
+            initView(context);
         }
     
-        protected void initView() {
-            setContentView();
+        private void initView(Context context) {
+            setContentView(context);
             setOnClickListener(null);
             setState(State.Normal);
+    
+            // inflate views
+            setLoadingView();
+            setEndView();
+            setErrorView();
         }
     
         public State getState() {
@@ -200,7 +200,6 @@ BaseEndlessFooterView主要处理一些view的显示逻辑
     
         private void dealLoading() {
             setOnClickListener(null);
-            setLoadingView();
             if (mLoadingView != null) {
                 mLoadingView.setVisibility(VISIBLE);
             }
@@ -208,16 +207,14 @@ BaseEndlessFooterView主要处理一些view的显示逻辑
     
         private void dealEnd() {
             setOnClickListener(null);
-            setEndView();
             if (mTheEndView != null) {
                 mTheEndView.setVisibility(VISIBLE);
             }
         }
     
         private void dealError() {
-            setErrorView();
-            if (mNetworkErrorView != null) {
-                mNetworkErrorView.setVisibility(VISIBLE);
+            if (mErrorView != null) {
+                mErrorView.setVisibility(VISIBLE);
             }
         }
     
@@ -228,129 +225,128 @@ BaseEndlessFooterView主要处理一些view的显示逻辑
             if (mTheEndView != null) {
                 mTheEndView.setVisibility(GONE);
             }
-            if (mNetworkErrorView != null) {
-                mNetworkErrorView.setVisibility(GONE);
+            if (mErrorView != null) {
+                mErrorView.setVisibility(GONE);
             }
         }
     }
 
 ## 2）封装了一个util来控制footer view的status
 
-    public class EndlessFooterUtils {
-        private static final String TAG = "EndlessFooterUtils";
-        private BaseEndlessFooterView mView;
-    
-        public EndlessFooterUtils(BaseEndlessFooterView view) {
-            mView = view;
-        }
-    
-        /**
-         * Sets end.you must set footer view before you use
-         *
-         * @param context      the context
-         * @param recyclerView the recycler view
-         * @param pageSize     the page size
-         */
-        public void setEnd(Context context, RecyclerView recyclerView, int pageSize) {
-            setFooterViewState(context, recyclerView, pageSize, BaseEndlessFooterView.State.End, null);
-        }
-    
-        /**
-         * Sets normal.you must set footer view before you use
-         *
-         * @param context      the context
-         * @param recyclerView the recycler view
-         * @param pageSize     the page size
-         */
-        public void setNormal(Context context, RecyclerView recyclerView, int pageSize) {
-            setFooterViewState(context, recyclerView, pageSize, BaseEndlessFooterView.State.Normal, null);
-        }
-    
-        /**
-         * Sets loading.you must set footer view before you use
-         *
-         * @param context      the context
-         * @param recyclerView the recycler view
-         * @param pageSize     the page size
-         */
-        public void setLoading(Context context, RecyclerView recyclerView, int pageSize) {
-            setFooterViewState(context, recyclerView, pageSize, BaseEndlessFooterView.State.Loading, null);
-        }
-    
-        /**
-         * Sets error.you must set footer view before you use
-         *
-         * @param context      the context
-         * @param recyclerView the recycler view
-         * @param pageSize     the page size
-         */
-        public void setError(Context context, RecyclerView recyclerView, int pageSize) {
-            setFooterViewState(context, recyclerView, pageSize, BaseEndlessFooterView.State.Error, null);
-        }
-    
-        /**
-         * Sets footer view state.
-         *
-         * @param context       the context
-         * @param recyclerView  the recycler view
-         * @param pageSize      the page size
-         * @param state         the state
-         * @param errorListener the error listener
-         */
-        private void setFooterViewState(Context context, RecyclerView recyclerView, int pageSize,
-                                               BaseEndlessFooterView.State state, View.OnClickListener errorListener) {
-            if (mView == null) {
-                Log.e(TAG, "you must set footer view before you use");
-                throw new InvalidParameterException("you must call setFooterView to set footer view before you use");
+        public class EndlessFooterUtils {
+            private static final String TAG = "EndlessFooterUtils";
+            private BaseEndlessFooterView mView;
+        
+            public EndlessFooterUtils(BaseEndlessFooterView view) {
+                mView = view;
             }
-            // get adapter of recycler view
-            RecyclerView.Adapter adapter = recyclerView.getAdapter();
-            if (adapter == null) {
-                Log.w(TAG, "setFooterViewState adapter invalidate");
-                return;
+        
+            /**
+             * Sets end.you must set footer view before you use
+             *
+             * @param recyclerView the recycler view
+             * @param pageSize     the page size
+             */
+            public void setEnd(RecyclerView recyclerView, int pageSize) {
+                setFooterViewState(recyclerView, pageSize, BaseEndlessFooterView.State.End, null);
             }
-            BaseRecyclerAdapter eadapter = (BaseRecyclerAdapter) adapter;
-            // if less than one page, not need to add EndlessFooter
-            if (eadapter.getBasicItemCount() < pageSize) {
-                return;
+        
+            /**
+             * Sets normal.you must set footer view before you use
+             *
+             * @param recyclerView the recycler view
+             * @param pageSize     the page size
+             */
+            public void setNormal(RecyclerView recyclerView, int pageSize) {
+                setFooterViewState(recyclerView, pageSize, BaseEndlessFooterView.State.Normal, null);
             }
-    
-            // create or get endless footer
-            if (eadapter.getFooterView().size() <= 0) { // create a new endless footer view
-                eadapter.addFooterView(mView);
+        
+            /**
+             * Sets loading.you must set footer view before you use
+             *
+             * @param recyclerView the recycler view
+             * @param pageSize     the page size
+             */
+            public void setLoading(RecyclerView recyclerView, int pageSize) {
+                setFooterViewState(recyclerView, pageSize, BaseEndlessFooterView.State.Loading, null);
             }
-    
-            // set state
-            mView.setState(state);
-            if (state == BaseEndlessFooterView.State.Error && errorListener != null) {
-                mView.setOnClickListener(errorListener);
+        
+            /**
+             * Sets error.you must set footer view before you use
+             *
+             * @param recyclerView  the recycler view
+             * @param pageSize      the page size
+             * @param errorListener error status listener
+             */
+            public void setError(RecyclerView recyclerView, int pageSize,
+                                 View.OnClickListener errorListener) {
+                setFooterViewState(recyclerView, pageSize, BaseEndlessFooterView.State.Error, errorListener);
             }
-        }
-    
-        /**
-         * get endless footer view status
-         *
-         * @param recyclerView recycler view
-         * @return the footer view state
-         */
-        public BaseEndlessFooterView.State getFooterViewState(RecyclerView recyclerView) {
-            // get adapter of recycler view
-            RecyclerView.Adapter adapter = recyclerView.getAdapter();
-            if (adapter == null) {
-                Log.w(TAG, "getFooterViewState adapter invalidate");
+        
+            /**
+             * Sets footer view state.
+             *
+             * @param recyclerView  the recycler view
+             * @param pageSize      the page size
+             * @param state         the state
+             * @param errorListener the error listener
+             */
+            private void setFooterViewState(RecyclerView recyclerView, int pageSize,
+                                            BaseEndlessFooterView.State state, View.OnClickListener errorListener) {
+                if (mView == null) {
+                    Log.e(TAG, "you must set footer view before you use");
+                    throw new InvalidParameterException("you must call setFooterView to set footer view before you use");
+                }
+                // get adapter of recycler view
+                RecyclerView.Adapter adapter = recyclerView.getAdapter();
+                if (adapter == null) {
+                    Log.w(TAG, "setFooterViewState adapter invalidate");
+                    return;
+                }
+                BaseRecyclerAdapter eadapter = (BaseRecyclerAdapter) adapter;
+                // if less than one page, not need to add EndlessFooter
+                if (eadapter.getBasicItemCount() < pageSize) {
+                    return;
+                }
+        
+                // create or get endless footer
+                if (eadapter.getFooterView().size() <= 0) { // create a new endless footer view
+                    eadapter.addFooterView(mView);
+                }
+        
+                // set state
+                mView.setState(state);
+        
+                // set error listener, if necessary
+                if (state == BaseEndlessFooterView.State.Error && errorListener != null) {
+                    mView.setOnClickListener(errorListener);
+                }
+            }
+        
+            /**
+             * get endless footer view status
+             *
+             * @param recyclerView recycler view
+             * @return the footer view state
+             */
+            public BaseEndlessFooterView.State getFooterViewState(RecyclerView recyclerView) {
+                // get adapter of recycler view
+                RecyclerView.Adapter adapter = recyclerView.getAdapter();
+                if (adapter == null) {
+                    Log.w(TAG, "getFooterViewState adapter invalidate");
+                    return BaseEndlessFooterView.State.Normal;
+                }
+                // get endless footer view
+                BaseRecyclerAdapter eadapter = (BaseRecyclerAdapter) adapter;
+                if (eadapter.getFooterView().size() > 0) {
+                    BaseEndlessFooterView endlessFooterView = (BaseEndlessFooterView) eadapter.getFooterView().get(0);
+                    return endlessFooterView.getState();
+                }
+        
                 return BaseEndlessFooterView.State.Normal;
             }
-            // get endless footer view
-            BaseRecyclerAdapter eadapter = (BaseRecyclerAdapter) adapter;
-            if (eadapter.getFooterView().size() > 0) {
-                BaseEndlessFooterView endlessFooterView = (BaseEndlessFooterView) eadapter.getFooterView().get(0);
-                return endlessFooterView.getState();
-            }
-    
-            return BaseEndlessFooterView.State.Normal;
+        
         }
-    
-    }
 
 ## 3）现在来看看滚动事件
 
@@ -409,18 +405,16 @@ BaseEndlessFooterView主要处理一些view的显示逻辑
     
 ## 准备完毕，我们来用吧
 
-封装的库已经发布：[hugerecyclerview](https://bintray.com/vivianwayne1985/maven/hugerecyclerview)
-
 我们在Module的build.gradle中引入
 
     // huge recyclerview library
-    compile 'com.open:hugerecyclerview:1.0.0'
+    compile 'com.open:hugerecyclerview:1.0.2'
 
 下面可以直接使用了：
 
 Activity的Code大部分都类似，不过我增加了mHugeOnScrollListener和OnRefreshSuccess等refresh监听，依据load more的结果来控制footerview的显示
 
-    public class EndlessActivity extends BaseActivity implements IEndlessListener {
+      public class EndlessActivity extends BaseActivity implements IEndlessListener {
         private static final String TAG = "EndlessActivity";
     
         // hint text view
@@ -431,7 +425,7 @@ Activity的Code大部分都类似，不过我增加了mHugeOnScrollListener和On
         private EndlessRecyclerAdapter mAdapter;
         private RecyclerView mRecyclerView;
         private HugeRecyclerOnScrollListener mHugeOnScrollListener;
-        private EndlessFooterUtils mFooterUtil;
+        protected EndlessFooterUtils mFooterUtil;
     
         // all data account in server
         private static final int TOTAL_SIZE = 64;
@@ -453,7 +447,7 @@ Activity的Code大部分都类似，不过我增加了mHugeOnScrollListener和On
     
         @Override
         protected void initView(Bundle savedInstanceState) {
-            setContentView(R.layout.activity_head_footer);
+            setContentView(R.layout.activity_endless);
     
             mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
             LinearLayoutManager lm = new LinearLayoutManager(this);
@@ -473,7 +467,7 @@ Activity的Code大部分都类似，不过我增加了mHugeOnScrollListener和On
                     }
                     // no more data
                     if (mCurrentNum > TOTAL_SIZE) {
-                        mFooterUtil.setEnd(EndlessActivity.this, mRecyclerView, PAGE_SIZE);
+                        mFooterUtil.setEnd(mRecyclerView, PAGE_SIZE);
                         return;
                     }
     
@@ -488,7 +482,7 @@ Activity的Code大部分都类似，不过我增加了mHugeOnScrollListener和On
     
         private void refreshData() {
             if (!NetworkUtils.isConnected(EndlessActivity.this)) {
-                mFooterUtil.setError(EndlessActivity.this, mRecyclerView, PAGE_SIZE, mFooterClick);
+                mFooterUtil.setError(mRecyclerView, PAGE_SIZE, mFooterClick);
                 Log.w(TAG, "net work no connected");
                 ToastUtils.INSTANCE.showToast(EndlessActivity.this, "net work no connected",
                         Toast.LENGTH_SHORT);
@@ -496,7 +490,7 @@ Activity的Code大部分都类似，不过我增加了mHugeOnScrollListener和On
             }
     
             // loading more data
-            mFooterUtil.setLoading(EndlessActivity.this, mRecyclerView, PAGE_SIZE);
+            mFooterUtil.setLoading(mRecyclerView, PAGE_SIZE);
             mPresenter.refreshData();
         }
     
@@ -525,9 +519,9 @@ Activity的Code大部分都类似，不过我增加了mHugeOnScrollListener和On
         public void OnRefreshSuccess(List<SampleModel> data) {
             mAdapter.addData(data);
             mCurrentNum += data.size();
-            mFooterUtil.setNormal(EndlessActivity.this, mRecyclerView, PAGE_SIZE);
+            mFooterUtil.setNormal(mRecyclerView, PAGE_SIZE);
         }
-        
+    
         private View.OnClickListener mFooterClick = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -537,7 +531,7 @@ Activity的Code大部分都类似，不过我增加了mHugeOnScrollListener和On
     
         @Override
         public void OnRefreshFail(String error) {
-            mFooterUtil.setError(EndlessActivity.this, mRecyclerView, PAGE_SIZE);
+            mFooterUtil.setError(mRecyclerView, PAGE_SIZE, mFooterClick);
         }
     
         @Override
@@ -546,6 +540,10 @@ Activity的Code大部分都类似，不过我增加了mHugeOnScrollListener和On
             mPresenter.destroy();
         }
     }
+    
+
+更多使用方法请查看：[hugerecyclerview](https://bintray.com/vivianwayne1985/maven/hugerecyclerview)    
+    
     
 ## 看看效果图
 
