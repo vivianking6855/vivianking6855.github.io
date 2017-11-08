@@ -31,3 +31,9 @@ comments: true
 
 
 # [AndroidStudio Gradle基本配置](http://www.jianshu.com/p/cd8fe9b16369)
+
+# [Android Studio 3.0]
+
+[Android Studio 3.0的新功能](https://mp.weixin.qq.com/s/2XmVG4mKEDX6-bvZ0vvmcw)
+
+[Android Studio 3.0新增的功能和更改](http://android.tedu.cn/information/223907.html)
