@@ -259,10 +259,13 @@ DiskLruCacheUtils
 1. 对文件读写完整性设计思路 DIRTY-CLEAN; DIRTY-ABORT; 可借鉴学习
 2. Lru思想也是使用LinkedHashMap
 
-    LinkedHashMap内部自己维护了一套元素访问顺序的列表, 最常用的元素放在链表的最后。LRU的关键是如果size大于了缓存最大容量，则删除链表的顶端元素   
-3. 接口只有对String和
+    LinkedHashMap内部自己维护了一套元素访问顺序的列表, 最常用的元素放在链表的最后。LRU的关键是如果size大于了缓存最大容量，则删除链表的顶端元素
+    
+3. 接口只有对String和 OutputStream,InputStream. 重新封装了下，可以查看DiskLruCacheUtils
 
 
 # Reference
 
 [Android DiskLruCache 源码解析](http://blog.csdn.net/lmj623565791/article/details/47251585)
+
+[base-diskcache](https://github.com/hongyangAndroid/base-diskcache)
