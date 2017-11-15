@@ -30,7 +30,7 @@ public static DiskLruCache open(File directory, int appVersion, int valueCount, 
 
 参数说明：
 
-1. File directory 指定数据的缓存地址 （比如：sdcard\Android\data\<package name>\cache\）
+1. File directory 指定数据的缓存地址 （比如：/sdcard/Android/data/<package name>/cache/ or /storage/emulated/0/Android/data/package name/cache/）
 2. int appVersion 指定当前应用的version code
 3. int valueCount 是Key所对应的文件数，通常设定 1. 对应后面的get方法的第一个参数（比如getString(int index)，index要设定为0，代表我们去第一个，话说我们也只有一个）
 4. long maxSize 最大缓存大小 通常设定 5M（5*1024*1024） or 10M（10*1024*1024）

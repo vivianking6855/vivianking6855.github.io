@@ -66,8 +66,7 @@ app常用到的storage，phone等都属于这类。
             dealWithPermission();
         }
     
-        private void dealWithPermission() {
-            if (!mTempChoice || mDuplicateStart) {
+         private void dealWithPermission() {
                 int hasWriteStoragePermission = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
                 if (hasWriteStoragePermission != PackageManager.PERMISSION_GRANTED) {
                     Log.d(TAG, "permission not granted");
@@ -85,7 +84,6 @@ app常用到的storage，phone等都属于这类。
                         }
                     }
                 }
-            }
         }
     
         private void showSystemRequestDialog() {
@@ -148,6 +146,8 @@ app常用到的storage，phone等都属于这类。
                 mNeverShowDlg.dismiss();
             }
         }
+        
+[Sample Code地址](https://github.com/vivianking6855/android-advanced/tree/master/Media/media)
 
 这也是google推荐的设计，详情可以参看[这里](https://material.io/guidelines/patterns/permissions.html#permissions-denied-permissions)
 
