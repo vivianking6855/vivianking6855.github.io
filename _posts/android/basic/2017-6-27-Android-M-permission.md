@@ -231,9 +231,42 @@ SYSTEM_ALERT_WINDOW 和 WRITE_SETTINGS 这两个权限特别敏感，因此大�
         }
 
 
+# 封装 BasePermissionActivity
+
+为了方便使用封装了一个 BasePermissionActivity
+
+使用很简单
+
+1. 继承他
+
+        public class MainActivity extends BasePermissionActivity {
+        
+2. 重写下面的三个方法
+
+        // Permission全部granted
+        @Override
+        protected void permissionGranted() {
+            mPresenter.loadData();
+        }
+    
+        // permission 任何一个deny
+        @Override
+        protected void permissionDeny() {
+            finish();
+        }
+    
+        // 需要请求的Permission列表
+        @Override
+        protected String[] getPermissions() {
+            return new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        }
+
+
+BasePermissionActivity[下载地址](https://github.com/vivianking6855/android-library/tree/master/AndroidLib/AndroidLib/appbase/src/main/java/com/open/applib/activity)
+
 # 第三方库
 
-如果是觉得这个比较麻烦，也可以用第三方库
+针对Permission也有很多第三方库，大家可以参看
 
 hotchemi’s PermissionsDispatcher。: [https://github.com/hotchemi/PermissionsDispatcher](https://github.com/hotchemi/PermissionsDispatcher)
 
