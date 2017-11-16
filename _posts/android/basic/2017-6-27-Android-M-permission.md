@@ -147,6 +147,14 @@ app常用到的storage，phone等都属于这类。
             }
         }
         
+        
+strings.xml
+
+    <string name="grant_permission">视频魔术师需要<strong>存储</strong>权限。请点击<strong>设置</strong>，然后点击<strong>应用程序信息</strong> > <strong>权限</strong>并打开<strong>存储</strong></string>
+    <string name="grant_permission_title">权限提醒</string>
+    <string name="grant_setting">设置</string>
+    <string name="grant_cancel">退出</string>
+        
 [Sample Code地址](https://github.com/vivianking6855/android-advanced/tree/master/Media/media)
 
 这也是google推荐的设计，详情可以参看[这里](https://material.io/guidelines/patterns/permissions.html#permissions-denied-permissions)
