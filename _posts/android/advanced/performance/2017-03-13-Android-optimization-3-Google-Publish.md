@@ -108,41 +108,6 @@ lefttrees: true
 - 最后，如果前面这个activity的内存都有全部正确释放，那么在空白activity被启动之后的内存快照中应该不会有前面那个activity中的任何对象了。
 
 
-# 四、 问题定位和调试工具
-
-我们可以通过一些工具来定位和调试：
-
-## 1. Show GPU view updates检测Overdraw
-
-开发者选项 -> 选择Show GPU view updates（显示GPU视图更新），查看视图更新的操作，
-
-最终可以通过移除不必要的背景以及使用canvas.clipRect解决大多数问题。
-
-![](http://i.imgur.com/BJCf3ps.png)
-
-## 2. HierarchyViewer检查layout布局
-
-HierarchyViewer工具查找Activity中的布局是否过于复杂
-
-使得布局尽量扁平化，移除非必需的UI组件，去除不必要的嵌套。这些操作能够减少Measure，Layout的计算时间。
-
-## 3. Android Studio工具，观察CPU,GPU,Memory等情况
-
-为了寻找内存的性能问题，Android Studio提供了Android Monitor工具来帮助开发者。
-
-- Memory Monitor：查看整个app所占用的内存，以及发生GC的时刻，短时间内发生大量的GC操作是一个危险的信号。
-- Allocation Tracker：使用此工具来追踪内存的分配，前面有提到过。
-- Heap Tool：查看当前内存快照，便于对比分析哪些对象有可能是泄漏了的。
-
-![](http://i.imgur.com/9Flc6Zh.jpg)
-
-## 4. 三方工具检查内存泄漏
-
-- FindBugs插件
-- [LeakCanary](https://www.liaohuqiu.net/cn/posts/leak-canary-read-me/)
-
-
-
 # Reference
 
 <br>
@@ -166,6 +131,8 @@ HierarchyViewer工具查找Activity中的布局是否过于复杂
 > [Google Android Performance Patterns YouTube ](https://www.youtube.com/playlist?list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE)
 
 > [Android UI性能优化实战 识别绘制中的性能问题](http://blog.csdn.net/lmj623565791/article/details/45556391/)
+
+> [Android开发者选项——Gpu呈现模式分析](https://www.cnblogs.com/ldq2016/p/6667381.html)
 
 
 

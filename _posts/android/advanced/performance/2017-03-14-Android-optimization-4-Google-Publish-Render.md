@@ -103,9 +103,10 @@ lefttrees: true
 
 从图中来看方案二教快一些（可以多次点击Profile Node取样）。Hierarchy Viewer 分析图示：
 
-[图一（ViewStub未显示）](vivianking6855.github.io/datum/images/hv_analysis_1.jpg)
 
-[图二（ViewStub 对应offline layout显示）](vivianking6855.github.io/datum/images/hv_analysis_2.jpg)
+![](https://i.imgur.com/3SQWGC6.jpg)
+
+![](https://i.imgur.com/IPbjiZa.jpg)
 
 
 点击LinearLayout，然后点击三色Obtain layout time icon. 三个点从左起依次代表View的Measure, Layout和Draw的性能. 
