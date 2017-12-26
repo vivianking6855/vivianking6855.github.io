@@ -124,7 +124,7 @@ GPU呈现模式是一个方便快速观察UI渲染效率的工具，主要作用
 - FindBugs插件
 - [LeakCanary](https://www.liaohuqiu.net/cn/posts/leak-canary-read-me/)
 
-# 六、 一些知名的整体性能测试工具
+# 六、 一些知名的性能测试工具
 
 - [网易的Emmagee](https://github.com/NetEase/Emmagee)： CPU、内存、流量、电量等
 - 腾讯的[GT](https://github.com/Tencent/GT)： CPU、内存、流量、电量、帧率/流畅度等等
