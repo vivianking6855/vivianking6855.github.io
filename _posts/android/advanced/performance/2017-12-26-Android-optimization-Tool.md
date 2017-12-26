@@ -109,7 +109,7 @@ GPU呈现模式是一个方便快速观察UI渲染效率的工具，主要作用
 - Input Handling：表示系统处理输入事件所耗费的时间，粗略等于对事件处理方法所执行的时间。一旦执行时间过长，意味着在处理用户的输入事件的地方执行了复杂的操作；
 - Misc Time/Vsync Delay：表示在主线程执行了太多的任务，导致UI渲染跟不上vSync的信号而出现掉帧的情况；
 
-## 四、 Android Studio工具，观察CPU,GPU,Memory等情况
+# 四、 Android Studio工具，观察CPU,GPU,Memory等情况
 
 为了寻找内存的性能问题，Android Studio提供了Android Monitor工具来帮助开发者。
 
@@ -119,17 +119,18 @@ GPU呈现模式是一个方便快速观察UI渲染效率的工具，主要作用
 
 ![](http://i.imgur.com/9Flc6Zh.jpg)
 
-## 五、 三方工具检查内存泄漏
+# 五、 三方工具检查内存泄漏
 
 - FindBugs插件
 - [LeakCanary](https://www.liaohuqiu.net/cn/posts/leak-canary-read-me/)
 
-优化要用实际数据说话，建议借助测试工具进行检测
+# 六、 一些知名的整体性能测试工具
 
-- 网易的Emmagee
-- 腾讯的GT和APT
-- 科大讯飞的iTest
-- Google的Battery Historian
+- [网易的Emmagee](https://github.com/NetEase/Emmagee)： CPU、内存、流量、电量等
+- 腾讯的[GT](https://github.com/Tencent/GT)： CPU、内存、流量、电量、帧率/流畅度等等
+- 腾讯的[APT](http://www.360doc.com/content/15/0511/10/5600807_469614293.shtml)：CPU，内存检测，内存构成分析
+- 科大讯飞的iTest： 记录特定应用的性能消耗情况，包括cpu、内存、流量、电量等信息
+- Google的Battery Historian： 电量优化
 
 # Reference
 
