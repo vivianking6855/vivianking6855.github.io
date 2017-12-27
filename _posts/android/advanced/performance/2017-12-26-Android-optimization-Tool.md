@@ -138,6 +138,8 @@ GPU呈现模式是一个方便快速观察UI渲染效率的工具，主要作用
 
 [Android开发者选项——Gpu呈现模式分析](https://www.cnblogs.com/ldq2016/p/6667381.html)
 
+[Android内存分析工具（一）：Memory Monitor](http://blog.csdn.net/berber78/article/details/47783585)
+
 
 
 
