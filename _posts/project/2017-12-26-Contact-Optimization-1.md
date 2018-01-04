@@ -47,14 +47,6 @@ comments: true
     - call log滑动: 主要是布局优化，绘制优化，响应速度优化
     - smart search: 内存和响应速度优化
 
-    优化完成后会催下面五项体验有很大的提升：
-    
-    - Contacts Preview Window launch  time： measure the Preview Window launch time of Contacts
-    - Launch time of Contacts (1st)： measure the launch time of Contacts at first time
-    - Frame rate of scrolling contacts (avg.)：measure the average frame rate of scrolling contacts
-    - Frame rate of scrolling call log (avg.)：measure the average frame rate of scrolling contacts
-    - Response time of backing to Home：measure the response time of backing to Home
-
 3. [重构](http://vivianking6855.github.io/2017/03/30/Android-Design-Refactoring/)，在现有的框架上适当重构。
 
 4. 其他
