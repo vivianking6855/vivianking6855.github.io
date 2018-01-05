@@ -17,7 +17,9 @@ comments: true
 
 # 简介
 
-关于性能优化的问题，主要关注的有：
+app优化主要包含size优化，性能优化，重构等。
+
+其中性能优化又是特别重要的一环。性能主要关注：
 
 - 内存
 - CPU
@@ -35,12 +37,9 @@ comments: true
 
 # Contact优化
 
-我们针对联系人做的优化大致如下：
+我们针对联系人做的优化包括：
 
-1. size优化
-
-    移除unused resources，降低app的size
-
+1. size优化： 移除unused resources，降低app的size
 2. 布局，绘制，响应速度等性能优化
 
     - 主页面，联络人详情优化: 主要是布局优化，绘制优化，响应速度优化
