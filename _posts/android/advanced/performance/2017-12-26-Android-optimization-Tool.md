@@ -18,7 +18,7 @@ lefttrees: true
 
 性能优化的常用工具有很多，以下列出一些常用的工具
 
-# 一、 Show GPU view updates检测Overdraw （GPU）
+# 一、 [Show GPU view updates检测Overdraw （GPU）](https://developer.android.com/studio/profile/inspect-gpu-rendering.html)
 
 开发者选项 -> 选择Show GPU view updates（显示GPU视图更新），查看视图更新的操作
 
@@ -30,7 +30,30 @@ lefttrees: true
  
 ![](http://i.imgur.com/SiZVlJ9.png)
 
-# 二、 HierarchyViewer检查layout布局 （CPU）
+# 二、 [GPU呈现模式分析 （UI渲染效率）](https://developer.android.com/studio/profile/inspect-gpu-rendering.html )
+
+开发者选项  ->  开启GPU呈现模式分析 
+
+GPU呈现模式是一个方便快速观察UI渲染效率的工具，主要作用是实时查看每一帧的渲染效率，定位哪里存在渲染的性能问题
+
+随着界面的刷新，界面上会滚动显示柱状图表示每帧画面说需要的渲染时间，柱状图越高表示花费的渲染时间越长。
+
+中间有一根绿色的横线，代表每帧的最长渲染时间：16ms，需要确保每一帧花费的总时间都低于这条横线，这样才能够避免出现卡顿的问题。
+
+从Android 6.0开始，你看到的每条柱状线已不止三种颜色：
+
+![](https://i.imgur.com/XxxBDRR.jpg)
+
+- Swap Buffers：表示处理任务的时间，也可以说是CPU等待GPU完成任务的时间，线条越高，表示GPU做的事情越多；
+- Command Issue：表示执行任务的时间，这部分主要是Android进行2D渲染显示列表的时间，为了将内容绘制到屏幕上，Android需要使用Open GL ES的API接口来绘制显示列表，红色线条越高表示需要绘制的视图更多；
+- Sync & Upload：表示的是准备当前界面上有待绘制的图片所耗费的时间，为了减少该段区域的执行时间，我们可以减少屏幕上的图片数量或者是缩小图片的大小；
+- Draw：表示测量和绘制视图列表所需要的时间，蓝色线条越高表示每一帧需要更新很多视图，或者View的onDraw方法中做了耗时操作；
+- Measure/Layout：表示布局的onMeasure与onLayout所花费的时间，一旦时间过长，就需要仔细检查自己的布局是不是存在严重的性能问题；
+- Animation：表示计算执行动画所需要花费的时间，包含的动画有ObjectAnimator，ViewPropertyAnimator，Transition等等。一旦这里的执行时间过长，就需要检查是不是使用了非官方的动画工具或者是检查动画执行的过程中是不是触发了读写操作等等；
+- Input Handling：表示系统处理输入事件所耗费的时间，粗略等于对事件处理方法所执行的时间。一旦执行时间过长，意味着在处理用户的输入事件的地方执行了复杂的操作；
+- Misc Time/Vsync Delay：表示在主线程执行了太多的任务，导致UI渲染跟不上vSync的信号而出现掉帧的情况；
+
+# 三、 HierarchyViewer检查layout布局 （CPU）
 
 HierarchyViewer工具查找Activity中的布局是否过于复杂
 
@@ -85,29 +108,6 @@ Hierarchy Viewer 分析图示：
 
 ![](http://i.imgur.com/ffC691e.jpg)
 
-
-# 三、 GPU呈现模式分析 （UI渲染效率）
-
-开发者选项  ->  开启GPU呈现模式分析 
-
-GPU呈现模式是一个方便快速观察UI渲染效率的工具，主要作用是实时查看每一帧的渲染效率，定位哪里存在渲染的性能问题
-
-随着界面的刷新，界面上会滚动显示柱状图表示每帧画面说需要的渲染时间，柱状图越高表示花费的渲染时间越长。
-
-中间有一根绿色的横线，代表每帧的最长渲染时间：16ms，需要确保每一帧花费的总时间都低于这条横线，这样才能够避免出现卡顿的问题。
-
-从Android 6.0开始，你看到的每条柱状线已不止三种颜色：
-
-![](http://imgsrc.baidu.com/forum/w%3D580/sign=8e54b036c1ea15ce41eee00186013a25/b60ab982d158ccbfe1ee6b8911d8bc3eb0354103.jpg)
-
-- Swap Buffers：表示处理任务的时间，也可以说是CPU等待GPU完成任务的时间，线条越高，表示GPU做的事情越多；
-- Command Issue：表示执行任务的时间，这部分主要是Android进行2D渲染显示列表的时间，为了将内容绘制到屏幕上，Android需要使用Open GL ES的API接口来绘制显示列表，红色线条越高表示需要绘制的视图更多；
-- Sync & Upload：表示的是准备当前界面上有待绘制的图片所耗费的时间，为了减少该段区域的执行时间，我们可以减少屏幕上的图片数量或者是缩小图片的大小；
-- Draw：表示测量和绘制视图列表所需要的时间，蓝色线条越高表示每一帧需要更新很多视图，或者View的onDraw方法中做了耗时操作；
-- Measure/Layout：表示布局的onMeasure与onLayout所花费的时间，一旦时间过长，就需要仔细检查自己的布局是不是存在严重的性能问题；
-- Animation：表示计算执行动画所需要花费的时间，包含的动画有ObjectAnimator，ViewPropertyAnimator，Transition等等。一旦这里的执行时间过长，就需要检查是不是使用了非官方的动画工具或者是检查动画执行的过程中是不是触发了读写操作等等；
-- Input Handling：表示系统处理输入事件所耗费的时间，粗略等于对事件处理方法所执行的时间。一旦执行时间过长，意味着在处理用户的输入事件的地方执行了复杂的操作；
-- Misc Time/Vsync Delay：表示在主线程执行了太多的任务，导致UI渲染跟不上vSync的信号而出现掉帧的情况；
 
 # 四、 Android Studio工具，观察CPU,GPU,Memory等情况
 

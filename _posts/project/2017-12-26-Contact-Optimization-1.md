@@ -26,7 +26,7 @@ comments: true
 - 渲染
 - 进程存活率等
 
-## 性能优化注意事项
+性能优化需要注意：
 
 1. 不要过早的做性能优化，app先求能用再求好用。在需求都还没完成的时候，花大量时间在优化上是本末倒置的
 2. 优化要用实际数据说话，建议借助测试工具进行检测。检测工具参看[这里](http://vivianking6855.github.io/2017/12/26/Android-optimization-Tool/)
@@ -41,7 +41,7 @@ comments: true
 
     移除unused resources，降低app的size
 
-2. 布局，绘制，相应速度等性能优化
+2. 布局，绘制，响应速度等性能优化
 
     - 主页面，联络人详情优化: 主要是布局优化，绘制优化，响应速度优化
     - call log滑动: 主要是布局优化，绘制优化，响应速度优化
@@ -63,7 +63,6 @@ comments: true
                 }
             }
 
-
 # Reference
 
 [Google 发布 Android 性能优化典范](http://www.oschina.net/news/60157/android-performance-patterns?sid=07vbqo00ovnh233e0ain6ue5a6)
@@ -77,3 +76,7 @@ comments: true
 [性能优化（四）Google典范之Render实践](http://vivianking6855.github.io/2017/03/14/Android-optimization-4-Google-Publish-Render/)
 
 [性能优化 - 工具](http://vivianking6855.github.io/2017/12/26/Android-optimization-Tool/)
+
+[MTTR，MTTF，MTBF计算方法](http://blog.csdn.net/mao0514/article/details/52224307)
+
+[Android手机MTBF自动化测试工具分析与设计](http://www.docin.com/p-826561498.html)
