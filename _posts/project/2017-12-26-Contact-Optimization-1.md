@@ -76,7 +76,3 @@ comments: true
 [性能优化（四）Google典范之Render实践](http://vivianking6855.github.io/2017/03/14/Android-optimization-4-Google-Publish-Render/)
 
 [性能优化 - 工具](http://vivianking6855.github.io/2017/12/26/Android-optimization-Tool/)
-
-[MTTR，MTTF，MTBF计算方法](http://blog.csdn.net/mao0514/article/details/52224307)
-
-[Android手机MTBF自动化测试工具分析与设计](http://www.docin.com/p-826561498.html)

@@ -140,6 +140,10 @@ Hierarchy Viewer 分析图示：
 
 [Android内存分析工具（一）：Memory Monitor](http://blog.csdn.net/berber78/article/details/47783585)
 
+[MTTR，MTTF，MTBF计算方法](http://blog.csdn.net/mao0514/article/details/52224307)
+
+[Android手机MTBF自动化测试工具分析与设计](http://www.docin.com/p-826561498.html)
+
 
 
 
