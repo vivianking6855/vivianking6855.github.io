@@ -83,7 +83,7 @@ size优化会用到Android Studio自带工具： “Remove Unused Resources”
 
 优化后size: 25,478KB	
 
-共节省size： 4.237M (4237KB)
+共节省size： <b> 4.237M (4237KB) </b>
 
 PS：size以Jenkins build出的apk为准 （proguard压缩过的大小）
 
