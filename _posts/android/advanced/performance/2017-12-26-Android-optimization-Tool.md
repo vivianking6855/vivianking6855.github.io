@@ -109,7 +109,7 @@ Hierarchy Viewer 分析图示：
 ![](http://i.imgur.com/ffC691e.jpg)
 
 
-# 四、 Android Studio工具，观察CPU,GPU,Memory等情况
+# 四、 Android Studio工具观察CPU,GPU,Memory等情况
 
 为了寻找内存的性能问题，Android Studio提供了Android Monitor工具来帮助开发者。
 
@@ -118,6 +118,10 @@ Hierarchy Viewer 分析图示：
 - Heap Tool：查看当前内存快照，便于对比分析哪些对象有可能是泄漏了的。
 
 ![](http://i.imgur.com/9Flc6Zh.jpg)
+
+AS 3.0名字改为[Android Profiler](https://developer.android.com/studio/preview/features/android-profiler.html)
+
+![](https://i.imgur.com/X1VQDwJ.jpg)
 
 # 五、 三方工具检查内存泄漏
 
@@ -140,10 +144,16 @@ Hierarchy Viewer 分析图示：
 
 [Android内存分析工具（一）：Memory Monitor](http://blog.csdn.net/berber78/article/details/47783585)
 
+[Android Studio 3.0 发行说明  ](http://blog.csdn.net/guiying712/article/details/78352062) 
+
+[Profile Your App Performance](https://developer.android.google.cn/studio/profile/index.html)
+
+[AndroidStudio3.0 Android Profiler分析器(cpu memory network 分析器)](http://blog.csdn.net/niubitianping/article/details/72617864)
+
 [MTTR，MTTF，MTBF计算方法](http://blog.csdn.net/mao0514/article/details/52224307)
 
 [Android手机MTBF自动化测试工具分析与设计](http://www.docin.com/p-826561498.html)
 
+[AndroidStudio3.0 下载使用新功能介绍](http://blog.csdn.net/niubitianping/article/details/72600923)
 
-
-
+[Android Studio 3.0 工具新特性的使用](http://blog.csdn.net/qq_35070105/article/details/78457097?locationNum=8&fps=1)

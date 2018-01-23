@@ -36,7 +36,7 @@ size优化会用到Android Studio自带工具： “Remove Unused Resources”
     
         Refactor前建议先Preview查看一下待移除的资源，做一次确认
 
-        ![](https://github.com/vivianking6855/vivianking6855.github.io/blob/master/datum/images/AS/refactor_2.jpg?raw=true)
+        ![Preview](https://github.com/vivianking6855/vivianking6855.github.io/blob/master/datum/images/AS/refactor_2.jpg?raw=true)
 
         Contact执行操作后共移除1971项
 
