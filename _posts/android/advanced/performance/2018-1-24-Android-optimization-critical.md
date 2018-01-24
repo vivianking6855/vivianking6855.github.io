@@ -14,11 +14,7 @@ lefttrees: true
 
 
 
-
-
-# 性能优化要点
-
-## UI
+# UI
 
 1. UI不可见时，及时释放资源
 2. 页面布局，尽量避免太多层级，避免被VM回收。
@@ -39,13 +35,13 @@ lefttrees: true
     - 耗时操作放在子线程来做 
     - 可以使用Thread+handle，AsyncTask，RxAndroid/RxJava等进行逻辑处理
  
-## 线程，进程
+# 线程，进程
 
 1. 使用多进程拆分时请注意，一个空进程也要额外占1.4MB，需评估拆分是否划算？
 2. 线程不再需要继续执行的时候要记得及时关闭
 3. 开启线程数量不易过多，一般和自己机器内核数一样最好，推荐开启线程的时候，使用线程池。
 
-## 资源回收
+# 资源回收
 
 1. BraodcastReceiver，ContentObserver，FileObserver，Service的解绑和释放 
     - 以上对象在Activity onDeatory或者某类声明周期结束之后一定要解绑或者close掉
@@ -72,7 +68,7 @@ lefttrees: true
 5. Cursor及时关闭：当查询完毕后，及时关闭，这样就可以把查询的结果集及时给回收掉。
 6. I/O流操作完毕，读写结束，记得关闭。
 
-##　对象创建，访问
+# 对象创建，访问
 
 1. 如不需要访问对象，请尽量用static method
 2. 常量请使用static final来修饰
@@ -114,7 +110,7 @@ lefttrees: true
 18. 使用集合对象，如果事先知道其大小，则可以在构造方法中设置初始大小。
 
 
-## Service
+# Service
 
 1.	如无必要，service不要一直在跑
 
@@ -133,7 +129,7 @@ lefttrees: true
     - startForeground可以避免让Service被强行kill掉，但是同时会带来Service很难会回收的side effect.
     - 非必要强烈建议不要startForeground()启动Service
 
-## 其他
+# 其他
 
 1. 采用内存缓存和磁盘缓存
 2. 设定android:largeHeap，使用 android:largeHeap="true"标记 (API Level >= 11) ，
