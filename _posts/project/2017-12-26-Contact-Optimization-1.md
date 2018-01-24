@@ -47,6 +47,22 @@ app优化主要包含size优化，性能优化，重构等。
     - call log滑动: 主要是布局优化，绘制优化，响应速度优化
     - smart search: 内存和响应速度优化
 
+
+- 响应时间（Response Time） 
+
+优化点： 
+- 异步请求网络数据 
+- 预处理服务器返回数据 
+- 异步进行数据存储操作 
+- 数据缓存刷新 
+- Timeout超时重试 
+- 在主线程中操作UI
+
+
+- 界面卡顿（ANR） 
+- 耗内存（Memory） 
+- 内存泄露（Out of memory)
+
 3. [重构](http://vivianking6855.github.io/2017/03/30/Android-Design-Refactoring/)，在现有的框架上适当重构。
 
 4. 其他

@@ -548,30 +548,6 @@ GPU Overdraw情况如下图，都是红色: 4X+ overdraw
 ![](http://i.imgur.com/ffC691e.jpg)
 
 
-# Reference
-
-<br>
-
-
-> 性能优化专题
-
-[性能优化（一）：方法概述](http://vivianking6855.github.io/2017/02/27/Android-optimization-1-method/)
-
-[性能优化（二）内存管理 & Memory Leak & OOM](http://vivianking6855.github.io/2017/02/27/Android-optimization-2-OOM/)
-
-[性能优化（三）Google典范之开篇](http://vivianking6855.github.io/2017/03/13/Android-optimization-3-Google-Publish/)
-
-[性能优化（四）Google典范之Render实践](http://vivianking6855.github.io/2017/03/14/Android-optimization-4-Google-Publish-Render/)
-
-> [Google 发布 Android 性能优化典范](http://www.oschina.net/news/60157/android-performance-patterns?sid=07vbqo00ovnh233e0ain6ue5a6)
-
-> [优达学城 Android 系统性能 Video](https://cn.udacity.com/course/android-performance--ud825)
-
-> [Google Android Performance Patterns YouTube ](https://www.youtube.com/playlist?list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE)
-
-> [Android UI性能优化实战 识别绘制中的性能问题](http://blog.csdn.net/lmj623565791/article/details/45556391/)
-
-
 
 
 
