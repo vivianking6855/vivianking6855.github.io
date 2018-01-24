@@ -126,7 +126,9 @@ AS 3.0名字改为[Android Profiler](https://developer.android.com/studio/previe
 # 五、 三方工具检查内存泄漏
 
 - FindBugs插件
-- [LeakCanary](https://www.liaohuqiu.net/cn/posts/leak-canary-read-me/)
+- [Square LeakCanary:内存泄漏](https://www.liaohuqiu.net/cn/posts/leak-canary-read-me/)
+- Android Lint工具，AndroidStudio内嵌工具
+- BlockCanary 卡顿检测工具
 
 # 六、 一些知名的性能测试工具
 
@@ -157,3 +159,5 @@ AS 3.0名字改为[Android Profiler](https://developer.android.com/studio/previe
 [AndroidStudio3.0 下载使用新功能介绍](http://blog.csdn.net/niubitianping/article/details/72600923)
 
 [Android Studio 3.0 工具新特性的使用](http://blog.csdn.net/qq_35070105/article/details/78457097?locationNum=8&fps=1)
+
+[Android 精彩三方库](http://vivianking6855.github.io/2017/09/27/Android-ThirdParty-Library/)
