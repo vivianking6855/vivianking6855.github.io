@@ -549,5 +549,10 @@ GPU Overdraw情况如下图，都是红色: 4X+ overdraw
 
 
 
+[更多性能优化相关：性能优化目录](http://vivianking6855.github.io/2018/01/24/Android-optimization-index/)
+
+
+
+
 
 

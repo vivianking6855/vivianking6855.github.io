@@ -106,3 +106,6 @@ lefttrees: true
 - 然后你需要创建一个几乎不这么占用内存的空白activity用来给前一个Activity进行跳转
 - 其次在跳转到这个空白的activity的时候主动调用System.gc()方法来确保触发一个GC操作。
 - 最后，如果前面这个activity的内存都有全部正确释放，那么在空白activity被启动之后的内存快照中应该不会有前面那个activity中的任何对象了。
+
+
+[更多性能优化相关：性能优化目录](http://vivianking6855.github.io/2018/01/24/Android-optimization-index/)

@@ -28,7 +28,7 @@ lefttrees: true
     - 如果是复杂icon，建议使用svg格式
     - 如果svg不满足需求，建议使用9patch图；
     - 如果不能使用9patch的情况下，针对几种主流分辨率的机型进行切图，比如xxhdpi
-4.. View缓存
+4. View缓存
     - 在ListView和GridView中，列表中的很多项(convertView)是可以重用的，不需要每次getView就重新生成一项。
     - 页面的绘制其实是很耗时的，findViewById也比较慢。所以不重用View，在有列表的时候就尤为显著了，经常会出现滑动很卡的现象。
     - 推荐使用recyclerview
@@ -138,6 +138,9 @@ lefttrees: true
     - 在 AndroidManifest.xml中的 Application节点中声明即可分配到更大的堆内存, 
     - android:largeHeap标记在 Android系统应用中也有广泛的应用 ,比如 Launcher, Browser这些内存大户上均有使用
 3.	使用优化后的lib和硬件加速。使用外部lib时注意，确保使用的是为移动环境优化后的lib
+
+
+[更多性能优化相关：性能优化目录](http://vivianking6855.github.io/2018/01/24/Android-optimization-index/)
 
 
 # Reference

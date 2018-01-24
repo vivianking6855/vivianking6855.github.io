@@ -138,6 +138,8 @@ AS 3.0名字改为[Android Profiler](https://developer.android.com/studio/previe
 - 科大讯飞的iTest： 记录特定应用的性能消耗情况，包括cpu、内存、流量、电量等信息
 - Google的Battery Historian： 电量优化
 
+[更多性能优化相关：性能优化目录](http://vivianking6855.github.io/2018/01/24/Android-optimization-index/)
+
 # Reference
 
 <br>
