@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 性能优化（一）：性能优化要点
+title: 性能优化：要点
 date: 2018-1-24
 excerpt: "性能优化要点"
 categories: Android

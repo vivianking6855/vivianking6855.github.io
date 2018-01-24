@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 性能优化（一）：方法概述
+title: 性能优化（一）方法概述
 date: 2017-2-27
 excerpt: "方法概述"
 categories: Android
