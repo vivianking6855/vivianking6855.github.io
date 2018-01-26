@@ -50,3 +50,5 @@ lefttrees: true
 > [Android最佳性能实践(一)——合理管理内存 ](http://blog.csdn.net/guolin_blog/article/details/42238627)
 
 > [Android UI性能优化实战 识别绘制中的性能问题](http://blog.csdn.net/lmj623565791/article/details/45556391/)
+
+> [Manage Your App's Memory](https://developer.android.google.cn/topic/performance/memory.html)

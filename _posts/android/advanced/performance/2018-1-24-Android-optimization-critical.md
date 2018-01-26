@@ -51,18 +51,13 @@ lefttrees: true
     - 相同的，对于Service等其他有自己声明周期的对象来说，直接引用都需要谨慎考虑是否会存在内存泄露的可能。
 3. Context使用注意生命周期，避免内存泄漏
 
-    1)	对activity的引用应该控制在activity的生命周期之内。
-    
-       - 应该尽量避免有appliction进程级别的对象来引用Activity级别的对象，如果有的话也应该在Activity结束的时候解引用。
-       - 如不应用applicationContext在Activity中获取资源。Service也一样。
-    
-    2)	如果不能就考虑使用getApplicationContext或者getApplication；
-    
-    3)	尽量不要在静态变量或者静态内部类中使用非静态外部成员变量（包括context），即使要使用，也要考虑适时把外部成员变量置空（如上例可以通过把sBackground的callback置空来解决内存泄露的问题）；
-    
-       也可以在内部类中使用弱引用来引用外部类的变量；
-    
-    4)	做到在onDestroy中释放资源，如清空对图片等资源有直接引用或者间接引用的数组（使用array.clear();array = null）
+    - 对activity的引用应该控制在activity的生命周期之内。
+        - 应该尽量避免有appliction进程级别的对象来引用Activity级别的对象，如果有的话也应该在Activity结束的时候解引用。
+        - 如不应用applicationContext在Activity中获取资源。Service也一样。
+    - 如果不能就考虑使用getApplicationContext或者getApplication
+    - 尽量不要在静态变量或者静态内部类中使用非静态外部成员变量（包括context），即使要使用，也要考虑适时把外部成员变量置空（如上例可以通过把sBackground的callback置空来解决内存泄露的问题）；
+    - 也可以在内部类中使用弱引用来引用外部类的变量
+    - 做到在onDestroy中释放资源，如清空对图片等资源有直接引用或者间接引用的数组（使用array.clear();array = null）
 
 4. handler使用完毕及时清理：Activity的onDestroy方法中调用handler.removeCallbacksAndMessages(null);取消所有的消息的处理，包括待处理的消息
 5. Cursor及时关闭：当查询完毕后，及时关闭，这样就可以把查询的结果集及时给回收掉。
