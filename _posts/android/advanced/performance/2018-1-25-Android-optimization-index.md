@@ -52,3 +52,7 @@ lefttrees: true
 > [Android UI性能优化实战 识别绘制中的性能问题](http://blog.csdn.net/lmj623565791/article/details/45556391/)
 
 > [Manage Your App's Memory](https://developer.android.google.cn/topic/performance/memory.html)
+
+> [【腾讯bugly干货分享】精神哥手把手教你如何智斗ANR](http://blog.csdn.net/tencent_bugly/article/details/46650675)
+ 
+> [Android ANR 分析学习总结](http://blog.csdn.net/nothingl3/article/details/52800182)

@@ -71,6 +71,7 @@ lefttrees: true
 
 - 主线程在5秒内没有响应输入事件 
 - BroadcastReceiver在10秒内没有执行完毕
+- Service中各生命周期函数执行超过20s
 
 因此需要Application中药注意：
 
@@ -78,6 +79,12 @@ lefttrees: true
 - 可以使用Thread+handle，AsyncTask，RxAndroid/RxJava等进行逻辑处理
 
 使用[BlockCanary 卡顿检测工具](https://github.com/markzhai/AndroidPerformanceMonitor)来检测卡顿
+
+同时下面的几项也可以纳入考虑，来提示UX：
+
+- 做好数据缓存
+- 优化逻辑处理
+- 优化算法
 
 # 二、 内存
 

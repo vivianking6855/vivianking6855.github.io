@@ -130,7 +130,11 @@ lefttrees: true
 2. 设定android:largeHeap，使用 android:largeHeap="true"标记 (API Level >= 11) ，
     - 在 AndroidManifest.xml中的 Application节点中声明即可分配到更大的堆内存, 
     - android:largeHeap标记在 Android系统应用中也有广泛的应用 ,比如 Launcher, Browser这些内存大户上均有使用
-3.	使用优化后的lib和硬件加速。使用外部lib时注意，确保使用的是为移动环境优化后的lib
+3. 使用优化后的lib和硬件加速。使用外部lib时注意，确保使用的是为移动环境优化后的lib
+4. 做好数据缓存 
+5. 优化逻辑处理
+6. 避免试用递归，它非常的耗费memory
+7. 优化算法
 
 
 [更多性能优化相关：性能优化目录](http://vivianking6855.github.io/2018/01/24/Android-optimization-index/)

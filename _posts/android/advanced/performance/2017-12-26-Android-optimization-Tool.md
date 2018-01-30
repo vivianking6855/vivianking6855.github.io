@@ -111,9 +111,9 @@ Hierarchy Viewer 分析图示：
 
 # 四、 Android Studio工具观察CPU,GPU,Memory等情况
 
-为了寻找内存的性能问题，Android Studio提供了Android Monitor工具来帮助开发者。
+为了寻找内存的性能问题，Android Studio提供了工具来帮助开发者。
 
-- Memory Monitor：查看整个app所占用的内存，以及发生GC的时刻，短时间内发生大量的GC操作是一个危险的信号。
+- Android Monitor/Android Profiler：查看整个app所占用的内存，以及发生GC的时刻，短时间内发生大量的GC操作是一个危险的信号。
 - Allocation Tracker：使用此工具来追踪内存的分配，前面有提到过。
 - Heap Tool：查看当前内存快照，便于对比分析哪些对象有可能是泄漏了的。
 
@@ -121,16 +121,33 @@ Hierarchy Viewer 分析图示：
 
 AS 3.0名字改为[Android Profiler](https://developer.android.com/studio/preview/features/android-profiler.html)
 
+- [Memory Profiler](https://developer.android.google.cn/studio/profile/memory-profiler.html)
+
 ![](https://i.imgur.com/X1VQDwJ.jpg)
 
-# 五、 三方工具检查内存泄漏
+# 开发者模式：不保留活动
+
+“不保留活动”：用户离开后即销毁每个活动
+
+这个选项对检测Activity中的资源是否有合理使用这类问题比较好用，问题比较容易复现。例如：
+
+- 子线程持有Activity的cotext，Activity立即销毁出现crash
+- Fragment引用了Activity的context，Activity立即销毁出现crash
+
+因为离开后Activity立即销毁，context会为null. 可能会导致crash。
+
+解决方案：可以判空或者使用ApplicationContext（主题相关的不建议使用ApplicationContext）
+
+这类问题的关键是正常使用时很难复现，不好定位问题。
+
+# 三方工具检查内存泄漏
 
 - FindBugs插件
 - [Square LeakCanary:内存泄漏](https://www.liaohuqiu.net/cn/posts/leak-canary-read-me/)
 - Android Lint工具，AndroidStudio内嵌工具
 - BlockCanary 卡顿检测工具
 
-# 六、 一些知名的性能测试工具
+# 一些知名的性能测试工具
 
 - [网易的Emmagee](https://github.com/NetEase/Emmagee)： CPU、内存、流量、电量等
 - 腾讯的[GT](https://github.com/Tencent/GT)： CPU、内存、流量、电量、帧率/流畅度等等
