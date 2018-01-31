@@ -18,13 +18,15 @@ lefttrees: true
 
 性能优化的常用工具有很多，以下列出一些常用的工具
 
-# 一、 [Show GPU view updates检测Overdraw （GPU）](https://developer.android.com/studio/profile/inspect-gpu-rendering.html)
+# 一、 [Show GPU Overdraw 检测Overdraw （GPU）](https://developer.android.com/studio/profile/inspect-gpu-rendering.html)
 
-开发者选项 -> 选择Show GPU view updates（显示GPU视图更新），查看视图更新的操作
+开发者选项 -> 选择Show GPU Overdraw（显示过渡绘制区域）
 
 最终可以通过移除不必要的背景以及使用canvas.clipRect解决大多数问题。
 
 ![](http://i.imgur.com/BJCf3ps.png)
+
+白色是无过渡绘制。比较正常基本都是在1x-2x范围内，例如Google now页面。如果超过3x，过渡绘制是很严重的了。
 
 再贴下CPU和GPU的工作，潜在的问题，检测的工具和解决方案图：
  

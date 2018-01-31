@@ -56,3 +56,5 @@ lefttrees: true
 > [【腾讯bugly干货分享】精神哥手把手教你如何智斗ANR](http://blog.csdn.net/tencent_bugly/article/details/46650675)
  
 > [Android ANR 分析学习总结](http://blog.csdn.net/nothingl3/article/details/52800182)
+
+> [Android开发者选项之GPU过度绘制](http://blog.csdn.net/u012209506/article/details/52788099)
