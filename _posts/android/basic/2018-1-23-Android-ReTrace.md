@@ -40,7 +40,7 @@ Windows上可以直接使用GUI界面
     
 语句前要加上at，而且返回值要移除（例如第一行的java.lang.String）
 
-还有要注意mapping文件，我在使用的时候发现Jenkins build自动生成的mapping不work，反而本地AS中自动生成的mapping可以使用，怪哉！暂时没理清原因。
+还有要注意mapping文件，使用Jenkins build自动生成的mapping和本地build出的mapping不同，所以要选择对应的mapping。
 
 正常的解析效果：
 
