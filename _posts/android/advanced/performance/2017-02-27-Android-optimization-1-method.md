@@ -57,13 +57,30 @@ lefttrees: true
     - 在TextView中使用Compound drawable，取代ImageView + TextView
     - 使用LinearLayout自带的分割线: android:divider=""
 
-2. Hierarchy Viewer工具优化布局
+2. [工具Hierarchy Viewer](http://vivianking6855.github.io/2017/12/26/Android-optimization-Tool/)优化布局
 
 ## 绘制优化
 
+Overdraw(过度绘制)描述的是屏幕上的某个像素在同一帧的时间内被绘制了多次。
+
+在多层次的UI结构里面，如果不可见的UI也在做绘制的操作，这就会导致某些像素区域被绘制了多次。这就浪费大量的CPU以及GPU资源。
+
+在app页面要实现非常复杂的视觉效果，可能会采用非常多的层叠组件来实现，这时候就会带来过度绘制的问题。
+
+- 在设计时：页面之间层级关系时，要尽量保持整个界面的架构统一，大背景色一致性。
+- 开发时尽量用简化的结构来布局，保持界面效果的同时也要考虑界面的流畅度
+
+通常解决Overdraw的方法有下面三个：
+
 1. 移除不必要的background
 2. 用clipRect优化
-3. onDraw方法要避免执行大量的操作
+3. canvas.quickreject()
+
+当然如果是自定义控件，还要考虑onDraw方法要避免执行大量的操作。
+
+如果非必要不要使用自定义控件，对于那些过于复杂的自定义的View(重写了onDraw方法)，Android系统无法检测具体在onDraw里面会执行什么操作，系统无法监控并自动优化
+
+使用[工具Show GPU Overdraw](http://vivianking6855.github.io/2017/12/26/Android-optimization-Tool/)可以查看Overdraw情况。
 
 ## 界面卡顿（ANR）
 
