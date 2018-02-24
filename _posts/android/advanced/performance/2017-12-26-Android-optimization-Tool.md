@@ -22,7 +22,7 @@ lefttrees: true
 
 开发者选项 -> 选择Show GPU Overdraw（显示过渡绘制区域）
 
-最终可以通过移除不必要的背景以及使用canvas.clipRect解决大多数问题。
+最终可以通过移除不必要的背景以及使用canvas.clipRect解决大多数问题。详情可以参看[Reducing Overdraw](https://developer.android.google.cn/topic/performance/rendering/overdraw.html)
 
 ![](http://i.imgur.com/BJCf3ps.png)
 
