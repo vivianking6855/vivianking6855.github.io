@@ -304,4 +304,6 @@ rxjava2 释放如下：
 
 > [如何用RXjava替代EventBus进行事件的分发 GitHub上的Demo](https://github.com/kaushikgopal/RxJava-Android-Samples)
 
+> [给 Android 开发者的 RxJava 详解](http://gank.io/post/560e15be2dca930e00da1083)
+
 
