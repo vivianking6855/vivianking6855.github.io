@@ -299,3 +299,9 @@ rxjava2 释放如下：
 > [Android OkHttp完全解析](http://blog.csdn.net/lmj623565791/article/details/47911083)
 
 > [Retrofit与okhttp之间的关系](http://blog.csdn.net/lmj623565791/article/details/51304204)
+
+> [如何用RXJava替代EventBus进行事件的分发](http://gank.io/post/560e15be2dca930e00da1083)
+
+> [如何用RXjava替代EventBus进行事件的分发 GitHub上的Demo](https://github.com/kaushikgopal/RxJava-Android-Samples)
+
+

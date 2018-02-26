@@ -8,6 +8,7 @@ tags: [Android 进阶]
 comments: true
 ---
 
+
 # EventBus （解除高度耦合的通讯框架）
 
 [EventBus框架： 一个典型的发布者-订阅者模式](https://github.com/greenrobot/EventBus )
@@ -91,8 +92,21 @@ EventBus是通过java反射机制来找到这个onEvent方法的，所以打包�
     -keepclassmembers class ** {
         public void onMessageEvent*(**);
     }
+    
+    
+# 其他
 
-参考资料：
+当然EventBus在解除我们耦合的同时，也有很多的潜在风险
+
+这两篇文章有提到建议停止使用EventBus
+
+[为什么你应该停止使用EventBus](http://blog.csdn.net/mislead/article/details/46695869)
+
+[Endless While Loop](https://endlesswhileloop.com/blog/2015/06/11/stop-using-event-buses/)
+
+建议使用用[RXJava](http://gank.io/post/560e15be2dca930e00da1083)[替代EventBus](https://github.com/kaushikgopal/RxJava-Android-Samples)进行事件的分发。
+
+# 参考资料：
 
 [快速Android开发系列通信篇之EventBus](http://www.cnblogs.com/angeldevil/p/3715934.html)
 
