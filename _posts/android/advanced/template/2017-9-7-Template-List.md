@@ -74,7 +74,12 @@ List模板新增
     - IDataModel: 待加载的数据，接口类型，各个Model可以实现此接口
 - MessageQueueUitl: 完整的展示和记录所有消息的传递流程，用于程序的逻辑功能分析
 
+
+# [Android项目模板 - 目录](http://vivianking6855.github.io/2018/02/28/Template-Index/)
+
+
 # Reference
 
 - [DiffUtil](http://blog.csdn.net/zxt0601/article/details/52562770):  提高RecyclerView的差异化效率，搭配payload实现高效刷新
 - [EasyRecyclerViewSidebar](https://github.com/CaMnter/EasyRecyclerViewSidebar) 侧滑栏 
+
