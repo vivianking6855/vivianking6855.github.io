@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Code Template 1 - Basic基础组合
-date: 2017-9-1
-excerpt: "Basic基础组合"
+title: Android项目模板 1 - Basic基础组合
+date: 2018-2-26
+excerpt: "Android项目模板"
 categories: Android
 tags: [Android 进阶]
 comments: true
@@ -41,3 +41,8 @@ Code Template 1是Basic基础组合，主要包含下面的控件和模块：
 
 - MainActivity: HomePagerAdapter 加载四个Fragment
 - 四个Fragment：FirstFragment, SecondFragment, ThirdFragment, FourthFragment
+
+
+
+
+# Android项目模板 - 目录

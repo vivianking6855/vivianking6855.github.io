@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Code Template 2 - List加载和通讯
-date: 2017-9-7
-excerpt: "List加载和通讯"
+title: Android项目模板 2 - List加载和通讯
+date: 2018-2-27
+excerpt: "Android项目模板"
 categories: Android
 tags: [Android 进阶]
 comments: true
