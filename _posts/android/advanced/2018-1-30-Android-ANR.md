@@ -39,9 +39,9 @@ lefttrees: true
 
 # ANR 解析
 
-anr解析通常是logcat文件搭配tract文件(系统自动生成)/console_error.log文件(我们使用的monkey工具命名)
+anr解析通常是logcat文件搭配trace文件(系统自动生成)/console_error.log文件(我们使用的monkey工具命名)
 
-系统的trace文件通常在：data/anr/tract.txt
+系统的trace文件通常在：data/anr/trace.txt
 
 通常先查看main thread的状况，然后看是否有waiting on, locked等关键字
 

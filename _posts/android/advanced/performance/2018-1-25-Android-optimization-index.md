@@ -58,3 +58,5 @@ lefttrees: true
 > [Android ANR 分析学习总结](http://blog.csdn.net/nothingl3/article/details/52800182)
 
 > [Android开发者选项之GPU过度绘制](http://blog.csdn.net/u012209506/article/details/52788099)
+
+> [使用注解改进代码检查](https://developer.android.com/studio/write/annotations.html)

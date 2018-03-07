@@ -47,28 +47,31 @@ comments: true
 
 ## 1. 主项目
 
-主项目这里列出了两种思路的项目结构
+主项目这里列出了两种思路的项目结构. 项目采用MVP架构
 
 ### 1） 全部按照模块来划分
 
-- 各个独立业务模块：每个模块中都包含自己的activity, adapter, entity，engine（例如splash，UserInfo等）
+- 各个独立业务模块：每个模块中都包含自己的activity, adapter, model（例如splash，UserInfo等）
 - db： sqllite相关逻辑封装
 - ui: 所有自定义控件
 - utils： 所有公用方法
 - Interfaces： 真正意义上的接口，命名以I作为开头
 - listener： 基于Listener的接口，命名以On作为开头
+- presenter：所有数据业务逻辑在这里
+- model：数据模型，数据api，不直接访问View
 
 ### 2） Activity按照模块划分
 
 - activity: 按照模块划分，把不同Activity放到不同的模块包下面
-- engine： 所有业务相关的类
 - adapter: 所有的适配器
-- entity: 所有的实体
+- model: 所有的实体
 - db： sqllite相关逻辑封装
 - ui: 所有自定义控件
 - utils： 所有公用方法
 - Interfaces： 真正意义上的接口，命名以I作为开头
 - listener： 基于Listener的接口，命名以On作为开头
+- presenter：所有数据业务逻辑在这里
+- model：数据模型，数据api，不直接访问View
 
 这里Activity按照模块拆分了，adapter和entity没有拆分。这是因为：
 
@@ -80,13 +83,17 @@ comments: true
 
 不管是 1）还是2）都建议建立一个类库AndroidLib，将业务无关的逻辑转移到这里。
 
-AndroidLib可以划分为几个部分：（全部都是业务无关）
+AndroidLib程序包有：（全部都是业务无关）
 
-- activity: Activity基类
-- net: 网络底层封装
-- cache: 缓存数据和图片
-- ui: 自定义控件
-- utils： 公用方法
+- com.open.utislib.base	 
+- com.open.utislib.device	 
+- com.open.utislib.file	 
+- com.open.utislib.net	 
+- com.open.utislib.security	 
+- com.open.utislib.time	 
+- com.open.utislib.window
+
+已发布到JCenter：[utilslib](https://bintray.com/vivianwayne1985/maven/utilslib)
 
 ### 小结
 
@@ -106,12 +113,14 @@ AndroidLib可以划分为几个部分：（全部都是业务无关）
 - initData() 初始化数据
 - initView() 初始化控件
 - loadData() 加载数据
+- getLayout() 设置layout
 
     public abstract class BaseActivity extends AppCompatActivity {
     
         @Override
         protected void onCreate(@Nullable Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            setContentView(getLayout());
     
             initData();
             initView(savedInstanceState);
@@ -243,3 +252,5 @@ github[下载地址](https://github.com/vivianking6855/android-advanced/tree/mas
 > 《App研发录》
 
 > [App研发录作者 Blog](http://www.cnblogs.com/jax/p/4656789.html)
+
+> [如何打造 最合适的构架，最合适的重构？](http://mp.weixin.qq.com/s/Uj4zbErp2_5RjUsKlkYiZA)

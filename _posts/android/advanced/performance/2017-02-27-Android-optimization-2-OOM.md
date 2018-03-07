@@ -16,22 +16,24 @@ lefttrees: true
 
 # 内存管理
 
+java虚拟机运行时数据区
+
+![java虚拟机运行时数据区](https://i.imgur.com/btm2ruP.jpg)
+
 内存示意图
 
-![](http://i.imgur.com/2ylcYWn.png)
+![内存示意图](http://i.imgur.com/2ylcYWn.png)
 
-1. Stack和Heap：
+1. Stack和Heap：（更详细的数据区，可以看图“java虚拟机运行时数据区”）
 
     - Stack空间（进栈和出栈）由操作系统控制，其中主要存储函数地址、函数参数、局部变量、还有一些基础类型等等，所以Stack空间不需要很大，一般为几MB大小。
     - Heap空间的使用由程序员控制，程序员可以使用malloc、new、free、delete等函数调用来操作这片地址空间。
-
-        Heap为程序完成各种复杂任务提供内存空间，所以空间比较大，一般为几百MB到几GB。
-        
-        Heap空间由程序员管理，所以容易出现使用不当导致严重问题。
+        - Heap为程序完成各种复杂任务提供内存空间，所以空间比较大，一般为几百MB到几GB。
+        - Heap空间由程序员管理，所以容易出现使用不当导致严重问题。
 
 2. Android中的进程
 
-    - 进程分为native进程（c/c++实现）和java进程（dalvik实例的linux进程。入口函数是java的main函数。
+    - 进程分为native进程（c/c++实现）和java进程（dalvik实例的linux进程。入口函数是java的main函数）
     - 每一个android上的java进程实际上就是一个linux进程，只是进程中多了一个dalvik虚拟机实例。
     - Android系统中的应用程序基本都是java进程，如桌面、电话、联系人、状态栏等等。
 
@@ -278,3 +280,14 @@ Memory Leak 和 OOM是内存优化当中比较突出的问题，尽量减少Leak
 # Reference
 
 > [Android最佳性能实践(一)——合理管理内存 ](http://blog.csdn.net/guolin_blog/article/details/42238627)
+
+
+[Android中导致内存泄漏的竟然是它----Dialog](http://mp.weixin.qq.com/s/sVbdugv-boumZ-oNk_92qg)
+
+[Android 开发绕不过的坑：你的 Bitmap 究竟占多大内存？](http://mp.weixin.qq.com/s/GkPrmlNm8p3fkeh4vo3Htg)
+
+[内存泄露从入门到精通三部曲之基础知识篇](https://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=400674207&idx=1&sn=a9580ca0dffc62a6d7dbb8fd3d7a2ef1&mpshare=1&scene=1&srcid=0303sm8e9bg2hcAT91sW6xBi#rd)
+
+[内存泄露从入门到精通三部曲之排查方法篇](https://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=400891536&idx=1&sn=0b6c629b0abe4a359d6552cd244c0c0c&mpshare=1&scene=1&srcid=0303ynX69pZPKE2BHK2UqodL#rd)
+
+[内存泄露从入门到精通三部曲之常见原因与用户实践](https://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=401107957&idx=2&sn=4b95bcfedd762b987ec57f60f80b1f94&mpshare=1&scene=1&srcid=030359Ow9DT0Wq7sLzh51FA3#rd)

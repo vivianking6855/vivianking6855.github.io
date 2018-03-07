@@ -76,7 +76,7 @@ lefttrees: true
 5. 避免创建不必要的对象或内存申请，尽量用原始类型:在java中每个类大约500 bytes code. 每个类实例会占用12-16 bytes以上	
 6. 避免临时objects：返回substring取代一个copy string
 7. 避免 internal getters/setter (si = mCount (is better than) i = getCount())
-8. 避免枚举类型:Enums消耗是静态常量的两倍	
+8. 避免[枚举类型](http://blog.csdn.net/qiuchengjia/article/details/52910948):Enums消耗是静态常量的两倍。建议用[@IntDef,@StringDef](https://noobcoderblog.wordpress.com/2015/04/12/java-enum-and-android-intdefstringdef-annotation/)等代替
 9. 适当使用软引用和弱引用
 10. 避免用浮点计算
 11. 循环

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: IPC - Inter-Process Communication 进程间通信
-date: 2017-1-23
+date: 2018-3-2
 excerpt: "IPC 进程间通信"
 categories: Android
 tags: [Android 基础]
@@ -23,6 +23,11 @@ IPC Inter-Process Communication.含义为进程间通信或者跨进程通信，
 
 在Android中使用多进程只有一种方法：给四大组件（Activity，Service，Receiver,ContentProvider)在AndroidMenifest中制定android:process属性
 
+android:process设定:remote和全称的差别“
+
+- ：方式会在名字前附上包名
+- ：方式是当前应用私有进程。全称指定可以通过ShareUID的方式跟它跑在同一个进程中
+
 使用多进程会有下面几个方面的问题：
 
 - 静态成员和单例模式完全失效
@@ -33,11 +38,11 @@ IPC Inter-Process Communication.含义为进程间通信或者跨进程通信，
 
 # 三、IPC的基础概念
 
-- 当通过Intent和和Binder传输数据时，需要用到Serializable和Parcelable把数据序列化
+- 当通过Intent和和Binder传输数据时，需要用到[Serializable和Parcelable把数据序列化](http://blog.csdn.net/javazejian/article/details/52665164)
 - Binder
-- Binder实现了IBinder接口
+    - Binder实现了IBinder接口
     - 从IPC角度来说Binder是跨进程通信的一种方式
-    - 从framework角度来说，Binder是ServiceManager连接各种Manager（ActivityManager、WindowManger等）和形影ManagerService的桥梁
+    - 从framework角度来说，Binder是ServiceManager连接各种Manager（ActivityManager、WindowManger等）和相应ManagerService的桥梁
     - 从Android应用层来说，Binder是客户端和服务器端进行通信的媒介
     - Binder主要用在Service中，包括AIDL和Messenger（底层其实是AIDL)
 
@@ -346,7 +351,22 @@ AIDL进行进程间通讯的流程
 - 自定义Parcelable对象和AIDL对象必须要显式import
 - 自定义Parcelable对象，必须新建一个和它同名的AIDL文件，并在其中声明Parcelable类型。这两个文件要在同一个package下面
 - AIDL除了基本数据类型，其他类型的参数必须标上方向：in,out, inout
-- AIDL接口只支持方法，不支持声明静态变量。
+- AIDL接口只支持方法，不支持声明静态变量
+
+功能逻辑：
+
+- Service 提供获取书单，管理书单接口。
+- Service 提供接口来监听和解除书单变化的通知
+
+知识点：
+
+- CopyOnWriteArrayList 支持并发读写
+    - AIDL支持的是抽象的List不支持CopyOnWriteArrayList，但是因为List只是一个接口。虽然服务器端返回的是CopyOnWriteArrayList，但是Binder会按照List规范去访问数据并最终形成一个新的ArrayList传递给客户端
+    - 和此类似的还有ConcurrentHashMap
+- RemoteCallbackList<E extends IInterface> 管理AIDL接口
+    - 跨进程通信客户端的同一个对象在服务器端生成不同的对象，但是新生成的对象底层的Binder对象是同一个
+    - RemoteCallbackList内部自动实现了线程同步的功能，不需要额外的线程同步功能
+    - 客户端进程终止后，自动移除客户端注册的listener
 
 核心Code
 
@@ -382,7 +402,6 @@ AIDL进行进程间通讯的流程
     interface INewBookListener {
         void onNewBookArrived(in Book newBook);
     }
-
 
 [github Code](https://github.com/vivianking6855/android-advanced)
 
@@ -422,6 +441,15 @@ Binder连接池的主要作用就是将每个业务模块的Binder请求统一�
 
 ![](http://i.imgur.com/x7EfgS9.jpg)
 
+# 七、Binder源码
+
+Android进程间的通讯没有沿用[Linux的原有的通讯模式](https://www.linuxidc.com/Linux/2016-10/136542.htm)，而是采用新的通讯模式Binder.
+
+Binder的优势：
+
+
+
+
 
 > [使用AIDL实现进程间的通信之复杂类型传递](http://blog.csdn.net/liuhe688/article/details/6409708)
 
@@ -430,3 +458,11 @@ Binder连接池的主要作用就是将每个业务模块的Binder请求统一�
 > [《Android开发艺术探索》](http://download.csdn.net/download/jsntghf/9602444)
 
 > [《Android开发艺术探索》 Github Code](https://github.com/singwhatiwanna/android-art-res)
+
+> [序列化与反序列化之Parcelable和Serializable浅析](http://blog.csdn.net/javazejian/article/details/52665164)
+
+> [Linux进程间的通信方式和原理](https://www.linuxidc.com/Linux/2016-10/136542.htm)
+
+
+
+

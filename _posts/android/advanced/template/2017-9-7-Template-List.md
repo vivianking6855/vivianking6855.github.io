@@ -28,6 +28,8 @@ List模板新增
     - [homepage](https://commons.apache.org/proper/commons-lang).
     - [JavaDoc](https://commons.apache.org/proper/commons-lang/javadocs/api-release)  
 - EventBus
+- 懒加载：Fragment的UI界面对用户可见的时候才加载数据
+
 
 # 效果图
 
@@ -82,4 +84,6 @@ List模板新增
 
 - [DiffUtil](http://blog.csdn.net/zxt0601/article/details/52562770):  提高RecyclerView的差异化效率，搭配payload实现高效刷新
 - [EasyRecyclerViewSidebar](https://github.com/CaMnter/EasyRecyclerViewSidebar) 侧滑栏 
-
+- [ViewPager+TabLayout+Fragment懒加载机制完全解析]( https://www.aliyun.com/jiaocheng/22714.html)
+- [Tablayout+Viewpager+Fragment组合使用以及懒加载机制](http://blog.csdn.net/qq_26936889/article/details/52680261)
+- [PagerAdapter分析与Fragment懒加载的几种实现](https://www.jianshu.com/p/9eb1c379f3e7)
