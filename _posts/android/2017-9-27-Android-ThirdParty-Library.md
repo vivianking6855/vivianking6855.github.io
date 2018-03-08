@@ -16,10 +16,14 @@ lefttrees: true
 
 # 图像
 
-- Picasso [Square公司](http://square.github.io/)
+- Picasso: [Square公司](http://square.github.io/)
 - [Fresco](https://github.com/facebook/fresco) Facebook
 - Glide ： 2014年google I/O大会上发布的官方推荐
     - [Glide和Picasso对比](http://jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0327/2650.html)
+
+[Picasso，Glide，Fresco比较](https://www.cnblogs.com/android-blogs/p/5786608.html)
+
+[Android图片加载库的选择与如何封装？ ](https://www.zhihu.com/question/40028112)
 
 # 数据
 

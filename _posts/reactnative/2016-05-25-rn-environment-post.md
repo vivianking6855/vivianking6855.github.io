@@ -9,7 +9,13 @@ comments: true
 ---
 
 
-# ReactNative 第1节 必备的学习网站
+
+* content
+{:toc}
+
+
+
+# 第1节 必备的学习网站
 
 ## 官网
 - [ReactNative 官网](https://facebook.github.io/react-native/) 
@@ -32,11 +38,11 @@ comments: true
 - [JS库查询](https://cdnjs.com/)
 - [JS COACH](https://js.coach/react-native?search=viewp&page=2)
 
-# ReactNative 第2节  环境搭建
+#  第2节  环境搭建
+
 [ReactNative环境搭建](https://github.com/vivianking6855/vivianking6855.github.io/blob/master/_posts/doc/React-Native%20%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.pdf)
 
-
-# ReactNative 第3节 IDE
+# 第3节 IDE
 
 React Native 的开发基本上是 Javascript ＋ 系统原生开发语言（Java，Objective-C，Swift）
 
@@ -67,7 +73,7 @@ React Native 的开发基本上是 Javascript ＋ 系统原生开发语言（Jav
   
   不用安装什么插件就能上手开发。正版软件收费，但是有破解版
   
-2. <font color='red' size=4>4.微软推荐的Visual Studio Code</font>
+2. 微软推荐的Visual Studio Code
   
   [Visual Studio Code](https://code.visualstudio.com/b?utm_expid=101350005-21.ckupCbvGQMiML5eJsxWmxw.1) 是微软在2015年4月29号 Build 2015 大会上发布的免费跨平台代码编辑器 
 
@@ -84,11 +90,10 @@ React Native 的开发基本上是 Javascript ＋ 系统原生开发语言（Jav
   
   https://marketplace.visualstudio.com/items?itemName=alechp.react-toolbox-snippets 
 
+  > [React Native 开发之 IDE 选型和配置](http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112392&idx=1&sn=135e29ddde3050d469be98db815c267e&scene=1&srcid=07018VwWxB6oc9FwO7daEAbX#rd)
 
-> [React Native 开发之 IDE 选型和配置](http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112392&idx=1&sn=135e29ddde3050d469be98db815c267e&scene=1&srcid=07018VwWxB6oc9FwO7daEAbX#rd)
 
-
-# ReactNative 第4节 建议学习的相关技术
+# 第4节 建议学习的相关技术
 
 1. HTML+CSS3
    
@@ -142,8 +147,5 @@ adb reverse tcp:8081 tcp:8081
 修改WebStorm默认保存的文件编码格式：File > Settings > Editor > File Encodings  
 
 IDE Encoding 和 Project Encoding 改成 UTF-8
-
-
-
 
 > [ReactNatvie IDE及其他相关基础技术](http://blog.csdn.net/yuanguozhengjust/article/details/50468561)
