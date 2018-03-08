@@ -22,7 +22,6 @@ comments: true
 - 绘制优化
 - 内存优化
 - Launch time
-- 响应时间优化（Response Time）
 
 # [工具](http://vivianking6855.github.io/2017/12/26/Android-optimization-Tool/)
 
@@ -31,7 +30,7 @@ comments: true
 - HierarchyViewer检查layout布局
 - Show GPU Overdraw检测Overdraw
 - GPU呈现模式分析UI渲染效率
-- Android Profiler检测CPU,GPU,Memory等情况
+- Android Profiler检测CPU,Memory等情况
 - LeakCanary 内存泄漏检测工具
 - BlockCanary 卡顿检测工具
 
@@ -39,8 +38,8 @@ comments: true
 
 - 设备：ZB570TL 
 - image: 最新image 
-- 单个联系人详情包含所有类别的信息，
-- 单个联系人call log > 20笔
+- 单个联系人详情包含所有类别的信息
+- 单个联系人call log 10笔
 
 # 优化分析和实践
   
@@ -200,7 +199,7 @@ Activity launch time优化主要是检查OnCreate中的耗时逻辑，将耗时�
     - 优化UpdateGroupTask避免memory leak：加入Activity isDestroyed判断，即使释放资源和避免无效的数据加载
     - 移除无效code 
 
-java code文件减少size: 10.6 MB - 10.2 MB = 0.4M
+java code文件减少size: 10.6 MB - 10.1 MB = 0.5M
 
 PS: 代码优化可以参看：[性能优化要点](http://vivianking6855.github.io/2018/01/24/Android-optimization-critical/)。建议代码优化时，参照AndroidStudio的Lint工具提醒
 
