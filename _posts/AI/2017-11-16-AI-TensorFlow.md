@@ -1,8 +1,8 @@
 ---
 layout: post
-title: AI 学习 ： 入门 
+title: AI 学习 ： TensorFlow 
 date: 2017-11-16
-excerpt: "AI 学习 ： 入门"
+excerpt: "AI 学习 ： TensorFlow"
 categories: AI
 tags: [AI]
 comments: true
