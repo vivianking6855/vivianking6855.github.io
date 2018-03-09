@@ -8,9 +8,8 @@ tags: [ReactNative]
 comments: true
 ---
 
-## 组件，页面通讯
 
-### 1.父子组件
+# 1.父子组件
 
 ReactJS中数据的流动是单向的
 
@@ -57,8 +56,8 @@ ReactJS中数据的流动是单向的
         }
     }
     
-   
-### 2.兄弟组件
+  
+# 2.兄弟组件
 
 当两个组件不是父子关系，但有相同的父组件时，将这两个组件称为兄弟组件。
 
@@ -111,7 +110,7 @@ ReactJS中数据的流动是单向的
     }
 
 
-### 3.全局事件
+# 3.全局事件
 
 
 1和2中的方法在组织结构非常深的时候，将会是一个噩梦。我们可以用全局事件来避免这些麻烦
@@ -193,9 +192,10 @@ ReactJS中数据的流动是单向的
 但是正因为全局事件脱离了单向数据流机制，从而使得数据的流向变得的不可预期。
 
 
-### 4. Navigator didfocus 和  Navigator传递方法通讯
+# 4. Navigator didfocus 和  Navigator传递方法通讯
 
-#### 监听didfocus事件（不推荐）
+## 监听didfocus事件（不推荐）
+
 用在有Navigator的scenario.
 
 在需要更新数据的组件didmount时重新load storage数据加载
@@ -236,7 +236,7 @@ ReactJS中数据的流动是单向的
         ];
     }
 
-### Navigator传递方法
+## Navigator传递方法
 
 用在有Navigator的scenario
 
@@ -267,12 +267,12 @@ ReactJS中数据的流动是单向的
     }
 
 
-### 4. Redux
+# 5. Redux
 
 Redux可以查看章节 [Redux](http://vivianking6855.github.io/redux/)
 
 
-## 小结
+# 小结
 
  - 简单的的组件沟通可以用传props和callback的方法实现。随着项目规模的扩大，组件就会嵌套得越来越深，这时候使用这个方法就有点不太适合。
 

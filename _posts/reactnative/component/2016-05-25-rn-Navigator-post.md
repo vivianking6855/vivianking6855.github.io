@@ -9,6 +9,7 @@ comments: true
 ---
 
 ## Component - Navigator
+
 应用一般是由很多页面组成。多页面的切换需要由路由或导航。
 
 RN中对应的控件是：Navigator（Android/IOS)，NavigatorIOS

@@ -8,12 +8,13 @@ tags: [ReactNative]
 comments: true
 ---
 
-## 物理back键处理
 
-### 需求 ：实现：点击back， 连续点击退出app
+# 物理back键处理
+
+## 需求 ：实现：点击back， 连续点击退出app
 
 
-### 关键Code
+## 关键Code
 
     _onBackPress = (event) => {
         let nav = this.refs.navigator;

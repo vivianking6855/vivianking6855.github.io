@@ -163,6 +163,8 @@ AS 3.0名字改为[Android Profiler](https://developer.android.com/studio/previe
 
 <br>
 
+[更多性能优化相关：性能优化目录](http://vivianking6855.github.io/2018/01/24/Android-optimization-index/)
+
 [Android开发者选项——Gpu呈现模式分析](https://www.cnblogs.com/ldq2016/p/6667381.html)
 
 [Android内存分析工具（一）：Memory Monitor](http://blog.csdn.net/berber78/article/details/47783585)

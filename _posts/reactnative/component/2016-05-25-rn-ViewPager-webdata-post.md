@@ -8,7 +8,7 @@ tags: [ReactNative]
 comments: true
 ---
 
-## Component - ViewPager
+# Component - ViewPager
 
 一个允许在子视图之间左右翻页的容器。每一个ViewPagerAndroid的子容器会被视作一个单独的页，并且会被拉伸填满ViewPagerAndroid。
 
@@ -22,7 +22,7 @@ comments: true
    
 
 
-### third-party lib
+# third-party lib
 
 有很多开源的库支持左右翻页
 
@@ -48,7 +48,7 @@ For more information about how the animations behind this work, check out the Re
 
 
 
-## 异步网络数据
+# 异步网络数据
 
 ReactNative不同于android的handler，AsyncTask。他是通过this.state 来触发UI更新。
 

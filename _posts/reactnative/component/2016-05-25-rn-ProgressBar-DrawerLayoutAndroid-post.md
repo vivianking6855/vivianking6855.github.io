@@ -8,7 +8,7 @@ tags: [ReactNative]
 comments: true
 ---
 
-## Component - ProgressBar
+# Component - ProgressBar
 
 封装了Android平台上的ProgressBar的React组件。这个组件可以用来表示应用正在加载或者有些事情正在进行中。
 
@@ -26,7 +26,7 @@ comments: true
 
 
 
-## Component - DrawerLayoutAndroid
+# Component - DrawerLayoutAndroid
 
 
 封装了平台DrawerLayout（仅限安卓平台）的React组件。抽屉（通常用于导航切换）是通过renderNavigationView方法渲染

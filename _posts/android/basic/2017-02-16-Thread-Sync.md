@@ -326,3 +326,7 @@ volatile用来确保多线访问变量的一致性。工作原理：
 > [《Android开发艺术探索》 Github Code](https://github.com/singwhatiwanna/android-art-res)
 
 > [聊聊并发](http://ifeve.com/volatile/) 
+
+> [JAVA多线程程序开发基础知识](http://www.panshy.com/articles/201602/dev-2534.html)
+
+> [JAVA使用Executor框架实现多线程并发](http://www.panshy.com/articles/201604/dev-2568.html)

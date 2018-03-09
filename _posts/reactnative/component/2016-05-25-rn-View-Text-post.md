@@ -8,9 +8,8 @@ tags: [ReactNative]
 comments: true
 ---
 
-## ReactNative 学习笔记 6 Component - View,Text
 
-### View
+# View
 
 [跟标签div类似,支持多层嵌套，支持flexbox布局](http://reactnative.cn/docs/0.26/view.html#content)
 
@@ -27,7 +26,8 @@ comments: true
 [Sample Code](https://github.com/vivianking6855/ReactNativeProject/blob/rncomponent/TwoReactNative/app/ViewLesson.js)
 
 
-### Text
+# Text
+
 [用于显示文本。可以嵌套，继承。](http://reactnative.cn/docs/0.26/text.html#content)
 
 Text组件特性：

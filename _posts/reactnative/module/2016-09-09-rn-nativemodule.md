@@ -8,7 +8,7 @@ tags: [ReactNative]
 comments: true
 ---
 
-## Android Native Moudule
+# Android Native Moudule
 
 在RN控件或功能无法满足需求时，需要Native Module来帮忙，需要平台API。
 
@@ -16,7 +16,8 @@ comments: true
 
 如何封装这些RN没有的模块呢？现有步骤介绍和Sample Code
 
-## Argument Types
+# Argument Types
+
 @ReactMethod RN参数跟JS参数的对比map，我们demo中用到了String，WritableMap，Promise，Callback，int 
 
 Boolean -> Bool
@@ -32,7 +33,8 @@ Promise -> Promise
 WritableMap -> Object
 
 
-## Toast 模块例子
+# Toast 模块例子
+
 我们希望可以从Javascript发起一个Toast消息（Android中的一种会在屏幕下方弹出、保持一段时间的消息通知）
 
 1. 创建一个原生模块 (UserNativeModule.java)
@@ -141,7 +143,8 @@ WritableMap -> Object
         });
 
 
-## Activity例子
+# Activity例子
+
 我们希望可以从Javascript叫起Android端Activity
 
 1. 原生模块UserNativeModule.java中添加方法
@@ -203,7 +206,8 @@ WritableMap -> Object
         });
         
         
-## Promise
+# Promise
+
  JS的异步变成模块。 RN也直接传入Promise作为参数。下面以获取Android app版号方法为例：
  Android核心Code
     @ReactMethod
@@ -237,7 +241,8 @@ WritableMap -> Object
             ToastAndroid.show('exception : ' + result);
           });
           
-## RN android端调用JS模块 - RCTDeviceEventEmitter 组件
+# RN android端调用JS模块 - RCTDeviceEventEmitter 组件
+
 RCTDeviceEventEmitter通讯组件不仅仅可以用于[组件全局事件交互](http://vivianking6855.github.io/rn-Community-post/)，还可以用做android调用JS模块使用
 
 Android核心Code

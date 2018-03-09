@@ -8,7 +8,7 @@ tags: [ReactNative]
 comments: true
 ---
 
-## Component - TextInput
+# Component - TextInput
 
 TextInput是一个允许用户在应用中通过键盘输入文本的基本组件。
 
@@ -41,7 +41,7 @@ TextInput是一个允许用户在应用中通过键盘输入文本的基本组�
 > [官网API地址](http://reactnative.cn/docs/0.26/textinput.html#content)
 
 
-## Component - Touchable
+# Component - Touchable
 RN没有Web开发那样给元素绑定click时间。RN的Text组件有onPress事件毁掉，View组件没有。
 
 但是实际开发通常需要View被点击。因此RN提供了三个组件来赋予被点击的能力（去包裹其他组件）。

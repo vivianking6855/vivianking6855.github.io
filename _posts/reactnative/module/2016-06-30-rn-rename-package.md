@@ -8,7 +8,7 @@ tags: [ReactNative]
 comments: true
 ---
 
-## Android包名修改
+# Android包名修改
 
 1. AndroidStudio打开项目 right click to "Open Module Setting".
     - Go to the Flavours tab. 
@@ -43,13 +43,15 @@ comments: true
 3. 重新打包 
 
     gradlew assembleRelease
+    
 4. aapt查看包名
     
     aapt dump badging "apkfile"
 
 
 
-## IOS包名修改
+# IOS包名修改
+
 xcode 8.0 修改包名步骤：
 
 1. 进入Build Settings的Packaging

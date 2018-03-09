@@ -34,17 +34,11 @@ Android可以使用AS的[CheckStyle来检查代码](http://gudong.name/2016/04/0
 [前端代码规范 及 最佳实践](https://coderlmn.github.io/code-standards/) 
 
 
-# 二、 代码优化
-
-## 1. 开发工具自动提示
-
-- IDE自动提示
-- Lint
-- FindBugs参考
-
-## 2. 深入优化代码
+# 二、 [代码优化](http://vivianking6855.github.io/2018/01/24/Android-optimization-critical/)
 
 
 # Reference
 
 [Android技术积累:开发规范](http://keeganlee.me/post/android/20150709) 
+
+[性能优化目录](http://vivianking6855.github.io/2018/01/24/Android-optimization-index/)

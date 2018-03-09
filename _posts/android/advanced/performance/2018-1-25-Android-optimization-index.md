@@ -26,7 +26,7 @@ lefttrees: true
 
 [性能优化（四）Google典范之Render实践](http://vivianking6855.github.io/2017/03/14/Android-optimization-4-Google-Publish-Render/)
 
-[性能优化（五）内存优化](http://vivianking6855.github.io/2017/03/14/Android-optimization-4-Google-Publish-Render/)
+[性能优化（五）内存优化](http://vivianking6855.github.io/2018/03/05/Android-optimization-5-Memory/)
 
 [性能优化：要点](http://vivianking6855.github.io/2018/01/24/Android-optimization-critical/)
 

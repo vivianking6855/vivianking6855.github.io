@@ -8,12 +8,13 @@ tags: [ReactNative]
 comments: true
 ---
 
-## Introduction
+# Introduction
+
 热更新在不用的领域有着多重多样的解释。我们关心的app的热更新简单来讲是：无需发新版本，实现app添加新功能。
 
 这里主要介绍Microsoft退出的CodePush平台实现热更新。它是一个云端服务，支持Cordova and React Native的开发者直接更新app, 而无需重新安装apk.
 
-## 微软的codepush
+# 微软的codepush
 
 微软的codepush框架操作原理是这样：
 
@@ -23,7 +24,8 @@ comments: true
  
     codepush.sync(paramas)可以实现更新，一般我们放在app启动的时候进行。或者可以在APP中增加一个按钮，点击就运行更新。
  
-## 实践步骤（Windows）
+# 实践步骤（Windows）
+
 可以follow[官网SOP](http://microsoft.github.io/code-push/index.html#getting_started)，也可以参考下面的步骤。
 
 1. Install the CodePush CLI
@@ -139,10 +141,11 @@ comments: true
     
     [其他发布命令](http://microsoft.github.io/code-push/docs/cli.html#releasing-updates-react-native)
     
-## [Sample Code](https://github.com/vivianking6855/ReactNativeProject/tree/rncomponent/Examples/codepush)
+# [Sample Code](https://github.com/vivianking6855/ReactNativeProject/tree/rncomponent/Examples/codepush)
 
 
-## 注意事项：
+# 注意事项：
+
 1. deployment
      
     注册CodePush service, 默认会有产生两个deployment： Staging and Production. （阶段和产品） 
@@ -151,10 +154,6 @@ comments: true
     
     列出所有deployment: code-push deployment ls <appName> [--displayKeys|-k]
     
-
-
-
-
 
 > [Microsoft React Native Client SDK](http://microsoft.github.io/code-push/docs/react-native.html)  
 
