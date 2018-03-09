@@ -34,9 +34,9 @@ comments: true
 
 [消息机制解读](http://vivianking6855.github.io/2018/03/09/Source-Message-Mechanism/)
 
-[AsyncTask异步任务 源码解读](http://blog.csdn.net/maplejaw_/article/details/51441312)
+[AsyncTask源码解读](http://vivianking6855.github.io/2018/03/09/Source-AsyncTask/)
 
-[HandlerThread](http://blog.csdn.net/abc512427549/article/details/79481226)
+[HandlerThread：自带消息循环的Thread](http://blog.csdn.net/abc512427549/article/details/79481226)
 
 ## 图像
 
