@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 源码解析 
+title: 源码解析-目录
 date: 2018-3-8
-excerpt: "源码解析"
-categories: Android
-tags: [Android 进阶]
+excerpt: "源码解析-目录"
+categories: 源码解析
+tags: [源码解析]
 comments: true
 ---
 
@@ -16,10 +16,9 @@ comments: true
 
 # 简介
 
-记录看过的源码解析
+记录一些源码的解析
 
-
-# Java源码分析
+# Android/Java源码分析
 
 ## 数据结构
 
@@ -27,9 +26,17 @@ comments: true
 
 [HashMap 1.7](http://blog.csdn.net/carson_ho/article/details/79373026)
 
-## 消息
+## 通讯
 
 [EventBus原理源码分析和使用](http://blog.csdn.net/hua631150873/article/details/51377131)
+
+# 消息
+
+[消息机制解读](http://vivianking6855.github.io/2018/03/09/Source-Message-Mechanism/)
+
+[AsyncTask异步任务 源码解读](http://blog.csdn.net/maplejaw_/article/details/51441312)
+
+[HandlerThread](http://blog.csdn.net/abc512427549/article/details/79481226)
 
 ## 图像
 
@@ -38,5 +45,13 @@ comments: true
 [Glide-源码详解](http://blog.csdn.net/yulyu/article/details/60331803)
 
 [Fresco源码解析](http://blog.csdn.net/column/details/master-fresco.html)
+
+## 数据存储
+
+[DiskLruCache](http://vivianking6855.github.io/2017/11/15/DiskLruCache/)
+
+## 系统
+
+[Android应用程序启动过程源代码分析](http://blog.csdn.net/luoshengyang/article/details/6689748 )
 
 
