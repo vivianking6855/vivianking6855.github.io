@@ -55,7 +55,7 @@ java的设计模式有N多种，据不完全统计，迄今为止，网络出现
 
 对单例的实现可以分为两大类——懒汉式和饿汉式，他们的区别在于：
 
-懒汉式：指全局的单例实例在第一次被使用时构建。
+懒汉式：指全局的单例实例在第一次被使用时构建
 
 饿汉式：指全局的单例实例在类装载时构建。
 
@@ -93,7 +93,33 @@ java的设计模式有N多种，据不完全统计，迄今为止，网络出现
 		}
 	}
 	
-	这是极简的写法，利用了创建枚举实例的过程是线程安全的。所以这种写法也没有同步的问题。      
+	这是极简的写法，利用了创建枚举实例的过程是线程安全的。所以这种写法也没有同步的问题。但是enum比较耗资源，需要权衡。
+
+	/**
+	 * 静态内部类，使用双重校验锁，线程安全（推荐）
+	 */
+	public static class Singleton {
+		private volatile static Singleton instance = null;
+
+		private Singleton() {
+
+		}
+
+		public static Singleton getInstance() {
+			if (instance == null) {
+				synchronized (Singleton.class) {
+					if (instance == null) {
+						instance = new Singleton();
+					}
+				}
+			}
+			return instance;
+		}
+	}
+	
+	这是一种双检锁实例的方式,只在第一次实例化的时候进行加锁,并在在加锁前后都会对是否实例化了进行判定.
+	
+	性能方面优于单检锁的形式.为了避免编译器对new Singleton()进行优化，instance变量加上volatile修饰,去除编译器优化的干扰. 
     
 ### 已有示例
 

@@ -23,48 +23,16 @@ comments: true
 ## Android
 
 - [Android基础](http://vivianking6855.github.io/tag/#Android%20%E5%9F%BA%E7%A1%80-ref)
-    - [UI - ConstraintLayout](http://vivianking6855.github.io/2016/12/30/Android-ConstraintLayout/)
-    - [UI - RecyclerView, DiffUtil, RecyclerViewUtils](http://vivianking6855.github.io/2016/12/29/Android-RecyclerView/)
-    - [UI- BottomNavigationView](http://vivianking6855.github.io/2017/09/01/Android-BottomNavigationView/)
-    - [UI - RemoteViews](http://vivianking6855.github.io/2017/01/24/Android-Nano-Tips-12-RemoteViews/)
-    - [Android O](http://vivianking6855.github.io/2017/08/30/Android-O/)
-    - [Android Permission处理](http://vivianking6855.github.io/2017/06/27/Android-M-permission/)
-    - [工具 - Android Studio 使用第三方库, 插件](http://vivianking6855.github.io/2017/02/27/Android-Studio/)
-    - [线程同步](http://vivianking6855.github.io/2017/02/16/Thread-Sync/)
-    - [Android的线程和线程池](http://vivianking6855.github.io/2017/02/15/Multi-Thread/)
-    - [Android Messenge](http://vivianking6855.github.io/2017/02/14/Android-Message/)
-    - [IPC - Inter-Process Communication 进程间通信](http://vivianking6855.github.io/2017/01/23/Android-IPC/)
-    - [Android 之 Dalvik和ART](http://vivianking6855.github.io/2016/10/14/Android-ART-Dalvik/)
-    - [如何解决Android应用方法数不能超过65K的问题](http://vivianking6855.github.io/2016/09/21/Android-method-more-than-65536/)
 - [Android 微技巧](http://vivianking6855.github.io/tag/#Android%20%E5%BE%AE%E6%8A%80%E5%B7%A7-ref)
-    - [JavaDoc](http://vivianking6855.github.io/2017/04/01/Android-JavaDoc/)
-    - [Tint, LocalBroadcastManager，GreenDao](http://vivianking6855.github.io/2017/03/10/Android-Nano-Tips-13-Tint/)
-    - [M new feature 2](http://vivianking6855.github.io/2016/12/28/Android-Nano-Tips-7-M-new-feature-2/)
-    - [M new feature 1](http://vivianking6855.github.io/2016/12/28/Android-Nano-Tips-6-M-new-feature-1/)
-    - [Spannable, Gradle, AndroidUtilCode,SurfaceView](http://vivianking6855.github.io/2016/10/14/Android-Nano-Tips-3/)
-    - [Android Design Support Library](http://vivianking6855.github.io/2016/10/10/Android-Nano-Tips-2-design-support-library/)
-    - [ExpandableListView, Annotations](http://vivianking6855.github.io/2016/09/14/Android-Nano-Tips-1/)
 - [Android 进阶](http://vivianking6855.github.io/tag/#Android%20%E8%BF%9B%E9%98%B6-ref)
-    - [Android Fragment](http://vivianking6855.github.io/2017/08/17/Android-Fragment/)
-    - [Kotlin](http://vivianking6855.github.io/2017/06/23/Kotlin/)
-    - [Android 视频分离和合成](http://vivianking6855.github.io/2017/06/19/Android-Vedio-merge-Music/)
-    - [Android Canvas](http://vivianking6855.github.io/2017/06/19/Android-Canvas/)
-    - [Android应用开发需精通20个技能点](http://vivianking6855.github.io/2017/05/12/Android-Technology/)
-    - [开源库 - Lambda插件：gradle-retrolambda](http://vivianking6855.github.io/2017/04/10/Android-Lib-retrolambda/)
-    - [开源库 - 优雅的网络和异步编程(Retrofit/Okhttp, RxAndroid/RxJava)](http://vivianking6855.github.io/2017/04/08/Android-Lib-Web/)
-    - [Android Disign And Refactoring](http://vivianking6855.github.io/2017/03/30/Android-Design-Refactoring/)
-    - [Android Dynamic Load](http://vivianking6855.github.io/2017/02/27/Android-Dynamic-Load/)
-    - [Android Bitmap的加载和Cache](http://vivianking6855.github.io/2017/02/22/Android-Bitmap-Cache/)
-    - [Android InstantAPP - 即搜即得应用](http://vivianking6855.github.io/2017/01/12/Android-InstantApp/)
-    - [开源库 - EventBus](http://vivianking6855.github.io/2016/12/19/Android-Lib-EventBus/)
-    - [UI - Customized View](http://vivianking6855.github.io/2016/11/09/Android-CustomizedView/)
-- [Android 性能优化](http://vivianking6855.github.io/tag/#Android%20%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-ref)
-    - [性能优化（一）：方法概述](http://vivianking6855.github.io/2017/02/27/Android-optimization-1-method/)
-    - [性能优化（二）内存管理 & Memory Leak & OOM](http://vivianking6855.github.io/2017/02/27/Android-optimization-2-OOM/)
-    - [性能优化（三）Google典范之开篇](http://vivianking6855.github.io/2017/03/13/Android-optimization-3-Google-Publish/)
-    - [性能优化（四）Google典范之Render实践](http://vivianking6855.github.io/2017/03/14/Android-optimization-4-Google-Publish-Render/)
-- Android项目开发模板
-    - [Code Template 1 - Basic基础组合](http://vivianking6855.github.io/2017/09/01/Template-Basic/)
+- [Android 性能优化](http://vivianking6855.github.io/2018/01/24/Android-optimization-index/)
+- [Android项目开发模板](http://vivianking6855.github.io/2018/02/28/Template-Index/)
+
+## Android源码
+
+- [androidxref 不用翻墙](http://androidxref.com/)
+- [源码解析](http://blog.csdn.net/vivian_king/article/category/7500394)
+
 
 ## 设计模式
  
@@ -75,7 +43,6 @@ comments: true
 
 ## [精彩third party library](http://vivianking6855.github.io/2017/09/25/Android-ThirdParty-Library/)
 
-
 # 第二部分
 
 - Java基础
@@ -83,7 +50,6 @@ comments: true
 - Java并发
     - [线程同步](http://vivianking6855.github.io/2017/02/16/Thread-Sync/)
     - [线程和线程池](http://vivianking6855.github.io/2017/02/15/Multi-Thread/)
-    - [开源库 - 优雅的网络和异步编程(Retrofit/Okhttp, RxAndroid/RxJava)](http://vivianking6855.github.io/2017/04/08/Android-Lib-Web/)
 
 # 第三部分
 
@@ -151,27 +117,11 @@ comments: true
 - [Android_Data#书籍](https://github.com/Freelander/Android_Data#%E4%B9%A6%E7%B1%8D)
 - [移动开发必读书单](https://mp.weixin.qq.com/s/vyeQUNKkiCjTrSyRrcH7lw)
 
-## 项目
-
-- [Contact](http://vivianking6855.github.io/2017/08/14/Contact/)
-- [WorkClub](http://vivianking6855.github.io/2017/03/31/WorkClub/)
-- [AudioWizard_ZF4](http://vivianking6855.github.io/2017/02/16/AudioWizard_ZF4/)
-- [ZenTalk](http://vivianking6855.github.io/2016/11/01/ZenTalk/)
-- [AudioWizard](http://vivianking6855.github.io/2016/10/28/AudioWizard/)
-- [Caculator](http://vivianking6855.github.io/2015/11/01/Calculator/)
-- [Flashlight](http://vivianking6855.github.io/2015/10/01/Flashlight/)
-- [Backup](http://vivianking6855.github.io/2015/09/01/Backup/)
+## [项目](http://vivianking6855.github.io/tag/#Projects-ref)
 
 # 第六部分
 
-- 管理
-    - [产品文档](http://vivianking6855.github.io/2017/07/17/Manager-BRD-MRD-PRD/)
-    - [时间管理](http://vivianking6855.github.io/2017/05/25/Manager-Time/)
-    - [SWOT分析法](http://vivianking6855.github.io/2017/05/25/Manager-SWOT/)
-    - [STAR法则](http://vivianking6855.github.io/2017/05/25/Manager-STAR/) 
-    - [Project Experiences](http://vivianking6855.github.io/2017/03/31/Project-Experiences/)
-    - [代码规范和优化](http://vivianking6855.github.io/2016/12/01/CodeFormat_And_Optimization/)
-    - [App Summary Template](http://vivianking6855.github.io/2016/10/28/App-Summary-Template/)
+- [管理](http://vivianking6855.github.io/tag/#%E7%AE%A1%E7%90%86-ref)
 
 # 参考资料
 

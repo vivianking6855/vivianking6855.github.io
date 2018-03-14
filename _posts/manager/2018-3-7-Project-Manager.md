@@ -19,10 +19,13 @@ comments: true
     - 作图：Xmind,[ProcessOn](https://www.processon.com/diagrams/new#temp-system)
     - 在线协作：有道云笔记，TIM，ProcessOn，[workflowy](https://workflowy.com/#)
     - 在线任务管理
-        - redmine
+        - redmine 可以分配任务，查看任务进度，还有wiki适合记录项目信息（开发，依赖，porting guide, 注意事项等）
         - [fengche](http://Fengche.co)：轻量级工具，非IT人员可快速上手。很直观的做计划，很便捷的跟踪和协调任务，很轻松的沟通交流。也适合公司的事务项目管理
         - Basecamp/[Tower](http://tower.im): 看板式任务管理软件，适合和团队成员讨论项目，计划项目去做什么
         - Teambition/worktitle/trello:看板式任务管理软件，适合在团队内部有较多的文字内容沟通
+    - 如果你擅长管理，也可以用excle
+    - 甘特图(Gantt chart)，每天进度，视情况而定。开发人员有些不热衷每天更新进度，可能就不适合了
+    - wiki 适合不喜欢写文档的同志们
 - [管理经验](http://vivianking6855.github.io/2017/03/31/Project-Experiences/)
 - 管理书籍
     - 高效能七个习惯：积极主动，重要的事情先做，以终为始；WIN/WIN, 知己知彼，统合综效；自我更新
