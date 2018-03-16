@@ -257,7 +257,7 @@ BookDescFragment变化： onCreateView加入getArguments处理
     }
 
 
-5. Rich Navigation
+# 5. Rich Navigation
 
 Swipe navigation and Action Bar navigation, you could check android default template here:
 
@@ -268,3 +268,5 @@ Swipe navigation and Action Bar navigation, you could check android default temp
 > [Creating Dynamic UI with Android Fragments](https://github.com/vivianking6855/android-advanced/blob/master/DynamicFragments/Creating%20Dynamic%20UI%20with%20Android%20Fragments.pdf)
 
 > [Android 基础：Fragment，看这篇就够了 （上）](https://cloud.tencent.com/developer/article/1005538)
+
+> [Activity与Fragment的生命周期](http://blog.csdn.net/chun0801/article/details/51956847) 
