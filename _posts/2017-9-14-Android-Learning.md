@@ -15,7 +15,7 @@ comments: true
 
 # Android知识图谱
 
-![](https://i.imgur.com/RudiyA6.png)
+![](https://i.imgur.com/vh7yCS5.png)
 
 
 # 第一部分

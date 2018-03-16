@@ -3,8 +3,8 @@ layout: post
 title: App - Analysis
 date: 2017-3-16
 excerpt: "App"
-categories: 资料集
-tags: [资料集]
+categories: Android 基础
+tags: [Android 基础]
 comments: true
 ---
 
