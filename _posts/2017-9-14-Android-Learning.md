@@ -13,9 +13,12 @@ comments: true
 
 
 
-# 第一部分：Android知识
+# Android知识图谱
 
-基础
+![](https://i.imgur.com/RudiyA6.png)
+
+
+# 第一部分
 
 ## [Android专栏](http://blog.csdn.net/column/details/20452.html)
 
@@ -23,7 +26,7 @@ comments: true
  
 ## [精彩third party library](http://vivianking6855.github.io/2017/09/25/Android-ThirdParty-Library/)
 
-# 第二部分：Java知识
+# 第二部分
 
 - Java基础
 - Java虚拟机 JVM
@@ -31,13 +34,27 @@ comments: true
     - [线程同步](http://vivianking6855.github.io/2017/02/16/Thread-Sync/)
     - [线程和线程池](http://vivianking6855.github.io/2017/02/15/Multi-Thread/)
 
-# 第三部分 数据结构和算法
+# 第三部分
 
 - 数据结构
 - 算法
     
-# 第五部分：[推荐书籍](http://vivianking6855.github.io/2018/03/16/Books/)
+# 第四部分
+
+- 网络
+- 操作系统
+
+# 第五部分
+
+## [推荐书籍](http://vivianking6855.github.io/2018/03/16/Books/)
 
 ## [项目](http://vivianking6855.github.io/tag/#Projects-ref)
 
+# 第六部分
+
+- [管理](http://vivianking6855.github.io/tag/#%E7%AE%A1%E7%90%86-ref)
+
+# Android资讯
+
+# 参考资料
 
