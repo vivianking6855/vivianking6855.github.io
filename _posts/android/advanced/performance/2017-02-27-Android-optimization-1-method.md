@@ -90,7 +90,7 @@ Overdraw(过度绘制)描述的是屏幕上的某个像素在同一帧的时间�
 - BroadcastReceiver在10秒内没有执行完毕
 - Service中各生命周期函数执行超过20s
 
-因此需要Application中药注意：
+因此需要Application中要注意：
 
 - UI线程只做界面刷新，不做任何耗时操作，耗时操作放在子线程来做 
 - 可以使用Thread+handle，AsyncTask，RxAndroid/RxJava等进行逻辑处理
