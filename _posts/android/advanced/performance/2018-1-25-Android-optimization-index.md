@@ -28,7 +28,7 @@ lefttrees: true
 
 [性能优化（五）内存优化](http://vivianking6855.github.io/2018/03/05/Android-optimization-5-Memory/)
 
-[性能优化（六）卡顿优化](http://vivianking6855.github.io/2018/03/05/Android-optimization-6-Block/)
+[性能优化（六）卡顿监测](http://vivianking6855.github.io/2018/03/05/Android-optimization-6-Block/)
 
 [性能优化：要点](http://vivianking6855.github.io/2018/01/24/Android-optimization-critical/)
 
