@@ -32,7 +32,7 @@ lefttrees: true
     
 动态加载技术/插件化技术需要：插件dex如何加载到内存，资源加载问题，插件互相调，四大组件生命周期等用等问题。
 
-摘要图（来自网上）
+摘要图（来自[深入理解Android插件化技术](http://www.bieryun.com/1348.html)）
 
 ![](https://i.imgur.com/vEhNmk7.jpg)
 
