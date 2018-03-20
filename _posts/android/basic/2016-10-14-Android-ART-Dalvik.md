@@ -20,6 +20,8 @@ Dalvik虚拟机是Google等厂商合作开发的Android移动设备平台的核�
 
 独立的进程可以防止在虚拟机崩溃的时候所有程序都被关闭。
 
+​Dalivk中，使用dexopt将dex文件优化为Odex文件。再依靠一个Just-In-Time (JIT)编译器去解释字节码。
+
 # 什么是ART
 
 Android操作系统已经成熟，Google的Android团队开始将注意力转向一些底层组件，其中之一是负责应用程序运行的Dalvik运行时。
@@ -34,7 +36,8 @@ ART则完全改变了这套做法，在应用安装时就预编译字节码到�
 
 在移除解释代码这一过程后，应用程序执行将更有效率，启动更快。
 
- 
+ART会使用dex2aot直接将全部的dex文件编译为native code存储，
+
 ## ART优点
 
 1. 系统性能的显著提升。
@@ -53,5 +56,15 @@ ART则完全改变了这套做法，在应用安装时就预编译字节码到�
 
 我们知道Dalvik即Android一直以来使用的运行方式。 但是从Android 4.X开始Dalvik和ART共存，用户可以选择ART。
 
-5.X和6.0上已经删除Dalvik，只保留了ART。
+5.X和6.0上已经删除Dalvik，只保留了ART
 
+# 比较
+
+| 虚拟机名字 | Android版本 | 编译 | 特性 | 
+| ------------- |:-------------:| -----:| -----:| 
+| Dalivk | Android 4.X及以前 | dexopt将dex文件优化为Odex文件，JIT去解析 | 
+| ART | Android 4.X共存，5.X和6.0只保留了ART， | dex2aot将dex文件编译为native code存储 | 
+
+# Reference
+
+[Dalvik类加载机制](https://www.jianshu.com/p/1d5cac5fe699) 
