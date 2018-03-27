@@ -89,6 +89,8 @@ lefttrees: true
 
 [微信Android热补丁实践演进之路](https://github.com/WeMobileDev/article/blob/master/%E5%BE%AE%E4%BF%A1Android%E7%83%AD%E8%A1%A5%E4%B8%81%E5%AE%9E%E8%B7%B5%E6%BC%94%E8%BF%9B%E4%B9%8B%E8%B7%AF.md#rd)
 
+[Android热修复原理（一）热修复框架对比和代码修复](https://blog.csdn.net/itachi85/article/details/79522200)
+
 PS: [AOP](https://baike.baidu.com/item/AOP/1332219?fr=aladdin) - Aspect Oriented Programming (面向切面编程)
 
 # Reference
