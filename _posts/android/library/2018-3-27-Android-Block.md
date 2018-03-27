@@ -24,7 +24,9 @@ Android版本：Android 4.1 API 16以上支持。
 
 # jCenter发布地址
 
-[AndroidBlockMonitor](https://bintray.com/vivianwayne1985/maven/AndroidBlockMonitor)
+[AndroidBlockMonitor Github](https://github.com/vivianking6855/android-blockmonitor)
+
+[AndroidBlockMonitor jCenter](https://bintray.com/vivianwayne1985/maven/AndroidBlockMonitor)
 
 # 原理
 
