@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Android Block库
+title: Android Block库发布
 date: 2018-3-27
-excerpt: "Android Block库"
+excerpt: "Android Block库发布"
 categories: Android
 tags: [Android 进阶]
 comments: true
