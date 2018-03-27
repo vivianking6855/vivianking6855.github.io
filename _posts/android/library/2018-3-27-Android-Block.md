@@ -90,6 +90,8 @@ Notification
 Log详情
     
    ![](https://i.imgur.com/Anob1Tk.jpg)
+   
+   ![](https://i.imgur.com/nPYwL3j.png)
 
 空白部分后期会显示波形图（Frame-Time，Frame-DropCount等）
 
