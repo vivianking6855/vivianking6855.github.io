@@ -16,9 +16,19 @@ lefttrees: true
 
 # ANR出现的原因
 
-1. KeyDispatchTimeout(5 seconds) --主要类型按键或触摸事件在特定时间内无响应
-2. BroadcastTimeout(10 seconds) --BroadcastReceiver在特定时间内无法处理完成
+1. KeyDispatchTimeout(5 seconds)
+    - InputDispatchingTimedOut
+    - 应用程序主线程在5秒内没有完成用户的input事件（比如按键事件、屏幕触摸事件）
+2. BroadcastTimeout
+    - 应用程序在规定时间内没有执行完成onReceive操作 
+    - 前台广播10秒超时 BROADCAST_FG_TIMEOUT. addFlgs(Intent.FLAG_RECEIVER_FOREGROUND)
+    - 后台广播60秒超时 BROADCAST_BG_TIMEOUT
 3. ServiceTimeout(20 seconds) --小概率类型 Service在特定的时间内无法处理完成
+    - 应用程序没有执行完成service的bind/create/start/destroy/unbind操作
+    - 前台服务20秒超时，后台服务200秒超时
+4. Content Provider Timeout
+    - 应用程序在20秒内没有执行完成ContentProvider相关操作
+
 
 容易出问题几个点：
 
@@ -183,3 +193,5 @@ root cause：Activity创建时可能有非常耗时的操作。查看onCreate中
 > [Android ANR 分析学习总结](http://blog.csdn.net/nothingl3/article/details/52800182)
 
 > [Android ANR问题总结（一）](http://blog.csdn.net/jiangguohu1/article/details/52636470)
+
+> [说说Android的广播](https://blog.csdn.net/lusing/article/details/51614173)

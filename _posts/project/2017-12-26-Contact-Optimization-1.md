@@ -42,26 +42,37 @@ app优化主要包含size优化，性能优化，重构等。
 1. size优化： 移除unused resources，降低app的size
 2. 布局，绘制，响应速度等性能优化
 
-    - 联络人详情优化: 主要是布局优化，绘制优化，响应速度优化
-    - 主页面优化: 主要是布局优化，绘制优化，响应速度优化
-    - call log滑动: 主要是布局优化，绘制优化，响应速度优化
+    - 联络人详情优化: 主要是布局优化，绘制优化，响应速度优化，内存优化
+    - 主页面优化: 主要是布局优化，绘制优化，响应速度优化，内存优化
+    - call log滑动: 主要是布局优化，绘制优化，响应速度优化，内存优化
     - smart search: 内存和响应速度优化
 
+3. 响应时间（Response Time） 
 
-- 响应时间（Response Time） 
+相应时间标准：（高速摄像机）
 
-优化点： 
-- 异步请求网络数据 
-- 预处理服务器返回数据 
-- 异步进行数据存储操作 
-- 数据缓存刷新 
-- Timeout超时重试 
+测试条件：
+
+- DUT存在500筆連絡人, 每個連絡人皆有頭像 (使用test file: 500(photo).vcf)
+- Kill Contacts process (無需重開機)，點擊Contacts, 當手指離開螢幕時即開始計時, 當Contacts的"底圖"完成顯示即停止計時
+
+测试项目：
+
+- Launch time of Contacts (1st)
+- Frame rate of scrolling contacts (avg.)
+- Frame rate of scrolling call log
+- Response time of backing to Home. 现在（avg 0.36s）
+
+优化点：
+
 - 在主线程中操作UI
-
-
-- 界面卡顿（ANR） 
-- 耗内存（Memory） 
-- 内存泄露（Out of memory)
+    - 界面卡顿（Block & ANR） 
+    - 数据缓存刷新 
+- 网络请求和网络缓存
+    - 异步请求网络数据 
+    - 预处理服务器返回数据 
+- 异步进行数据存储操作 
+- Timeout超时重试 
 
 3. [重构](http://vivianking6855.github.io/2017/03/30/Android-Design-Refactoring/)，在现有的框架上适当重构。
 
