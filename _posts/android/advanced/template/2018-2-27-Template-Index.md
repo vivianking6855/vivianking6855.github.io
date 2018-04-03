@@ -26,3 +26,20 @@ Android项目模板目录。
 # 2. [Android项目模板: List加载和通讯](http://vivianking6855.github.io/2017/09/07/Template-List/) 
 
   ![](https://i.imgur.com/sL73hvO.png)
+  
+  
+# [Android架构小结](http://vivianking6855.github.io/2017/03/30/Template-Open/)
+
+# [Android组件化和插件化浅谈](http://vivianking6855.github.io/2018/04/02/Template-Plugin-Component/)
+
+# Reference
+
+[浅谈 MVP in Android](https://blog.csdn.net/lmj623565791/article/details/46596109)
+
+Android彻底组件化
+
+- [Android彻底组件化方案实践](https://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&mid=2247486803&idx=1&sn=884fed93567022e3ac9731df6fc4660a&scene=19#wechat_redirect)
+- [Android彻底组件化源码分析](https://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&mid=2247486804&idx=1&sn=664b30f6bdbd55f3b8be706a9a4fe092&scene=19#wechat_redirect)
+  
+  
+  
