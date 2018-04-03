@@ -44,18 +44,21 @@ Bob大神的Architecture is About Intent, not Frameworks. 个人理解是：架�
 
 ![](https://i.imgur.com/5X0VIG0.jpg)
 
-其中数据层，业务无关层分别是独立的library；展示层和业务公有层在app module中
+其中数据层，业务无关层分别是独立的library；展示层和业务公有层在app module中； 展示层和数据层的通过接口方式现实数据监听
 
 - 展示层，业务展示层采用MVP架构
     - V: activity, fragment, view
     - M: model
-    - P: presenter处理数据逻辑，使用data module中的各个api
+    - P: presenter处理数据逻辑，使用data module中的各个repository
+        - P和V的解耦合可以通过Lisenter，EventBus, RxAndroid/RxJava等方式
+        - P调用使用data module中的各个repository，异步数据监听可以通过data层的接口来实现
 - 业务公有层 share
     - router 页面跳转器
     - utils 业务公用工具
     - base 业务封装基类
 - 数据层 data module
-    - api 提供给展示层的数据接口
+    - repository 提供给展示层的数据接口（例如UserProvider等）
+    - listener 提供给上层的数据变化监听接口
     - cache 缓存
     - db 数据库
     - entity 数据单元，其中可解析的entity多用于网络请求
