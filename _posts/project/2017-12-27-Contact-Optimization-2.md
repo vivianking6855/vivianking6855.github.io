@@ -105,3 +105,7 @@ PS：size以Jenkins build出的apk为准 （proguard压缩过的大小）
 3. 不同resolution 设备UI展示测试
 
 当然还有比不可少的monkey测试
+
+# Reference
+
+[性能优化 - 目录](http://vivianking6855.github.io/2018/01/24/Android-optimization-index/)

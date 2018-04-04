@@ -35,6 +35,12 @@ lefttrees: true
 [性能优化：工具](http://vivianking6855.github.io/2017/12/26/Android-optimization-Tool/)
 
 
+性能优化实践
+
+- [Contact 优化 - 开篇](http://vivianking6855.github.io/2017/12/26/Contact-Optimization-1/)
+- [Contact 优化 - size优化](http://vivianking6855.github.io/2017/12/27/Contact-Optimization-2/)
+- [Contact 优化 - detail页面优化](http://vivianking6855.github.io/2018/01/04/Contact-Optimization-3/)
+
 # Reference
 
 > 《Android开发艺术探索》

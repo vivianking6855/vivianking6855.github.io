@@ -108,14 +108,4 @@ app优化主要包含size优化，性能优化，重构等。
 
 # Reference
 
-[Google 发布 Android 性能优化典范](http://www.oschina.net/news/60157/android-performance-patterns?sid=07vbqo00ovnh233e0ain6ue5a6)
-
-[性能优化（一）：方法概述](http://vivianking6855.github.io/2017/02/27/Android-optimization-1-method/)
-
-[性能优化（二）内存管理 & Memory Leak & OOM](http://vivianking6855.github.io/2017/02/27/Android-optimization-2-OOM/)
-
-[性能优化（三）Google典范之开篇](http://vivianking6855.github.io/2017/03/13/Android-optimization-3-Google-Publish/)
-
-[性能优化（四）Google典范之Render实践](http://vivianking6855.github.io/2017/03/14/Android-optimization-4-Google-Publish-Render/)
-
-[性能优化 - 工具](http://vivianking6855.github.io/2017/12/26/Android-optimization-Tool/)
+[性能优化 - 目录](http://vivianking6855.github.io/2018/01/24/Android-optimization-index/)

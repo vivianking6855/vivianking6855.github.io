@@ -306,3 +306,8 @@ CPU优化前后效果图对比（后者为优化后)
 3. detai页面多笔item加载场景
 4. call log多笔item加载场景
 5. 联系人详情增加多笔item和call log场景
+
+
+# Reference
+
+[性能优化 - 目录](http://vivianking6855.github.io/2018/01/24/Android-optimization-index/)
