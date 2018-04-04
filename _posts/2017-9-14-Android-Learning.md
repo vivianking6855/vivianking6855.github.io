@@ -24,7 +24,7 @@ comments: true
 
 ## [设计模式](http://blog.csdn.net/vivian_king/article/category/7493755)
  
-## [精彩third party library](http://vivianking6855.github.io/2017/09/25/Android-ThirdParty-Library/)
+## [Android库小结](http://vivianking6855.github.io/2017/09/25/Android-ThirdParty-Library/)
 
 # 第二部分
 
