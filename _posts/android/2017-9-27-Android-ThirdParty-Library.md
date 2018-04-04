@@ -77,6 +77,24 @@ lefttrees: true
 - [retrolambda](http://vivianking6855.github.io/2017/04/10/Android-Lib-retrolambda/) Android Studio 3.0 用不到了，默认就支持了
 - [Checkstyle](http://checkstyle.sourceforge.net/) 代码style检查工具
 
+# UI
+
+## ViewPager
+
+ViewPagerIndicator：一款基于ViewPager的页面指示器开源框架
+
+- 官网地址 http://viewpagerindicator.com/
+- github  https://github.com/JakeWharton/ViewPagerIndicator
+- 作者：JakeWharton 
+
+## 刷新
+
+Android-PullToRefresh：一款为普通视图提供刷新UI的视图框架
+
+- 8.2K的star数量使它位居刷新类UI框架榜首，强大的兼容能力，该框架支持ListView，GrdiView，WebViewScrollView，ViewPager等众多View增加刷新的能力，如果你有增加上拉加载，下拉加载的需求，你应该考虑它了！
+- github https://github.com/chrisbanes/Android-PullToRefresh
+- 作者：Chris Banes
+- 使用：github fork源码，集成到项目中
 
 # 参考资料
 
