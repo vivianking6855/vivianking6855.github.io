@@ -78,7 +78,6 @@ lefttrees: true
 - [Checkstyle](http://checkstyle.sourceforge.net/) 代码style检查工具
 
 
-
 # 参考资料
 
 开源库

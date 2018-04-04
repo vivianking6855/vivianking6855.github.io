@@ -26,6 +26,24 @@ comments: true
  
 ## [Android库小结](http://vivianking6855.github.io/2017/09/25/Android-ThirdParty-Library/)
 
+## 开源学习资料
+
+开源库
+
+- [Anroid开源库 TimLiu](https://github.com/Tim9Liu9/TimLiu-Android)
+- [2017年Android百大框架排行榜](https://www.cnblogs.com/jincheng-yangchaofan/articles/7018780.html)
+- [Android库收集](https://github.com/wasabeef/awesome-android-libraries)
+- [Android 开发人员不得不收集的代码](https://github.com/Blankj/AndroidUtilCode)
+
+学习资料
+
+- [LearningNotes](https://github.com/francistao/LearningNotes)
+- [Android 学习资料收集](https://github.com/Freelander/Android_Data)  
+- [Android官网博客 Android Developers Blog](http://android-developers.blogspot.com/) 
+- [android学习之路 ](http://stormzhang.com/android/2014/07/07/learn-android-from-rookie/)
+- [开源项目源码解析地址](http://p.codekk.com)
+- [Android 开源项目分类汇总](https://github.com/Trinea/android-open-project)
+
 # 第二部分
 
 - Java基础
