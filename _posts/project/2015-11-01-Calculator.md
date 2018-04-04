@@ -17,20 +17,20 @@ comments: true
 
 1. 功能描述
 
-Android Calculator。 Unbundle to All devices。
-
-Calculator app + Floating Widget + Widget
-
-- 科学计算器
-- 单位换算
-- 汇率换算
-- 主题
+    Android Calculator。 Unbundle to All devices。
+    
+    Calculator app + Floating Widget + Widget
+    
+    - 科学计算器
+    - 单位换算
+    - 汇率换算
+    - 主题
 
 2. Members
 
-- venjee
-- abbi
-- vivian
+    - venjee
+    - abbi
+    - vivian
 
 3. 开发时间：2015.9.10 ~ 2017.6.9 （开发结束）
 

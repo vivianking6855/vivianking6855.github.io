@@ -18,20 +18,20 @@ comments: true
 
 1. 功能描述
 
-[墨刀地址](https://modao.cc/app/PRizIEov59JZ6Fs6NhISvQKcW3iFH0O?inapp=1)
-
-- 登录
-- 显示不同板块数据
-- 聊天
-- 发帖
-- 搜索
+    [墨刀地址](https://modao.cc/app/PRizIEov59JZ6Fs6NhISvQKcW3iFH0O?inapp=1)
+    
+    - 登录
+    - 显示不同板块数据
+    - 聊天
+    - 发帖
+    - 搜索
 
 2. Members
 
-- vivian
-- jack
-- jame
-- chris
+    - vivian
+    - jack
+    - jame
+    - chris
 
 3. 开发时间：2017.2.10 ~ 至今
 

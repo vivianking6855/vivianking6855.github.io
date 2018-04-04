@@ -16,21 +16,21 @@ comments: true
 
 1. 功能描述
 
-AudioWizard 音频向导。 
-
-- 三种scenario可支持多种GEQ音效：Norma,Pop,Rock等
-    - BT
-    - HP
-    - Speaker
-- 耳机450+可选
-- 听力补偿
-- DTS音场效果
+    AudioWizard 音频向导。 
+    
+    - 三种scenario可支持多种GEQ音效：Norma,Pop,Rock等
+        - BT
+        - HP
+        - Speaker
+    - 耳机450+可选
+    - 听力补偿
+    - DTS音场效果
 
 2. Members
 
-- venjee
-- Raygee
-- Vivian
+    - venjee
+    - Raygee
+    - Vivian
 
 3. 开发时间：2015.10.20 ~ 2017.1 (开发结束）
 

@@ -25,8 +25,8 @@ comments: true
 
 2. Members
 
-- cissy
-- vivian
+    - cissy
+    - vivian
 
 3. 开发时间：2015.11.10 ~ 2016.1.28 （项目结束）
 

@@ -17,20 +17,20 @@ comments: true
 
 1. 功能描述
 
-AudioWizard 音频向导。 支援很多音频特效：
-
-- Music模式
-- 影院模式
-- 游戏模式
-- 演讲模式
-- 智能模式
-- 户外
+    AudioWizard 音频向导。 支援很多音频特效：
+    
+    - Music模式
+    - 影院模式
+    - 游戏模式
+    - 演讲模式
+    - 智能模式
+    - 户外
 
 2. Members
 
-- venjee
-- Raygee
-- Vivian
+    - venjee
+    - Raygee
+    - Vivian
 
 3. 开发时间：2015.8.10 ~ 2016.10.28（开发结束）
 

@@ -28,6 +28,7 @@ Android可以使用AS的[CheckStyle来检查代码](http://gudong.name/2016/04/0
 - [Google's Java Style Checkstyle Coverage](http://checkstyle.sourceforge.net/google_style.html#Googles_Java_Style_Checkstyle_Coverage)
 - [picasso/checkstyle.xml](https://github.com/square/picasso/blob/master/checkstyle.xml)
 - [华为CheckStyle](https://gist.github.com/ownwell/c32878440216f1866842)
+- 阿里巴巴代码规范
 
 ## 2 前端代码规范
 
