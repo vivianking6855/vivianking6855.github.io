@@ -33,6 +33,14 @@ lefttrees: true
 7. 积累自己的轮子
 
 
+选择库要考虑：
+
+1. 库是否稳定，例如作者，更新频率等
+2. 库的大小
+3. 库的功能是否符合要求（例如图片几级缓存等）
+4. 库的架构设计是否合理（例如线程池开销）
+5. 竞品优缺点对比
+
 # 图像
 
 - Picasso: [Square公司](http://square.github.io/)
@@ -42,9 +50,16 @@ lefttrees: true
 
 看具体需求选择库
 
-[Picasso，Glide，Fresco比较](https://www.cnblogs.com/android-blogs/p/5786608.html)
+[Android 三大图片加载框架的对比——ImageLoader,Picasso,Glide](https://www.cnblogs.com/fightingchendan/p/5972985.html)
 
 [Android图片加载库的选择与如何封装？ ](https://www.zhihu.com/question/40028112)
+
+Picasso
+
+- [Picasso 修改缓存路径](https://blog.csdn.net/bc_2014621/article/details/54946366)
+- [Android Picasso归纳以及谜一般的缓存](https://blog.csdn.net/myfwjy/article/details/52451238)
+- [图片处理自带缓存的Picasso](https://blog.csdn.net/sinat_29874521/article/details/52471374)
+- [源码分析: 图片加载框架Picasso源码分析](https://www.cnblogs.com/wytiger/p/6254121.html)
 
 # 数据
 

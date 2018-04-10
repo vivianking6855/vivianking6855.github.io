@@ -54,4 +54,8 @@ comments: true
 
 [Android应用程序启动过程源代码分析](http://blog.csdn.net/luoshengyang/article/details/6689748 )
 
+# Reference
+
+[codekk源码解析](http://a.codekk.com/)
+
 
