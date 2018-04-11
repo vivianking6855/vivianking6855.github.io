@@ -16,6 +16,13 @@ lefttrees: true
 
 # 前言
 
+渲染操作通常依赖于两个核心组件：CPU与GPU。
+
+- CPU负责包括Measure，Layout，Record，Execute的计算操作
+- GPU负责Rasterization(栅格化)操作。
+
+CPU通常存在的问题的原因是存在非必需的视图组件，它不仅仅会带来重复的计算操作，而且还会占用额外的GPU资源。
+
 优化的思想：尽量减少布局文件的层级和降低Overdraw来减轻CPU和GPU负载。
 
 再贴下CPU和GPU的工作，潜在的问题，检测的工具和解决方案图：

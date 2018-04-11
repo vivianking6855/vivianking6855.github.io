@@ -49,46 +49,35 @@ app优化主要包含size优化，性能优化，重构等。
 
 3. 响应时间（Response Time） 
 
-相应标准步骤和标准如下：
-
-测试工具：高速摄像机
-
-测试条件：
-
-- DUT存在500筆連絡人, 每個連絡人皆有頭像 (使用test file: 500(photo).vcf)
-
-测试项目：
-
-- Contacts Preview Window launch  time. 联系人预览时间测试。 要求0.6s内
-    - 1. Kill Contacts process (無需重開機)
-    - 2. 點擊Contacts, 當手指離開螢幕時即開始計時, 當Contacts的"底圖"完成顯示即停止計時（不包含底图的文字和icon）
-- Launch time of Contacts (1st) 联系人页面加载时间。 要求2s内
-    - 1. Kill Phone & Contacts process (無需重開機)
-    - 2. 開啟Contacts, 當手指離開螢幕時即開始計時
-    - 3. 當連絡人畫面完全顯示後,停止計時
-- Frame rate of scrolling contacts. 联系人滑动卡顿测试。 要求50帧内
-    - 1. 開啟連絡人app
-    - 2. 滑動聯絡人以載入聯絡人頭像
-    - 3. 使用手指向上滑動, 計算畫面捲動的frame rate
-- Frame rate of scrolling call log. 联系人滑动卡顿测试。 要求50帧内
-    - 1. 開啟Phone app > 將撥號鍵收起來 (秀出整頁的call log)
-    - 2. 滑動call log以載入聯絡人頭像
-    - 3. 使用手指向上滑動, 計算畫面捲動的frame rate
-- Response time of backing to Home。 联系人退出时间测试。要求0.8s内
-    - 1.新增10筆聯絡人資料(均需有頭像、姓名、電話)
-    - 2.切換到Favorite tab，選擇step1建立的10筆資料設為Favorite
-    - 3.在Favorite頁面點擊Home鍵, 當手指離開Home鍵即開始計時, 至回到Home畫面
-
-优化点：
-
-- 在主线程中操作UI
-    - 界面卡顿（Block & ANR） 
-    - 数据缓存刷新 
-- 网络请求和网络缓存
-    - 异步请求网络数据 
-    - 预处理服务器返回数据 
-- 异步进行数据存储操作 
-- Timeout超时重试 
+    相应标准步骤和标准如下：
+    
+    测试工具：高速摄像机
+    
+    测试条件：
+    
+    - DUT存在500筆連絡人, 每個連絡人皆有頭像 (使用test file: 500(photo).vcf)
+    
+    测试项目：
+    
+    - Contacts Preview Window launch  time. 联系人预览时间测试。 要求0.6s内
+        - 1. Kill Contacts process (無需重開機)
+        - 2. 點擊Contacts, 當手指離開螢幕時即開始計時, 當Contacts的"底圖"完成顯示即停止計時（不包含底图的文字和icon）
+    - Launch time of Contacts (1st) 联系人页面加载时间。 要求2s内
+        - 1. Kill Phone & Contacts process (無需重開機)
+        - 2. 開啟Contacts, 當手指離開螢幕時即開始計時
+        - 3. 當連絡人畫面完全顯示後,停止計時
+    - Frame rate of scrolling contacts. 联系人滑动卡顿测试。 要求50帧内
+        - 1. 開啟連絡人app
+        - 2. 滑動聯絡人以載入聯絡人頭像
+        - 3. 使用手指向上滑動, 計算畫面捲動的frame rate
+    - Frame rate of scrolling call log. 联系人滑动卡顿测试。 要求50帧内
+        - 1. 開啟Phone app > 將撥號鍵收起來 (秀出整頁的call log)
+        - 2. 滑動call log以載入聯絡人頭像
+        - 3. 使用手指向上滑動, 計算畫面捲動的frame rate
+    - Response time of backing to Home。 联系人退出时间测试。要求0.8s内
+        - 1.新增10筆聯絡人資料(均需有頭像、姓名、電話)
+        - 2.切換到Favorite tab，選擇step1建立的10筆資料設為Favorite
+        - 3.在Favorite頁面點擊Home鍵, 當手指離開Home鍵即開始計時, 至回到Home畫面
 
 3. [重构](http://vivianking6855.github.io/2017/03/30/Android-Design-Refactoring/)，在现有的框架上适当重构。
 

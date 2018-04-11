@@ -45,7 +45,7 @@ Android app优化主要包含size优化，性能优化，重构等。
 
 ![](https://i.imgur.com/oYPZtTe.jpg)
 
-最终的目标做到合理优化，数据的量化。
+最终的目标做到合理优化，数据的量化。 更重要是如何建立合理的框架避免发生问题，或者是能及时的发现问题。
 
 文章的最后还说明了发布和测试需要注意的一些事项
 
@@ -73,7 +73,7 @@ Android app优化主要包含size优化，性能优化，重构等。
 
 # 1. size优化
 
-size优化可以参看之前的[Contact size优化篇](http://vivianking6855.github.io/2017/12/27/Contact-Optimization-2/)
+参看[Contact size优化篇](http://vivianking6855.github.io/2017/12/27/Contact-Optimization-2/)
 
 备注：这里没有设计so的优化，待以后有实战了再更新
 
@@ -81,22 +81,23 @@ size优化可以参看之前的[Contact size优化篇](http://vivianking6855.git
 
 ## 2.1 lanch time
 
-size优化可以参看[性能优化（八）启动时间优化](http://vivianking6855.github.io/2018/04/11/Android-optimization-8-Launch-Time/)
+参看[性能优化（八）启动时间优化](http://vivianking6855.github.io/2018/04/11/Android-optimization-8-Launch-Time/)
 
 ## 2.2 渲染
 
-再贴下CPU和GPU的工作，潜在的问题，检测的工具和解决方案图：
+渲染操作通常依赖于两个核心组件：CPU与GPU。CPU和GPU的工作，潜在的问题，检测的工具和解决方案图：
  
 ![](http://i.imgur.com/SiZVlJ9.png)
 
+参看
 
-3. 内存
-4. 耗电
-5. 卡顿
-6. 网络
-7. 数据库优化
-8. 进程存活率
-内存监控
+[性能优化（三）Google典范之开篇](http://vivianking6855.github.io/2017/03/13/Android-optimization-3-Google-Publish/)
+
+[性能优化（四）Google典范之Render实践](http://vivianking6855.github.io/2017/03/14/Android-optimization-4-Google-Publish-Render/)
+
+[Contact 优化 - detail页面优化](http://vivianking6855.github.io/2018/01/04/Contact-Optimization-3/)
+
+## 2.3 内存
 
 ## 明显的内存问题
 
@@ -107,191 +108,31 @@ size优化可以参看[性能优化（八）启动时间优化](http://viviankin
 3. 内存抖动
 4. GC引起的性能问题（例如循环单元里面执行了创建对象操作，短时间内发生大量的内存上涨和降低事件）
 
+我们可以用一些工具和技术监测分析以及代码，逻辑优化来解决
 
+参看下面三篇
 
-6. 是可以用一些工具和技术来监测
+[性能优化：要点](http://vivianking6855.github.io/2018/01/24/Android-optimization-critical/)
 
-- LeakCanary，腾讯的LeakInspector天网等工具
-- 图片引用大图告警（能够自动检测出业务图片不合理使用：比如解码的图片尺寸大于显示尺寸2倍以上等问题）
-- 内存触顶监控（能够检测出内存不足时占用内存较高的业务场景，并定位到相应的页面）
+[性能优化（五）内存优化](http://vivianking6855.github.io/2018/03/05/Android-optimization-5-Memory/)
+
+[Contact 优化 - detail页面优化](http://vivianking6855.github.io/2018/01/04/Contact-Optimization-3/)
 
 ## 更深入的内存分析
 
 比如偶发或长期操作才可能出现的不明显内存问题，就需要更深入的内存分析。这个需要搭配服务器端的细致监控app平均内存，平均OOM率，以及版本间增幅等相关的深入分析，就需要搭配服务器端。
 
-更深入的内存分析
+需要结合内存监控和缓存监控来分析和解决这部分内存和OOM
 
-这次我们主要从监控和清理两个角度出发，系统化的进一步优化手Q内存：  
+## 2.4. 耗电和网路
 
-1.统一缓存监控 开发实现全面的内存缓存监控系统，能够更细致的监控手Q内存缓存使用情况，及时发现轻度不合理问题，推进优化。
+参看[性能优化（七）电量和网络优化](http://vivianking6855.github.io/2018/04/11/Android-optimization-7-Power/)
 
-  
-2.内存清理 在监控的基础上，开发实现自动清理机制。一方面统一调度手Q各业务主动清理内存，另一方面，通过深入的技术研究，实现系统内存清理技术。
+## 2.5 卡顿
 
-通过监控和清理相互配合，我们最终实现了优化手Ｑ整体内存，降低OOM率的效果。以下是详细方案。
+参看[性能优化（六）卡顿监测](http://vivianking6855.github.io/2018/03/05/Android-optimization-6-Block/)
 
-
-我们并不能将内存优化中用到的所有技巧都一一说明，而且随着Android版本的更替，可能很多方法都会变的过时。我在想更重要的是我们能持续的发现问题，精细化的监控，而不是一直处于”哪个有坑填哪里的”的窘况。在这里给大家的建议有：
-
-率先考虑采用已有的工具；中国人喜欢重复造轮子，我们更推荐花精力去优化已有工具，为广大码农做贡献。生活已不易，码农何为为难码农！
-
-不拘泥于点，更重要在于如何建立合理的框架避免发生问题，或者是能及时的发现问题。
-
-当前微信内存监控体系中也存在一些不尽人意的地方，在未来的日子里也同样需要努力去优化。 
-
-# 优化实施方案
-
-这里的实施方案主要针对明显内存问题
-
-# 如何避免
-
-- 合理的框架
-- 例如独立电量管理框架，自动释放内存
-
-
-
-腾讯的Bugly平台监测系统
-
-
-
-bugly是腾讯出品的一款质量跟踪平台，主要面向开发者，支持Android、IOS、Unity、Cocos多个平台，不知道大家是否知道它的竞品有哪些？他们之间的优劣是什么？
-
-Contact 优化 - 开篇
- 
-Posted on Dec 26, 2017 By Vivian Sun
-
-
-在性能测试中存在两个概念：
-(1). 响应时间
-指从用户操作开始到系统给用户以正确反馈的时间。一般包括逻辑处理时间 + 网络传输时间 + 展现时间。对于非网络类应用不包括网络传输时间。
-
-展现时间即网页或 App 界面渲染时间。
-
- 
-
-响应时间是用户对性能最直接的感受。
-
- 
-
-(2). TPS(Transaction Per Second)
-
-TPS为每秒处理的事务数，是系统吞吐量的指标，在搜索系统中也用QPS(Query Per Second)衡量。TPS一般与响应时间反相关。
-
- 
-
-通常所说的性能问题就是指响应时间过长、系统吞吐量过低。
-
- 
-
-对后台开发来说，也常将高并发下内存泄漏归为性能问题。
-对移动开发来说，性能问题还包括电量、内存使用这两类较特殊情况。
-
-
-简介
-
-app优化主要包含size优化，性能优化，重构等。
-
-其中性能优化又是特别重要的一环。性能主要关注：
-•内存
-•CPU
-•耗电
-•卡顿
-•渲染
-•进程存活率等
-
-性能优化需要注意：
-1.不要过早的做性能优化，app先求能用再求好用。在需求都还没完成的时候，花大量时间在优化上是本末倒置的
-2.优化要用实际数据说话，建议借助测试工具进行检测。检测工具参看这里
-
-总之，要合理优化，数据量化。
-
-Contact优化
-
-我们针对联系人做的优化包括：
-1.size优化： 移除unused resources，降低app的size
-
-2.布局，绘制，响应速度等性能优化
-◦联络人详情优化: 主要是布局优化，绘制优化，响应速度优化，内存优化
-◦主页面优化: 主要是布局优化，绘制优化，响应速度优化，内存优化
-◦call log滑动: 主要是布局优化，绘制优化，响应速度优化，内存优化
-◦smart search: 内存和响应速度优化
-
-3.响应时间（Response Time）
-
-相应标准步骤和标准如下：
-
-测试工具：高速摄像机
-
-测试条件：
-•DUT存在500筆連絡人, 每個連絡人皆有頭像 (使用test file: 500(photo).vcf)
-
-测试项目：
-•Contacts Preview Window launch time. 联系人预览时间测试。 要求0.6s内 ◦ 1.Kill Contacts process (無需重開機)
-
-◦ 1.點擊Contacts, 當手指離開螢幕時即開始計時, 當Contacts的”底圖”完成顯示即停止計時（不包含底图的文字和icon）
-
-
-•Launch time of Contacts (1st) 联系人页面加载时间。 要求2s内 ◦ 1.Kill Phone & Contacts process (無需重開機)
-
-◦ 1.開啟Contacts, 當手指離開螢幕時即開始計時
-
-◦ 1.當連絡人畫面完全顯示後,停止計時
-
-
-•Frame rate of scrolling contacts. 联系人滑动卡顿测试。 要求50帧内 ◦ 1.開啟連絡人app
-
-◦ 1.滑動聯絡人以載入聯絡人頭像
-
-◦ 1.使用手指向上滑動, 計算畫面捲動的frame rate
-
-
-•Frame rate of scrolling call log. 联系人滑动卡顿测试。 要求50帧内 ◦ 1.開啟Phone app > 將撥號鍵收起來 (秀出整頁的call log)
-
-◦ 1.滑動call log以載入聯絡人頭像
-
-◦ 1.使用手指向上滑動, 計算畫面捲動的frame rate
-
-
-•Response time of backing to Home。 联系人退出时间测试。要求0.8s内 ◦1.新增10筆聯絡人資料(均需有頭像、姓名、電話)
-◦2.切換到Favorite tab，選擇step1建立的10筆資料設為Favorite
-◦3.在Favorite頁面點擊Home鍵, 當手指離開Home鍵即開始計時, 至回到Home畫面
-
-
-优化点：
-•在主线程中操作UI ◦界面卡顿（Block & ANR）
-◦数据缓存刷新
-
-•网络请求和网络缓存 ◦异步请求网络数据
-◦预处理服务器返回数据
-
-•异步进行数据存储操作
-•Timeout超时重试
-
-1.重构，在现有的框架上适当重构。
-
-
-2.其他
-
-◦zipAlignEnabled: 对应用程序中的资源作对齐操作
-
-使得在运行时Android与应用程序间的交互更加有效率。这种方式能够让应用程序和整个系统运行得更快
-
-
-
-  buildTypes {
-      release {
-          shrinkResources true
-          minifyEnabled true
-          zipAlignEnabled true
-          proguardFiles 'proguard.flags'
-      }
-  }
-  
-# 电量和网络优化
-
-可以参看：[性能优化（七）电量和网络优化](http://vivianking6855.github.io/2018/04/11/Android-optimization-7-Power/)
-
-# 数据库优化
+## 2.6 数据库优化
 
 笔者的项目暂不需要，待以后实作会补充上来。
 
@@ -299,18 +140,31 @@ Contact优化
 
 主要是索引优化，使用事务，sqlite优化，异步单线程等
 
-# 8. 进程存活率
+## 2.7 进程存活率
 
+参看这里[Android进程保活招式大全](https://blog.csdn.net/tencent_bugly/article/details/52192423)
 
+# 如何避免性能问题
 
-## 压力测试
+在优化的同时，要知道更重要是如何建立合理的框架避免发生问题，或者是能及时的发现问题
+
+- 合理的框架，避免资源没有释放问题。例如我们项目中使用的AppUniform, MVP的P会在destroy时自动释放
+- 例如独立电量管理框架，自动释放内存
+
+另外程序的Code Style要尽量遵循[性能优化：要点](http://vivianking6855.github.io/2018/01/24/Android-optimization-critical/)
+
+# 压力测试
+
+- monkey > 18小时，生成报表：crash，ANR，内存图标等
+- 建议使用Espresso，UiAutomator，AndroidJunitRunner，JUnit4等创建测试用例
 
 # 方案发布
 
 正式方案发布需要特别注意下面的几项：
 
-1. 分布式发布
-2. 
+1. 严密的质量测试和压力测试
+2. 尽量阶梯式发布 0.02， 0.5
+3. 实时监测发布后的状态
 
 # 小结
 

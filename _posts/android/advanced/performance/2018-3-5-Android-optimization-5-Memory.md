@@ -34,6 +34,13 @@ lefttrees: true
 
 如果条件允许，建议加入bug管理平台。出现问题，及时回传到服务器（例如腾讯的Bugly平台等）
 
+# 工具
+
+- LeakCanary，腾讯的LeakInspector天网等工具
+- 图片引用大图告警（能够自动检测出业务图片不合理使用：比如解码的图片尺寸大于显示尺寸2倍以上等问题）
+- 内存触顶监控（能够检测出内存不足时占用内存较高的业务场景，并定位到相应的页面）
+- Android Profile
+
 # 内存分析
 
 ## 1. 代码逻辑检查
@@ -90,6 +97,8 @@ lefttrees: true
 
 [更多性能优化相关：性能优化目录](http://vivianking6855.github.io/2018/01/24/Android-optimization-index/)
 
+[Android性能优化典范（三](https://www.csdn.net/article/2015-08-12/2825447-android-performance-patterns-season-3)
+
 [Android优化文章精选](https://www.jianshu.com/p/525e9d555cf3)
 
 [Android 内存优化总结&实践](http://mp.weixin.qq.com/s/uySEk1cwxRENneFsoReFyw)
@@ -101,6 +110,10 @@ lefttrees: true
 [神奇的内存占用大户FinalizerReference](http://www.sohu.com/a/169062705_99921943)
 
 [Android 性能优化之内存泄漏检测以及内存优化（上）](http://blog.csdn.net/self_study/article/details/61919483) 
+
+[Android Training - 管理应用的内存](http://hukai.me/android-training-managing_your_app_memory/)
+
+[Android自动dump hprof文件的功能实现](https://blog.csdn.net/cxq234843654/article/details/51376050)
 
 
 
