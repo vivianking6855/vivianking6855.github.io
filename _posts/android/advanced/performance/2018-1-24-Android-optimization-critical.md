@@ -156,12 +156,14 @@ lefttrees: true
 - HashMap、WeakHashMap选择，WeakHashMap中元素可在适当时候被系统垃圾回收器自动回收，所以适合在内存紧张型中使用。
 - Collections.synchronizedMap和ConcurrentHashMap的选择，ConcurrentHashMap为细分锁，锁粒度更小，并发性能更优。Collections.synchronizedMap为对象锁，自己添加函数进行锁控制更方便
 - 使用特定Map容器容器，取代HashMap来避免autoboxing带来的效率问题.(Don't use HashMap since it's memory inefficient. Putting a single entry into a HashMap requires 32 bytes.）
-        ![](https://i.imgur.com/FoZtb5Q.jpg)
+      
+   ![](https://i.imgur.com/FoZtb5Q.jpg)
+        
 - 特定Sparse容器（SparseArray、SparseBooleanArray、SparseIntArray） 
 - 在满足：对象个数的数量级最好是千以内和数据组织形式包含Map结构，考虑使用ArrayMap
 
 
-# 缓存优化 
+# [缓存优化 ](http://vivianking6855.github.io/2018/04/12/Android-cache/)
 
 
 # [算法](https://blog.csdn.net/vivian_king/article/details/79624965)优化
