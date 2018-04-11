@@ -29,7 +29,7 @@ Android app优化主要包含size优化，性能优化，重构等。
 
 性能主要关注：
 
-1. lanch time
+1. launch time
 2. 渲染
 3. 内存
 4. 耗电和网络
@@ -79,9 +79,13 @@ Android app优化主要包含size优化，性能优化，重构等。
 
 # 2. 性能优化
 
-## 2.1 lanch time
+## 2.1 launch time
 
-参看[性能优化（八）启动时间优化](http://vivianking6855.github.io/2018/04/11/Android-optimization-8-Launch-Time/)
+参看
+
+[性能优化（八）启动时间优化](http://vivianking6855.github.io/2018/04/11/Android-optimization-8-Launch-Time/)
+
+[Contact 优化 - detail页面优化](http://vivianking6855.github.io/2018/01/04/Contact-Optimization-3/)
 
 ## 2.2 渲染
 
@@ -99,7 +103,7 @@ Android app优化主要包含size优化，性能优化，重构等。
 
 ## 2.3 内存
 
-## 明显的内存问题
+### 明显的内存问题
 
 比较明显的内存问题，例如
 
@@ -118,11 +122,13 @@ Android app优化主要包含size优化，性能优化，重构等。
 
 [Contact 优化 - detail页面优化](http://vivianking6855.github.io/2018/01/04/Contact-Optimization-3/)
 
-## 更深入的内存分析
+### 更深入的内存分析
 
 比如偶发或长期操作才可能出现的不明显内存问题，就需要更深入的内存分析。这个需要搭配服务器端的细致监控app平均内存，平均OOM率，以及版本间增幅等相关的深入分析，就需要搭配服务器端。
 
-需要结合内存监控和缓存监控来分析和解决这部分内存和OOM
+需要结合内存监控和缓存监控来分析和解决这部分内存和OOM.
+
+这部分公司现在条件限制，待有实战在更新。
 
 ## 2.4. 耗电和网路
 
@@ -155,7 +161,7 @@ Android app优化主要包含size优化，性能优化，重构等。
 
 # 压力测试
 
-- monkey > 18小时，生成报表：crash，ANR，内存图标等
+- monkey > 18小时，生成报表：crash，ANR，内存图表等
 - 建议使用Espresso，UiAutomator，AndroidJunitRunner，JUnit4等创建测试用例
 
 # 方案发布
