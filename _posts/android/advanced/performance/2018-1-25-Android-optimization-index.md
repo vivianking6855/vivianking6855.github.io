@@ -30,9 +30,15 @@ lefttrees: true
 
 [性能优化（六）卡顿监测](http://vivianking6855.github.io/2018/03/05/Android-optimization-6-Block/)
 
+[性能优化（七）电量和网络优化](http://vivianking6855.github.io/2018/04/11/Android-optimization-7-Power/)
+
+[性能优化（八）启动时间优化](http://vivianking6855.github.io/2018/04/11/Android-optimization-8-Launch-Time/)
+
 [性能优化：要点](http://vivianking6855.github.io/2018/01/24/Android-optimization-critical/)
 
 [性能优化：工具](http://vivianking6855.github.io/2017/12/26/Android-optimization-Tool/)
+
+[性能优化：移动应用优化解决方案](http://vivianking6855.github.io/2018/04/11/Android-optimization-resolutio/)
 
 
 性能优化实践
@@ -43,15 +49,19 @@ lefttrees: true
 
 # Reference
 
-> 《Android开发艺术探索》
+> [Google Android Performance Patterns YouTube ](https://www.youtube.com/playlist?list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE)
+
+> [Android性能优化典范](http://hukai.me/android-performance-patterns-season-6/)
+
+> [Android内存优化杂谈](https://blog.csdn.net/chenkai19920410/article/details/50341127)
+
+> [Google《Android性能优化》学习笔记](https://www.csdn.net/article/2015-04-15/2824477-android-performance/4)
 
 > [Android内存优化之OOM](http://www.csdn.net/article/2015-09-18/2825737/5)
 
 > [Google 发布 Android 性能优化典范](http://www.oschina.net/news/60157/android-performance-patterns?sid=07vbqo00ovnh233e0ain6ue5a6)
 
 > [优达学城 Android 系统性能 Video](https://cn.udacity.com/course/android-performance--ud825)
-
-> [Google Android Performance Patterns YouTube ](https://www.youtube.com/playlist?list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE)
 
 > [性能优化系列总篇](http://www.trinea.cn/android/database-performance/)
 

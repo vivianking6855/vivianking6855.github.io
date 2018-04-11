@@ -55,7 +55,7 @@ lefttrees: true
 
 建议app做一些压力测试（比如人工压力测试，Monkey压力测试等）
 
-## 页面退出
+## 4. 页面退出
 
 页面完全退回后，原则上需要释放到资源
 
@@ -69,7 +69,18 @@ lefttrees: true
 
 # HeapDump分析
 
-看图中allocate的memory是否都是现在page要用到的。检查每一项的合理性
+看图中allocate的memory是否都是现在page要用到的。检查每一项的合理性。
+
+使用Android Profile前，应对应用代码施加压力并尝试强制内存泄漏。在应用中引发内存泄漏的一种方式是，先让其运行一段时间，然后再检查堆。 泄漏在堆中可能逐渐汇聚到分配顶部。
+
+不过，泄漏越小，您越需要运行更长时间的应用才能看到泄漏。还可以通过以下方式之一触发内存泄漏：
+
+- 将设备从纵向旋转为横向，然后在不同的 Activity 状态下反复操作多次。 
+    - 旋转设备经常会导致应用泄漏 Activity、Context 或 View 对象，因为系统会重新创建 Activity
+    - 如果您的应用在其他地方保持对这些对象之一的引用，系统将无法对其进行垃圾回收。
+- 处于不同的 Activity 状态时，在您的应用与另一个应用之间切换（导航到主屏幕，然后返回到您的应用）。
+
+提示：还可以使用 [monkeyrunner](https://developer.android.com/tools/help/monkeyrunner_concepts.html) 测试框架执行上述步骤。 
 
 ![](https://i.imgur.com/cCph2XF.jpg)
 

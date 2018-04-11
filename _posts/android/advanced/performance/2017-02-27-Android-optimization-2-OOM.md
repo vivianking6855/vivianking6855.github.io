@@ -279,8 +279,7 @@ Memory Leak 和 OOM是内存优化当中比较突出的问题，尽量减少Leak
 
 # Reference
 
-> [Android最佳性能实践(一)——合理管理内存 ](http://blog.csdn.net/guolin_blog/article/details/42238627)
-
+[Android最佳性能实践(一)——合理管理内存 ](http://blog.csdn.net/guolin_blog/article/details/42238627)
 
 [Android中导致内存泄漏的竟然是它----Dialog](http://mp.weixin.qq.com/s/sVbdugv-boumZ-oNk_92qg)
 

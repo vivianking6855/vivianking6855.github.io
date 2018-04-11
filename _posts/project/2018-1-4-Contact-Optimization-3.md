@@ -171,6 +171,8 @@ Activity launch time优化主要是检查OnCreate中的耗时逻辑，将耗时�
 
 现在的时间差约：581ms
 
+其他优化建议请参看[性能优化（八）启动时间优化](http://vivianking6855.github.io/2018/04/11/Android-optimization-8-Launch-Time/)
+
 ### 实践
 
 从加载逻辑来分析，看哪些可以优化
