@@ -28,7 +28,8 @@ comments: true
 
 ## [组件化](https://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&mid=2247486803&idx=1&sn=884fed93567022e3ac9731df6fc4660a&scene=19#wechat_redirect)：偏向于机械零件的感觉
 
-- app包含很多组件，比如分享，二维码等
+- 单一的功能组件，例如地图组件、支付组件、路由组件（Router）
+- 负责的组件：有独立的业务逻辑，也可以成为模块
 - 每个组件原则上可以独立工作
 
 需要解决组件间的通讯，组件的单独调试，集成调试等问题
@@ -37,10 +38,21 @@ comments: true
 
 ![](https://i.imgur.com/Cji2XGh.jpg)
 
+-- 
+
 # 小结
 
 因目前项目业务逻辑复杂度不高，仅在“utillib”，“appbase”，以及业务公用库，业务MVP架构方面有涉及。
 
 组件化除了接入一些三方组件：比如二维码识别，黄页，音效库组件等，自己还没有沉淀出好的组件。
 
-插件化也因为项目目前对时效性要求不高，目前尚未接入
+插件化也因为项目目前对时效性要求不高，目前尚未接入。
+
+待之后有实践之后再补充。
+
+# Reference
+
+[Android彻底组件化方案实践](https://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&mid=2247486803&idx=1&sn=884fed93567022e3ac9731df6fc4660a&scene=19#wechat_redirect)
+
+[Android 模块化探索和实践（1）：基本思路](https://www.jianshu.com/p/a2382dfb76ed)
+
