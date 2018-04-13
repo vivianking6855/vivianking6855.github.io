@@ -143,7 +143,16 @@ Android Framework里面一些重要的模块都插入了Label信息，例如
 
 ## 使用
 
-TODO
+两种使用方式：
+
+1. 命令行使用
+
+    TODO
+
+2. DDMS入口
+
+    ![](https://i.imgur.com/jaGiCe8.jpg)
+
 
 # 代码dump hrof
 
@@ -162,6 +171,19 @@ Android Profile可以直接监测Memory情况，不过如果需要将hrof上传�
             }
         });
 
+dump出的文件可以直接用AS打开分析，也可以用MAT工具分析，查看饼图
+
+AS打开效果
+
+![](https://i.imgur.com/lroLMnm.jpg)
+
+MAT查看效果
+
+![](https://i.imgur.com/fymctlA.jpg)
+
+
+[MAT下载地址](https://www.eclipse.org/mat/)
+
 # Github Sample [地址](https://github.com/vivianking6855/android-advanced/tree/master/CodeDebug)
 
 
@@ -171,6 +193,11 @@ Android Profile可以直接监测Memory情况，不过如果需要将hrof上传�
 
 [手把手教你使用Systrace](https://zhuanlan.zhihu.com/p/27331842)
 
-[Android Systrace的使用]( https://www.aliyun.com/jiaocheng/15246.html)
+[阿里云Android Systrace的使用]( https://www.aliyun.com/jiaocheng/15246.html)
 
-[Android自动dump hprof文件的功能实现](https://blog.csdn.net/cxq234843654/article/details/51376050)
+[android性能分析之Systrace的使用](https://blog.csdn.net/lamp_zy/article/details/53375521)
+
+[Android调试工具详解](http://www.360doc.com/content/17/0104/06/21698478_619908408.shtml)
+
+[Android 应用程序启动过程分析 (用SysTrace 跟踪分析)](https://blog.csdn.net/ccjhdopc/article/details/52893738)
+

@@ -95,9 +95,11 @@ lefttrees: true
 
     ![](https://i.imgur.com/cCph2XF.jpg)
 
-看图中allocate的memory是否必要，检查每一项的合理性。
-
-![](https://i.imgur.com/t96Zm6j.jpg)
+    看图中allocate的memory是否必要，检查每一项的合理性。
+    
+    建议按照package name排序，先检查自己package的数据。如需必要可以搭配MAT工具一起分析。
+    
+    ![](https://i.imgur.com/t96Zm6j.jpg)
 
 # Reference
 

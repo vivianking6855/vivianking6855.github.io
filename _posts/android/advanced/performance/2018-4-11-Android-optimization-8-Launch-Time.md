@@ -64,9 +64,7 @@ lefttrees: true
 
          ![](https://i.imgur.com/QvNrItB.jpg)
          
-    - Method Tracing 加入code debug，一般用在启动方法的监测
-    
-
+    - Method Tracing 加入code debug方法请参看
 
 2. Systrace：在onCreate方法里面添加trace.beginSection()与trace.endSection()方法来声明需要跟踪的起止位置，系统会帮忙统计中间经历过的函数调用耗时，并输出报表。
 
