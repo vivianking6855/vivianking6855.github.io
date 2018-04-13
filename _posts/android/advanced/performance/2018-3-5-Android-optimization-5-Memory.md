@@ -76,8 +76,6 @@ lefttrees: true
 
 # HeapDump分析
 
-看图中allocate的memory是否都是现在page要用到的。检查每一项的合理性。
-
 使用Android Profile前，应对应用代码施加压力并尝试强制内存泄漏。在应用中引发内存泄漏的一种方式是，先让其运行一段时间，然后再检查堆。 泄漏在堆中可能逐渐汇聚到分配顶部。
 
 不过，泄漏越小，您越需要运行更长时间的应用才能看到泄漏。还可以通过以下方式之一触发内存泄漏：
@@ -89,7 +87,15 @@ lefttrees: true
 
 提示：还可以使用 [monkeyrunner](https://developer.android.com/tools/help/monkeyrunner_concepts.html) 测试框架执行上述步骤。 
 
-![](https://i.imgur.com/cCph2XF.jpg)
+1. dump所有的memory
+
+    ![](https://i.imgur.com/0Jdm3Hy.jpg)
+
+2. dump一段时间的的memory
+
+    ![](https://i.imgur.com/cCph2XF.jpg)
+
+看图中allocate的memory是否必要，检查每一项的合理性。
 
 ![](https://i.imgur.com/t96Zm6j.jpg)
 

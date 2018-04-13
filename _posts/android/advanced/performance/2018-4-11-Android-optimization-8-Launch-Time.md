@@ -53,19 +53,26 @@ lefttrees: true
 
 # 分析工具
 
-启动耗时总时间监测的三种方法
+1. 统计launch time耗时，[分析工具](http://vivianking6855.github.io/2017/12/26/Android-optimization-Tool/)采用AS Profile和代码调试工具一起
 
-1. Android 4.4之后可以在logcat中查看TAG “ActivityManager” 信息可以看到Activity启动时间
+2. Method Tracing 和 Android Profile CPU：测量耗时细节
 
-    ![](https://i.imgur.com/ybHDZCW.jpg)
+    - Android Profile CPU，用在手动record方便的场景（不适合启动的时候，时机不好把控）
+        - 左侧是线程的名字，第1个一般是主线程。（建议自己创建的线程规范化命名，有利于问题分析）
+        - 红色标注分别是主线程的消息队列和消息分发处理
+        - 个人习惯先看Call Chart，再Top Down分析
 
-2. 参照从OnCreate到onWindowFocusChanged的时间差
-3. 页面完全加载可以参照从OnCreate到到IdleHandler的时间差
+         ![](https://i.imgur.com/QvNrItB.jpg)
+         
+    - Method Tracing 加入code debug，一般用在启动方法的监测
+    
 
-耗时细节时间分析
 
-1. Method Tracing：测量耗时细节
 2. Systrace：在onCreate方法里面添加trace.beginSection()与trace.endSection()方法来声明需要跟踪的起止位置，系统会帮忙统计中间经历过的函数调用耗时，并输出报表。
+
+
+有关调试工具详细使用请参看：[性能优化：工具](http://vivianking6855.github.io/2017/12/26/Android-optimization-Tool/)
+
 
 # 常见问题场景
 

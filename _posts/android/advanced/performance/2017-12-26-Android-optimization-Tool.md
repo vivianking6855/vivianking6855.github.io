@@ -127,6 +127,10 @@ AS 3.0名字改为[Android Profiler](https://developer.android.com/studio/previe
 
 ![](https://i.imgur.com/X1VQDwJ.jpg)
 
+
+# 五、 [代码调试工具](http://vivianking6855.github.io/2018/04/13/Android-optimization-Tool -Code/)
+
+
 # 开发者模式：不保留活动
 
 “不保留活动”：用户离开后即销毁每个活动
@@ -157,13 +161,9 @@ AS 3.0名字改为[Android Profiler](https://developer.android.com/studio/previe
 - 科大讯飞的iTest： 记录特定应用的性能消耗情况，包括cpu、内存、流量、电量等信息
 - Google的Battery Historian： 电量优化
 
-[更多性能优化相关：性能优化目录](http://vivianking6855.github.io/2018/01/24/Android-optimization-index/)
-
 # Reference
 
-<br>
-
-[更多性能优化相关：性能优化目录](http://vivianking6855.github.io/2018/01/24/Android-optimization-index/)
+[性能优化 - 目录](http://vivianking6855.github.io/2018/01/24/Android-optimization-index/)
 
 [Android开发者选项——Gpu呈现模式分析](https://www.cnblogs.com/ldq2016/p/6667381.html)
 
@@ -184,3 +184,5 @@ AS 3.0名字改为[Android Profiler](https://developer.android.com/studio/previe
 [Android Studio 3.0 工具新特性的使用](http://blog.csdn.net/qq_35070105/article/details/78457097?locationNum=8&fps=1)
 
 [Android 精彩三方库](http://vivianking6855.github.io/2017/09/27/Android-ThirdParty-Library/)
+
+[Android调试工具用法详细介绍](http://www.360doc.com/content/17/0104/06/21698478_619908408.shtml)
