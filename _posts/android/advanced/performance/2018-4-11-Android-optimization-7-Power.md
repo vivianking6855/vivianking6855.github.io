@@ -36,6 +36,15 @@ Purdue University研究了最受欢迎的一些应用的电量消耗
 电量消耗的计算与统计是一件麻烦而且矛盾的事情，记录电量消耗本身也是一个费电量的事情。唯一可行的方案是使用第三方监测电量的设备，这样才能够获取到真实的电量消耗
 
 - 手机设置选项找到对应App的电量消耗统计数据
+
+    ![](https://i.imgur.com/xKgRdEB.jpg)
+    
+    ![](https://i.imgur.com/R8WwT9z.jpg)
+    
+    电池优化列表的app，在锁屏的时候会被系统kill
+    
+    ![](https://i.imgur.com/5FxydrG.jpg)
+
 - 通过Battery Historian Tool来查看详细的电量消耗
 
 # 网络优化
