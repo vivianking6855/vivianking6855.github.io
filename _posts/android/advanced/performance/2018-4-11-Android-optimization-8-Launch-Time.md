@@ -51,26 +51,13 @@ lefttrees: true
     - 2.切換到Favorite tab，選擇step1建立的10筆資料設為Favorite
     - 3.在Favorite頁面點擊Home鍵, 當手指離開Home鍵即開始計時, 至回到Home畫面
 
-# 分析工具
+# 分析
 
-1. 统计launch time耗时，[分析工具](http://vivianking6855.github.io/2017/12/26/Android-optimization-Tool/)采用AS Profile和代码调试工具一起
+分析需要两步：
 
-2. Method Tracing 和 Android Profile CPU：测量耗时细节
+1. 统计launch time耗时，方法请参看[代码调试工具中的启动耗时间](http://vivianking6855.github.io/2018/04/13/Android-optimization-Tool-Code/)
 
-    - Android Profile CPU，用在手动record方便的场景（不适合启动的时候，时机不好把控）
-        - 左侧是线程的名字，第1个一般是主线程。（建议自己创建的线程规范化命名，有利于问题分析）
-        - 红色标注分别是主线程的消息队列和消息分发处理
-        - 个人习惯先看Call Chart，再Top Down分析
-
-         ![](https://i.imgur.com/QvNrItB.jpg)
-         
-    - Method Tracing 加入code debug方法请参看
-
-2. Systrace：在onCreate方法里面添加trace.beginSection()与trace.endSection()方法来声明需要跟踪的起止位置，系统会帮忙统计中间经历过的函数调用耗时，并输出报表。
-
-
-有关调试工具详细使用请参看：[性能优化：工具](http://vivianking6855.github.io/2017/12/26/Android-optimization-Tool/)
-
+2. 方法耗时细节，Method Tracing 和 Android Profile CPU可任选其一。用法请参看[代码调试工具](http://vivianking6855.github.io/2018/04/13/Android-optimization-Tool-Code/)）
 
 # 常见问题场景
 

@@ -128,7 +128,7 @@ AS 3.0名字改为[Android Profiler](https://developer.android.com/studio/previe
 ![](https://i.imgur.com/X1VQDwJ.jpg)
 
 
-# 五、 [代码调试工具](http://vivianking6855.github.io/2018/04/13/Android-optimization-Tool -Code/)
+# 五、 [代码调试工具](http://vivianking6855.github.io/2018/04/13/Android-optimization-Tool-Code/)
 
 
 # 开发者模式：不保留活动

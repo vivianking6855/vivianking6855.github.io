@@ -173,12 +173,16 @@ Activity launch time优化主要是检查OnCreate中的耗时逻辑，将耗时�
 
 其他优化建议请参看[性能优化（八）启动时间优化](http://vivianking6855.github.io/2018/04/11/Android-optimization-8-Launch-Time/)
 
+使用AS CPU监测MethodTrace结果如下：
+
+![](https://i.imgur.com/aWSNL8N.jpg)
+
 ### 实践
 
 从加载逻辑来分析，看哪些可以优化
 
 - 移除UI有重复刷新
-- 背景和头像背景放到AsyncTask中加载
+- 背景和头像背景处理放到AsyncTask中
 - 移除部分无用数据加载
 
 ## 4. 内存优化
