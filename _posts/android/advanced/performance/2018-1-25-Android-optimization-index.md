@@ -51,7 +51,21 @@ lefttrees: true
 - [Contact 优化 - size优化](http://vivianking6855.github.io/2017/12/27/Contact-Optimization-2/)
 - [Contact 优化 - detail页面优化](http://vivianking6855.github.io/2018/01/04/Contact-Optimization-3/)
 
+---
+
+# 优化规范定义
+
+之前做优化前就想如果有这样一系列的优化规范就好了。可惜的是到现在为止还没有一些规范可以参考。
+
+于是准备依据已有的项目经验和brainstorm来整理出一套规范，并逐步的完善它。
+
+每个优化点的规范是从衡量标准、分析、优化方案这三个方面来定义。若有不当之处还请不吝赐教。
+
+[size规范](http://vivianking6855.github.io/2018/04/18/Rule-Size/)
+
 # Reference
+
+> [Android 内存优化总结&实践](https://mp.weixin.qq.com/s/2MsEAR9pQfMr1Sfs7cPdWQ)
 
 > [Google Android Performance Patterns YouTube ](https://www.youtube.com/playlist?list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE)
 
