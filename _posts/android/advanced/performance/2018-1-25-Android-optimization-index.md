@@ -61,9 +61,13 @@ lefttrees: true
 
 每个优化点的规范是从衡量标准、分析、优化方案这三个方面来定义。若有不当之处还请不吝赐教。
 
+规范初版1.0版，2018/4/18
+
 [size规范](http://vivianking6855.github.io/2018/04/18/Rule-Size/)
 
 [time规范](http://vivianking6855.github.io/2018/04/19/Rule-Time/)
+
+[渲染规范](http://vivianking6855.github.io/2018/04/20/Rule-Render/)
 
 # Reference
 
