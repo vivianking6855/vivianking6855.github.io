@@ -45,7 +45,9 @@ lefttrees: true
 [性能优化：移动应用优化解决方案](http://vivianking6855.github.io/2018/04/11/Android-optimization-resolution/)
 
 
-性能优化实践
+# 性能优化实践
+
+持续更新中...
 
 - [Contact 优化 - 开篇](http://vivianking6855.github.io/2017/12/26/Contact-Optimization-1/)
 - [Contact 优化 - size优化](http://vivianking6855.github.io/2017/12/27/Contact-Optimization-2/)
@@ -53,7 +55,9 @@ lefttrees: true
 
 ---
 
-# 优化规范定义
+# 优化规范 - 1.0 (2018/4/18)
+
+持续更新中...
 
 之前做优化前就想如果有这样一系列的优化规范就好了。可惜的是到现在为止还没有一些规范可以参考。
 
@@ -61,7 +65,7 @@ lefttrees: true
 
 每个优化点的规范是从衡量标准、分析、优化方案这三个方面来定义。若有不当之处还请不吝赐教。
 
-规范初版1.0版，2018/4/18
+1.0 (2018/4/18)
 
 [size规范](http://vivianking6855.github.io/2018/04/18/Rule-Size/)
 
