@@ -233,11 +233,19 @@ PS: 代码优化可以参看：[性能优化要点](http://vivianking6855.github
     - ArrayList移到判断条件内部，有需要的时候在创建
     - 移除AsusRedPointNotificationDualPanelHelper，小红点功能CN不支援
 
+
 #### 页面完全退回Memory检测
   
   其实LeakCanary已经可以帮忙检测出部分，如果是不放心这里还可以再详尽的检查一次
    
   原则上需要释放无用资源。 可以设置开发者选项开启“不保留活动”，强制GC后，分析HeapDump
+  
+### 4）图片的回收
+
+- 头像和背景图回收
+
+### 5) 线程优化
+
 
 # 优化效果对比
 
