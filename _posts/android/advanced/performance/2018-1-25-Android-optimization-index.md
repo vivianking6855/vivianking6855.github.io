@@ -75,6 +75,12 @@ lefttrees: true
 
 [内存规范](http://vivianking6855.github.io/2018/04/20/Rule-Memory/)
 
+# 高性能开发手册
+
+总结了一些开发中高性能调优的一些常见问题和解决方案。请参看000 Android_1.0.0_高性能开发手册.pdf
+
+![](https://i.imgur.com/5DGx9RS.jpg)
+
 # Reference
 
 > [Android 内存优化总结&实践](https://mp.weixin.qq.com/s/2MsEAR9pQfMr1Sfs7cPdWQ)
