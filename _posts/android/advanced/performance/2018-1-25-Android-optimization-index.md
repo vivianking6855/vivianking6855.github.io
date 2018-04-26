@@ -40,10 +40,11 @@ lefttrees: true
 
 [性能优化：代码调试工具](http://vivianking6855.github.io/2018/04/13/Android-optimization-Tool-Code/)
 
-[性能优化 - Memory Leak 分析]((http://vivianking6855.github.io/2018/04/13/Android-optimization-Tool-Leak)
+[性能优化 - Memory Leak 分析](http://vivianking6855.github.io/2018/04/13/Android-optimization-Tool-Leak)
 
 [性能优化：移动应用优化解决方案](http://vivianking6855.github.io/2018/04/11/Android-optimization-resolution/)
 
+[优化基础知识]
 
 # 性能优化实践
 
