@@ -42,8 +42,9 @@ comments: true
 
 ## OKHttp
 
+- [okhttp源码解析](https://blog.csdn.net/json_it/article/details/78404010)
 - [OKHttp源码解析](https://www.jianshu.com/p/27c1554b7fee)
--  [okhttp源码解析](https://blog.csdn.net/json_it/article/details/78404010)
+- [okhttp源码解析](https://blog.csdn.net/json_it/article/details/78404010)
 - [Android面试题-OkHttp3源码分析](https://blog.csdn.net/mwq384807683/article/details/71173442?locationNum=8&fps=1)
 
 ## Volley
@@ -51,6 +52,12 @@ comments: true
 - [Volley源码解析](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2017/0605/8040.html)
 - [Android Volley完全解析(一)，初识Volley的基本用法](https://blog.csdn.net/guolin_blog/article/details/17482095)
 - [Volley Github](https://github.com/google/volley)
+
+## Retrofit
+
+- [Retrofit原理探究-源码解析](https://blog.csdn.net/json_it/article/details/78842715)
+- [okio源码解析](https://blog.csdn.net/json_it/article/details/78111468)
+- [动态代理JDK机制解析](https://blog.csdn.net/json_it/article/details/78735539)
 
 # 5. 图像
 
