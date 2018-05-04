@@ -50,6 +50,7 @@ OOM & Memory Leak
 小知识点
 
 - [Android 性能优化之String篇](http://blog.csdn.net/vfush/article/details/53038437) 
+- [Java 性能优化之 String 篇](https://www.ibm.com/developerworks/cn/java/j-lo-optmizestring/)
 - [HashMap，ArrayMap，SparseArray源码分析及性能对比](http://www.jianshu.com/p/7b9a1b386265) 
 - [Android 开发绕不过的坑：你的 Bitmap 究竟占多大内存？](https://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=403263974&idx=1&sn=b0315addbc47f3c38e65d9c633a12cd6&scene=21#wechat_redirect)
 
