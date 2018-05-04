@@ -2,7 +2,7 @@
 layout: post
 title: 性能优化：目录
 date: 2018-1-24
-excerpt: "性能优化目录"
+excerpt: "性能优化：目录"
 categories: Android
 tags: [Android 性能优化]
 comments: true
@@ -44,7 +44,9 @@ lefttrees: true
 
 [性能优化：移动应用优化解决方案](http://vivianking6855.github.io/2018/04/11/Android-optimization-resolution/)
 
-[优化基础知识]
+[性能优化 - 优化基础知识](http://vivianking6855.github.io/2018/04/26/Performance-ahead-index/)
+
+[性能优化 - Android Studio & MAT 如何分析内存](http://vivianking6855.github.io/2018/05/04/Android-optimization-AS-MAT/)
 
 # 性能优化实践
 
