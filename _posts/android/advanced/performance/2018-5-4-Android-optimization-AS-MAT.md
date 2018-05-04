@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Android 性能优化 - Android Studio & MAT 如何分析内存
+title: 性能优化 - Android Studio & MAT 如何分析内存
 date: 2018-5-4
-excerpt: "Android 性能优化 - Android Studio & MAT 如何分析内存"
+excerpt: "性能优化 - Android Studio & MAT 如何分析内存"
 categories: Android 性能优化
 tags: [Android 性能优化]
 comments: true

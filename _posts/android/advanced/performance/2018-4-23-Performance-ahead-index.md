@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 优化基础知识
+title: 性能优化 - 优化基础知识
 date: 2018-4-26
-excerpt: "优化基础知识 - 目录"
+excerpt: "性能优化 - 优化基础知识"
 categories: Android
 tags: [Android 性能优化]
 comments: true
