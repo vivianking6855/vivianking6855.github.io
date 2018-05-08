@@ -87,6 +87,13 @@ Picasso
 - [FindBugs](http://tbfungeek.github.io/2016/06/22/Android-%E8%BF%9B%E9%98%B6%E4%B9%8B%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8-Findbugs/)
 - [BlockCanary 卡顿检测工具](https://github.com/markzhai/AndroidPerformanceMonitor)
 
+
+# 注解
+
+- Butterknife
+	- [GitHub](https://github.com/JakeWharton/butterknife)
+	- [使用总结](https://blog.csdn.net/donkor_/article/details/77879630)
+
 # 其他插件
 
 - [retrolambda](http://vivianking6855.github.io/2017/04/10/Android-Lib-retrolambda/) Android Studio 3.0 用不到了，默认就支持了
