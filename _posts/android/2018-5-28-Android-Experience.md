@@ -58,6 +58,7 @@ clearn architecture
 - OKR工作法使用
 - STAR处理事务法则
 - 员工培育： weekly share, 每年书单
+- 高效能人士的七个习惯为依据，总结个人宣言，作为个人原则
 
 # Reference
 
