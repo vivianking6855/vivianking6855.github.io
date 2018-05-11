@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Android架构小结
+title: Android架构总结
 date: 2018-3-30
-excerpt: "Android开源架构小结"
+excerpt: "Android架构总结"
 categories: Android
 tags: [Android 进阶]
 comments: true
@@ -30,9 +30,9 @@ Bob大神的Architecture is About Intent, not Frameworks. 个人理解是：架�
 
 这里我们仅针对app的架构讨论，不会涉及深入的组件化和插件化内容。
 
-# 我的AppUniform架构
+# 我们的CleanArchitecture架构
 
-[AppUniform](https://github.com/vivianking6855/android-advanced/tree/master/AppUniform)是依据之前的项目总结出的Clean Architecture
+[CleanArchitecture架构](https://github.com/vivianking6855/android-architecture/tree/master/CleanArchitecture)是在项目实践中不断总结出的Clean Architecture
 
 是我们产品研发时尽可能遵循的原则，我们的期望是任何一个内部环节对外部是解耦的，没有依赖关系。
 
@@ -46,18 +46,29 @@ Bob大神的Architecture is About Intent, not Frameworks. 个人理解是：架�
 
 其中数据层，业务无关层分别是独立的library；展示层和业务公有层在app module中； 展示层和数据层的通过接口方式现实数据监听
 
-- 展示层，业务展示层采用MVP架构
-    - V: activity, fragment, view
+1. 展示层business
+
+	业务展示层采用MVP架构
+    
+	- V: activity, fragment, view
     - M: model
     - P: presenter处理数据逻辑，使用data module中的各个repository
         - P和V的解耦合可以通过Lisenter，EventBus, RxAndroid/RxJava等方式
         - P调用使用data module中的各个repository，异步数据监听可以通过data层的接口来实现
-- 业务公有层 share
+	
+	实际使用中展示层是依据功能模块分成各个独立的模块，例如Home, User等。
+	
+	每个模块都包含view,model,presenter,listerner,adapter，fragment 六个标准文件夹，用户也可以按照自己的需要再客制化
+
+2. 业务公共层 businesscommon
+
     - router 页面跳转器
     - utils 业务公用工具
     - base 业务封装基类
-- 数据层 data module
-    - repository 提供给展示层的数据接口（例如UserProvider等）
+   
+3. 数据层 data module
+    
+	- repository 提供给展示层的数据接口（例如UserProvider等）
     - listener 提供给上层的数据变化监听接口
     - cache 缓存
     - db 数据库
@@ -65,16 +76,57 @@ Bob大神的Architecture is About Intent, not Frameworks. 个人理解是：架�
     - exception 异常
     - net 网络相关
     - task 各类任务线程池
-- 业务无关库 common module
+
+4. 业务无关库 common module
     - 业务逻辑无关的一些公用库
-    - 已发到JCenter上的库有：[utilslib](https://bintray.com/vivianwayne1985/maven/utilslib) 和 [appbase](https://bintray.com/vivianwayne1985/maven/appbase)
+    - 也有使用到已发布的JCenter上的库
 
-目录结构如下：
+除此之外还有debug模块来管控log输出和调试
 
-![](https://i.imgur.com/W6LimMp.jpg)
+# MVP架构说明
 
+- V:是一个接口
+- P:BasePresenter持有V
+- BaseMVPActivity持有P extends BasePresenter<V>，且implements V的接口
 
-除此之外还有一些建议：
+		--------BaseMVPActivity
+	
+		public abstract class BaseMVPActivity<V, P extends BasePresenter<V>> extends BaseActivity {
+	
+		--------应用实例
+	
+		1. 定义V接口
+
+			public interface IHomeDisplayer {
+			    void onDisplay(UserModel model);
+			}
+
+		2. HomePresenter继承BasePresenter<IHomeDisplayer>
+
+			public class HomePresenter extends BasePresenter<IHomeDisplayer> {
+
+			数据加载成功后调用V的方法（viewWeakRef.get()获取View的实例）
+            viewWeakRef.get().onDisplay(DataTransaction.transform(user));
+	
+		3. HomeActivity继承BaseMVPActivity，实现V IHomeDisplayer的方法
+
+			public class HomeActivity extends BaseMVPActivity<IHomeDisplayer, HomePresenter> implements IHomeDisplayer {
+			
+			    @Override
+			    public void onDisplay(UserModel model) {
+			        if (model != null) {
+			            resultTV.setText(model.getUserId());
+			        }
+			    }
+
+# 待优化
+
+- 组件化部分尚未加入
+- JUnit, espresso等测试用例模板尚未加入
+
+后续项目复杂度提升，实践后再更新出来。
+
+# 其他建议
 
 - 尽可能搭配组件化/插件化：注意独立模块的单独调试和继承测试
 - 动态加载（轻量级插件化）：若app对更新时效性有要求，需要。例如金融类app
@@ -89,6 +141,8 @@ Bob大神的Architecture is About Intent, not Frameworks. 个人理解是：架�
 查看知乎[的一种更清晰的Android架构](https://zhuanlan.zhihu.com/p/20001838)
 
 # Reference
+
+[Android项目架构 - 目录](vivianking6855.github.io/2018/02/28/Template-Index/)
 
 [一种更清晰的Android架构](https://zhuanlan.zhihu.com/p/20001838)
 

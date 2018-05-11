@@ -41,6 +41,21 @@ lefttrees: true
 4. 库的架构设计是否合理（例如线程池开销）
 5. 竞品优缺点对比
 
+# 调试
+
+1. [stetho](https://github.com/facebook/stetho)
+
+	- 一款提供在Chrome开发者工具上调试Android app能力的开源框架
+	- 作者：FaceBook
+	- 官网地址： http://facebook.github.io/stetho/
+	- github   https://github.com/facebook/stetho
+
+2. logger：一款让log日志优雅显示的框架
+
+	- 优雅的输出log信息，并且支持多种格式：线程、Json、Xml、List、Map等
+	- github https://github.com/orhanobut/logger
+	- 作者：Orhan Obut
+
 # 图像
 
 - Picasso: [Square公司](http://square.github.io/)
@@ -90,33 +105,113 @@ Picasso
 
 # 注解
 
-- Butterknife
+1. Butterknife
+	
 	- [GitHub](https://github.com/JakeWharton/butterknife)
 	- [使用总结](https://blog.csdn.net/donkor_/article/details/77879630)
 
 # 其他插件
 
-- [retrolambda](http://vivianking6855.github.io/2017/04/10/Android-Lib-retrolambda/) Android Studio 3.0 用不到了，默认就支持了
 - [Checkstyle](http://checkstyle.sourceforge.net/) 代码style检查工具
 
 # UI
 
 ## ViewPager
 
-ViewPagerIndicator：一款基于ViewPager的页面指示器开源框架
+1. ViewPagerIndicator：一款基于ViewPager的页面指示器开源框架
 
-- 官网地址 http://viewpagerindicator.com/
-- github  https://github.com/JakeWharton/ViewPagerIndicator
-- 作者：JakeWharton 
+	- 官网地址 http://viewpagerindicator.com/
+	- github  https://github.com/JakeWharton/ViewPagerIndicator
+	- 作者：JakeWharton 
 
 ## 刷新
 
-Android-PullToRefresh：一款为普通视图提供刷新UI的视图框架
+1. Android-PullToRefresh：一款为普通视图提供刷新UI的视图框架
 
-- 8.2K的star数量使它位居刷新类UI框架榜首，强大的兼容能力，该框架支持ListView，GrdiView，WebViewScrollView，ViewPager等众多View增加刷新的能力，如果你有增加上拉加载，下拉加载的需求，你应该考虑它了！
-- github https://github.com/chrisbanes/Android-PullToRefresh
-- 作者：Chris Banes
-- 使用：github fork源码，集成到项目中
+	- 8.2K的star数量使它位居刷新类UI框架榜首，强大的兼容能力，该框架支持ListView，GrdiView，WebViewScrollView，ViewPager等众多View增加刷新的能力，如果你有增加上拉加载，下拉加载的需求，你应该考虑它了！
+	- github https://github.com/chrisbanes/Android-PullToRefresh
+	- 作者：Chris Banes
+
+## RecyclerView
+
+1. BaseRecyclerViewAdapterHelper：Recyvlerview通用适配器
+
+	- 7.7K个star，github上Android 适配器排行榜第一
+	- 官网地址：http://www.recyclerview.org/
+	- 作者：陈宇明以及他的小伙伴
+
+## Animation 
+
+1. lottie-android:一款可以在Android端快速展示Adobe Afeter Effect（AE）工具所作动画的框架
+
+	- 动画类框架第一名，github上13.3k个star证明了他的优越性，利用json文件快速实现动画效果是它最大的便利，而这个json文件也是由Adobe提供的After Effects（AE）工具制作的，在AE中装一个Bodymovin的插件，使用这个插件最终将动画效果生成json文件，这个json文件即可由LottieAnimationView解析并生成绚丽的动画效果。而且它还支持跨平台哟。
+	- github  https://github.com/airbnb/lottie-android
+	- 作者：Airbnb 团队
+
+2. Material-Animations:一款提供场景转换过渡能力的动画框架
+
+	- Android动画框架排行榜第二名，9.3k个star数量，Material-Animations提供的是场景切换的动画效果。
+	- github  https://github.com/lgvalle/Material-Animations
+	- 作者：Luis G. Valle
+
+3. AndroidViewAnimations：款提供可爱动画集合的框架
+
+	- 囊括了开发需求过程中所有的动画效果，集成进了这个简洁可爱的动画框架。7.6K的star数，仅位列lottie-android和Material-Animations两个动画框架
+	- github https://github.com/daimajia/AndroidViewAnimations
+	- 作者：daimajia
+
+ 
+## Drawer
+
+1. MaterialDrawer: 强大的塑料风格的抽屉框架
+
+	- 7.6K的star数量，作者的持续更新状态，如果你还在犹豫上手SlidingMenu遇到bug没人管的困境，那么你可以入手它作为你的抽屉布局 
+	- github  https://github.com/mikepenz/MaterialDrawer
+	- 作者：Mike Penz
+
+ 
+
+ 33.Android-ObservableScrollView
+一句话介绍：一款让视图滑动更具有视觉效果的滑动式框架
+
+上榜理由：7.5K的star数量，证明了它曾经的价值，github上提供了12种滑动效果，你可以用它弥补其他框架的不足，提升你的App体验！
+
+github https://github.com/ksoichiro/Android-ObservableScrollView
+
+作者：Soichiro Kashima
+
+使用：
+
+compile com.github.ksoichiro:android-observablescrollview
+ 
+
+34.CircleImageView
+一句话介绍：圆角ImageView
+
+上榜理由：也许你已经听说过无数种展示圆角图片的方法，但如果你不尝试尝试CircleImageView，那么你的知识库会因为少了它黯然失色，有的时候完成需求是开发者优先考虑的，不同实现方法牵扯到的性能差异更值得让人深思，如果你有心在图片性能上有所涉猎，那么CircleImageView绝对不会让你败兴而归。最后别忘了记得去看Romain Guy的建议哟。
+
+github https://github.com/hdodenhof/CircleImageView
+
+作者：Henning Dodenhof
+
+使用：
+
+dependencies {
+    ...
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+}
+ 
+
+复制代码
+<de.hdodenhof.circleimageview.CircleImageView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/profile_image"
+    android:layout_width="96dp"
+    android:layout_height="96dp"
+    android:src="@drawable/profile"
+    app:civ_border_width="2dp"
+    app:civ_border_color="#FF000000"/>
+复制代码
 
 # 参考资料
 
