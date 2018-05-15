@@ -3,8 +3,8 @@ layout: post
 title: Android 精彩三方库
 date: 2017-9-27
 excerpt: "Android 精彩三方库"
-categories: 资料集
-tags: [资料集]
+categories: Android
+tags: [Android]
 comments: true
 lefttrees: true
 ---
