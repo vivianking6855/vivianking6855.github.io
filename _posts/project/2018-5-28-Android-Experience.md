@@ -3,8 +3,8 @@ layout: post
 title: Android Experience
 date: 2018-5-28
 excerpt: "Android Experience"
-categories: 资料集
-tags: [资料集]
+categories: Projects
+tags: [Projects]
 comments: true
 lefttrees: true
 ---

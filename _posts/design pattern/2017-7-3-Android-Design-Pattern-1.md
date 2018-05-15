@@ -2,9 +2,9 @@
 layout: post
 title: Android Design-Pattern （一）
 date: 2017-7-3
-excerpt: "Android Disign Pattern （一）"
-categories: Android
-tags: [Android 进阶]
+excerpt: "Android Design Pattern （一）"
+categories: 设计模式
+tags: [设计模式]
 comments: true
 lefttrees: true
 ---

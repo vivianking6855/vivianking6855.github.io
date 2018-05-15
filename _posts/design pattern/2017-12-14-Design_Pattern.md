@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Design Patterns 设计模式
+title: Java Design Patterns
 date: 2017-12-14
-excerpt: "Design Patterns 设计模式"
-categories: Java
-tags: [Java]
+excerpt: "Java Design Patterns"
+categories: 设计模式
+tags: [设计模式]
 comments: true
 ---
 
