@@ -37,7 +37,8 @@ comments: true
 
 ## 2. Go
 
-[Go语言之路-目录](https://blog.csdn.net/vivian_king/article/details/80082454)
+- [GO CSDN](https://blog.csdn.net/vivian_king/article/category/7620234)
+- [Go语言之路-目录](https://blog.csdn.net/vivian_king/article/details/80082454)
 
 ## 3. ReactNative
 
