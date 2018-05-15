@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Android Learning
+title: 学习资料集
 date: 2018-5-15
-excerpt: "Android Learning"
+excerpt: "学习资料集"
 categories: 资料集
 tags: [资料集]
 comments: true
