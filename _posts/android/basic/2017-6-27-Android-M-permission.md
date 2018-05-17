@@ -49,113 +49,182 @@ app常用到的storage，phone等都属于这类。
 如果可以的话，在app开启之前可以有一页导览页面跟user说明为何会使用到这些权限，以便于user了解，提高允许概率。
 
 核心Code
-    
-    变量定义--------------------------------------------
 
-    // permission request code
-    private final static int PERMISSION_REQUEST_CODE_RECORD = 10000;
-    // if system request dialogue show
-    private boolean mSystemPermissionShowing = false;
-    private AlertDialog mNeverShowDlg;
+		(1) onResume检查权限是否允许----------------------
+		
+		    @Override
+		    protected void onResume() {
+		        super.onResume();
+		        if (!isUserChooseDenyLastTime) {
+		            dealWithPermission();
+		        }
+		    }
+		
+		    /**
+		     * deal with normal dangerous permission,such as Camera, Storage, etc
+		     */
+		    private void dealWithPermission() {
+		        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+		            return;
+		        }
+		
+		        if (userNotGranted()) {// permission not granted
+		            String[] notGranted = userChooseNeverShow();
+		            if (notGranted.length > 0 && notGranted[0] != null) {
+		                showNeverShowHintDialogue(notGranted);
+		            } else {
+		                if (!mSystemPermissionShowing) {
+		                    // show system permission dialogue
+		                    mSystemPermissionShowing = true;
+		                    showSystemRequestDialog();
+		                }
+		            }
+		        } else {// permission granted
+		            permissionGranted();
+		        }
+		    }
 
-    (1) onResume检查权限是否允许----------------------
-    
-        @Override
-        protected void onResume() {
-            super.onResume();
-            dealWithPermission();
-        }
-    
-         private void dealWithPermission() {
-                int hasWriteStoragePermission = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                if (hasWriteStoragePermission != PackageManager.PERMISSION_GRANTED) {
-                    Log.d(TAG, "permission not granted");
-                    // if user choose never show before, request system permission will not work
-                    boolean never_show = !ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                    if (never_show) {
-                        Log.d(TAG, "user choose never show");
-                        showNeverShowHintDialogue();
-                    } else {
-                        if (!mSystemPermissionShowing) {
-                            Log.d(TAG, "show system permission dialogue");
-                            // show system permission dialogue
-                            mSystemPermissionShowing = true;
-                            showSystemRequestDialog();
-                        }
-                    }
-                }
-        }
-    
-        private void showSystemRequestDialog() {
-            // show system permission dialogue
-            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                    PERMISSION_REQUEST_CODE_RECORD);
-        }
-    
-        private void showNeverShowHintDialogue() {
-            mNeverShowDlg = new AlertDialog.Builder(mContext)
-                    .setCancelable(false)
-                    .setTitle(getString(R.string.grant_permission_title))
-                    .setMessage(getString(R.string.grant_permission))
-                    .setPositiveButton(getString(R.string.grant_setting), new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            // user choose never show,you could change your resolution here for your project
-                            gotoAppDetail();
-                        }
-                    })
-                    .setNegativeButton(getString(R.string.grant_cancel), new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            finish();
-                        }
-                    })
-                    .show();
-        }
-    
-        private void gotoAppDetail() {
-            Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-            intent.addCategory(Intent.CATEGORY_DEFAULT);
-            intent.setData(Uri.parse("package:" + getPackageName()));
-            startActivity(intent);
-        }
-        
-    (2) 重写onRequestPermissionsResult中处理交互逻辑：系统Permission窗口
-    
-        @Override
-        public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                                               int[] grantResults) {
-            if (requestCode == PERMISSION_REQUEST_CODE_RECORD) {
-                mSystemPermissionShowing = false;
-                int hasWriteStoragePermission = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                if (hasWriteStoragePermission != PackageManager.PERMISSION_GRANTED) {
-                    // if user choose deny,exit app
-                    finish();
-                }
-            }
-            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
-        
-    （3）资源释放---------------------------------------------------
-           
-        @Override
-        protected void onDestroy() {
-            super.onDestroy();
-            mTempChoice = false;
-            if (mNeverShowDlg != null && mNeverShowDlg.isShowing()) {
-                mNeverShowDlg.dismiss();
-            }
-        }
-        
-        
-strings.xml
+		 (2) 重写onRequestPermissionsResult中处理交互逻辑：系统Permission窗口
+		
+		    @Override
+		    public void onRequestPermissionsResult(int requestCode, String[] permissions,
+		                                           int[] grantResults) {
+		        if (requestCode == PERMISSION_REQUEST_CODE_RECORD) {
+		            mSystemPermissionShowing = false;
+		            String[] notGranted = userNotGrantedMore();
+		            if (notGranted.length > 0 && notGranted[0] != null) {
+		                // user choose deny,
+		                permissionDeny(notGranted);
+		                isUserChooseDenyLastTime = true;
+		            } else {
+		                permissionGranted();
+		            }
+		        }
+		        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+		    }
+		
+		    private boolean getPermissionFistDeny(String permission) {
+		        SharedPreferences sp = getSharedPreferences(sPermissonFile, MODE_PRIVATE);
+		        return sp.getBoolean(permission, true);
+		    }
+		
+		    private void setPermissionDeny(String permission) {
+		        SharedPreferences sp = getSharedPreferences(sPermissonFile, MODE_PRIVATE);
+		        SharedPreferences.Editor editor = sp.edit();
+		        editor.putBoolean(permission, false);
+		        editor.apply();
+		    }
+		
+		    /**
+		     * if user choose never show for any one of permissions
+		     */
+		    private String[] userChooseNeverShow() {
+		        String[] permissions = getPermissions();
+		        String[] notGranted = new String[permissions.length];
+		        int pos = 0;
+		        for (int i = 0; i < permissions.length; i++) {
+		            // if user choose never show before, request system permission will not work
+		            boolean never_show = !ActivityCompat.shouldShowRequestPermissionRationale(BasePermissionActivity.this,
+		                    permissions[i]);
+		            boolean notGrant = ContextCompat.checkSelfPermission(BasePermissionActivity.this,
+		                    permissions[i]) != PackageManager.PERMISSION_GRANTED;
+		            boolean firstDeny = getPermissionFistDeny(permissions[i]);
+		            if (notGrant && never_show && !firstDeny) {
+		                notGranted[pos] = permissions[i];
+		                pos++;
+		            }
+		        }
+		        return notGranted;
+		    }
+		
+		    /**
+		     * if user not granted any one of permissions
+		     */
+		    private boolean userNotGranted() {
+		        String[] permissions = getPermissions();
+		        for (int i = 0; i < permissions.length; i++) {
+		            int hasPermission = ContextCompat.checkSelfPermission(BasePermissionActivity.this,
+		                    permissions[i]);
+		            if (hasPermission != PackageManager.PERMISSION_GRANTED) {
+		                return true;
+		            }
+		        }
+		
+		        return false;
+		    }
+		
+		    private String[] userNotGrantedMore() {
+		        String[] permissions = getPermissions();
+		        String[] notGranted = new String[permissions.length];
+		        int pos = 0;
+		        for (int i = 0; i < permissions.length; i++) {
+		            int hasWriteStoragePermission = ContextCompat.checkSelfPermission(BasePermissionActivity.this,
+		                    permissions[i]);
+		            if (hasWriteStoragePermission != PackageManager.PERMISSION_GRANTED) {
+		                notGranted[pos] = permissions[i];
+		                pos++;
+		                setPermissionDeny(permissions[i]);
+		            }
+		        }
+		
+		        return notGranted;
+		    }
+		
+		    /**
+		     * show system permission request dlg
+		     */
+		    private void showSystemRequestDialog() {
+		        // show system permission dialogue
+		        ActivityCompat.requestPermissions(BasePermissionActivity.this, getPermissions(),
+		                PERMISSION_REQUEST_CODE_RECORD);
+		    }
+		
+		    /**
+		     * show never show hint dlg
+		     */
+		    private void showNeverShowHintDialogue(String[] notGranted) {
+		        mNeverShowHintDlg = new AlertDialog.Builder(BasePermissionActivity.this)
+		                .setCancelable(false)
+		                .setTitle(neverShowRes == null ? TITLE : neverShowRes[0])
+		                .setMessage(neverShowRes == null ? MESSAGE : neverShowRes[1])
+		                .setPositiveButton(neverShowRes == null ? POSITIVE : neverShowRes[2], new DialogInterface.OnClickListener() {
+		                    @Override
+		                    public void onClick(DialogInterface dialog, int which) {
+		                        // user choose never show,you could change your resolution here for your project
+		                        gotoSettingsAppDetail();
+		                    }
+		                })
+		                .setNegativeButton(neverShowRes == null ? NEGATIVE : neverShowRes[3], new DialogInterface.OnClickListener() {
+		                    @Override
+		                    public void onClick(DialogInterface dialog, int which) {
+		                        permissionDeny(notGranted);
+		                    }
+		                })
+		                .show();
+		    }
+		
+		    private void gotoSettingsAppDetail() {
+		        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+		        intent.addCategory(Intent.CATEGORY_DEFAULT);
+		        intent.setData(Uri.parse("package:" + getPackageName()));
+		        startActivity(intent);
+		    }
+		
 
-    <string name="grant_permission">视频魔术师需要<strong>存储</strong>权限。请点击<strong>设置</strong>，然后点击<strong>应用程序信息</strong> > <strong>权限</strong>并打开<strong>存储</strong></string>
-    <string name="grant_permission_title">权限提醒</string>
-    <string name="grant_setting">设置</string>
-    <string name="grant_cancel">退出</string>
-        
-[Sample Code地址](https://github.com/vivianking6855/android-advanced/tree/master/Media/media)
+		（3）资源释放---------------------------------------------------
+		
+		    @Override
+		    protected void onDestroy() {
+		        super.onDestroy();
+		
+		        // dismiss never show dlg hint
+		        if (mNeverShowHintDlg != null && mNeverShowHintDlg.isShowing()) {
+		            mNeverShowHintDlg.dismiss();
+		        }
+		    }
+		}
+
+     
 
 这也是google推荐的设计，详情可以参看[这里](https://material.io/guidelines/patterns/permissions.html#permissions-denied-permissions)
 
@@ -231,38 +300,43 @@ SYSTEM_ALERT_WINDOW 和 WRITE_SETTINGS 这两个权限特别敏感，因此大�
         }
 
 
-# 封装 BasePermissionActivity
+# 自己尝试封装BasePermissionActivity.java
 
-为了方便使用封装了一个 BasePermissionActivity
+设计逻辑
 
-使用很简单
+- onResume中请求权限，如果deny过就不在请求
+- 若用户选择never show, 则弹出提示说明，请用户到app info界面开启权限
 
-1. 继承他
+[BasePermissionActivity Github地址](https://github.com/vivianking6855/android-open/tree/master/Common/appbase/src/main/java/com/open/appbase/activity)
 
-        public class MainActivity extends BasePermissionActivity {
-        
-2. 重写下面的三个方法
+使用code如下：
 
-        // Permission全部granted
-        @Override
-        protected void permissionGranted() {
-            mPresenter.loadData();
-        }
-    
-        // permission 任何一个deny
-        @Override
-        protected void permissionDeny() {
-            finish();
-        }
-    
-        // 需要请求的Permission列表
-        @Override
-        protected String[] getPermissions() {
-            return new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
-        }
+	public class HomeActivity extends BasePermissionActivity {
+	
+		......
+	
+	    @Override
+	    protected void loadData() {
+	        setPermissionAlterDialog(permissionStrs);
+	    }
+		......
+	
+	    @Override
+	    protected String[] getPermissions() {
+	        return new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
+	    }
+	
+	    @Override
+	    protected void permissionGranted() {
+	
+	    }
+	
+	    @Override
+	    protected void permissionDeny(String[] notGranted) {
+	        Toast.makeText(HomeActivity.this, "Photo will not work", Toast.LENGTH_SHORT).show();
+	    }
+	}
 
-
-BasePermissionActivity[下载地址](https://github.com/vivianking6855/android-library/tree/master/AndroidLib/AndroidLib/appbase/src/main/java/com/open/applib/activity)
 
 # 第三方库
 
@@ -272,7 +346,23 @@ hotchemi’s PermissionsDispatcher。: [https://github.com/hotchemi/PermissionsD
 
 RxPermissions: [https://github.com/tbruyelle/RxPermissions](https://github.com/tbruyelle/RxPermissions)
 
+	- 核心原理是动态添加一个Fragment来处理权限
+	- 允许单个和多个权限请求
+	- 但是在onResume中调用会无限循环，需要外部加入特殊逻辑处理
+
 Grant: [https://github.com/anthonycr/Grant](https://github.com/anthonycr/Grant)
+
+[easypermissions](https://github.com/googlesamples/easypermissions) 
+
+三方库的比较可以参照[目前最流行的运行时权限请求框架PermissionsDispatcher、RxPermissions和easypermissions的使用和对比](https://blog.csdn.net/totond/article/details/73648103)
+
+![](https://i.imgur.com/CZcnKyS.jpg)
+
+# 小结
+
+我们的项目中使用的是自己封装的BasePermissionActivity，里面包含了dangerous权限，SYSTEM_ALERT_WINDOW, WRITE_SETTINGS这些功能。
+
+如果是三方app建议使用easypermissions
 
 # Reference
 
