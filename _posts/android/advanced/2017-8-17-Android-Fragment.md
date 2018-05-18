@@ -278,17 +278,17 @@ Fragment可以通过getActivity获取FragmentActivity的实例，也可以通过
 	- 缺点：多个Fragment直接耦合
 	- 优点：不通过Activity传递
 - 3）使用EventBus解耦
-	- 使用方法：参照EventBus使用方法
-	- 优点：实现Activity，Fragment直接解耦
+	- 使用方法：[参照EventBus使用方法](http://greenrobot.org/eventbus/documentation/how-to-get-started/)
+	- 优点：实现Activity，Fragment直接解耦，可定制线程环境
 	- 缺点：需要增加EventBus类，逻辑复杂时可能出现nested Event
 - 4) RxJava
 	- 使用方法：[放弃RxBus，拥抱RxJava](https://www.jianshu.com/p/61631134498e)，透出Observe对象
-	- 优点：不通过第三方传递，直接投给目标
+	- 优点：不通过第三方传递，直接投给目标，可定制线程环境，面向响应式编程
 	- 缺点：Fragment之间耦合
 - 5）LocalBroadcast方式
 	- 使用方法：参考LocalBroadcast[源码解析](https://www.jianshu.com/p/6f1ea19a17ed)和[使用](https://blog.csdn.net/jarchie520/article/details/71434833) 
 	- 优点：解除耦合，较EventBus性能差不太多
-	- 缺点：代码量多，依赖Context注入
+	- 缺点：代码量多，依赖Context注入，运行在主线程，若有耗时操作可能会影响UX
 
 [EventBus和LocalBroadcast的比较](https://blog.csdn.net/sanjay_f/article/details/50342057)
 

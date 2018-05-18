@@ -15,13 +15,13 @@ comments: true
 
 # 导览
 
-- 个人知识图谱
+- 个人知识图谱（绿色是有基础需要深入，蓝色是基础尚未掌握）
 
-	![](https://i.imgur.com/dlsq778.png)
+	![](https://i.imgur.com/ls6bcDk.png)
 
 - 热门知识图谱
 
-	![](https://i.imgur.com/vh7yCS5.png)
+	![](https://i.imgur.com/bvQYQWU.png)
 
 - [知识News](http://vivianking6855.github.io/2018/03/16/%E7%9F%A5%E8%AF%86News/)
 
@@ -47,12 +47,37 @@ comments: true
 
 ## 4. JS,HTML,CSS
 
-- [W3C Scholl](http://www.w3school.com.cn/)
+- [W3C School](http://www.w3school.com.cn/)
 
-## 5. IOS 
+### 4.1 ReactJs
+
+ReactJS为Facebook开发的,与AngularJS一样，都是框架。 
+
+主要是在前端Web开发中, 对MVC中的V进行操作，最出名于 Virtual DOM（Angularjs 是MVC, 最出名于data-binding）
+
+[AngularJS和ReactJS分别是干什么的](https://www.zhihu.com/question/30111787)
+
+### 4.2 [NodeJs](https://nodejs.org/)
+
+nodejs是j一种javascript的运行环境，能够使得javascript脱离浏览器运行s运行时。类比java中jvm
+
+[Node.js是用来做什么的？](https://www.zhihu.com/question/33578075)
+
+## 5. Python
+
+- [Python爬虫之路](http://vivianking6855.github.io/2017/12/14/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF_1/)
+
+## 6. C#, WPF
+
+## 7. C++ 
+
+## 8. IOS 
 
 学习资料 trip-to-iOS：[https://github.com/Aufree/trip-to-iOS](https://github.com/Aufree/trip-to-iOS)
 
+## 9. PHP
+
+- [PHP CSDN](https://blog.csdn.net/vivian_king/article/category/3102471)
 
 ---
 # 数据结构和算法
@@ -75,9 +100,11 @@ comments: true
 ---
 # 操作系统
 
+---   
+# 网络和安全
 
 ---   
-# 网络
+# 数据库
 
 
 ---
