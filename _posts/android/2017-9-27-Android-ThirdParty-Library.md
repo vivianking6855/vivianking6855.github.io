@@ -93,6 +93,9 @@ Picasso
 # 并发和通讯
 
 - [RxAndroid/RxJava](http://vivianking6855.github.io/2017/04/08/Android-Lib-Web-OkHttp-RxJava/) RxAndroid是RxJava的扩展, 优雅地处理异步请求.
+	- [RxBinding](https://github.com/JakeWharton/RxBinding)
+	- RxBus
+	- RxPermission
 - [EventBus](http://vivianking6855.github.io/2016/12/19/Android-Lib-EventBus/) 优化的publish/subscribe消息总线， [快速使用](http://greenrobot.org/eventbus/documentation/how-to-get-started/)
 
 # 性能检测
