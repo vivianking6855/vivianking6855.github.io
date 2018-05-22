@@ -108,10 +108,7 @@ JsBridge, JS和Native交互的桥梁。在Android开发中，能实现Js调用Ja
 # 性能和优化
 
 - webview采自用不动加载图片，等页面finish后再发起图片加载方案。提升webview的UX
-- webview加载效率优化
-
-
-    - webview加载优化之缩略图
+- webview加载优化之缩略图
 
         建议服务器支援多档图片，例如
         
@@ -120,6 +117,22 @@ JsBridge, JS和Native交互的桥梁。在Android开发中，能实现Js调用Ja
         2)	preview大图：512*512, 1024*768?     用于user点击后查看大图，加速大图页面的渲染和加载
         
         3)	原图：已经支援
+
+- webview 内存泄漏
+
+	[WebView深度学习（三）之WebView的内存泄漏、漏洞以及缓存机制原理和解决方案](https://www.jianshu.com/p/44b977907e51)
+
+	webView的彻底销毁
+
+		if (mWebView != null) {
+	        mWebView.loadDataWithBaseURL(null, "", "text/html", "utf-8", null);
+	        mWebView.clearHistory();
+	
+	        ((ViewGroup) mWebView.getParent()).removeView(mWebView);
+	        mWebView.destroy();
+	        mWebView = null;
+	    }
+
 
 [WebView内存泄漏，如何让WebView清除更彻底](https://blog.csdn.net/qq_16318981/article/details/45362399)
 
@@ -141,8 +154,14 @@ JsBridge, JS和Native交互的桥梁。在Android开发中，能实现Js调用Ja
 	
 # Reference
 
+[Android WebView开发问题及优化汇总 - 阿里云](https://www.aliyun.com/jiaocheng/655803.html)
+
+[Android Webview太烂？试试Webview独立进程吧](https://www.jianshu.com/p/8ed995016fde)
+
 [Android WebView 全面干货指南](https://www.jianshu.com/p/fd61e8f4049e)
 
 [Android WebView开发问题及优化汇总](http://blog.csdn.net/xyz_lmn/article/details/3947339473701701)
 
 [Android WebView 缓存处理](http://www.open-open.com/lib/view/open1392188052301.html)
+
+[WebView控件之WebSettings详解](https://www.jianshu.com/p/0d7d429bd216)
