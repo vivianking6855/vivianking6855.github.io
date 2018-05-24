@@ -154,6 +154,10 @@ JsBridge, JS和Native交互的桥梁。在Android开发中，能实现Js调用Ja
 	
 # Reference
 
+[《移动端本地 H5 秒开方案探索与实现》](https://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653579803&idx=1&sn=0a1f418f628a53e9262b97879f47593b&chksm=84b3b81cb3c4310a175b95264bf74a5be8abf39751ed0b21a353e68e6cf1846db11995bc2fec&mpshare=1&scene=1&srcid=0524GVlrCE03TcvbOGYNMFHw#rd)
+
+[WebView性能、体验分析与优化](https://tech.meituan.com/WebViewPerf.html)
+
 [Android WebView开发问题及优化汇总 - 阿里云](https://www.aliyun.com/jiaocheng/655803.html)
 
 [Android Webview太烂？试试Webview独立进程吧](https://www.jianshu.com/p/8ed995016fde)
