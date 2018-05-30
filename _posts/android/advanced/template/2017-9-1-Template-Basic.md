@@ -25,4 +25,4 @@ comments: true
 
 # [Github Code](https://github.com/vivianking6855/android-architecture/tree/master/TemplateBasic)
 
-# [Android项目模板 - 目录](http://vivianking6855.github.io/2018/05/30/Template-Index/)
+# [Vivian 的Android架构](http://vivianking6855.github.io/tag/#Android%E6%9E%B6%E6%9E%84-ref)     

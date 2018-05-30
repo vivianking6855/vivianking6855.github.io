@@ -27,7 +27,7 @@ Android项目模板目录
 
 持续更新中......
 
-- [Android项目模板: 纯净架构](http://vivianking6855.github.io/2018/03/30/Template-Open/)
+- [Android项目模板: 纯净架构](http://vivianking6855.github.io/2018/03/30/Template-Clean/)
 
 - [Android项目模板: 基础架构](http://vivianking6855.github.io/2018/05/30/Template-Basic/)
 

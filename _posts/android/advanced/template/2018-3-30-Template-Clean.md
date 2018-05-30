@@ -38,7 +38,11 @@ Bob大神的Architecture is About Intent, not Frameworks. 个人理解是：架�
 
 这也是架构设计的核心：独立性和可测试性；二者是相符想成的。
 
-比如纯Java的可以用JUnit等测试，Android业务相可以用Android Instrumentation等测试
+比如纯Java的可以用JUnit等测试，Android业务相可以用Android Instrumentation等测试。
+
+效果图：
+
+![](https://i.imgur.com/OAJV0s7.jpg)
 
 我们的项目基本包含四个层次
 
@@ -133,7 +137,9 @@ Bob大神的Architecture is About Intent, not Frameworks. 个人理解是：架�
 - 性能和测试
     - 对app核心行为和各个组件交互和生命周期的监控，后期可以搭配bug服务器平台跟trace log一起上传，以便于bug的分析和追踪（LogMan写入文件)
     - 建议接入移动测试平台 
-     
+
+# [Vivian 的Android架构](http://vivianking6855.github.io/tag/#Android%E6%9E%B6%E6%9E%84-ref)     
+
 # 开源架构
 
 著名的[Android-CleanArchitecture](https://github.com/android10/Android-CleanArchitecture)
@@ -141,8 +147,6 @@ Bob大神的Architecture is About Intent, not Frameworks. 个人理解是：架�
 查看知乎[的一种更清晰的Android架构](https://zhuanlan.zhihu.com/p/20001838)
 
 # Reference
-
-[Android项目架构 - 目录](vivianking6855.github.io/2018/02/28/Template-Index/)
 
 [一种更清晰的Android架构](https://zhuanlan.zhihu.com/p/20001838)
 
