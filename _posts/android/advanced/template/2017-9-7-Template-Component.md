@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android项目模板 2 - List加载和通讯
+title: Android项目模板 - 组件基础架构
 date: 2018-5-30
 excerpt: "Android项目模板"
 categories: Android
