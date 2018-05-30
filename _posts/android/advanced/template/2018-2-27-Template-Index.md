@@ -1,14 +1,12 @@
 ---
 layout: post
 title: Android项目架构 - 目录
-date: 2018-2-28
+date: 2018-5-30
 excerpt: "Android项目架构"
 categories: Android
-tags: [Android 进阶]
+tags: [Android架构]
 comments: true
 ---
-
-
 
 
 # 简介
@@ -23,20 +21,17 @@ Android项目模板目录
 
 # 2. [Android组件化和插件化浅谈](http://vivianking6855.github.io/2018/04/02/Template-Plugin-Component/)
 
-# 3. [Android架构小结 - 通用架构CleanArchitecture](http://vivianking6855.github.io/2018/03/30/Template-Open/)
+# 3. [Android架构小结 - 干净架构CleanArchitecture](http://vivianking6855.github.io/2018/05/30/Template-Open/)
 
 # 4. Android项目模板
 
-持续更新中
+持续更新中......
 
-- [Android项目模板: Basic](http://vivianking6855.github.io/2017/09/01/Template-Basic/)
+- [Android项目模板: 纯净架构](http://vivianking6855.github.io/2018/03/30/Template-Open/)
 
-    ![](https://i.imgur.com/v8GNPWo.png)
+- [Android项目模板: 基础架构](http://vivianking6855.github.io/2018/05/30/Template-Basic/)
 
-- [Android项目模板: 列表加载和通讯](http://vivianking6855.github.io/2017/09/07/Template-List/) 
-
-    ![](https://i.imgur.com/sL73hvO.png)
-
+- [Android项目模板: 组件化基础架构](http://vivianking6855.github.io/2018/05/30/Template-Component/) 
 
 
 # Reference

@@ -1,47 +1,28 @@
 ---
 layout: post
-title: Android项目模板 1 - Basic基础组合
-date: 2018-2-26
+title: Android项目模板 - 基础架构
+date: 2018-5-30
 excerpt: "Android项目模板"
 categories: Android
-tags: [Android 进阶]
+tags: [Android架构]
 comments: true
 ---
 
 
 # 简介
 
-Code Template 1是Basic基础组合，主要包含下面的控件和模块：
+基础架构是基于CleanArchitecture，新增下面的控件和模块：
 
 - BottomNavigation  底部栏导航
-- ViewPager         滑动页面切换
-- BaseActivity      重构Base类
-- Lambda插件：gradle-retrolambda
-- RxJava, RxAndroid 并发和通讯
 
 # 效果图
 
-![](https://i.imgur.com/v8GNPWo.png)
+   ![](https://i.imgur.com/bayGdTX.jpg)
 
 # 功能描述
 
-- 底部bottom bar点击或滑动时viewpager切换页面
+底部bottom bar点击或滑动时viewpager切换页面
 
-# [Github Code](https://github.com/vivianking6855/android-advanced/tree/master/Template)
+# [Github Code](https://github.com/vivianking6855/android-architecture/tree/master/TemplateBasic)
 
-# 框架
-
-采用MPV框架
-
-## 目录结构
-
-![](https://i.imgur.com/uhtDKKJ.jpg)
-
-## 框架说明
-
-- MainActivity: HomePagerAdapter 加载四个Fragment
-- 四个Fragment：FirstFragment, SecondFragment, ThirdFragment, FourthFragment
-
-
-
-# [Android项目模板 - 目录](http://vivianking6855.github.io/2018/02/28/Template-Index/)
+# [Android项目模板 - 目录](http://vivianking6855.github.io/2018/05/30/Template-Index/)

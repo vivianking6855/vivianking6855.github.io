@@ -1,10 +1,10 @@
 ---
 layout: post
 title: Android架构总结
-date: 2018-3-30
+date: 2018-5-30
 excerpt: "Android架构总结"
 categories: Android
-tags: [Android 进阶]
+tags: [Android架构]
 comments: true
 ---
 
