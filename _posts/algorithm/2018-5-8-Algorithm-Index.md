@@ -4,7 +4,7 @@ title: 算法目录
 date: 2018-5-8
 excerpt: "算法目录"
 categories: Android
-tags: [Android 进阶]
+tags: [Algorithm]
 comments: true
 ---
 
