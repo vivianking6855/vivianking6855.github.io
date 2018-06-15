@@ -34,6 +34,9 @@ Android项目模板目录
 - [Android项目模板: 组件化基础架构](http://vivianking6855.github.io/2018/05/30/Template-Component/) 
 
 
+# 5. [软件架构（体系架构）](http://vivianking6855.github.io/2018/06/15/System-Architecture/)
+
+
 # Reference
 
 - [Android组件化框架设计与实践](https://blog.csdn.net/xJ032w2j4cCjhOW8s8/article/details/80045510)

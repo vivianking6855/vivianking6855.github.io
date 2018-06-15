@@ -408,6 +408,8 @@ append源码
 3. 创建String，请使用方法1：直接赋值的方式。因为new String会额外在堆空间中的创建字符串对象
 4. 合理使用intern()重用方法，过多得使用会导致 PermGen过度增长，出现OOM。JDK1.6及之前，常量池中会再存储一份对象。之后是可以直接存储堆中的引用。
 
+备注测试结果会受GC的影响，每次都有些许波动
+
 # Reference
 
 - [1] [Android 性能优化之String篇](http://blog.csdn.net/vfush/article/details/53038437) 
