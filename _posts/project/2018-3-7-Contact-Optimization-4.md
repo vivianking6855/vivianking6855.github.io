@@ -161,7 +161,11 @@ TODO
 
 ## 分析和优化
 
-- Android Profile监测线程和Service创建情况
+### 1. 接入内存泄漏工具[LeakCanary](https://github.com/square/leakcanary)
+
+一周后，未发现明显Leak问题
+
+### 2. Android Profile监测线程和Service创建情况
 
     Android Profile监测
     
@@ -169,61 +173,90 @@ TODO
     -	AsyncTask是否需要设置并行
     -	Service创建的合理性
 
-- 动态allocation分析
+检测结果
 
-    Android Profile record memory查看alloc分配，分析动态allocation是否合理
+- 有一处匿名创建Thread的情况，修改放入CacheThreadPool中
+
+
+## 3. 动态allocation分析
+
+Android Profile record memory查看alloc分配，分析动态allocation是否合理
  
-    - 应用包名过滤: com.**.** [alloc 59K] [Pass]
-        - list等都有重用
-        - 默认图片也都有重用）
-    - 整体分析  [alloc 3.5M]
-        - by callstack，共13 thread，查看了200K+的thread        
-            - main线程 [2M]，100K以上消耗基本都来自布局加载
-            - call log query ThreadPool [758K]
-                - 300K+ 是来自CooTek三方库消耗
 
-         到这里可以看出非UI线程消耗基本在1.5M
+(1) 应用包名过滤: com.**.** [alloc 59K] [Pass]
+
+ - list等都有重用
+ - 默认图片也都有重用
+
+
+(2) 整体分析  [alloc 3.5M]
+
+ - by callstack，共13 thread，查看了200K+的thread        
+	- main线程 [2M]，100K以上消耗基本都来自布局加载
+	- call log query ThreadPool [758K]
+		- 300K+ 是来自CooTek三方库消耗
+
+    到这里可以看出非UI线程消耗基本在1.5M
          
-         - by package, 查看100K + 的集合
+ - by package, 查看100K + 的集合
          
-            main线程和app包名前面分析过了，直接略过。重点看大量或单笔100K+的对象
+ 	main线程和app包名前面分析过了，直接略过。重点看大量或单笔100K+的对象
             
-         未发现严重的内存问题
+	未发现严重的内存问题
 
-- 退出memory分析
+## 4. memory分析内存泄漏
 
-    设置“不保留活动”查看是否有内存没有及时释放，避免内存泄漏
-    
-  先分析退出memory的原因是这里最容易导致内存泄漏，可以先解决大部分的内容泄漏再开始下面的heap分析
+分析退出时的dump memory，查看是否有内存没有及时释放，避免内存泄漏
 
+步骤
 
-- heap分析
+- 设置“不保留活动”
+- 第一次进入页面，做一些常规操作，GC 2次后dump memory - m1，AS导出 （用作后面的MAT比较）
+- 退出重新进入，重复4次，GC 2次后dump meory - m2，AS导出
 
-    Memory Profile + MAT分析
-    
-    操作一段时间后，两次GC后 dump memory分析
+### AS工具分析
 
-    转MAT格式
-    
-        hprof-conv heap-original.hprof heap-converted.hprof
+查看是否有多个实例存在的情况（因为我们退出/重进了多次）
+
+按照包名排序查看，HomeActivity没有泄漏的情况，都有成功销毁
+	
+![](https://i.imgur.com/gkdEtXg.jpg)
+	
+还有model这里，有四个Reference，从分析来看他们都是指向同一个实例。之所有会有这么多是因为有很多内部类持有了外类的引用
+	
+![](https://i.imgur.com/l7ssEfs.jpg)
+
+注意哈，这里有两个Application对象和两个TestLaunchActivity对象，是因为app有两个进程
+
+分析结果：暂没有发现严重的内存泄漏
+	
+### MAT分析内存泄漏
+
+转MAT格式
+	    
+	hprof-conv heap-original.hprof heap-converted.hprof
+
+我们先采用明确方式，再采用传统方式，最后做进阶分析
+
+1. 明确方式
+
+2. 传统方式
+
+3. 进阶分析
+
 
 ## 效果对比
 
-
-# 注意事项
-
-- layout优化层级变动时，可能会导致UI，特别是背景有误。layout优化完成后要对比各种scenario时的UI
-- image压缩时，要注意是否失真不符合预期效果
+待补充
 
 # 测试重点
 
-1. detail页面UI展示测试
-2. detail页面的逻辑操作
-3. detai页面多笔item加载场景
-4. call log多笔item加载场景
-5. 联系人详情增加多笔item和call log场景
-
+1. 主页面加载
+2. 联系人列表，编辑
+3. call log列表，编辑
 
 # Reference
 
 [性能优化 - 目录](http://vivianking6855.github.io/2018/01/24/Android-optimization-index/)
+
+[性能优化 - Android Studio & MAT 如何分析内存](http://vivianking6855.github.io/2018/05/04/Android-optimization-AS-MAT/)
