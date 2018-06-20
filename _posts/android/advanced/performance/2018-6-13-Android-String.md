@@ -178,6 +178,11 @@ comments: true
     }
 
 
+注意下面的是动态拼接
+
+String A = "aaa";
+String B = "bbb";
+String C = A + B;
 
 # 3. String的创建
 
