@@ -25,6 +25,45 @@ comments: true
 
 - [知识News](http://vivianking6855.github.io/2018/03/16/%E7%9F%A5%E8%AF%86News/)
 
+
+---
+# 项目管理
+
+- [项目-标签](http://vivianking6855.github.io/tag/#Projects-ref)
+- [管理-标签](http://vivianking6855.github.io/tag/#%E7%AE%A1%E7%90%86-ref)
+- [推荐书籍](http://vivianking6855.github.io/2018/03/16/Books/)
+
+
+---
+# AI, 大数据
+
+- [AI-标签](http://vivianking6855.github.io/tag/#AI-ref)
+- [Python-标签](http://vivianking6855.github.io/categories/#Python-ref)
+
+
+---
+# 操作系统
+
+---   
+# 网络和安全
+
+---   
+# 数据库
+
+
+
+---
+# 数据结构和算法
+
+- [数据结构](https://blog.csdn.net/vivian_king/article/details/79624965)
+- [算法目录](http://vivianking6855.github.io/2018/05/08/Algorithm-Index/)
+
+---
+# 设计模式
+
+- [设计模式-标签](http://vivianking6855.github.io/tag/#设计模式-ref)
+
+
 ---
 
 # 编程语言
@@ -79,38 +118,6 @@ nodejs是j一种javascript的运行环境，能够使得javascript脱离浏览�
 
 - [PHP CSDN](https://blog.csdn.net/vivian_king/article/category/3102471)
 
----
-# 数据结构和算法
 
-- [数据结构](https://blog.csdn.net/vivian_king/article/details/79624965)
-- [算法目录](http://vivianking6855.github.io/2018/05/08/Algorithm-Index/)
-
----
-# 设计模式
-
-- [设计模式-标签](http://vivianking6855.github.io/tag/#设计模式-ref)
-
----
-# 项目管理
-
-- [项目-标签](http://vivianking6855.github.io/tag/#Projects-ref)
-- [管理-标签](http://vivianking6855.github.io/tag/#%E7%AE%A1%E7%90%86-ref)
-- [推荐书籍](http://vivianking6855.github.io/2018/03/16/Books/)
-
----
-# 操作系统
-
----   
-# 网络和安全
-
----   
-# 数据库
-
-
----
-# AI, 大数据
-
-- [AI-标签](http://vivianking6855.github.io/tag/#AI-ref)
-- [Python-标签](http://vivianking6855.github.io/categories/#Python-ref)
 
 
